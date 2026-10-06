@@ -20,402 +20,413 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Base de dados indexada para o autocomplete em tempo real
 const searchDatabase = [
-  // Introdução & Conceitos
   {
-    id: "introducao",
-    title: "Introdução: Inclusão e Transformação Digital",
-    category: "Geral",
-    categoryClass: "category-normas",
-    keywords: "prefeitura rio cidadania inclusão digital transformação carioca governo serviços públicos",
-    snippet: "Compromisso da gestão pública municipal com a inclusão digital de todos os cidadãos cariocas."
+    "id": "pessoas-com-deficiencia-definicao",
+    "title": "Pessoas com Deficiência: definição",
+    "category": "Compreendendo ",
+    "categoryClass": "category-estrutura",
+    "keywords": "pessoas com deficiência definição segundo ministério saúde brasileiro, “pessoas aquelas impedimento",
+    "snippet": "Segundo o Ministério da Saúde brasileiro, “pessoas com deficiência são aquelas que têm impedimento de médio ou longo prazo de natureza física, mental, intele..."
   },
   {
-    id: "definicao-pcd",
-    title: "Definição de Pessoas com Deficiência (Ministério da Saúde)",
-    category: "Conceitos",
-    categoryClass: "category-censo",
-    keywords: "pcd conceito impedimento barreiras atitudinais físicas sensoriais ambientais",
-    snippet: "Impedimento de médio ou longo prazo de natureza física, mental, intelectual ou sensorial que interage com barreiras."
+    "id": "tipos-de-deficiencia",
+    "title": "Tipos de Deficiência",
+    "category": "Compreendendo ",
+    "categoryClass": "category-estrutura",
+    "keywords": "tipos de deficiência refere origem deficiência, ministério saúde reconhece congênita (quando",
+    "snippet": "No que se refere à origem da deficiência, o Ministério da Saúde reconhece que ela pode ser congênita (quando a pessoa já nasce com a deficiência) ou adquirid..."
   },
   {
-    id: "tipos-deficiencia",
-    title: "Tipos de Deficiência: Congênita, Adquirida e Ocultas",
-    category: "Conceitos",
-    categoryClass: "category-censo",
-    keywords: "congênita adquirida invisíveis ocultas temporária permanente fibromialgia tea tdah lúpus",
-    snippet: "Classificação quanto à origem (congênita/adquirida), duração (temporária/permanente) e deficiências invisíveis."
+    "id": "direitos-das-pessoas-com-deficiencia",
+    "title": "Direitos das Pessoas com Deficiência",
+    "category": "Compreendendo ",
+    "categoryClass": "category-estrutura",
+    "keywords": "direitos das pessoas com deficiência convenção sobre (2006) primeiro",
+    "snippet": "A Convenção sobre os Direitos das Pessoas com Deficiência da ONU (2006) foi o primeiro tratado internacional a reconhecer a importância do respeito à diferen..."
   },
   {
-    id: "censo-demografia",
-    title: "Estatísticas: Censo 2010 vs 2022 e o Cenário Carioca",
-    category: "Estatísticas",
-    categoryClass: "category-censo",
-    keywords: "censo ibge 2010 2022 dados estatística rio de janeiro subnotificação envelhecimento idosos",
-    snippet: "Comparativo dos censos, queda de 24,7% para 6,9% por mudança metodológica e o envelhecimento populacional no Rio."
+    "id": "tipos-de-acessibilidade",
+    "title": "Tipos de Acessibilidade",
+    "category": "Compreendendo ",
+    "categoryClass": "category-estrutura",
+    "keywords": "tipos de acessibilidade garantir autonomia pessoas deficiência, imprescindível segundo",
+    "snippet": "Para garantir a autonomia das pessoas com deficiência, é imprescindível garantir acessibilidade que, segundo o autor Romeu Kazumi Sassaki, se divide em sete ..."
   },
   {
-    id: "direitos-pcd",
-    title: "Direitos das PCDs: Convenção da ONU e Lei nº 13.146 (LBI)",
-    category: "Legislação",
-    categoryClass: "category-normas",
-    keywords: "lei 13146 lbi estatuto pessoa com deficiência onu convenção direitos constitucionais",
-    snippet: "Estatuto da Pessoa com Deficiência (LBI) e a Convenção da ONU com status de Emenda Constitucional no Brasil."
+    "id": "acessibilidade-digital-entendendo-o-conceito",
+    "title": "Acessibilidade Digital: entendendo o conceito",
+    "category": "Compreendendo ",
+    "categoryClass": "category-estrutura",
+    "keywords": "acessibilidade digital entendendo o conceito dentre essas formas acessibilidade, prevista digital,",
+    "snippet": "Dentre essas formas de acessibilidade, está prevista a acessibilidade digital, que é a eliminação de barreiras na Web. Ela determina que todo tipo de página ..."
   },
   {
-    id: "dimensoes-acessibilidade",
-    title: "As 7 Dimensões da Acessibilidade (Romeu Sassaki) e Desenho Universal",
-    category: "Conceitos",
-    categoryClass: "category-normas",
-    keywords: "sassaki 7 dimensões arquitetônica comunicacional metodológica instrumental programática atitudinal digital desenho universal",
-    snippet: "Arquitetônica, comunicacional, metodológica, instrumental, programática, atitudinal e digital, além do Desenho Universal."
+    "id": "deficiencia-visual",
+    "title": "Deficiência Visual",
+    "category": "Tipos de defic",
+    "categoryClass": "category-estrutura",
+    "keywords": "deficiência visual",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
-    id: "acessibilidade-digital-conceito",
-    title: "Acessibilidade Digital: Obrigatoriedade Legal e Cenário",
-    category: "Conceitos",
-    categoryClass: "category-normas",
-    keywords: "acessibilidade digital artigo 63 lbi lei obrigatória web internet barreiras sistemas legados",
-    snippet: "Eliminação de barreiras na Web para que todas as pessoas possam perceber, entender, navegar e interagir."
+    "id": "principais-dificuldades-de-uso",
+    "title": "Principais dificuldades de uso",
+    "category": "Tipos de defic",
+    "categoryClass": "category-estrutura",
+    "keywords": "principais dificuldades de uso práticas:",
+    "snippet": "Boas práticas:"
   },
   {
-    id: "pesquisas-bid-wpt",
-    title: "Pesquisa BID 2025 e Movimento Web Para Todos 2024",
-    category: "Estatísticas",
-    categoryClass: "category-censo",
-    keywords: "bid 2025 wpt web para todos bigdatacorp estatísticas falhas 89% sites governamentais 2,9%",
-    snippet: "Pesquisa aponta baixa adaptação digital (BID) e que 89,96% dos sites governamentais falham em acessibilidade (WPT)."
-  },
-
-  // Tipos de Deficiência & Tecnologias Assistivas
-  {
-    id: "deficiencia-visual-cegueira",
-    title: "Deficiência Visual: Cegueira e Leitores de Tela",
-    category: "Visual",
-    categoryClass: "category-visual",
-    keywords: "cegueira leitor de tela nvda jaws voiceover texto alternativo alt semântica teclado",
-    snippet: "Dificuldades com imagens sem descrição, formulários sem identificação e boas práticas com HTML semântico e teclado."
+    "id": "boas-praticas",
+    "title": "Boas práticas",
+    "category": "Tipos de defic",
+    "categoryClass": "category-estrutura",
+    "keywords": "boas práticas daltonismo alteração percepção cores devido funcionamento ausência cones",
+    "snippet": "3) #### Daltonismo: Alteração na percepção das cores devido ao funcionamento ou ausência dos cones da retina, células responsáveis por identificar as cores. ..."
   },
   {
-    id: "deficiencia-visual-baixa-visao",
-    title: "Deficiência Visual: Baixa Visão e Ampliação",
-    category: "Visual",
-    categoryClass: "category-visual",
-    keywords: "baixa visão zoom 200% contraste fontes pequenas ampliação layout responsivo",
-    snippet: "Importância do contraste adequado, texto redimensionável até 200% sem perda de conteúdo e espaçamentos."
+    "id": "boas-praticas",
+    "title": "Boas práticas",
+    "category": "Tipos de defic",
+    "categoryClass": "category-estrutura",
+    "keywords": "boas práticas",
+    "snippet": "####"
   },
   {
-    id: "deficiencia-visual-daltonismo",
-    title: "Daltonismo: Protanopia, Deuteranopia e Tritanopia",
-    category: "Visual",
-    categoryClass: "category-visual",
-    keywords: "daltonismo protanopia deuteranopia tritanopia cores contraste uso de cores monocromático gráficos",
-    snippet: "A cor nunca deve ser o único meio de transmitir informação; combinar cores com textos, ícones e padrões visuais."
+    "id": "deficiencia-auditiva",
+    "title": "Deficiência Auditiva",
+    "category": "Boas práticas",
+    "categoryClass": "category-estrutura",
+    "keywords": "deficiência auditiva surdez total parcial: condição afetar percepção diferentes graus,",
+    "snippet": "1) #### Surdez total ou parcial: Essa condição pode afetar a percepção dos sons e, em diferentes graus, a comunicação oral."
   },
   {
-    id: "deficiencia-auditiva-surdez",
-    title: "Deficiência Auditiva: Surdez e Conteúdos em LIBRAS",
-    category: "Auditivo",
-    categoryClass: "category-auditivo",
-    keywords: "surdez auditiva legendas libras webvtt intérprete língua de sinais transcrição áudio",
-    snippet: "Uso de legendas sincronizadas (WebVTT), transcrições para áudios e tradução em LIBRAS sem depender exclusivamente de sons."
+    "id": "deficiencia-intelectual-cognitiva",
+    "title": "Deficiência Intelectual / Cognitiva",
+    "category": "Boas práticas",
+    "categoryClass": "category-estrutura",
+    "keywords": "deficiência intelectual cognitiva deficiências cognitiva, dificuldades práticas costumam repetir tipos",
+    "snippet": "No caso de deficiências intelectual e cognitiva, as dificuldades e boas práticas costumam se repetir em cada um dos tipos de deficiência. Para que a lista nã..."
   },
   {
-    id: "deficiencia-intelectual",
-    title: "Deficiência Intelectual e Cognitiva: Linguagem Simples",
-    category: "Cognitivo",
-    categoryClass: "category-cognitivo",
-    keywords: "intelectual cognitiva linguagem simples instruções claras etapas menores consistência",
-    snippet: "Uso de linguagem simples, divisão de tarefas complexas em etapas menores e mensagens de erro elucidativas."
+    "id": "perceptivel",
+    "title": "Perceptível",
+    "category": "Boas práticas ",
+    "categoryClass": "category-estrutura",
+    "keywords": "perceptível",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
-    id: "deficiencia-cognitiva-tea",
-    title: "Transtorno do Espectro Autista (TEA): Previsibilidade",
-    category: "Cognitivo",
-    categoryClass: "category-cognitivo",
-    keywords: "tea autismo espectro autista estímulos visuais som reprodução automática consistência previsibilidade",
-    snippet: "Evitar animações desnecessárias, não reproduzir áudio/vídeo automaticamente e manter layouts previsíveis."
+    "id": "operavel",
+    "title": "Operável",
+    "category": "Boas práticas ",
+    "categoryClass": "category-estrutura",
+    "keywords": "operável",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
-    id: "deficiencia-cognitiva-tdah",
-    title: "TDAH: Foco, Hierarquia e Tempo Suficiente",
-    category: "Cognitivo",
-    categoryClass: "category-cognitivo",
-    keywords: "tdah déficit de atenção hiperatividade poluição visual hierarquia tempo memorização",
-    snippet: "Interfaces limpas sem distrações visuais, redução da carga de memorização e tempo ajustável para tarefas."
+    "id": "compreensivel",
+    "title": "Compreensível",
+    "category": "Boas práticas ",
+    "categoryClass": "category-estrutura",
+    "keywords": "compreensível",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
-    id: "deficiencia-cognitiva-dislexia",
-    title: "Dislexia: Legibilidade de Fontes e Alternativas Textuais",
-    category: "Cognitivo",
-    categoryClass: "category-cognitivo",
-    keywords: "dislexia fontes sem serifa opendyslexic espaçamento áudio leitura em voz alta",
-    snippet: "Fontes simples sem serifa ou específicas, espaçamento generoso e opções de áudio/leitura em voz alta."
-  },
-
-  // Padrões Normativos
-  {
-    id: "mobile-first",
-    title: "Abordagem Mobile-First e Design Responsivo",
-    category: "Normas",
-    categoryClass: "category-normas",
-    keywords: "mobile first responsivo celular telas pequenas luke wroblewski aprimoramento progressivo",
-    snippet: "Projetar primeiro para dispositivos móveis garantindo que serviços públicos funcionem em qualquer tela."
+    "id": "robusto",
+    "title": "Robusto",
+    "category": "Boas práticas ",
+    "categoryClass": "category-estrutura",
+    "keywords": "robusto esses princípios dividem diretrizes desdobram critérios sucesso.",
+    "snippet": "Esses princípios se dividem em diretrizes que, por sua vez, se desdobram em critérios de sucesso. As diretrizes têm como objetivo principal garantir que o co..."
   },
   {
-    id: "wcag-emag-abnt",
-    title: "Padrões Normativos: WCAG 2.2, eMAG 3.1 e Normas ABNT",
-    category: "Normas",
-    categoryClass: "category-normas",
-    keywords: "wcag 2.2 emag 3.1 abnt nbr 17060 17225 w3c níveis a aa aaa normas brasileiras",
-    snippet: "Diretrizes de Acessibilidade da W3C (níveis A, AA, AAA), eMAG do governo federal e normas ABNT 17060 e 17225."
+    "id": "orientacoes-gerais",
+    "title": "Orientações gerais",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "orientações gerais",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
-    id: "principios-pour",
-    title: "Os 4 Princípios POUR da WCAG (Perceptível, Operável, Compreensível, Robusto)",
-    category: "Normas",
-    categoryClass: "category-normas",
-    keywords: "pour perceptível operável compreensível robusto princípios wcag fundamentos",
-    snippet: "1. Perceptível, 2. Operável, 3. Compreensível e 4. Robusto — pilares de qualquer aplicação acessível."
-  },
-
-  // Diretrizes Textuais
-  {
-    id: "texto-paragrafos",
-    title: "Parágrafos Semânticos no HTML (<p>)",
-    category: "Texto",
-    categoryClass: "category-textual",
-    keywords: "parágrafos tag p tag br leitor de tela semântica quebra de linha",
-    snippet: "Cada parágrafo deve estar dentro de <p>; evitar a tag <br> para separar ideias para não confundir tecnologias assistivas."
+    "id": "paragrafos",
+    "title": "Parágrafos",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "parágrafos",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
-    id: "texto-tamanho-zoom",
-    title: "Tamanho de Fonte e Redimensionamento (Zoom 200%)",
-    category: "Texto",
-    categoryClass: "category-textual",
-    keywords: "tamanho fonte zoom 200% escala redimensionamento mínimo 16px wcag",
-    snippet: "Tamanho mínimo recomendado de 16px e suporte a ampliação de até 200% sem quebrar o layout nem perder funções."
+    "id": "tamanho-de-fonte-e-redimensionamento-de-texto",
+    "title": "Tamanho de fonte e redimensionamento de texto",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "tamanho de fonte e redimensionamento texto determina fonte, entanto, práticas",
+    "snippet": "A WCAG não determina um tamanho de fonte, no entanto, boas práticas de design indicam o tamanho 16 como o mínimo. Além disso, a questão do redimensionamento ..."
   },
   {
-    id: "texto-alinhamento-largura",
-    title: "Alinhamento de Texto e Limite de 80 Caracteres",
-    category: "Texto",
-    categoryClass: "category-textual",
-    keywords: "alinhamento à esquerda nunca justificar justificado 80 caracteres glifos legibilidade",
-    snippet: "Alinhamento sempre à esquerda (para idiomas ocidentais), nunca justificado, e blocos de no máximo 80 caracteres."
+    "id": "alinhamento-de-texto",
+    "title": "Alinhamento de texto",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "alinhamento de texto",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
-    id: "texto-reflow-320px",
-    title: "Realinhamento de Tela e Reflow (320px CSS)",
-    category: "Texto",
-    categoryClass: "category-textual",
-    keywords: "reflow 320px zoom 400% rolagem bidimensional horizontal responsivo",
-    snippet: "Garantir apresentação sem rolagem horizontal dupla para larguras equivalentes a 320px CSS (zoom 400% em 1280px)."
+    "id": "realinhamento-e-rolagem-de-tela",
+    "title": "Realinhamento e rolagem de tela",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "realinhamento e rolagem de tela",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
-    id: "texto-espacamento",
-    title: "Espaçamento de Texto: Linhas, Parágrafos, Letras e Palavras",
-    category: "Texto",
-    categoryClass: "category-textual",
-    keywords: "espaçamento entrelinhas 1.5 parágrafos 2x letras 0.12 palavras 0.16 line-height letter-spacing",
-    snippet: "Entrelinhas de no mínimo 1.5x, parágrafos de 2x, entre letras de 0.12x e palavras de 0.16x o tamanho da fonte."
+    "id": "espacamento-de-texto",
+    "title": "Espaçamento de texto",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "espaçamento de texto espaçamentos devem calculados levando consideração tamanho fonte texto.",
+    "snippet": "Os espaçamentos devem ser calculados levando em consideração o tamanho da fonte do texto. O layout do site deve suportar esses ajustes sem quebrar."
   },
   {
-    id: "texto-contraste",
-    title: "Contraste Textual Mínimo (4.5:1 e 3:1)",
-    category: "Texto",
-    categoryClass: "category-textual",
-    keywords: "contraste 4.5:1 3:1 texto normal grande webaim adobe color checker nível aa",
-    snippet: "Contraste mínimo de 4.5:1 para texto normal e 3:1 para texto grande/ampliado (Nível AA)."
+    "id": "contraste-textual",
+    "title": "Contraste textual",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "contraste textual",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
-    id: "contraste-nao-textual",
-    title: "Contraste Não Textual para Botões e Ícones (3:1)",
-    category: "Texto",
-    categoryClass: "category-textual",
-    keywords: "contraste não textual 3:1 botões ícones inputs bordas estados foco hover",
-    snippet: "Contraste mínimo de 3:1 entre componentes de interface (botões, inputs, gráficos) e cores adjacentes."
+    "id": "contraste-nao-textual",
+    "title": "Contraste não textual",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "contraste não textual",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
-    id: "uso-de-cores",
-    title: "Uso de Cores: Nunca Depender Exclusivamente da Cor",
-    category: "Texto",
-    categoryClass: "category-textual",
-    keywords: "uso de cores redundância cor única erro sucesso ícones texto",
-    snippet: "A cor não pode ser o único meio de transmitir instruções, status de erro/sucesso ou diferenciar elementos."
+    "id": "uso-de-cores",
+    "title": "Uso de cores",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "uso de cores",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
-    id: "indicacao-de-link",
-    title: "Indicação de Links Significativos (Evitar 'Clique Aqui')",
-    category: "Texto",
-    categoryClass: "category-textual",
-    keywords: "links texto âncora clique aqui saiba mais leia mais descritivo título link",
-    snippet: "Links devem descrever claramente o destino ou ação; nunca use termos vagos como 'clique aqui' ou 'saiba mais'."
+    "id": "indicacao-de-link",
+    "title": "Indicação de link",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "indicação de link fornecer texto descreva finalidade",
+    "snippet": "Ex.:  Fornecer um texto de link que descreva a finalidade de um link"
   },
   {
-    id: "formularios-acessiveis",
-    title: "Formulários Acessíveis: Labels, Agrupamento e Validação",
-    category: "Texto",
-    categoryClass: "category-textual",
-    keywords: "formulários label fieldset legend validação mensagens de erro wai-aria inputs",
-    snippet: "Associação explícita com <label>, agrupamento com <fieldset>/<legend>, instruções claras e notificações de erro."
+    "id": "formularios",
+    "title": "Formulários",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "formulários considerações técnicas, usuários geralmente preferem simples curtos.",
+    "snippet": "Além das considerações técnicas, os usuários geralmente preferem formulários simples e curtos. Solicite apenas o necessário para concluir a transação ou o pr..."
   },
   {
-    id: "listas-semanticas",
-    title: "Listas Estruturadas (ul, ol e dl)",
-    category: "Texto",
-    categoryClass: "category-textual",
-    keywords: "listas ul ol li dl dt dd leitor de tela voiceover semântica",
-    snippet: "Uso de listas não ordenadas (ul), ordenadas (ol) e de descrição (dl, dt, dd) com estrutura HTML adequada."
-  },
-
-  // Imagens
-  {
-    id: "imagens-informativas",
-    title: "Imagens Informativas e Textos Alternativos (alt)",
-    category: "Imagens",
-    categoryClass: "category-visual",
-    keywords: "imagens texto alternativo alt 100 150 caracteres fotos gráficos fotos equipe",
-    snippet: "Descrever com clareza o conteúdo e a mensagem da imagem no atributo alt (geralmente entre 100 e 150 caracteres)."
+    "id": "listas",
+    "title": "Listas",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "listas existem vários tipos lista:",
+    "snippet": "Existem vários tipos de lista:"
   },
   {
-    id: "imagens-decorativas",
-    title: "Imagens Decorativas: Atributo alt='' Vazio",
-    category: "Imagens",
-    categoryClass: "category-visual",
-    keywords: "imagens decorativas alt vazio alt='' leitor de tela ignorar",
-    snippet: "Imagens meramente visuais sem conteúdo informativo devem conter alt='' vazio para serem ignoradas por leitores de tela."
+    "id": "imagens-informativas",
+    "title": "Imagens informativas",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "imagens informativas representam graficamente conceitos informações, geralmente figuras, fotos",
+    "snippet": "Imagens que representam graficamente conceitos e informações, geralmente figuras, fotos e ilustrações."
   },
   {
-    id: "imagens-funcionais",
-    title: "Imagens Funcionais em Botões e Links",
-    category: "Imagens",
-    categoryClass: "category-visual",
-    keywords: "imagens funcionais botão link ícone impressora lupa busca ação",
-    snippet: "O texto alternativo de imagens clicáveis deve descrever a função ou destino da ação, e não o desenho do ícone."
+    "id": "imagens-decorativas",
+    "title": "Imagens decorativas",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "imagens decorativas aquela único objetivo adicionar decoração visual página, transmitir",
+    "snippet": "É aquela que tem como único objetivo adicionar decoração visual à página, em vez de transmitir informações."
   },
   {
-    id: "imagens-com-texto",
-    title: "Imagens com Texto: Evitar e Priorizar HTML/CSS",
-    category: "Imagens",
-    categoryClass: "category-visual",
-    keywords: "imagens com texto banners evitar texto legibilidade responsivo css",
-    snippet: "Não incrustar textos importantes dentro de imagens rasterizadas; construir textos usando HTML e CSS."
+    "id": "imagens-funcionais",
+    "title": "Imagens funcionais",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "imagens funcionais",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
-    id: "imagens-complexas",
-    title: "Imagens Complexas: Gráficos, Diagramas e Tabelas",
-    category: "Imagens",
-    categoryClass: "category-visual",
-    keywords: "imagens complexas gráficos diagramas descrição longa longdesc contexto tabela de dados",
-    snippet: "Fornecer descrições textuais ricas no próprio contexto da página ou em link complementar com tabela de dados."
+    "id": "imagens-com-texto",
+    "title": "Imagens com texto",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "imagens com texto",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
-    id: "tabelas-acessiveis",
-    title: "Tabelas de Dados Acessíveis (th, td, scope)",
-    category: "Imagens",
-    categoryClass: "category-visual",
-    keywords: "tabelas th td scope headers cabeçalhos dados linhas colunas leitor de tela",
-    snippet: "Marcação semântica com <th>, <td>, atributos scope e headers para associar claramente cabeçalhos e células."
-  },
-
-  // Vídeo e Áudio
-  {
-    id: "video-legendas",
-    title: "Legendas em Vídeos (WebVTT e Legendas ao Vivo)",
-    category: "Vídeo",
-    categoryClass: "category-auditivo",
-    keywords: "legendas vídeo webvtt ao vivo pré-gravado áudio sincronizado legendagem",
-    snippet: "Fornecer legendas sincronizadas pré-gravadas (WebVTT) e ao vivo; legendas automáticas exigem revisão prévia."
+    "id": "imagens-complexas",
+    "title": "Imagens complexas",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "imagens complexas",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
-    id: "video-audiodescricao",
-    title: "Audiodescrição e Audiodescrição Estendida",
-    category: "Vídeo",
-    categoryClass: "category-visual",
-    keywords: "audiodescrição estendida vídeo narração cenas expressões ambiente",
-    snippet: "Descrição falada de elementos visuais importantes (cenários, ações, expressões) para usuários cegos."
+    "id": "grupos-de-imagens",
+    "title": "Grupos de imagens",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "grupos de imagens",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
-    id: "video-midia-alternativa",
-    title: "Mídia Alternativa e Transcrições Textuais Completas",
-    category: "Vídeo",
-    categoryClass: "category-auditivo",
-    keywords: "mídia alternativa transcrição completa texto descrições oradores sons",
-    snippet: "Documento textual que sequencia diálogos, identificação de oradores e descrições do ambiente visual."
+    "id": "mapas-de-imagem",
+    "title": "Mapas de imagem",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "mapas de imagem dividida áreas selecionáveis. outra página",
+    "snippet": "Um mapa de imagem é uma imagem dividida em áreas selecionáveis. Cada área é um link para outra página ou para outra parte da mesma página."
   },
   {
-    id: "video-libras",
-    title: "Tradução em LIBRAS: Boas Práticas de Gravação e Enquadramento",
-    category: "Vídeo",
-    categoryClass: "category-auditivo",
-    keywords: "libras língua de sinais intérprete enquadramento contraste fundo sólido janela vlibras",
-    snippet: "Gravação profissional de intérprete humano, da cintura até acima da cabeça, com fundo sólido e alto contraste."
-  },
-
-  // Estrutura & Navegabilidade
-  {
-    id: "estrutura-cabecalhos",
-    title: "Estrutura Hierárquica de Cabeçalhos (H1 a H6)",
-    category: "Estrutura",
-    categoryClass: "category-estrutura",
-    keywords: "cabeçalhos h1 h2 h3 h4 h5 h6 hierarquia título único pular níveis",
-    snippet: "Apenas um <h1> por página como título principal, seguido por <h2> a <h6> em ordem estrita sem pular níveis."
+    "id": "tabelas",
+    "title": "Tabelas",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "tabelas apresentação conteúdo vídeo:",
+    "snippet": "Apresentação do conteúdo em vídeo:"
   },
   {
-    id: "estrutura-regioes",
-    title: "Regiões Semânticas HTML5 (main, nav, aside, footer)",
-    category: "Estrutura",
-    categoryClass: "category-estrutura",
-    keywords: "regiões semânticas main nav aside footer header landmarks wai-aria",
-    snippet: "Uso das tags HTML5 <main>, <nav>, <aside> e <footer> para orientar sintetizadores de voz e tecnologias assistivas."
+    "id": "orientacoes-gerais",
+    "title": "Orientações gerais",
+    "category": "Tabelas",
+    "categoryClass": "category-estrutura",
+    "keywords": "orientações gerais conteúdo textual, fornecida alternativa mídia beneficiam representações alternativas",
+    "snippet": "Além do conteúdo textual, deve ser fornecida uma alternativa em mídia aos que se beneficiam de representações alternativas a texto, que podem ser áudio, víde..."
   },
   {
-    id: "estrutura-carrossel",
-    title: "Carrosséis Acessíveis: Controle e Pausa",
-    category: "Estrutura",
-    categoryClass: "category-estrutura",
-    keywords: "carrossel slider listas pausar parar passar slides teclado",
-    snippet: "Estruturar itens como listas não ordenadas e fornecer controles por teclado e botão de pausar rotação."
+    "id": "uso-de-legendas",
+    "title": "Uso de legendas",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "uso de legendas",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
-    id: "navegacao-teclado",
-    title: "Navegação por Teclado e Foco Visível Sem Armadilhas",
-    category: "Navegação",
-    categoryClass: "category-estrutura",
-    keywords: "teclado foco visual visível tab shift tab armadilha de teclado outline tabindex",
-    snippet: "Toda a interface deve ser operável por teclado, com indicador de foco nítido e sem prender o usuário em componentes."
+    "id": "uso-de-audiodescricao",
+    "title": "Uso de audiodescrição",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "uso de audiodescrição",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
-    id: "tempo-ajustavel",
-    title: "Tempo de Navegação Ajustável: Desligar, Ajustar ou Prolongar",
-    category: "Navegação",
-    categoryClass: "category-estrutura",
-    keywords: "tempo limite de tempo expirar sessão estender prolongar 20 segundos",
-    snippet: "Oferecer opções para desligar, ajustar para 10x ou prolongar o tempo limite de sessões com aviso prévio."
+    "id": "midia-alternativa",
+    "title": "Mídia alternativa",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "mídia alternativa",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
-    id: "animacoes-movimento",
-    title: "Controle de Movimento e Animações Automáticas",
-    category: "Navegação",
-    categoryClass: "category-estrutura",
-    keywords: "animações movimento pausar parar ocultar piscar fotos mais de 5 segundos",
-    snippet: "Mecanismo para pausar, parar ou ocultar qualquer movimento ou animação automática com duração superior a 5 segundos."
+    "id": "lingua-de-sinais",
+    "title": "Língua de sinais",
+    "category": "Apresentação d",
+    "categoryClass": "category-estrutura",
+    "keywords": "língua de sinais",
+    "snippet": "###"
   },
   {
-    id: "design-feedback-consistencia",
-    title: "Design Consistente, Feedback Visível e Viewports",
-    category: "Design",
-    categoryClass: "category-normas",
-    keywords: "design consistente feedback orientação breadcrumbs viewports zoom telas",
-    snippet: "Manter navegação uniforme, apresentar feedbacks claros em ações e garantir que o design suporte múltiplos viewports."
+    "id": "cabecalhos",
+    "title": "Cabeçalhos",
+    "category": "Estrutura da p",
+    "categoryClass": "category-estrutura",
+    "keywords": "cabeçalhos maioria sites possui página contém informações gerais site,",
+    "snippet": "A maioria dos sites possui uma área no topo de cada página que contém informações gerais do site, como o logotipo, a função de busca e as opções de navegação."
   },
   {
-    id: "referencias-bibliograficas",
-    title: "Referências Bibliográficas, Normas e Legislação",
-    category: "Legislação",
-    categoryClass: "category-normas",
-    keywords: "referências notas bibliografia leis artigos abnt manual decreto",
-    snippet: "Compilado de todas as 29 fontes bibliográficas oficiais, leis federais, decretos e publicações científicas citadas."
+    "id": "rodape",
+    "title": "Rodapé",
+    "category": "Estrutura da p",
+    "categoryClass": "category-estrutura",
+    "keywords": "rodapé assim cabeçalho página, maioria sites também possui região",
+    "snippet": "Assim como o cabeçalho da página, a maioria dos sites também possui uma região na parte inferior de cada página que contém informações gerais do site, como i..."
+  },
+  {
+    "id": "conteudo-principal",
+    "title": "Conteúdo principal",
+    "category": "Estrutura da p",
+    "categoryClass": "category-estrutura",
+    "keywords": "conteúdo principal",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
+  },
+  {
+    "id": "conteudo-complementar",
+    "title": "Conteúdo complementar",
+    "category": "Estrutura da p",
+    "categoryClass": "category-estrutura",
+    "keywords": "conteúdo complementar menu:",
+    "snippet": "5. ### Menu:"
+  },
+  {
+    "id": "carrossel",
+    "title": "Carrossel",
+    "category": "Estrutura da p",
+    "categoryClass": "category-estrutura",
+    "keywords": "carrossel carrosséis frequentemente usados ​​como galerias exibir série imagens.",
+    "snippet": "Os carrosséis são frequentemente usados ​​como galerias para exibir uma série de imagens. No entanto, conteúdos mais complexos, como teasers, artigos ou seçõ..."
+  },
+  {
+    "id": "navegacao-por-teclado",
+    "title": "Navegação por teclado",
+    "category": "Navegabilidade",
+    "categoryClass": "category-estrutura",
+    "keywords": "navegação por teclado",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
+  },
+  {
+    "id": "tempo-de-navegacao-ajustavel",
+    "title": "Tempo de navegação ajustável",
+    "category": "Navegabilidade",
+    "categoryClass": "category-estrutura",
+    "keywords": "tempo de navegação ajustável",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
+  },
+  {
+    "id": "controlar-movimento-de-informacoes-ou-animacoes",
+    "title": "Controlar movimento de informações ou animações",
+    "category": "Navegabilidade",
+    "categoryClass": "category-estrutura",
+    "keywords": "controlar movimento de informações ou animações",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
+  },
+  {
+    "id": "navegacao-clara-e-consistente",
+    "title": "Navegação clara e consistente",
+    "category": "Outras dicas d",
+    "categoryClass": "category-estrutura",
+    "keywords": "navegação clara e consistente",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
+  },
+  {
+    "id": "feedback-facilmente-identificavel",
+    "title": "Feedback facilmente identificável",
+    "category": "Outras dicas d",
+    "categoryClass": "category-estrutura",
+    "keywords": "feedback facilmente identificável",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
+  },
+  {
+    "id": "design-para-diferentes-tamanhos-de-viewport",
+    "title": "Design para diferentes tamanhos de viewport",
+    "category": "Outras dicas d",
+    "categoryClass": "category-estrutura",
+    "keywords": "design para diferentes tamanhos de viewport",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   }
 ];
 

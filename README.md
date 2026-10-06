@@ -71,6 +71,25 @@ Não requer instalação de Node.js, banco de dados ou dependências externas!
 
 ---
 
+## 🔄 Como Atualizar os Textos (Google Docs » Portal)
+
+O portal conta com um pipeline automatizado para que novas versões do guia exportadas do Google Docs atualizem automaticamente o site, o sumário e o mecanismo de busca:
+
+### Opção 1: Atalho de 1 Clique no Windows (`atualizar_guia.bat`)
+1. No Google Docs, clique em **Arquivo** > **Fazer download** > **Markdown (.md)**.
+2. Salve o arquivo como `GuiaAcessibilidade.md` na raiz do projeto.
+3. Dê dois cliques em `atualizar_guia.bat`.
+4. O script extrairá novas imagens, atualizará os capítulos, reconstruirá o sumário lateral e o banco de busca, perguntando se deseja enviar para o GitHub automaticamente.
+
+### Opção 2: Conversor Web no Próprio Navegador (`conversor.html`)
+- Acesse `guiasite/conversor.html` (ou online em [https://mrsherlockyx.github.io/guia-acessibilidade-rio/guiasite/conversor.html](https://mrsherlockyx.github.io/guia-acessibilidade-rio/guiasite/conversor.html)).
+- Arraste o arquivo `.md` do Google Docs para a tela para obter a prévia da nova estrutura, estatísticas e arquivos gerados em tempo real sem precisar de terminal.
+
+### Opção 3: Automação Total via GitHub Actions
+- Ao fazer upload ou commit de um novo `GuiaAcessibilidade.md` no repositório GitHub, a action `.github/workflows/rebuild.yml` reconstrói e publica o site automaticamente no GitHub Pages!
+
+---
+
 ## 🌐 Publicação no GitHub Pages
 
 O portal está estruturado para publicação imediata no GitHub Pages:
