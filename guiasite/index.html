@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia de Boas Práticas de Acessibilidade Digital | Prefeitura da Cidade do Rio de Janeiro</title>
+  <meta name="description" content="Guia oficial de boas práticas e diretrizes de acessibilidade digital da Prefeitura da Cidade do Rio de Janeiro, Subsecretaria de Transformação Digital e Cidades Inteligentes. Baseado em WCAG 2.2, eMAG 3.1 e normas ABNT.">
+  <meta name="theme-color" content="#002B49">
+
+  <!-- Fontes Oficiais DM Sans e Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+
+  <!-- Estilo Visual Oficial Prefeitura do Rio / Governo Digital -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 1. LINKS DE ATALHO DE ACESSIBILIDADE (SKIP LINKS - WCAG 2.4.1) -->
+  <nav class="skip-links" aria-label="Atalhos de acessibilidade">
+    <a href="#conteudo-principal" class="skip-link">Ir para o conteúdo principal [Alt + 1]</a>
+    <a href="#navegacao-guia" class="skip-link">Ir para o sumário do guia [Alt + 2]</a>
+    <a href="#search-input" class="skip-link">Ir para a barra de pesquisa [Alt + 3]</a>
+  </nav>
+
+  <!-- Barra de progresso de leitura no topo -->
+  <div id="reading-progress-bar" aria-hidden="true"></div>
+
+  <!-- 2. BARRA DE TOPO INSTITUCIONAL (PREFEITURA DO RIO) -->
+  <header class="topbar-prefeitura" role="region" aria-label="Portais da Prefeitura do Rio de Janeiro">
+    <div class="topbar-container">
+      <ul class="topbar-portal-links">
+        <li>
+          <a class="topbar-portal-link" href="https://prefeitura.rio/" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/></svg>
+            Prefeitura.rio
+          </a>
+        </li>
+        <li>
+          <a class="topbar-portal-link" href="https://carioca.rio/" target="_blank" rel="noopener noreferrer">
+            Carioca Digital
+          </a>
+        </li>
+        <li>
+          <a class="topbar-portal-link" href="https://www.1746.rio/" target="_blank" rel="noopener noreferrer">
+            Central 1746
+          </a>
+        </li>
+        <li>
+          <a class="topbar-portal-link" href="https://transparencia.prefeitura.rio/" target="_blank" rel="noopener noreferrer">
+            Transparência
+          </a>
+        </li>
+        <li>
+          <a class="topbar-portal-link" href="https://lgpd.prefeitura.rio/" target="_blank" rel="noopener noreferrer">
+            LGPD
+          </a>
+        </li>
+      </ul>
+
+      <ul class="topbar-social-links" aria-label="Redes sociais oficiais da Prefeitura">
+        <li>
+          <a class="topbar-social-link" href="https://twitter.com/Prefeitura_Rio" target="_blank" rel="noopener noreferrer" aria-label="X antigo Twitter da Prefeitura do Rio">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="topbar-social-link" href="https://www.facebook.com/PrefeituradoRio" target="_blank" rel="noopener noreferrer" aria-label="Facebook da Prefeitura do Rio">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="topbar-social-link" href="https://www.instagram.com/prefeitura_rio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Prefeitura do Rio">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="topbar-social-link" href="https://www.youtube.com/prefeiturario" target="_blank" rel="noopener noreferrer" aria-label="YouTube da Prefeitura do Rio">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- 3. HEADER PRINCIPAL / HERO DO GUIA -->
+  <header class="site-header" role="banner">
+    <div class="header-container">
+      <div class="header-brand">
+        <span class="brand-badge">Governo Digital</span>
+        <span class="brand-subsecdigital">Prefeitura da Cidade do Rio de Janeiro &bull; Subsecretaria de Transformação Digital e Cidades Inteligentes</span>
+      </div>
+
+      <div class="header-title-wrap">
+        <h1>Guia de Boas Práticas de <span class="highlight-cyan">Acessibilidade Digital</span></h1>
+        <p class="header-subtitle">
+          Diretrizes, critérios técnicos e orientações práticas para a construção e adequação de portais públicos acessíveis, autônomos e inclusivos a todos os cidadãos cariocas.
+        </p>
+      </div>
+
+      <!-- BARRA DE PESQUISA COM SUGESTÕES EM TEMPO REAL (AUTOCOMPLETE) -->
+      <section class="search-section" role="search" aria-label="Pesquisar no guia">
+        <div class="search-input-wrapper">
+          <span class="search-icon-left" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </span>
+
+          <input
+            type="text"
+            id="search-input"
+            class="search-input"
+            placeholder="Digite para pesquisar (ex: contraste, alt, teclado, libras, censo)..."
+            aria-label="Pesquisar critérios e tópicos no Guia de Acessibilidade"
+            autocomplete="off"
+            role="combobox"
+            aria-autocomplete="list"
+            aria-expanded="false"
+            aria-controls="suggestions-list"
+          />
+
+          <span class="search-shortcut-badge" aria-hidden="true">Ctrl + K</span>
+
+          <button type="button" id="search-clear-btn" class="search-clear-btn" aria-label="Limpar pesquisa">
+            &times;
+          </button>
+        </div>
+
+        <!-- DROPDOWN DE SUGESTÕES INSTANTÂNEAS -->
+        <div id="search-suggestions" class="search-suggestions-dropdown" aria-label="Sugestões de pesquisa">
+          <div class="suggestions-header">
+            <span>Sugestões Encontradas</span>
+            <span id="suggestions-count" class="suggestions-count-badge">0</span>
+          </div>
+          <ul id="suggestions-list" class="suggestions-list" role="listbox">
+            <!-- Itens inseridos dinamicamente pelo JavaScript conforme a digitação -->
+          </ul>
+        </div>
+
+        <!-- Anunciador acessível para leitores de tela -->
+        <div id="search-live-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+      </section>
+    </div>
+  </header>
+
+  <!-- 4. TOOLBAR DE ACESSIBILIDADE FIXA NO TOPO -->
+  <aside class="a11y-toolbar" role="region" aria-label="Ferramentas de acessibilidade">
+    <div class="a11y-toolbar-inner">
+      <span class="a11y-toolbar-label">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M15.89 8.11C15.5 7.72 14.83 7 13.53 7h-3.06c-1.3 0-1.97.72-2.36 1.11L4 12.24l1.41 1.41L9 10.07V21h2v-6h2v6h2V10.07l3.59 3.59L20 12.24l-4.11-4.13z"/></svg>
+        Acessibilidade:
+      </span>
+
+      <div class="a11y-tools-group">
+        <button type="button" class="a11y-btn" id="btn-font-increase" title="Aumentar tamanho do texto" aria-label="Aumentar tamanho do texto">
+          A+
+        </button>
+        <button type="button" class="a11y-btn" id="btn-font-decrease" title="Diminuir tamanho do texto" aria-label="Diminuir tamanho do texto">
+          A-
+        </button>
+        <button type="button" class="a11y-btn" id="btn-contrast-high" title="Alternar alto contraste" aria-pressed="false">
+          Alto Contraste
+        </button>
+        <button type="button" class="a11y-btn" id="btn-dark-mode" title="Alternar modo escuro" aria-pressed="false">
+          Modo Escuro
+        </button>
+        <button type="button" class="a11y-btn" id="btn-dyslexia" title="Alternar fonte para dislexia" aria-pressed="false">
+          Fonte Legível
+        </button>
+        <button type="button" class="a11y-btn" id="btn-spaced-text" title="Alternar espaçamento expandido de texto (WCAG)" aria-pressed="false">
+          Espaçamento
+        </button>
+        <button type="button" class="a11y-btn" id="btn-underline-links" title="Sublinhar todos os links" aria-pressed="false">
+          Sublinhar Links
+        </button>
+        <button type="button" class="a11y-btn a11y-btn-reset" id="btn-a11y-reset" title="Redefinir ajustes visuais">
+          Redefinir
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 5. ESTRUTURA PRINCIPAL: SUMÁRIO HIERÁRQUICO + CONTEÚDO -->
+  <div class="main-wrapper">
+
+    <!-- SUMÁRIO LATERAL HIERÁRQUICO (TOC) -->
+    <nav class="sidebar-toc" id="navegacao-guia" aria-label="Sumário do Guia">
+      <div class="toc-header">
+        <span class="toc-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          Índice do Guia
+        </span>
+      </div>
+
+      <input
+        type="search"
+        id="toc-filter-input"
+        class="toc-filter-input"
+        placeholder="Filtrar tópicos no sumário..."
+        aria-label="Filtrar tópicos do sumário"
+      />
+
+      <ul class="toc-tree">
+        <li class="toc-tree-item">
+          <a href="#introducao" class="toc-link">1. Introdução</a>
+        </li>
+        <li class="toc-tree-item">
+          <a href="#compreendendo-acessibilidade" class="toc-link">2. Compreendendo a Acessibilidade</a>
+          <ul class="toc-sublist">
+            <li><a href="#definicao-pcd" class="toc-link">2.1 Pessoas com Deficiência</a></li>
+            <li><a href="#tipos-deficiencia" class="toc-link">2.2 Tipos de Deficiência</a></li>
+            <li><a href="#censo-demografia" class="toc-link">2.3 Demografia e Censo no RJ</a></li>
+            <li><a href="#direitos-pcd" class="toc-link">2.4 Direitos e Marcos Legais</a></li>
+            <li><a href="#dimensoes-acessibilidade" class="toc-link">2.5 As 7 Dimensões e Desenho Universal</a></li>
+            <li><a href="#acessibilidade-digital-conceito" class="toc-link">2.6 Acessibilidade Digital e Desafios</a></li>
+            <li><a href="#pesquisas-bid-wpt" class="toc-link">2.7 Pesquisas BID e WPT</a></li>
+          </ul>
+        </li>
+        <li class="toc-tree-item">
+          <a href="#tipos-deficiencia-digital" class="toc-link">3. Tipos de Deficiência &amp; Boas Práticas</a>
+          <ul class="toc-sublist">
+            <li><a href="#deficiencia-visual-cegueira" class="toc-link">3.1 Cegueira e Leitores de Tela</a></li>
+            <li><a href="#deficiencia-visual-baixa-visao" class="toc-link">3.2 Baixa Visão</a></li>
+            <li><a href="#deficiencia-visual-daltonismo" class="toc-link">3.3 Daltonismo</a></li>
+            <li><a href="#deficiencia-auditiva-surdez" class="toc-link">3.4 Deficiência Auditiva e LIBRAS</a></li>
+            <li><a href="#deficiencia-intelectual" class="toc-link">3.5 Deficiência Intelectual</a></li>
+            <li><a href="#deficiencia-cognitiva-tea" class="toc-link">3.6 Autismo (TEA)</a></li>
+            <li><a href="#deficiencia-cognitiva-tdah" class="toc-link">3.7 TDAH</a></li>
+            <li><a href="#deficiencia-cognitiva-dislexia" class="toc-link">3.8 Dislexia</a></li>
+          </ul>
+        </li>
+        <li class="toc-tree-item">
+          <a href="#padroes-normativos" class="toc-link">4. Padrões Normativos e Princípios</a>
+          <ul class="toc-sublist">
+            <li><a href="#mobile-first" class="toc-link">4.1 Mobile-First</a></li>
+            <li><a href="#wcag-emag-abnt" class="toc-link">4.2 WCAG 2.2, eMAG e ABNT</a></li>
+            <li><a href="#principios-pour" class="toc-link">4.3 Princípios POUR</a></li>
+          </ul>
+        </li>
+        <li class="toc-tree-item">
+          <a href="#conteudo-textual" class="toc-link">5. Conteúdo Textual</a>
+          <ul class="toc-sublist">
+            <li><a href="#texto-paragrafos" class="toc-link">5.1 Parágrafos Semânticos</a></li>
+            <li><a href="#texto-tamanho-zoom" class="toc-link">5.2 Tamanho de Fonte e Zoom 200%</a></li>
+            <li><a href="#texto-alinhamento-largura" class="toc-link">5.3 Alinhamento e 80 Caracteres</a></li>
+            <li><a href="#texto-reflow-320px" class="toc-link">5.4 Reflow (320px CSS)</a></li>
+            <li><a href="#texto-espacamento" class="toc-link">5.5 Espaçamento de Texto</a></li>
+            <li><a href="#texto-contraste" class="toc-link">5.6 Contraste Textual (4.5:1 / 3:1)</a></li>
+            <li><a href="#contraste-nao-textual" class="toc-link">5.7 Contraste Não Textual (3:1)</a></li>
+            <li><a href="#uso-de-cores" class="toc-link">5.8 Uso de Cores com Redundância</a></li>
+            <li><a href="#indicacao-de-link" class="toc-link">5.9 Links Significativos</a></li>
+            <li><a href="#formularios-acessiveis" class="toc-link">5.10 Formulários Acessíveis</a></li>
+            <li><a href="#listas-semanticas" class="toc-link">5.11 Listas Estruturadas</a></li>
+          </ul>
+        </li>
+        <li class="toc-tree-item">
+          <a href="#conteudo-imagetico" class="toc-link">6. Conteúdo Imagético</a>
+          <ul class="toc-sublist">
+            <li><a href="#imagens-informativas" class="toc-link">6.1 Imagens Informativas (alt)</a></li>
+            <li><a href="#imagens-decorativas" class="toc-link">6.2 Imagens Decorativas</a></li>
+            <li><a href="#imagens-funcionais" class="toc-link">6.3 Imagens Funcionais</a></li>
+            <li><a href="#imagens-com-texto" class="toc-link">6.4 Imagens com Texto</a></li>
+            <li><a href="#imagens-complexas" class="toc-link">6.5 Imagens Complexas</a></li>
+            <li><a href="#tabelas-acessiveis" class="toc-link">6.6 Tabelas de Dados</a></li>
+          </ul>
+        </li>
+        <li class="toc-tree-item">
+          <a href="#conteudo-video" class="toc-link">7. Vídeo e Áudio</a>
+          <ul class="toc-sublist">
+            <li><a href="#video-legendas" class="toc-link">7.1 Legendas (WebVTT)</a></li>
+            <li><a href="#video-audiodescricao" class="toc-link">7.2 Audiodescrição</a></li>
+            <li><a href="#video-midia-alternativa" class="toc-link">7.3 Mídia Alternativa</a></li>
+            <li><a href="#video-libras" class="toc-link">7.4 Língua de Sinais (LIBRAS)</a></li>
+          </ul>
+        </li>
+        <li class="toc-tree-item">
+          <a href="#estrutura-pagina" class="toc-link">8. Estrutura da Página</a>
+          <ul class="toc-sublist">
+            <li><a href="#estrutura-cabecalhos" class="toc-link">8.1 Cabeçalhos (H1 a H6)</a></li>
+            <li><a href="#estrutura-regioes" class="toc-link">8.2 Regiões Semânticas</a></li>
+            <li><a href="#estrutura-carrossel" class="toc-link">8.3 Carrosséis Acessíveis</a></li>
+          </ul>
+        </li>
+        <li class="toc-tree-item">
+          <a href="#navegabilidade-interface" class="toc-link">9. Navegabilidade e Interação</a>
+          <ul class="toc-sublist">
+            <li><a href="#navegacao-teclado" class="toc-link">9.1 Navegação por Teclado</a></li>
+            <li><a href="#tempo-ajustavel" class="toc-link">9.2 Tempo de Navegação</a></li>
+            <li><a href="#animacoes-movimento" class="toc-link">9.3 Controle de Animações</a></li>
+          </ul>
+        </li>
+        <li class="toc-tree-item">
+          <a href="#dicas-design" class="toc-link">10. Dicas de Design</a>
+        </li>
+        <li class="toc-tree-item">
+          <a href="#referencias-bibliograficas" class="toc-link">11. Referências e Legislação</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ÁREA DE CONTEÚDO PRINCIPAL -->
+    <main class="main-content" id="conteudo-principal">
+
+      <!-- ==========================================
+           SEÇÃO 1: INTRODUÇÃO
+           ========================================== -->
+      <section class="content-section" id="introducao">
+        <span class="section-badge">Capítulo 1</span>
+        <h2 class="section-heading">Introdução</h2>
+
+        <p>
+          Em meio a um cenário de avanços tecnológicos e de transformação digital, torna-se urgente a preocupação e o compromisso da gestão pública com a inclusão digital de todos os cidadãos. Sem essa inclusão, a transformação digital torna-se mais uma barreira do que um facilitador. Por outro lado, uma transformação digital focada no ser humano usa a tecnologia para criar uma sociedade mais igualitária, garantindo acesso a serviços essenciais, diminuindo a burocracia, aumentando a eficiência, a transparência e a cidadania ativa.
+        </p>
+        <p>
+          A implementação da acessibilidade digital promove o acesso igualitário aos conteúdos e serviços públicos, garantindo que os usuários possam navegar com autonomia e compreender com facilidade seu conteúdo. Embora o foco deste guia seja garantir o acesso de pessoas com diversos tipos de deficiência, essa inclusão acaba sendo benéfica para toda a sociedade, pois também impacta outros grupos com baixa adaptação digital, como pessoas idosas ou com baixo nível de escolaridade, por exemplo.
+        </p>
+        <p>
+          A melhoria da acessibilidade e da usabilidade de portais não impacta negativamente quem não necessita delas, mas representa uma enorme diferença para todos aqueles que, muitas vezes, se vêem impossibilitados de acessar serviços apenas pelo fato de estarem em formato digital.
+        </p>
+
+        <div class="callout callout-info">
+          <div class="callout-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            Compromisso com a População Carioca
+          </div>
+          <p>
+            Visando estabelecer esse compromisso com a população carioca, a Prefeitura da Cidade do Rio de Janeiro, a partir do trabalho da <strong>Subsecretaria de Transformação Digital e Cidades Inteligentes</strong>, cria o <em>Guia de Boas Práticas de Acessibilidade Digital</em>, que tem como objetivo unir transformação digital e inclusão, trazendo um compilado de diretrizes, critérios práticos e tutoriais que visam orientar Secretarias e demais Órgãos municipais a adequarem seus portais destinados aos cidadãos.
+          </p>
+        </div>
+
+        <p>
+          Reconhecemos as dificuldades intrínsecas à empreitada, mas reforçamos que mudanças dependem de engajamento e proatividade, mesmo que ocorram de forma gradual. Olhar para acessibilidade e usabilidade de nossos portais é também enxergar que todo e qualquer cidadão carioca precisa ter seus direitos assegurados e isso precisa ser prioridade para a gestão pública.
+        </p>
+      </section>
+
+      <!-- ==========================================
+           SEÇÃO 2: COMPREENDENDO A ACESSIBILIDADE
+           ========================================== -->
+      <section class="content-section" id="compreendendo-acessibilidade">
+        <span class="section-badge">Capítulo 2</span>
+        <h2 class="section-heading">Compreendendo a Acessibilidade</h2>
+
+        <!-- 2.1 Pessoas com Deficiência -->
+        <article id="definicao-pcd">
+          <h3 class="subsection-heading">Pessoas com Deficiência: definição</h3>
+          <p>
+            Segundo o Ministério da Saúde brasileiro, “pessoas com deficiência são aquelas que têm <strong>impedimento de médio ou longo prazo de natureza física, mental, intelectual ou sensorial</strong>, o que, em interação com uma ou mais barreiras, pode obstruir sua participação plena e efetiva na sociedade em igualdade de condições com as demais pessoas”<sup id="fnref1"><a href="#fn1" class="footnote-backlink" aria-describedby="fn1">[1]</a></sup>.
+          </p>
+          <div class="callout callout-success">
+            <div class="callout-title">O Modelo Social da Deficiência</div>
+            <p>
+              A deficiência não é somente um atributo de cunho físico-biológico, mas sim o <strong>resultado da interação</strong> entre as limitações da pessoa e as barreiras do meio onde ela se encontra. Podemos encontrar essas barreiras na arquitetura, nos transportes, nas comunicações, na informação, na tecnologia, além das barreiras atitudinais (preconceitos). <strong>Com acessibilidade e inclusão, as limitações da pessoa passam a ser apenas uma característica e não um motivo de exclusão.</strong>
+            </p>
+          </div>
+        </article>
+
+        <!-- 2.2 Tipos de Deficiência -->
+        <article id="tipos-deficiencia">
+          <h3 class="subsection-heading">Tipos de Deficiência</h3>
+          <p>
+            No que se refere à origem da deficiência, o Ministério da Saúde reconhece que ela pode ser <strong>congênita</strong> (quando a pessoa já nasce com a deficiência) ou <strong>adquirida</strong> (quando a pessoa passa a ter a deficiência a partir de algum momento da vida, por motivos como doença ou acidente, por exemplo). Ela também pode ser <strong>permanente</strong> ou <strong>temporária</strong>, no que diz respeito à duração.
+          </p>
+          <p>
+            Oficialmente, o Brasil reconhece como tipos de deficiência: <strong>a física, visual, auditiva, intelectual e múltiplas</strong> (quando a pessoa tem mais de um tipo de deficiência). Ainda assim, o nosso Sistema Único de Saúde também trata como tal, as <strong>deficiências invisíveis ou ocultas</strong><sup id="fnref2"><a href="#fn2" class="footnote-backlink">[2]</a></sup>, como: fibromialgia, lúpus, esclerose múltipla, endometriose, osteoporose, enxaqueca, surdez, baixa visão, doença de Alzheimer, dificuldades de aprendizado, esquizofrenia, TEA (transtorno do espectro autista), TDAH (transtorno de déficit de atenção e hiperatividade), depressão, TAB (transtorno afetivo bipolar), TAG (transtorno de ansiedade generalizada) e diversas outras.
+          </p>
+        </article>
+
+        <!-- 2.3 Censo Demográfico e o Rio de Janeiro -->
+        <article id="censo-demografia">
+          <h3 class="subsection-heading">Estatísticas: Censo 2010 vs 2022 e o Cenário Carioca</h3>
+          <p>
+            Além dos parâmetros do Ministério da Saúde, existem também os adotados pelo IBGE para realizar o Censo, que é a nossa principal forma de verificar os índices de pessoas com deficiência em todo o território nacional. Mas até mesmo dentro do próprio aferimento do IBGE existem mudanças teórico-metodológicas que precisamos levar em consideração.
+          </p>
+          <p>
+            No <strong>Censo IBGE 2010</strong><sup id="fnref3"><a href="#fn3" class="footnote-backlink">[3]</a></sup>, a metodologia utilizada seguia a proposta do <strong>Washington Group</strong> sobre Estatísticas das Pessoas com Deficiência (mesma utilizada pela ONU). As perguntas investigavam deficiência visual, auditiva, motora, mental/intelectual ou múltipla em três níveis de severidade: alguma dificuldade, grande dificuldade ou não conseguia de modo algum.
+          </p>
+          <p>
+            Naquele ano, a população brasileira era de <strong>190.755.799 habitantes</strong>, e <strong>23,9% da população</strong> (45.606.048 pessoas) declarou possuir pelo menos uma das deficiências investigadas em algum grau:
+          </p>
+
+          <!-- Figura 1 -->
+          <figure class="content-figure">
+            <div class="figure-img-wrap">
+              <img src="assets/images/image1.png" alt="Gráfico do Censo 2010: População brasileira com pelo menos uma das deficiências investigadas totalizando 23,9% dos habitantes." loading="lazy">
+              <button type="button" class="figure-zoom-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                Ampliar Imagem
+              </button>
+            </div>
+            <figcaption><strong>Figura 1:</strong> População com pelo menos uma deficiência investigada em algum grau no Brasil (Censo IBGE 2010).</figcaption>
+          </figure>
+
+          <p>
+            No que se refere às deficiências severas, o percentual correspondia a <strong>8,3% da população brasileira</strong>, representando aqueles com muita dificuldade ou incapacidade total:
+          </p>
+
+          <!-- Figura 2 -->
+          <figure class="content-figure">
+            <div class="figure-img-wrap">
+              <img src="assets/images/image2.png" alt="Gráfico do Censo 2010: Percentual da população brasileira com deficiências severas, totalizando 8,3% dos habitantes." loading="lazy">
+              <button type="button" class="figure-zoom-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                Ampliar Imagem
+              </button>
+            </div>
+            <figcaption><strong>Figura 2:</strong> Percentual de pessoas com deficiência severa no Brasil (Censo IBGE 2010).</figcaption>
+          </figure>
+
+          <p>
+            Em 2010, o <strong>Estado do Rio de Janeiro contava com 24,4% da população</strong> com deficiência. Na <strong>cidade do Rio de Janeiro</strong>, o Instituto Pereira Passos lançou em junho de 2013 o <em>Cadernos do Rio: Pessoas com deficiência</em>, afirmando que <strong>24,7% dos habitantes da Cidade do Rio de Janeiro</strong> tinham algum tipo de deficiência<sup id="fnref4"><a href="#fn4" class="footnote-backlink">[4]</a></sup>, superando os índices nacional e estadual.
+          </p>
+          <p>
+            No <strong>Censo 2022</strong>, porém, o IBGE alterou a metodologia: abrangeu mais tipos, mas considerou apenas casos <strong>graves e permanentes</strong>, excluindo casos moderados e temporários. Além disso, aplicou as perguntas apenas no questionário da amostra estendida:
+          </p>
+
+          <!-- Figura 3 e 4 -->
+          <figure class="content-figure">
+            <div class="figure-img-wrap">
+              <img src="assets/images/image3.png" alt="Infográfico das mudanças metodológicas adotadas pelo IBGE no Censo 2022." loading="lazy">
+              <button type="button" class="figure-zoom-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                Ampliar Imagem
+              </button>
+            </div>
+            <figcaption><strong>Figura 3:</strong> Mudança metodológica da investigação de deficiências no Censo 2022.</figcaption>
+          </figure>
+
+          <p>
+            Essa alteração metodológica provocou uma drástica subnotificação: <strong>na cidade do Rio de Janeiro, o percentual registrado caiu de 24,7% para 6,9%</strong>, e nacionalmente representou cerca de <strong>30 milhões de pessoas a menos</strong><sup id="fnref5"><a href="#fn5" class="footnote-backlink">[5]</a></sup>.
+          </p>
+
+          <!-- Figura 4 -->
+          <figure class="content-figure">
+            <div class="figure-img-wrap">
+              <img src="assets/images/image4.png" alt="Comparativo da taxa de PCD no Rio de Janeiro: queda de 24,7% no Censo 2010 para 6,9% no Censo 2022." loading="lazy">
+              <button type="button" class="figure-zoom-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                Ampliar Imagem
+              </button>
+            </div>
+            <figcaption><strong>Figura 4:</strong> Discrepância na taxa declarada de PCDs no Município do Rio de Janeiro entre 2010 e 2022.</figcaption>
+          </figure>
+
+          <div class="callout callout-warning">
+            <div class="callout-title">O Alerta do Envelhecimento Populacional no Rio</div>
+            <p>
+              Segundo a PNAD Contínua 2022<sup id="fnref6"><a href="#fn6" class="footnote-backlink">[6]</a></sup>, a partir dos 40 anos ocorre um salto no aumento de deficiências adquiridas, intensificado aos 60 anos. O Rio de Janeiro é a <strong>segunda capital mais idosa do país</strong><sup id="fnref7"><a href="#fn7" class="footnote-backlink">[7]</a></sup> e o Estado tem a menor taxa de fecundidade. O IBGE projeta que a partir de 2028 o Estado do RJ comece a encolher<sup id="fnref8"><a href="#fn8" class="footnote-backlink">[8]</a></sup>, com mais pessoas acima de 60 anos do que jovens abaixo de 14 anos. Garantir acessibilidade digital é preparar os serviços públicos para essa realidade demográfica urgente.
+            </p>
+          </div>
+        </article>
+
+        <!-- 2.4 Direitos das PCDs -->
+        <article id="direitos-pcd">
+          <h3 class="subsection-heading">Direitos das Pessoas com Deficiência e Marcos Legais</h3>
+          <p>
+            A <strong>Convenção sobre os Direitos das Pessoas com Deficiência da ONU (2006)</strong> foi o primeiro tratado internacional a reconhecer a autonomia e a igualdade de oportunidades da pessoa com deficiência. Em 2008, o Brasil ratificou a Convenção com status de <strong>Emenda Constitucional</strong> (Decreto nº 6.949/2009)<sup id="fnref9"><a href="#fn9" class="footnote-backlink">[9]</a></sup>.
+          </p>
+          <div class="callout callout-law">
+            <div class="callout-title">Lei Brasileira de Inclusão (Lei nº 13.146/2015 - LBI)</div>
+            <p>
+              Também conhecida como Estatuto da Pessoa com Deficiência, assegura o exercício dos direitos e liberdades fundamentais em condições de igualdade<sup id="fnref10"><a href="#fn10" class="footnote-backlink">[10]</a></sup>, assegurando o <strong>direito de acesso à informação e à comunicação</strong> essenciais à cidadania.
+            </p>
+          </div>
+        </article>
+
+        <!-- 2.5 As 7 Dimensões da Acessibilidade -->
+        <article id="dimensoes-acessibilidade">
+          <h3 class="subsection-heading">Tipos de Acessibilidade: As 7 Dimensões de Sassaki e o Desenho Universal</h3>
+          <p>
+            Segundo o especialista Romeu Kazumi Sassaki, a acessibilidade plena se divide em <strong>sete dimensões</strong> essenciais<sup id="fnref11"><a href="#fn11" class="footnote-backlink">[11]</a></sup>:
+          </p>
+
+          <!-- Figura 5 -->
+          <figure class="content-figure">
+            <div class="figure-img-wrap">
+              <img src="assets/images/image5.png" alt="Infográfico das Sete Dimensões da Acessibilidade por Romeu Kazumi Sassaki: Arquitetônica, Comunicacional, Metodológica, Instrumental, Programática, Atitudinal e Digital." loading="lazy">
+              <button type="button" class="figure-zoom-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                Ampliar Imagem
+              </button>
+            </div>
+            <figcaption><strong>Figura 5:</strong> As Sete Dimensões da Acessibilidade (Romeu Kazumi Sassaki).</figcaption>
+          </figure>
+
+          <p>
+            O governo federal e a Lei Brasileira de Inclusão preconizam a aplicação do <strong>Desenho Universal</strong><sup id="fnref13"><a href="#fn13" class="footnote-backlink">[13]</a></sup>: conceber produtos, serviços e ambientes utilizáveis por todas as pessoas, na maior extensão possível, sem necessidade de adaptação posterior.
+          </p>
+        </article>
+
+        <!-- 2.6 Acessibilidade Digital -->
+        <article id="acessibilidade-digital-conceito">
+          <h3 class="subsection-heading">Acessibilidade Digital: Entendendo o Conceito e a Obrigatoriedade</h3>
+          <p>
+            A <strong>acessibilidade digital</strong> é a eliminação ativa de barreiras na Web. Ela determina que todo tipo de página e serviço seja projetado para que todas as pessoas possam perceber, entender, navegar e interagir de maneira efetiva.
+          </p>
+          <div class="callout callout-law">
+            <div class="callout-title">Obrigatoriedade Legal (Art. 63 da LBI - Lei 13.146/2015)</div>
+            <p>
+              <em>"É obrigatória a acessibilidade nos sítios da internet mantidos por empresas com sede ou representação comercial no País ou por órgãos de governo, para uso da pessoa com deficiência, garantindo-lhe acesso às informações disponíveis, conforme as melhores práticas e diretrizes de acessibilidade adotadas internacionalmente."</em><sup id="fnref14"><a href="#fn14" class="footnote-backlink">[14]</a></sup>
+            </p>
+          </div>
+          <p>
+            No setor público, a ausência de acessibilidade fere princípios constitucionais de <strong>igualdade</strong>, <strong>cidadania</strong> e <strong>legalidade</strong>. Os maiores entraves decorrem de sistemas legados obsoletos, tratar a acessibilidade como remendo pós-lançamento, orçamentos restritos e carência de testes com usuários reais com deficiência.
+          </p>
+        </article>
+
+        <!-- 2.7 Pesquisas BID e WPT -->
+        <article id="pesquisas-bid-wpt">
+          <h3 class="subsection-heading">Cenário Real: Pesquisa BID 2025 e Movimento Web Para Todos 2024</h3>
+          <p>
+            O levantamento do Banco Interamericano de Desenvolvimento (BID 2025)<sup id="fnref15"><a href="#fn15" class="footnote-backlink">[15]</a></sup> revelou que, embora <strong>94,2% dos brasileiros</strong> possuam smartphone com internet, existe acentuada <strong>baixa adaptação digital</strong>:
+          </p>
+
+          <!-- Figura 6 -->
+          <figure class="content-figure">
+            <div class="figure-img-wrap">
+              <img src="assets/images/image6.png" alt="Gráfico da pesquisa BID 2025: Autoconfiança da população brasileira para realizar tarefas digitais sem ajuda externa." loading="lazy">
+              <button type="button" class="figure-zoom-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                Ampliar Imagem
+              </button>
+            </div>
+            <figcaption><strong>Figura 6:</strong> Autoconfiança para realizar atividades digitais sem auxílio externo (BID, 2025).</figcaption>
+          </figure>
+
+          <p>
+            Apenas 47,5% dos entrevistados têm autoconfiança para atividades digitais sem auxílio. Entre maiores de 55 anos o índice cai para 24,0%, e entre pessoas com deficiência é de apenas 24,2%. Por isso, <strong>57,2% declararam preferir atendimento presencial</strong> se precisarem do serviço novamente<sup id="fnref19"><a href="#fn19" class="footnote-backlink">[19]</a></sup>.
+          </p>
+          <div class="callout callout-warning">
+            <div class="callout-title">Diagnóstico Nacional da Web Brasileira (BigDataCorp / WPT 2024)</div>
+            <p>
+              Estudo com mais de <strong>26,3 milhões de sites brasileiros ativos</strong><sup id="fnref20"><a href="#fn20" class="footnote-backlink">[20]</a></sup> demonstrou que apenas <strong>2,9% passaram sem erros</strong> nos testes da W3C. Mais grave: <strong>89,96% dos sites governamentais falham nos critérios mínimos</strong> de acessibilidade!
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <!-- ==========================================
+           SEÇÃO 3: TIPOS DE DEFICIÊNCIA E DIRETRIZES
+           ========================================== -->
+      <section class="content-section" id="tipos-deficiencia-digital">
+        <span class="section-badge">Capítulo 3</span>
+        <h2 class="section-heading">Tipos de Deficiência e Acessibilidade Digital</h2>
+
+        <!-- 3.1 Deficiência Visual: Cegueira -->
+        <article id="deficiencia-visual-cegueira">
+          <h3 class="subsection-heading">Deficiência Visual: Cegueira</h3>
+          <p>Perda total ou quase total da visão, não corrigível por lentes ou cirurgia. Usuários dependem prioritariamente de tecnologias assistivas como leitores de tela (NVDA, JAWS, TalkBack, VoiceOver) e teclados.</p>
+
+          <div class="comparison-grid">
+            <div class="card-difficulty">
+              <h5>Dificuldades Críticas</h5>
+              <ul class="accessible-list">
+                <li>Imagens, gráficos, mapas e ícones sem texto alternativo (alt).</li>
+                <li>Botões e formulários sem identificação semântica ou nome acessível.</li>
+                <li>Navegação que depende exclusivamente do mouse.</li>
+                <li>Alertas e mudanças dinâmicas na tela que não disparam anúncios ARIA.</li>
+              </ul>
+            </div>
+            <div class="card-good-practice">
+              <h5>Boas Práticas Recomendadas</h5>
+              <ul class="accessible-list">
+                <li>Utilizar HTML5 semântico com hierarquia lógica de títulos e marcos.</li>
+                <li>Prover descrições textuais precisas e contextualizadas.</li>
+                <li>Garantir operabilidade plena via teclado sem armadilhas de foco.</li>
+                <li>Testar portais com leitores de tela e usuários reais com deficiência.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3.2 Baixa Visão -->
+        <article id="deficiencia-visual-baixa-visao">
+          <h3 class="subsection-heading">Deficiência Visual: Baixa Visão</h3>
+          <p>Redução significativa da capacidade visual, não compensável por óculos comuns. Usuários ampliam telas e utilizam modos de alto contraste.</p>
+
+          <div class="comparison-grid">
+            <div class="card-difficulty">
+              <h5>Dificuldades Críticas</h5>
+              <ul class="accessible-list">
+                <li>Textos pequenos e baixo contraste de cores com o fundo.</li>
+                <li>Interfaces que quebram ou perdem conteúdo ao receber zoom.</li>
+                <li>Botões e alvos de toque minúsculos ou excessivamente agrupados.</li>
+                <li>Informações transmitidas apenas por localização espacial ou tamanho.</li>
+              </ul>
+            </div>
+            <div class="card-good-practice">
+              <h5>Boas Práticas Recomendadas</h5>
+              <ul class="accessible-list">
+                <li>Contraste textual mínimo de 4.5:1 (normal) e 3:1 (ampliado).</li>
+                <li>Permitir zoom de até 200% sem perda de legibilidade ou função.</li>
+                <li>Tamanho mínimo de fonte recomendado de 16px.</li>
+                <li>Espaçamentos confortáveis e alinhamento à esquerda.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3.3 Daltonismo -->
+        <article id="deficiencia-visual-daltonismo">
+          <h3 class="subsection-heading">Deficiência Visual: Daltonismo</h3>
+          <p>Alteração nos cones da retina que modifica a percepção de cores. Apresenta-se principalmente nas variações:</p>
+
+          <!-- Figuras 7 e 8 -->
+          <figure class="content-figure">
+            <div class="figure-img-wrap">
+              <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+                <img src="assets/images/image7.png" alt="Simulação de visão normal versus protanopia e deuteranopia em espectro de cores." style="max-height:160px;" loading="lazy">
+                <img src="assets/images/image8.png" alt="Simulação de tritanopia e visão monocromática (acromatopsia)." style="max-height:160px;" loading="lazy">
+              </div>
+              <button type="button" class="figure-zoom-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                Ampliar Imagem
+              </button>
+            </div>
+            <figcaption><strong>Figuras 7 e 8:</strong> Tipos de daltonismo e percepção visual de espectros cromáticos.</figcaption>
+          </figure>
+
+          <div class="comparison-grid">
+            <div class="card-difficulty">
+              <h5>Dificuldades Críticas</h5>
+              <ul class="accessible-list">
+                <li>Campos obrigatórios ou erros indicados apenas por cor vermelha.</li>
+                <li>Gráficos que diferenciam categorias exclusivamente pela legenda de cor.</li>
+                <li>Links com a mesma cor do texto comum sem sublinhado ou destaque.</li>
+              </ul>
+            </div>
+            <div class="card-good-practice">
+              <h5>Boas Práticas Recomendadas</h5>
+              <ul class="accessible-list">
+                <li><strong>Nunca usar a cor como único meio</strong> de transmitir informação.</li>
+                <li>Combinar cor com ícones (ex: &check;, &times;, &excl;), padrões ou rótulos em texto.</li>
+                <li>Assegurar contraste de luminosidade suficiente independente do tom.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3.4 Deficiência Auditiva -->
+        <article id="deficiencia-auditiva-surdez">
+          <h3 class="subsection-heading">Deficiência Auditiva: Surdez e Língua de Sinais (LIBRAS)</h3>
+          <p>Condição que afeta a percepção sonora. Para muitos cidadãos surdos, a Língua Brasileira de Sinais (LIBRAS) é sua primeira língua natural, tendo o português escrito como segunda língua.</p>
+
+          <div class="comparison-grid">
+            <div class="card-difficulty">
+              <h5>Dificuldades Críticas</h5>
+              <ul class="accessible-list">
+                <li>Vídeos e podcasts sem legendas ou transcrição descritiva.</li>
+                <li>Avisos sonoros e notificações de erro transmitidos apenas por áudio.</li>
+                <li>Ausência de suporte e tradução para LIBRAS em serviços essenciais.</li>
+              </ul>
+            </div>
+            <div class="card-good-practice">
+              <h5>Boas Práticas Recomendadas</h5>
+              <ul class="accessible-list">
+                <li>Fornecer legendas sincronizadas no formato WebVTT em vídeos.</li>
+                <li>Disponibilizar transcrições textuais completas de materiais sonoros.</li>
+                <li>Integrar widget do VLibras e ofertar intérpretes humanos em vídeos institucionais.</li>
+                <li>Utilizar linguagem simples e redação objetiva.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3.5 Deficiência Intelectual e Cognitiva -->
+        <article id="deficiencia-intelectual">
+          <h3 class="subsection-heading">Deficiência Intelectual: Linguagem Simples e Previsibilidade</h3>
+          <p>Limitações no funcionamento intelectual e adaptativo (comunicação, raciocínio, autonomia).</p>
+
+          <div class="comparison-grid">
+            <div class="card-difficulty">
+              <h5>Dificuldades Críticas</h5>
+              <ul class="accessible-list">
+                <li>Textos prolixos, jargões burocráticos ou termos estritamente técnicos.</li>
+                <li>Formulários com dezenas de etapas confusas sem indicação de progresso.</li>
+                <li>Mensagens de erro genéricas que não ensinam o cidadão a corrigir.</li>
+              </ul>
+            </div>
+            <div class="card-good-practice">
+              <h5>Boas Práticas Recomendadas</h5>
+              <ul class="accessible-list">
+                <li>Adotar as diretrizes de <strong>Linguagem Simples</strong> do Governo.</li>
+                <li>Dividir processos longos em etapas curtas e progressivas.</li>
+                <li>Manter padrões consistentes de posicionamento de botões e links.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3.6 TEA -->
+        <article id="deficiencia-cognitiva-tea">
+          <h3 class="subsection-heading">Transtorno do Espectro Autista (TEA)</h3>
+          <p>Condição do neurodesenvolvimento que afeta comunicação, percepção sensorial e processamento de informações.</p>
+
+          <div class="comparison-grid">
+            <div class="card-difficulty">
+              <h5>Dificuldades Críticas</h5>
+              <ul class="accessible-list">
+                <li>Sobrecarga de estímulos visuais, banners piscantes e pop-ups intrusivos.</li>
+                <li>Reprodução automática (autoplay) de áudios ou vídeos.</li>
+                <li>Comportamentos inesperados que alteram o layout abruptamente.</li>
+              </ul>
+            </div>
+            <div class="card-good-practice">
+              <h5>Boas Práticas Recomendadas</h5>
+              <ul class="accessible-list">
+                <li>Interfaces limpas, organizadas e previsíveis.</li>
+                <li>Nunca iniciar mídia com áudio sem clique deliberado do usuário.</li>
+                <li>Disponibilizar controles para pausar animações e carrosséis.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3.7 TDAH -->
+        <article id="deficiencia-cognitiva-tdah">
+          <h3 class="subsection-heading">TDAH (Transtorno do Déficit de Atenção com Hiperatividade)</h3>
+          <p>Padrões de desatenção, hiperatividade e impulsividade que demandam clareza e foco imediato.</p>
+
+          <div class="comparison-grid">
+            <div class="card-difficulty">
+              <h5>Dificuldades Críticas</h5>
+              <ul class="accessible-list">
+                <li>Telas saturadas de informação competindo pela atenção.</li>
+                <li>Sessões com limites de tempo curtos que deslogam o usuário de surpresa.</li>
+                <li>Fluxos que exigem memorização de códigos em telas separadas.</li>
+              </ul>
+            </div>
+            <div class="card-good-practice">
+              <h5>Boas Práticas Recomendadas</h5>
+              <ul class="accessible-list">
+                <li>Hierarquia visual nítida destacando o botão ou ação principal.</li>
+                <li>Permitir estender ou desativar contadores de tempo de sessão.</li>
+                <li>Reduzir carga de memorização mantendo resumos de dados visíveis.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3.8 Dislexia -->
+        <article id="deficiencia-cognitiva-dislexia">
+          <h3 class="subsection-heading">Dislexia: Legibilidade Tipográfica</h3>
+          <p>Transtorno específico de aprendizagem com base neurobiológica que afeta o reconhecimento preciso e fluente de palavras.</p>
+
+          <div class="comparison-grid">
+            <div class="card-difficulty">
+              <h5>Dificuldades Críticas</h5>
+              <ul class="accessible-list">
+                <li>Blocos de texto maciços e densos sem espaçamento entre parágrafos.</li>
+                <li>Tipografia com serifa complexa, letras muito condensadas ou distorcidas.</li>
+                <li>Paredes de texto justificado que criam "rios de espaço em branco".</li>
+              </ul>
+            </div>
+            <div class="card-good-practice">
+              <h5>Boas Práticas Recomendadas</h5>
+              <ul class="accessible-list">
+                <li>Utilizar fontes sem serifa limpas ou fontes específicas (OpenDyslexic).</li>
+                <li>Alinhar textos sempre à esquerda.</li>
+                <li>Oferecer espaçamento generoso entre linhas (1.5x) e letras (0.12x).</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ==========================================
+           SEÇÃO 4: PADRÕES NORMATIVOS E PRINCÍPIOS
+           ========================================== -->
+      <section class="content-section" id="padroes-normativos">
+        <span class="section-badge">Capítulo 4</span>
+        <h2 class="section-heading">Padrões Normativos e Princípios</h2>
+
+        <!-- 4.1 Mobile-First -->
+        <article id="mobile-first">
+          <h3 class="subsection-heading">Abordagem Mobile-First e Design Responsivo</h3>
+          <p>
+            Como a grande maioria da população brasileira acessa a internet prioritariamente pelo celular, todos os portais e sistemas municipais devem ser concebidos sob a estratégia <strong>Mobile-First</strong> (proposta em 2009 por Luke Wroblewski)<sup id="fnref22"><a href="#fn22" class="footnote-backlink">[22]</a></sup>:
+          </p>
+          <div class="callout callout-info">
+            <div class="callout-title">Aprimoramento Progressivo</div>
+            <p>
+              Projeta-se primeiro para telas compactas, priorizando o essencial da tarefa do cidadão, e adicionam-se recursos conforme o espaço aumenta. Isso evita a "degradação graciosa" (tentar espremer um site desktop pesado em um celular).
+            </p>
+          </div>
+        </article>
+
+        <!-- 4.2 WCAG 2.2, eMAG e ABNT -->
+        <article id="wcag-emag-abnt">
+          <h3 class="subsection-heading">Diretrizes Normativas: WCAG 2.2, eMAG 3.1 e Normas ABNT</h3>
+          <p>
+            O parâmetro global oficial é a <strong>WCAG 2.2 (Web Content Accessibility Guidelines)</strong><sup id="fnref23"><a href="#fn23" class="footnote-backlink">[23]</a></sup> da W3C. Seus níveis de conformidade estabelecem:
+          </p>
+          <ul class="accessible-list">
+            <li><strong>Nível A (Padrão Mínimo):</strong> Elimina barreiras críticas que impedem o uso do sistema.</li>
+            <li><strong>Nível AA (Padrão Recomendado):</strong> Referência obrigatória de conformidade para sites e serviços públicos governamentais.</li>
+            <li><strong>Nível AAA (Padrão Ideal):</strong> Grau mais rigoroso, implementado onde tecnicamente viável.</li>
+          </ul>
+          <p>
+            No Brasil, somam-se a este referencial o <strong>eMAG 3.1 (Modelo de Acessibilidade em Governo Eletrônico)</strong><sup id="fnref24"><a href="#fn24" class="footnote-backlink">[24]</a></sup> e as normas técnicas <strong>ABNT NBR 17060:2022</strong> (aplicativos móveis)<sup id="fnref25"><a href="#fn25" class="footnote-backlink">[25]</a></sup> e <strong>ABNT NBR 17225:2025</strong> (aplicações web alinhadas à WCAG 2.2)<sup id="fnref26"><a href="#fn26" class="footnote-backlink">[26]</a></sup>.
+          </p>
+        </article>
+
+        <!-- 4.3 Princípios POUR -->
+        <article id="principios-pour">
+          <h3 class="subsection-heading">Os 4 Princípios POUR da WCAG</h3>
+          <p>A arquitetura de acessibilidade da WCAG fundamenta-se em quatro pilares universais<sup id="fnref27"><a href="#fn27" class="footnote-backlink">[27]</a></sup>:</p>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap:1rem; margin:1.5rem 0;">
+            <div style="border:1px solid var(--border-light); padding:1.25rem; border-radius:var(--radius-md); background:var(--bg-card-alt);">
+              <span class="badge-wcag" style="background:#0284C7; color:#fff; padding:2px 8px; border-radius:4px; font-size:0.75rem; font-weight:700;">1. P</span>
+              <h4 class="card-feature-title" style="margin:0.5rem 0;">Perceptível</h4>
+              <p style="font-size:0.88rem; margin:0;">A informação e os componentes de interface devem ser apresentados de forma que todos os sentidos possam percebê-los.</p>
+            </div>
+            <div style="border:1px solid var(--border-light); padding:1.25rem; border-radius:var(--radius-md); background:var(--bg-card-alt);">
+              <span class="badge-wcag" style="background:#16A34A; color:#fff; padding:2px 8px; border-radius:4px; font-size:0.75rem; font-weight:700;">2. O</span>
+              <h4 class="card-feature-title" style="margin:0.5rem 0;">Operável</h4>
+              <p style="font-size:0.88rem; margin:0;">A navegação e a interação não podem exigir ações que o usuário seja incapaz de realizar (ex: teclado total).</p>
+            </div>
+            <div style="border:1px solid var(--border-light); padding:1.25rem; border-radius:var(--radius-md); background:var(--bg-card-alt);">
+              <span class="badge-wcag" style="background:#D97706; color:#fff; padding:2px 8px; border-radius:4px; font-size:0.75rem; font-weight:700;">3. U</span>
+              <h4 class="card-feature-title" style="margin:0.5rem 0;">Compreensível</h4>
+              <p style="font-size:0.88rem; margin:0;">O conteúdo textual e a operação da interface devem ser claros e fáceis de assimilar sem ambiguidades.</p>
+            </div>
+            <div style="border:1px solid var(--border-light); padding:1.25rem; border-radius:var(--radius-md); background:var(--bg-card-alt);">
+              <span class="badge-wcag" style="background:#7C3AED; color:#fff; padding:2px 8px; border-radius:4px; font-size:0.75rem; font-weight:700;">4. R</span>
+              <h4 class="card-feature-title" style="margin:0.5rem 0;">Robusto</h4>
+              <p style="font-size:0.88rem; margin:0;">O código deve ser compatível com diferentes navegadores e com a evolução contínua das tecnologias assistivas.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ==========================================
+           SEÇÃO 5: CONTEÚDO TEXTUAL
+           ========================================== -->
+      <section class="content-section" id="conteudo-textual">
+        <span class="section-badge">Capítulo 5</span>
+        <h2 class="section-heading">Diretrizes Práticas de Conteúdo Textual</h2>
+
+        <p>
+          O conteúdo textual e todas as orientações não podem depender exclusivamente de características sensoriais como cor, formato, som ou localização na tela.
+        </p>
+
+        <!-- 5.1 Parágrafos -->
+        <article id="texto-paragrafos">
+          <h3 class="subsection-heading">1. Parágrafos Semânticos</h3>
+          <ul class="accessible-list">
+            <li>Cada parágrafo deve estar encapsulado dentro de sua tag semântica <code>&lt;p&gt;</code>.</li>
+            <li><strong>Não utilizar a tag <code>&lt;br&gt;</code> para separar ideias</strong>, pois para leitores de tela isso cria um parágrafo único confuso com quebras forçadas.</li>
+            <li>Manter títulos, listas e citações nas respectivas tags estruturais.</li>
+          </ul>
+        </article>
+
+        <!-- 5.2 Tamanho de Fonte -->
+        <article id="texto-tamanho-zoom">
+          <h3 class="subsection-heading">2. Tamanho de Fonte e Redimensionamento (Zoom 200%)</h3>
+          <ul class="accessible-list">
+            <li>Recomenda-se o tamanho de <strong>16px como valor mínimo</strong> para o corpo de texto.</li>
+            <li>O texto deve suportar <strong>zoom de até 200% sem perda de conteúdo</strong>, truncamento ou sobreposição de botões e caixas de texto.</li>
+          </ul>
+        </article>
+
+        <!-- 5.3 Alinhamento de Texto -->
+        <article id="texto-alinhamento-largura">
+          <h3 class="subsection-heading">3. Alinhamento de Texto e Largura de Linha</h3>
+          <ul class="accessible-list">
+            <li>A largura das linhas de texto não deve ultrapassar <strong>80 caracteres ou glifos</strong> por linha. Linhas excessivamente longas provocam perda da linha de leitura.</li>
+            <li>O texto <strong>NUNCA deve ser justificado</strong> (alinhado a ambas as margens), pois gera espaços irregulares que dificultam a leitura de pessoas com dislexia e baixa visão.</li>
+            <li>No português, o alinhamento deve ser estritamente <strong>à esquerda</strong>.</li>
+          </ul>
+        </article>
+
+        <!-- 5.4 Reflow -->
+        <article id="texto-reflow-320px">
+          <h3 class="subsection-heading">4. Realinhamento e Rolagem de Tela (Reflow a 320px CSS)</h3>
+          <ul class="accessible-list">
+            <li>O conteúdo deve se reorganizar sem exigir rolagem bidimensional (horizontal e vertical simultâneas) para larguras a partir de <strong>320 pixels CSS</strong> (equivalente a zoom de 400% em tela de 1280px).</li>
+            <li>Exceções aplicam-se apenas a tabelas de dados complexas, mapas geográficos ou jogos onde o layout bidimensional é intrínseco.</li>
+          </ul>
+        </article>
+
+        <!-- 5.5 Espaçamento -->
+        <article id="texto-espacamento">
+          <h3 class="subsection-heading">5. Espaçamento de Texto (WCAG 2.2 Critério 1.4.12)</h3>
+          <p>O layout deve suportar as seguintes proporções sem quebra visual:</p>
+          <ul class="accessible-list">
+            <li>Espaçamento entre linhas (line-height) de pelo menos <strong>1,5 vezes</strong> o tamanho da fonte.</li>
+            <li>Espaçamento entre parágrafos de pelo menos <strong>2 vezes</strong> o tamanho da fonte.</li>
+            <li>Espaçamento entre letras (letter-spacing) de pelo menos <strong>0,12 vezes</strong> o tamanho da fonte.</li>
+            <li>Espaçamento entre palavras (word-spacing) de pelo menos <strong>0,16 vezes</strong> o tamanho da fonte.</li>
+          </ul>
+        </article>
+
+        <!-- 5.6 Contraste Textual -->
+        <article id="texto-contraste">
+          <h3 class="subsection-heading">6. Contraste Textual Mínimo (Critério 1.4.3)</h3>
+          <ul class="accessible-list">
+            <li><strong>Texto normal:</strong> taxa mínima de contraste de <strong>4.5:1</strong> com o fundo.</li>
+            <li><strong>Texto grande (a partir de 24px ou 19px em negrito):</strong> taxa mínima de <strong>3:1</strong>.</li>
+            <li>Ferramentas recomendadas para validação: <em>WebAIM Contrast Checker</em> e <em>Adobe Color Contrast Analyzer</em>.</li>
+          </ul>
+        </article>
+
+        <!-- 5.7 Contraste Não Textual -->
+        <article id="contraste-nao-textual">
+          <h3 class="subsection-heading">7. Contraste Não Textual (Critério 1.4.11)</h3>
+          <ul class="accessible-list">
+            <li>Componentes de interface (bordas de campos de entrada, botões, ícones, foco do teclado) devem manter contraste mínimo de <strong>3:1</strong> em relação às cores adjacentes.</li>
+          </ul>
+        </article>
+
+        <!-- 5.8 Uso de Cores -->
+        <article id="uso-de-cores">
+          <h3 class="subsection-heading">8. Uso de Cores</h3>
+          <ul class="accessible-list">
+            <li>A cor <strong>não pode ser o único meio visual</strong> de indicar erros, sucessos, status ou obrigatoriedade de campos. Deve sempre vir acompanhada de um texto explicativo e/ou ícone.</li>
+          </ul>
+        </article>
+
+        <!-- 5.9 Indicação de Link -->
+        <article id="indicacao-de-link">
+          <h3 class="subsection-heading">9. Textos de Links Significativos</h3>
+          <ul class="accessible-list">
+            <li>Evitar textos genéricos como "clique aqui", "saiba mais" ou "leia mais". O próprio título do documento, serviço ou notícia deve compor o link.</li>
+            <li>Exemplo correto: <code>&lt;a href="edital.pdf"&gt;Baixar o Edital de Concurso SMS 2026 em PDF&lt;/a&gt;</code>.</li>
+          </ul>
+        </article>
+
+        <!-- 5.10 Formulários -->
+        <article id="formularios-acessiveis">
+          <h3 class="subsection-heading">10. Formulários Acessíveis</h3>
+          <ul class="accessible-list">
+            <li>Todos os campos devem ter um <code>&lt;label for="id-do-campo"&gt;</code> explicitamente associado ao <code>id</code> do input.</li>
+            <li>Agrupar perguntas correlatas usando <code>&lt;fieldset&gt;</code> e <code>&lt;legend&gt;</code> (ex: opções de gênero, estado civil, endereço).</li>
+            <li>Fornecer instruções claras de preenchimento e mensagens de erro específicas que expliquem exatamente como sanar o erro.</li>
+          </ul>
+        </article>
+
+        <!-- 5.11 Listas -->
+        <article id="listas-semanticas">
+          <h3 class="subsection-heading">11. Listas Estruturadas</h3>
+          <ul class="accessible-list">
+            <li>Listas não ordenadas: <code>&lt;ul&gt;</code> e <code>&lt;li&gt;</code>.</li>
+            <li>Listas sequenciais e ordenadas: <code>&lt;ol&gt;</code> e <code>&lt;li&gt;</code>.</li>
+            <li>Listas de descrição (termos e definições): <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code> e <code>&lt;dd&gt;</code>.</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- ==========================================
+           SEÇÃO 6: CONTEÚDO IMAGÉTICO
+           ========================================== -->
+      <section class="content-section" id="conteudo-imagetico">
+        <span class="section-badge">Capítulo 6</span>
+        <h2 class="section-heading">Diretrizes de Conteúdo Imagético</h2>
+
+        <!-- 6.1 Imagens Informativas -->
+        <article id="imagens-informativas">
+          <h3 class="subsection-heading">1. Imagens Informativas e Textos Alternativos</h3>
+          <p>Imagens que transmitem conceitos, dados, figuras e ilustrações devem conter o atributo <code>alt</code> com descrição precisa e concisa (geralmente entre 100 e 150 caracteres).</p>
+
+          <div class="code-card">
+            <div class="code-header">
+              <span>Exemplo de Descrição Alternativa</span>
+              <button type="button" class="code-copy-btn">Copiar</button>
+            </div>
+            <pre><code>&lt;!-- INCORRETO: Vago e redundante --&gt;
+&lt;img src="equipe.jpg" alt="Foto da equipe"&gt;
+
+&lt;!-- CORRETO: Descritivo e contextualizado --&gt;
+&lt;img src="equipe.jpg" alt="Equipe de desenvolvimento do Web para Todos: cinco pessoas em frente a um quadro branco com diagramas de fluxo"&gt;</code></pre>
+          </div>
+        </article>
+
+        <!-- 6.2 Imagens Decorativas -->
+        <article id="imagens-decorativas">
+          <h3 class="subsection-heading">2. Imagens Decorativas</h3>
+          <p>
+            Imagens com finalidade exclusivamente estética devem receber <strong><code>alt=""</code> vazio</strong>. Dessa forma, os leitores de tela ignoram a imagem sem poluir a navegação do usuário cego.
+          </p>
+        </article>
+
+        <!-- 6.3 Imagens Funcionais -->
+        <article id="imagens-funcionais">
+          <h3 class="subsection-heading">3. Imagens Funcionais</h3>
+          <p>
+            Quando uma imagem ou ícone atua como botão ou link, o texto alternativo deve descrever a <strong>ação desempenhada</strong> e não a imagem física. Exemplo: um ícone de impressora deve ter <code>alt="Imprimir certidão"</code> e não <code>alt="Desenho de impressora"</code>.
+          </p>
+        </article>
+
+        <!-- 6.4 Imagens com Texto -->
+        <article id="imagens-com-texto">
+          <h3 class="subsection-heading">4. Imagens com Texto</h3>
+          <p>
+            <strong>Evitar imagens contendo textos inseridos diretamente em seu gráfico</strong>. Textos em imagem perdem resolução no zoom e são inacessíveis para leitores de tela. Sempre renderize títulos e textos em HTML e CSS.
+          </p>
+        </article>
+
+        <!-- 6.5 Imagens Complexas -->
+        <article id="imagens-complexas">
+          <h3 class="subsection-heading">5. Imagens Complexas (Gráficos e Mapas)</h3>
+          <p>
+            Para infográficos e gráficos de estatísticas, forneça uma transcrição descritiva completa ou tabela de dados correspondente no texto imediatamente adjacente à imagem.
+          </p>
+        </article>
+
+        <!-- 6.6 Tabelas de Dados -->
+        <article id="tabelas-acessiveis">
+          <h3 class="subsection-heading">6. Tabelas de Dados Acessíveis</h3>
+          <p>Tabelas precisam de marcação semântica estrita para contextualizar as tecnologias assistivas:</p>
+          <ul class="accessible-list">
+            <li>Células de cabeçalho: <code>&lt;th scope="col"&gt;</code> ou <code>&lt;th scope="row"&gt;</code>.</li>
+            <li>Células de dados: <code>&lt;td&gt;</code>.</li>
+            <li>Legenda explicativa da tabela: <code>&lt;caption&gt;</code>.</li>
+          </ul>
+
+          <div class="table-responsive">
+            <table class="accessible-table">
+              <caption>Tabela Comparativa de Níveis WCAG e Escopo</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Nível</th>
+                  <th scope="col">Padrão</th>
+                  <th scope="col">Impacto nos Usuários</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Nível A</th>
+                  <td>Mínimo Obrigatório</td>
+                  <td>Remove barreiras absolutas de bloqueio na navegação.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Nível AA</th>
+                  <td>Recomendado para Portais Públicos</td>
+                  <td>Garante autonomia para o conjunto mais amplo de deficiências.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Nível AAA</th>
+                  <td>Avançado / Especializado</td>
+                  <td>Requisitos altamente rigorosos para nichos específicos.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <!-- ==========================================
+           SEÇÃO 7: CONTEÚDO EM VÍDEO E ÁUDIO
+           ========================================== -->
+      <section class="content-section" id="conteudo-video">
+        <span class="section-badge">Capítulo 7</span>
+        <h2 class="section-heading">Diretrizes de Conteúdo em Vídeo e Áudio</h2>
+
+        <!-- 7.1 Legendas -->
+        <article id="video-legendas">
+          <h3 class="subsection-heading">1. Uso de Legendas Sincronizadas</h3>
+          <ul class="accessible-list">
+            <li>Fornecer legendas sincronizadas para todo conteúdo audiovisual gravado (formato padrão WebVTT).</li>
+            <li>Legendas automáticas geradas por IA não atendem plenamente aos critérios de acessibilidade e necessitam de revisão e edição humana prévia.</li>
+            <li>Disponibilizar legendas em tempo real (ao vivo) para transmissões governamentais.</li>
+          </ul>
+        </article>
+
+        <!-- 7.2 Audiodescrição -->
+        <article id="video-audiodescricao">
+          <h3 class="subsection-heading">2. Audiodescrição</h3>
+          <ul class="accessible-list">
+            <li>Fornecer faixa de audiodescrição narrando ações, expressões faciais, mudanças de cenário e textos na tela que ocorram em momentos de pausa dos diálogos.</li>
+          </ul>
+        </article>
+
+        <!-- 7.3 Mídia Alternativa -->
+        <article id="video-midia-alternativa">
+          <h3 class="subsection-heading">3. Mídia Alternativa Descritiva</h3>
+          <ul class="accessible-list">
+            <li>Disponibilizar documento textual descritivo contendo as falas com identificação dos oradores e descrições do ambiente e ações visuais em ordem cronológica.</li>
+          </ul>
+        </article>
+
+        <!-- 7.4 LIBRAS -->
+        <article id="video-libras">
+          <h3 class="subsection-heading">4. Tradução em Língua de Sinais (LIBRAS)</h3>
+          <div class="callout callout-info">
+            <div class="callout-title">Boas Práticas de Gravação de LIBRAS</div>
+            <ul class="accessible-list">
+              <li>O plugin automatizado não substitui a tradução de um intérprete humano fluente e conhecedor de regionalismos.</li>
+              <li>O intérprete deve trajar roupas sólidas com alto contraste em relação ao seu tom de pele.</li>
+              <li>O enquadramento da gravação deve capturar com clareza da linha abaixo da cintura até acima da cabeça e as laterais dos cotovelos.</li>
+              <li>Posicionar a janela do intérprete no canto inferior direito sem cobrir textos de apoio ou legendas.</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <!-- ==========================================
+           SEÇÃO 8: ESTRUTURA DA PÁGINA
+           ========================================== -->
+      <section class="content-section" id="estrutura-pagina">
+        <span class="section-badge">Capítulo 8</span>
+        <h2 class="section-heading">Estrutura e Semântica da Página</h2>
+
+        <!-- 8.1 Cabeçalhos -->
+        <article id="estrutura-cabecalhos">
+          <h3 class="subsection-heading">1. Hierarquia Rígida de Cabeçalhos (H1 a H6)</h3>
+          <ul class="accessible-list">
+            <li>Cada página deve ter <strong>um único elemento <code>&lt;h1&gt;</code></strong> representando o título principal.</li>
+            <li>Os subtópicos devem seguir a sequência lógica: <code>&lt;h2&gt;</code>, seguido por <code>&lt;h3&gt;</code> e <code>&lt;h4&gt;</code>, <strong>sem jamais pular níveis</strong> (ex: de h2 direto para h4).</li>
+          </ul>
+        </article>
+
+        <!-- 8.2 Regiões Semânticas -->
+        <article id="estrutura-regioes">
+          <h3 class="subsection-heading">2. Regiões Semânticas HTML5</h3>
+          <ul class="accessible-list">
+            <li><code>&lt;main&gt;</code>: Delimita a região de conteúdo central único da página.</li>
+            <li><code>&lt;nav&gt;</code>: Delimita blocos de menu e trilhas de navegação.</li>
+            <li><code>&lt;aside&gt;</code>: Regiões de conteúdo complementar e notas laterais.</li>
+            <li><code>&lt;footer&gt;</code>: Rodapé institucional com declarações legais e contatos.</li>
+          </ul>
+        </article>
+
+        <!-- 8.3 Carrosséis -->
+        <article id="estrutura-carrossel">
+          <h3 class="subsection-heading">3. Carrosséis Acessíveis</h3>
+          <ul class="accessible-list">
+            <li>Estruturar slides como listas não ordenadas com marcação clara de título.</li>
+            <li>Permitir pausar, avançar e retroceder slides via teclado.</li>
+            <li>Não avançar slides automaticamente enquanto o usuário estiver com o mouse ou o foco do teclado sobre o elemento.</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- ==========================================
+           SEÇÃO 9: NAVEGABILIDADE E INTERAÇÃO
+           ========================================== -->
+      <section class="content-section" id="navegabilidade-interface">
+        <span class="section-badge">Capítulo 9</span>
+        <h2 class="section-heading">Navegabilidade da Interface</h2>
+
+        <!-- 9.1 Teclado -->
+        <article id="navegacao-teclado">
+          <h3 class="subsection-heading">1. Navegação Plena por Teclado e Foco Visível</h3>
+          <ul class="accessible-list">
+            <li>Todas as funcionalidades devem ser operáveis usando apenas a tecla <code>Tab</code>, <code>Shift + Tab</code>, <code>Enter</code>, <code>Espaço</code> e teclas de seta.</li>
+            <li><strong>Nunca remover o outline de foco</strong> via CSS (<code>outline: none</code>) sem fornecer um anel de foco substituto com alto contraste evidente.</li>
+            <li>Evitar armadilhas de teclado: o usuário deve ser capaz de entrar e sair de qualquer modal ou componente sem ficar preso.</li>
+          </ul>
+        </article>
+
+        <!-- 9.2 Tempo Ajustável -->
+        <article id="tempo-ajustavel">
+          <h3 class="subsection-heading">2. Tempo de Navegação Ajustável</h3>
+          <ul class="accessible-list">
+            <li>Em sessões com tempo limite, o usuário deve ter a opção de desligar o cronômetro, ajustá-lo para 10x mais tempo ou estendê-lo com aviso prévio de no mínimo 20 segundos.</li>
+          </ul>
+        </article>
+
+        <!-- 9.3 Controle de Animações -->
+        <article id="animacoes-movimento">
+          <h3 class="subsection-heading">3. Controle de Movimento e Animações</h3>
+          <ul class="accessible-list">
+            <li>Qualquer animação, rolagem automática ou piscar que dure mais de 5 segundos deve possuir um botão para pausar, parar ou ocultar o movimento.</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- ==========================================
+           SEÇÃO 10: DICAS DE DESIGN
+           ========================================== -->
+      <section class="content-section" id="dicas-design">
+        <span class="section-badge">Capítulo 10</span>
+        <h2 class="section-heading">Recomendações Complementares de Design</h2>
+
+        <article id="design-feedback-consistencia">
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1.25rem; margin-top:1.5rem;">
+            <div style="border:1px solid var(--border-light); padding:1.25rem; border-radius:var(--radius-md); background:var(--bg-card-alt);">
+              <h4 class="card-feature-title" style="margin-bottom:0.5rem;">Navegação Consistente</h4>
+              <p style="font-size:0.9rem; margin:0;">Mantenha a mesma posição e ordem para menus, rodapés e caixas de busca em todo o portal. Utilize breadcrumbs (trilhas de navegação) claras.</p>
+            </div>
+            <div style="border:1px solid var(--border-light); padding:1.25rem; border-radius:var(--radius-md); background:var(--bg-card-alt);">
+              <h4 class="card-feature-title" style="margin-bottom:0.5rem;">Feedback Imediato</h4>
+              <p style="font-size:0.9rem; margin:0;">Forneça confirmação de ações, alertas em destaque sobre erros cometidos e instruções claras de como corrigi-los.</p>
+            </div>
+            <div style="border:1px solid var(--border-light); padding:1.25rem; border-radius:var(--radius-md); background:var(--bg-card-alt);">
+              <h4 class="card-feature-title" style="margin-bottom:0.5rem;">Adaptação de Viewports</h4>
+              <p style="font-size:0.9rem; margin:0;">Projete pensando em múltiplos tamanhos de tela e zoom do navegador (até 200% sem perda de legibilidade).</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ==========================================
+           SEÇÃO 11: REFERÊNCIAS BIBLIOGRÁFICAS E LEGISLAÇÃO
+           ========================================== -->
+      <section class="content-section footnotes-section" id="referencias-bibliograficas">
+        <span class="section-badge">Capítulo 11</span>
+        <h2 class="section-heading">Referências Bibliográficas, Normas e Legislação</h2>
+        <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:1.5rem;">
+          Fontes oficiais, legislações nacionais e referências técnicas que fundamentam este Guia:
+        </p>
+
+        <ol class="accessible-list" style="padding-left:1.5rem;">
+          <li class="footnote-item" id="fn1">
+            <strong>BRASIL. Ministério da Saúde.</strong> Saúde da pessoa com deficiência. Brasília, DF: Ministério da Saúde. <a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-pessoa-com-deficiencia" target="_blank" rel="noopener noreferrer">Acessar portal</a> <a href="#fnref1" class="footnote-backlink" title="Voltar ao texto">&uarr;</a>
+          </li>
+          <li class="footnote-item" id="fn2">
+            <strong>SETA, Renata.</strong> Deficiências invisíveis, deficiências ocultas, neurodivergências e doenças raras. <em>Faculdade de Educação – UNICAMP</em>, 2024. <a href="https://portal.fe.unicamp.br/artigo/deficiencias-invisiveis-deficiencias-ocultas-neurodivergencias-e-doencas-raras-fundamental-falar-sobre-isso/" target="_blank" rel="noopener noreferrer">Acessar artigo</a> <a href="#fnref2" class="footnote-backlink" title="Voltar ao texto">&uarr;</a>
+          </li>
+          <li class="footnote-item" id="fn3">
+            <strong>BRASIL. Secretaria de Direitos Humanos da Presidência da República.</strong> <em>Cartilha do Censo 2010: pessoas com deficiência</em>. Brasília, 2012. <a href="https://siac.fpabramo.org.br/uploads/acaoinstitucional/SNPDPCD_censo_2012.pdf" target="_blank" rel="noopener noreferrer">Acessar cartilha</a> <a href="#fnref3" class="footnote-backlink" title="Voltar ao texto">&uarr;</a>
+          </li>
+          <li class="footnote-item" id="fn4">
+            <strong>RIO DE JANEIRO (Município). Instituto Pereira Passos.</strong> <em>Cadernos do Rio: pessoas com deficiência</em>. Rio de Janeiro: IPP, jun. 2013, p. 9. <a href="https://www.data.rio/documents/0507e899644f469185454462c776862b/explore" target="_blank" rel="noopener noreferrer">Acessar Data.Rio</a> <a href="#fnref4" class="footnote-backlink" title="Voltar ao texto">&uarr;</a>
+          </li>
+          <li class="footnote-item" id="fn5">
+            <strong>FERRAZ, Carolina Valença.</strong> O desaparecimento das pessoas com deficiência; ou a balada do capacitismo estrutural. <em>Folha de S.Paulo</em>, 25 jul. 2025. <a href="https://www1.folha.uol.com.br/opiniao/2025/07/o-desaparecimento-das-pessoas-com-deficiencia-ou-a-balada-do-capacitismo-estrutural.shtml" target="_blank" rel="noopener noreferrer">Acessar artigo</a> <a href="#fnref5" class="footnote-backlink" title="Voltar ao texto">&uarr;</a>
+          </li>
+          <li class="footnote-item" id="fn6">
+            <strong>IBGE.</strong> Pesquisa Nacional por Amostra de Domicílios Contínua (PNAD Contínua 2022). Rio de Janeiro: IBGE, 2022. <a href="https://biblioteca.ibge.gov.br/visualizacao/livros/liv102013_informativo.pdf" target="_blank" rel="noopener noreferrer">Acessar informativo</a> <a href="#fnref6" class="footnote-backlink" title="Voltar ao texto">&uarr;</a>
+          </li>
+          <li class="footnote-item" id="fn7">
+            <strong>STEIL, Juliana.</strong> As 20 cidades com mais idosos no Brasil, segundo Censo 2022. <em>Valor Econômico</em>, 2025. <a href="https://valor.globo.com/brasil/artigo/as-20-cidades-com-mais-idosos-no-brasil-segundo-censo-2022.ghtml" target="_blank" rel="noopener noreferrer">Acessar reportagem</a> <a href="#fnref7" class="footnote-backlink" title="Voltar ao texto">&uarr;</a>
+          </li>
+          <li class="footnote-item" id="fn8">
+            <strong>TELES, Lilia; COSTA, André Coelho.</strong> População do RJ tem queda em quatro anos, segundo IBGE. <em>G1 Rio</em>, 2024. <a href="https://g1.globo.com/rj/rio-de-janeiro/noticia/2024/08/22/populacao-do-rj-queda-em-quatro-anos-ibge.ghtml" target="_blank" rel="noopener noreferrer">Acessar notícia</a> <a href="#fnref8" class="footnote-backlink" title="Voltar ao texto">&uarr;</a>
+          </li>
+          <li class="footnote-item" id="fn9">
+            <strong>BRASIL.</strong> <em>Convenção sobre os Direitos das Pessoas com Deficiência e Protocolo Facultativo</em> (Decreto Legislativo nº 186/2008 e Decreto nº 6.949/2009). <a href="https://www.mds.gov.br/webarquivos/Oficina%20PCF/JUSTI%C3%87A%20E%20CIDADANIA/convencao-e-lbi-pdf.pdf" target="_blank" rel="noopener noreferrer">Acessar documento</a> <a href="#fnref9" class="footnote-backlink" title="Voltar ao texto">&uarr;</a>
+          </li>
+          <li class="footnote-item" id="fn10">
+            <strong>BRASIL.</strong> <em>Lei nº 13.146, de 6 de julho de 2015</em>. Lei Brasileira de Inclusão da Pessoa com Deficiência (Estatuto da Pessoa com Deficiência). <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm" target="_blank" rel="noopener noreferrer">Acessar no Planalto</a> <a href="#fnref10" class="footnote-backlink" title="Voltar ao texto">&uarr;</a>
+          </li>
+          <li class="footnote-item" id="fn11">
+            <strong>SASSAKI, Romeu Kazumi.</strong> <em>Guia de Bolso 7 Dimensões da Acessibilidade</em>. SMPD Prefeitura do Rio de Janeiro. <a href="https://smpd.prefeitura.rio/wp-content/uploads/sites/33/2025/11/Guia-de-Bolso-7-dimensoes-PDF.pdf" target="_blank" rel="noopener noreferrer">Acessar PDF</a> <a href="#dimensoes-acessibilidade" class="footnote-backlink" title="Voltar ao texto">&uarr;</a>
+          </li>
+          <li class="footnote-item" id="fn13">
+            <strong>BRASIL.</strong> Conceito de Desenho Universal. Lei nº 13.146/2015, art. 3º, II. <a href="#dimensoes-acessibilidade" class="footnote-backlink" title="Voltar ao texto">&uarr;</a>
+          </li>
+          <li class="footnote-item" id="fn14">
+            <strong>BRASIL.</strong> Obrigatoriedade de Acessibilidade Digital nos Sítios da Internet. Lei nº 13.146/2015, art. 63. <a href="#acessibilidade-digital-conceito" class="footnote-backlink" title="Voltar ao texto">&uarr;</a>
+          </li>
+          <li class="footnote-item" id="fn15">
+            <strong>BERGUES, Martina; LAFUENTE, Mariano.</strong> <em>Uso de serviços digitais: um retrato do Brasil</em>. Banco Interamericano de Desenvolvimento (BID), 2025. <a href="https://www.gov.br/gestao/pt-br/assuntos/noticias/2025/abril/pesquisa-revela-que-77-dos-brasileiros-consideram-facil-o-acesso-a-servicos-publicos-digitais/usodeservicosdigitais_bid.pdf" target="_blank" rel="noopener noreferrer">Acessar estudo BID</a> <a href="#pesquisas-bid-wpt" class="footnote-backlink" title="Voltar ao texto">&uarr;</a>
+          </li>
+          <li class="footnote-item" id="fn19">
+            <strong>BERGUES, Martina; LAFUENTE, Mariano.</strong> <em>Op. cit.</em>, BID, 2025, p. 35. <a href="#pesquisas-bid-wpt" class="footnote-backlink" title="Voltar ao texto">&uarr;</a>
+          </li>
+          <li class="footnote-item" id="fn20">
+            <strong>BIGDATACORP; MOVIMENTO WEB PARA TODOS (WPT).</strong> <em>Estudo de Acessibilidade em Sites Ativos no Brasil (2024)</em>. <a href="https://mwpt.com.br/metodologia-utilizada-no-estudo-de-acessibilidade-em-sites-ativos-brasil-2024/" target="_blank" rel="noopener noreferrer">Acessar pesquisa WPT</a> <a href="#pesquisas-bid-wpt" class="footnote-backlink" title="Voltar ao texto">&uarr;</a>
+          </li>
+          <li class="footnote-item" id="fn22">
+            <strong>WROBLEWSKI, Luke.</strong> <em>Mobile First</em>. A Book Apart, 2011. <a href="#mobile-first" class="footnote-backlink" title="Voltar ao texto">&uarr;</a>
+          </li>
+          <li class="footnote-item" id="fn23">
+            <strong>WORLD WIDE WEB CONSORTIUM (W3C).</strong> <em>Diretrizes de Acessibilidade para Conteúdo Web (WCAG) 2.2</em>. W3C Recommendation, 2023. <a href="https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/" target="_blank" rel="noopener noreferrer">Acessar tradução oficial W3C Brasil</a> <a href="#wcag-emag-abnt" class="footnote-backlink" title="Voltar ao texto">&uarr;</a>
+          </li>
+          <li class="footnote-item" id="fn24">
+            <strong>BRASIL. Ministério do Planejamento.</strong> <em>Modelo de Acessibilidade em Governo Eletrônico (eMAG 3.1)</em>. Brasília: MPOG, 2014. <a href="https://emag.governoeletronico.gov.br/" target="_blank" rel="noopener noreferrer">Acessar eMAG</a> <a href="#wcag-emag-abnt" class="footnote-backlink" title="Voltar ao texto">&uarr;</a>
+          </li>
+          <li class="footnote-item" id="fn25">
+            <strong>ABNT.</strong> <em>ABNT NBR 17060:2022</em>: Acessibilidade em aplicativos de dispositivos móveis. Rio de Janeiro: ABNT, 2022. <a href="#wcag-emag-abnt" class="footnote-backlink" title="Voltar ao texto">&uarr;</a>
+          </li>
+          <li class="footnote-item" id="fn26">
+            <strong>ABNT.</strong> <em>ABNT NBR 17225:2025</em>: Acessibilidade em conteúdo e aplicações web. Rio de Janeiro: ABNT, 2025. <a href="#wcag-emag-abnt" class="footnote-backlink" title="Voltar ao texto">&uarr;</a>
+          </li>
+          <li class="footnote-item" id="fn27">
+            <strong>WORLD WIDE WEB CONSORTIUM (W3C).</strong> <em>Understanding WCAG 2.2: The POUR Principles</em>. W3C Web Accessibility Initiative, 2025. <a href="https://www.w3.org/WAI/WCAG22/Understanding/intro" target="_blank" rel="noopener noreferrer">Acessar W3C WAI</a> <a href="#principios-pour" class="footnote-backlink" title="Voltar ao texto">&uarr;</a>
+          </li>
+        </ol>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- 6. MODAL DE ZOOM DE IMAGEM (LIGHTBOX ACESSÍVEL) -->
+  <div id="image-modal" class="image-modal-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Visualização ampliada da imagem">
+    <div class="image-modal-box">
+      <button type="button" id="modal-close-btn" class="image-modal-close-btn" aria-label="Fechar ampliação da imagem">&times;</button>
+      <img id="modal-img" class="image-modal-img" src="" alt="">
+      <p id="modal-caption" class="image-modal-caption"></p>
+    </div>
+  </div>
+
+  <!-- 7. BOTÃO FLUTUANTE VOLTAR AO TOPO -->
+  <button type="button" id="back-to-top" class="back-to-top-btn" title="Voltar ao topo da página" aria-label="Voltar ao topo da página">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <!-- 8. RODAPÉ INSTITUCIONAL PREFEITURA DO RIO -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>Prefeitura da Cidade do Rio de Janeiro</h3>
+        <p>
+          Subsecretaria de Transformação Digital e Cidades Inteligentes<br>
+          Compromisso público com a inclusão, autonomia e cidadania plena de todos os cariocas.
+        </p>
+        <p style="font-size:0.85rem; color:#64748B;">
+          Este portal foi desenvolvido em total conformidade com a WCAG 2.2 (Nível AA), o eMAG 3.1 e as normas ABNT NBR 17060 e 17225.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Portais e Serviços</h4>
+        <ul class="footer-links">
+          <li><a href="https://carioca.rio/" target="_blank" rel="noopener noreferrer">Carioca Digital</a></li>
+          <li><a href="https://www.1746.rio/" target="_blank" rel="noopener noreferrer">Central 1746</a></li>
+          <li><a href="https://transparencia.prefeitura.rio/" target="_blank" rel="noopener noreferrer">Portal da Transparência</a></li>
+          <li><a href="https://lgpd.prefeitura.rio/" target="_blank" rel="noopener noreferrer">Privacidade e LGPD</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Acessibilidade &amp; Apoio</h4>
+        <ul class="footer-links">
+          <li><a href="https://vlibras.gov.br/" target="_blank" rel="noopener noreferrer">VLibras - Língua de Sinais</a></li>
+          <li><a href="https://smpd.prefeitura.rio/" target="_blank" rel="noopener noreferrer">Sec. Mun. da Pessoa com Deficiência</a></li>
+          <li><a href="https://www.w3c.br/" target="_blank" rel="noopener noreferrer">W3C Brasil</a></li>
+          <li><a href="https://webparatodos.com.br/" target="_blank" rel="noopener noreferrer">Movimento Web para Todos</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 Prefeitura da Cidade do Rio de Janeiro. Todos os direitos reservados.</span>
+      <span>Desenvolvido com foco no ser humano e na inclusão digital.</span>
+    </div>
+  </footer>
+
+  <!-- 9. WIDGET OFICIAL DO VLIBRAS INTEGRADO -->
+  <div id="vlibras" vw class="enabled" aria-label="Widget de tradução em LIBRAS">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    if (window.VLibras) {
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    }
+  </script>
+
+  <!-- Script principal do portal (Busca com sugestões em tempo real, TOC, Acessibilidade) -->
+  <script src="js/app.js"></script>
+</body>
+</html>
