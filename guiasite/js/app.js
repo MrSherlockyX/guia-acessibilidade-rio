@@ -419,6 +419,50 @@ const searchDatabase = [
   }
 ];
 
+// ==========================================================================
+// CONTROLE DE ROLAGEM E SINCRONIZAÇÃO DA SIDEBAR (Anti-Jerk / Anti-Bounce)
+// ==========================================================================
+let isProgrammaticScrolling = false;
+let programmaticScrollTimer = null;
+
+function setProgrammaticScrolling(duration = 1200) {
+  isProgrammaticScrolling = true;
+  clearTimeout(programmaticScrollTimer);
+  programmaticScrollTimer = setTimeout(() => {
+    isProgrammaticScrolling = false;
+  }, duration);
+}
+
+// Libera imediatamente se o usuário rolar manualmente com mouse ou toque
+window.addEventListener("wheel", () => { isProgrammaticScrolling = false; }, { passive: true });
+window.addEventListener("touchmove", () => { isProgrammaticScrolling = false; }, { passive: true });
+if ("onscrollend" in window) {
+  window.addEventListener("scrollend", () => { isProgrammaticScrolling = false; }, { passive: true });
+}
+
+// Rola exclusivamente a caixa do sumário (.sidebar-toc), sem afetar a rolagem da página (window)
+function scrollLinkIntoSidebarView(link) {
+  const sidebar = document.querySelector(".sidebar-toc");
+  if (!sidebar || !link) return;
+
+  const sidebarRect = sidebar.getBoundingClientRect();
+  const linkRect = link.getBoundingClientRect();
+
+  // Se o link já está visível dentro da área visível do sumário, não move
+  if (linkRect.top >= sidebarRect.top + 30 && linkRect.bottom <= sidebarRect.bottom - 30) {
+    return;
+  }
+
+  // Centraliza o link no sumário lateral de forma suave
+  const relativeTop = linkRect.top - sidebarRect.top + sidebar.scrollTop;
+  const targetScrollTop = relativeTop - (sidebar.clientHeight / 2) + (link.clientHeight / 2);
+
+  sidebar.scrollTo({
+    top: Math.max(0, targetScrollTop),
+    behavior: "smooth"
+  });
+}
+
 function initSearchAutocomplete() {
   const searchInput = document.getElementById("search-input");
   const suggestionsDropdown = document.getElementById("search-suggestions");
@@ -581,7 +625,25 @@ function initSearchAutocomplete() {
     closeDropdown();
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      setProgrammaticScrolling(1200);
+
+      const toolbar = document.querySelector(".a11y-toolbar");
+      const offset = (toolbar ? toolbar.offsetHeight : 54) + 16;
+      const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: Math.max(0, targetTop),
+        behavior: "smooth"
+      });
+
+      // Atualiza e centraliza o item no sumário lateral se existir
+      const matchingTocLink = document.querySelector(`.sidebar-toc .toc-link[href="#${targetId}"]`);
+      if (matchingTocLink) {
+        document.querySelectorAll(".sidebar-toc .toc-link").forEach(l => l.classList.remove("is-active"));
+        matchingTocLink.classList.add("is-active");
+        scrollLinkIntoSidebarView(matchingTocLink);
+      }
+
       targetElement.classList.remove("target-pulse");
       void targetElement.offsetWidth; // força reflow
       targetElement.classList.add("target-pulse");
@@ -778,15 +840,26 @@ function initAccessibilityToolbar() {
 }
 
 /* ==========================================================================
-   3. SUMÁRIO HIERÁRQUICO (TOC) COM SCROLLSPY E FILTRO RÁPIDO
+   3. SUMÁRIO HIERÁRQUICO (TOC) COM SCROLLSPY ESTÁVEL E FILTRO RÁPIDO
    ========================================================================== */
 
 function initTableOfContents() {
   const tocLinks = document.querySelectorAll(".sidebar-toc .toc-link");
-  const sections = document.querySelectorAll(".content-section");
   const filterInput = document.getElementById("toc-filter-input");
 
-  if (!tocLinks.length || !sections.length) return;
+  if (!tocLinks.length) return;
+
+  // Mapeia todos os elementos alvos existentes referenciados pelo sumário
+  const targetItems = [];
+  tocLinks.forEach(link => {
+    const href = link.getAttribute("href");
+    if (href && href.startsWith("#")) {
+      const el = document.getElementById(href.slice(1));
+      if (el) {
+        targetItems.push({ id: href.slice(1), element: el, link: link });
+      }
+    }
+  });
 
   // Filtro interativo no sumário
   if (filterInput) {
@@ -803,24 +876,115 @@ function initTableOfContents() {
     });
   }
 
-  // ScrollSpy com IntersectionObserver
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute("id");
-        tocLinks.forEach(link => {
-          if (link.getAttribute("href") === `#${id}`) {
-            link.classList.add("is-active");
-            link.scrollIntoView({ block: "nearest", behavior: "smooth" });
-          } else {
-            link.classList.remove("is-active");
-          }
-        });
+  // Navegação suave e precisa ao clicar nos tópicos do sumário
+  tocLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href");
+      if (!href || !href.startsWith("#")) return;
+
+      const targetId = href.slice(1);
+      const targetElement = document.getElementById(targetId);
+      if (!targetElement) return;
+
+      e.preventDefault();
+
+      // Trava o scrollspy para evitar conflito com as seções intermediárias durante a rolagem
+      setProgrammaticScrolling(1200);
+
+      // Marca o link como ativo imediatamente e centraliza na sidebar
+      tocLinks.forEach(l => l.classList.remove("is-active"));
+      link.classList.add("is-active");
+      scrollLinkIntoSidebarView(link);
+
+      // Calcula a rolagem exata compensando a barra flutuante de acessibilidade
+      const toolbar = document.querySelector(".a11y-toolbar");
+      const offset = (toolbar ? toolbar.offsetHeight : 54) + 16;
+      const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: Math.max(0, targetTop),
+        behavior: "smooth"
+      });
+
+      // Atualiza a URL sem saltos bruscos
+      history.pushState(null, "", href);
+
+      // Animação de pulso para identificação visual do tópico alcançado
+      targetElement.classList.remove("target-pulse");
+      void targetElement.offsetWidth;
+      targetElement.classList.add("target-pulse");
+
+      // Foco acessível sem forçar rolagem
+      targetElement.setAttribute("tabindex", "-1");
+      targetElement.focus({ preventScroll: true });
+    });
+  });
+
+  // ScrollSpy ultra-eficiente e sem travamentos durante a leitura manual
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (isProgrammaticScrolling || targetItems.length === 0) return;
+
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateActiveTocItem();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  function updateActiveTocItem() {
+    if (isProgrammaticScrolling || targetItems.length === 0) return;
+
+    const toolbar = document.querySelector(".a11y-toolbar");
+    const offset = (toolbar ? toolbar.offsetHeight : 54) + 30;
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Se estiver no final da página, ativa o último item
+    if ((window.innerHeight + scrollY) >= document.documentElement.scrollHeight - 50) {
+      const lastItem = targetItems[targetItems.length - 1];
+      setActiveLink(lastItem.link);
+      return;
+    }
+
+    // Encontra o tópico atual baseado na posição de rolagem
+    let activeItem = targetItems[0];
+    for (let i = 0; i < targetItems.length; i++) {
+      const item = targetItems[i];
+      const rect = item.element.getBoundingClientRect();
+      if (rect.top <= offset) {
+        activeItem = item;
+      } else {
+        break;
+      }
+    }
+
+    if (activeItem) {
+      setActiveLink(activeItem.link);
+    }
+  }
+
+  function setActiveLink(activeLink) {
+    let changed = false;
+    tocLinks.forEach(l => {
+      if (l === activeLink) {
+        if (!l.classList.contains("is-active")) {
+          l.classList.add("is-active");
+          changed = true;
+        }
+      } else {
+        l.classList.remove("is-active");
       }
     });
-  }, { rootMargin: "-20% 0px -70% 0px" });
 
-  sections.forEach(sec => observer.observe(sec));
+    if (changed) {
+      scrollLinkIntoSidebarView(activeLink);
+    }
+  }
+
+  // Inicializa a posição do sumário
+  updateActiveTocItem();
 }
 
 /* ==========================================================================
@@ -916,11 +1080,12 @@ function initBackToTop() {
   });
 
   btn.addEventListener("click", () => {
+    setProgrammaticScrolling(1000);
     window.scrollTo({ top: 0, behavior: "smooth" });
     const headerTitle = document.querySelector(".header-title-wrap h1");
     if (headerTitle) {
       headerTitle.setAttribute("tabindex", "-1");
-      headerTitle.focus();
+      headerTitle.focus({ preventScroll: true });
     }
   });
 }
