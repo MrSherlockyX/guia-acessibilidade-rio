@@ -1108,6 +1108,19 @@ textarea:focus-visible,
   flex: 1;
 }
 
+/* --- ELEMENTOS DO SUMÁRIO MOBILE (PADRÃO DESKTOP: OCULTOS) --- */
+.mobile-toc-bar {
+  display: none;
+}
+
+.sidebar-toc-backdrop {
+  display: none;
+}
+
+.toc-close-btn {
+  display: none;
+}
+
 /* --- BARRA LATERAL HIERÁRQUICA (SUMÁRIO / TOC) --- */
 .sidebar-toc {
   position: sticky;
@@ -1787,37 +1800,482 @@ table.accessible-table tbody tr:hover {
   color: #94A3B8;
 }
 
-/* --- RESPONSIVIDADE (MOBILE-FIRST ADAPTATIVO) --- */
+/* --- RESPONSIVIDADE PROFUNDA & MOBILE-FIRST --- */
+
+/* 1. TABLETS E TELAS MÉDIAS (<= 1024px) */
 @media (max-width: 1024px) {
   .main-wrapper {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 1.25rem auto;
+    padding: 0 1rem;
   }
+
+  /* BARRA STICKY DO ÍNDICE MOBILE */
+  .mobile-toc-bar {
+    display: block;
+    position: sticky;
+    top: 48px; /* Diretamente abaixo da toolbar de acessibilidade */
+    z-index: 450;
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-light);
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .mobile-toc-toggle-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-card-alt);
+    color: var(--text-main);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 0.65rem 1rem;
+    font-size: 0.92rem;
+    font-weight: 700;
+    cursor: pointer;
+    min-height: 44px;
+    transition: all var(--transition-fast);
+  }
+
+  .mobile-toc-toggle-btn:hover,
+  .mobile-toc-toggle-btn:focus-visible {
+    border-color: var(--rio-cyan-vivid);
+    background-color: rgba(56, 189, 248, 0.1);
+  }
+
+  .mobile-toc-btn-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .mobile-toc-badge {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--rio-cyan-vivid);
+    background-color: rgba(56, 189, 248, 0.15);
+    padding: 0.2rem 0.55rem;
+    border-radius: var(--radius-full);
+    max-width: 170px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* MÁSCARA DE FUNDO (BACKDROP) */
+  .sidebar-toc-backdrop {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(7, 13, 24, 0.75);
+    backdrop-filter: blur(4px);
+    z-index: 1500;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
+  }
+
+  .sidebar-toc-backdrop.is-active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* OFF-CANVAS DRAWER DO SUMÁRIO */
   .sidebar-toc {
-    position: static;
-    max-height: none;
-    margin-bottom: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: min(340px, 86vw);
+    height: 100vh;
+    max-height: 100vh;
+    z-index: 1600;
+    background-color: var(--bg-card);
+    border-right: 1px solid var(--border-light);
+    border-radius: 0;
+    box-shadow: 6px 0 24px rgba(0, 0, 0, 0.4);
+    padding: 1.25rem 1rem;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
   }
+
+  .sidebar-toc.is-open {
+    transform: translateX(0);
+  }
+
+  .toc-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background-color: var(--bg-card-alt);
+    border: 1px solid var(--border-light);
+    border-radius: 50%;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .toc-close-btn:hover,
+  .toc-close-btn:focus-visible {
+    color: var(--rio-cyan-vivid);
+    border-color: var(--rio-cyan-vivid);
+  }
+
+  .toc-tree {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .toc-link {
+    padding: 0.6rem 0.75rem;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+  }
+
   .footer-container {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
 
+/* 2. SMARTPHONES E TELAS PEQUENAS (<= 768px) */
 @media (max-width: 768px) {
-  .header-title-wrap h1 {
-    font-size: 1.75rem;
+  /* BARRA DE PROGRESSO DE LEITURA */
+  #reading-progress-bar {
+    height: 3px;
   }
-  .main-content {
-    padding: 1.5rem;
-  }
-  .comparison-grid {
-    grid-template-columns: 1fr;
+
+  /* TOPBAR INSTITUCIONAL */
+  .topbar-prefeitura {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.78rem;
   }
   .topbar-container {
-    justify-content: center;
+    justify-content: space-between;
+    gap: 0.5rem;
   }
   .topbar-portal-links {
-    justify-content: center;
+    gap: 0.85rem;
   }
+  .topbar-social-links {
+    gap: 0.5rem;
+  }
+
+  /* CABEÇALHO HERO */
+  .site-header {
+    padding: 1.5rem 1rem 1.85rem;
+  }
+  .header-brand {
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+  .brand-badge {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.65rem;
+  }
+  .brand-subsecdigital {
+    font-size: 0.8rem;
+  }
+  .header-title-wrap h1 {
+    font-size: clamp(1.55rem, 5.5vw, 1.95rem);
+    margin-bottom: 0.5rem;
+  }
+  .header-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.45;
+    margin-bottom: 1.25rem;
+  }
+
+  /* BARRA DE PESQUISA */
+  .search-section {
+    margin-top: 0.5rem;
+  }
+  .search-input {
+    padding: 0.85rem 2.85rem 0.85rem 2.65rem;
+    font-size: 0.98rem;
+    min-height: 48px;
+  }
+  .search-icon-left {
+    left: 0.85rem;
+    font-size: 1.15rem;
+  }
+  .search-shortcut-badge {
+    display: none; /* Oculta tecla '/' em aparelhos touch */
+  }
+  .search-clear-btn {
+    right: 0.65rem;
+    width: 36px;
+    height: 36px;
+  }
+  .search-suggestions-dropdown {
+    max-height: 60vh;
+    border-radius: var(--radius-md);
+  }
+  .suggestion-item {
+    padding: 0.75rem 0.9rem;
+  }
+
+  /* TOOLBAR FLUTUANTE DE ACESSIBILIDADE HORIZONTAL TOUCH */
+  .a11y-toolbar {
+    padding: 0.35rem 0.5rem;
+  }
+  .a11y-toolbar-inner {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0.4rem;
+    padding-bottom: 2px;
+  }
+  .a11y-toolbar-inner::-webkit-scrollbar {
+    display: none;
+  }
+  .a11y-toolbar-label {
+    flex-shrink: 0;
+    font-size: 0.78rem;
+  }
+  .a11y-tools-group {
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    gap: 0.35rem;
+  }
+  .a11y-btn {
+    white-space: nowrap;
+    min-height: 40px;
+    padding: 0.4rem 0.65rem;
+    font-size: 0.8rem;
+  }
+
+  /* CONTEÚDO PRINCIPAL */
+  .main-wrapper {
+    margin: 0.85rem auto;
+    padding: 0 0.75rem;
+  }
+  .main-content {
+    padding: 1.25rem 0.9rem;
+    border-radius: var(--radius-md);
+  }
+  .content-section {
+    margin-bottom: 2.25rem;
+    padding-bottom: 2rem;
+  }
+  .section-badge {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.55rem;
+  }
+  .section-heading {
+    font-size: clamp(1.35rem, 4.5vw, 1.65rem);
+    margin-bottom: 1rem;
+  }
+  .subsection-heading {
+    font-size: clamp(1.15rem, 3.8vw, 1.3rem);
+    margin: 1.5rem 0 0.85rem;
+  }
+  .topic-heading {
+    font-size: clamp(1.02rem, 3.2vw, 1.15rem);
+    margin: 1.25rem 0 0.65rem;
+  }
+  .main-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.15rem;
+  }
+  .callout {
+    padding: 1rem;
+    margin: 1.15rem 0;
+    font-size: 0.92rem;
+    border-left-width: 4px;
+  }
+  .callout-title {
+    font-size: 0.98rem;
+  }
+  .guidelines-list {
+    padding-left: 1.25rem;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin-bottom: 1.15rem;
+  }
+  .guidelines-list li {
+    margin-bottom: 0.5rem;
+  }
+
+  /* TABELAS RESPONSIVAS COM ROLAGEM HORIZONTAL SUAVE */
+  .table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 1.25rem 0;
+    border-radius: var(--radius-sm);
+    box-shadow: inset -6px 0 8px -4px rgba(0, 0, 0, 0.15);
+  }
+  .accessible-table {
+    min-width: 540px;
+    font-size: 0.85rem;
+  }
+  .accessible-table th,
+  .accessible-table td {
+    padding: 0.65rem 0.75rem;
+  }
+
+  /* FIGURAS E IMAGENS */
+  .content-figure {
+    margin: 1.25rem 0;
+  }
+  .figure-img-wrap {
+    padding: 0.5rem;
+  }
+  .figure-zoom-btn {
+    font-size: 0.78rem;
+    padding: 0.35rem 0.65rem;
+  }
+  figcaption {
+    padding: 0.65rem 0.85rem;
+    font-size: 0.82rem;
+  }
+
+  /* LIGHTBOX MODAL NO MOBILE */
+  .image-modal-overlay {
+    padding: 0.75rem;
+  }
+  .image-modal-box {
+    max-width: 98vw;
+    max-height: 94vh;
+    padding: 1rem;
+  }
+  .image-modal-close-btn {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 44px;
+    height: 44px;
+  }
+  .image-modal-img {
+    max-height: 70vh;
+  }
+  .image-modal-caption {
+    font-size: 0.85rem;
+  }
+
+  /* BOTÃO VOLTAR AO TOPO */
+  .back-to-top-btn {
+    width: 44px;
+    height: 44px;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    font-size: 1.2rem;
+  }
+
+  /* RODAPÉ INSTITUCIONAL */
+  .site-footer {
+    padding: 2.25rem 1rem 1.75rem;
+    margin-top: 2.5rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+  }
+}
+
+/* 3. SMARTPHONES COMPACTOS & REFLOW 320px (WCAG 2.2 Critério 1.4.10) */
+@media (max-width: 480px) {
+  .main-wrapper {
+    padding: 0 0.5rem;
+    margin: 0.65rem auto;
+  }
+  .main-content {
+    padding: 1rem 0.75rem;
+  }
+  .mobile-toc-bar {
+    padding: 0.4rem 0.65rem;
+  }
+  .mobile-toc-toggle-btn {
+    padding: 0.55rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  .mobile-toc-badge {
+    max-width: 120px;
+    font-size: 0.72rem;
+  }
+  .header-title-wrap h1 {
+    font-size: clamp(1.4rem, 6.5vw, 1.75rem);
+  }
+  .header-subtitle {
+    font-size: 0.9rem;
+  }
+  .callout {
+    padding: 0.85rem;
+  }
+  .stat-card {
+    padding: 0.85rem;
+  }
+}
+
+/* ESTILOS DE TEMA PARA COMPONENTES MOBILE */
+body.dark-mode .mobile-toc-bar {
+  background-color: #0B1320 !important;
+  border-bottom-color: #1E293B !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
+}
+body.dark-mode .mobile-toc-toggle-btn {
+  background-color: #142236 !important;
+  color: #F8FAFC !important;
+  border-color: #2A3C56 !important;
+}
+body.dark-mode .mobile-toc-toggle-btn:hover,
+body.dark-mode .mobile-toc-toggle-btn:focus-visible {
+  border-color: #38BDF8 !important;
+  background-color: rgba(56, 189, 248, 0.15) !important;
+}
+body.dark-mode .mobile-toc-badge {
+  background-color: rgba(56, 189, 248, 0.18) !important;
+  color: #38BDF8 !important;
+}
+body.dark-mode .toc-close-btn {
+  border-color: #2A3C56 !important;
+  color: #CBD5E1 !important;
+  background-color: #142236 !important;
+}
+body.dark-mode .sidebar-toc-backdrop {
+  background-color: rgba(3, 7, 18, 0.85) !important;
+}
+
+body.high-contrast .mobile-toc-bar {
+  background-color: #000000 !important;
+  border-bottom: 2px solid #FFFF00 !important;
+}
+body.high-contrast .mobile-toc-toggle-btn {
+  background-color: #000000 !important;
+  color: #FFFF00 !important;
+  border: 2px solid #FFFF00 !important;
+}
+body.high-contrast .mobile-toc-badge {
+  background-color: #000000 !important;
+  color: #00FFFF !important;
+  border: 1px solid #00FFFF !important;
+}
+body.high-contrast .toc-close-btn {
+  background-color: #000000 !important;
+  border: 2px solid #FFFF00 !important;
+  color: #FFFF00 !important;
+}
+body.high-contrast .sidebar-toc-backdrop {
+  background-color: rgba(0, 0, 0, 0.92) !important;
 }
 
 /* --- IMPRESSÃO ACESSÍVEL --- */

@@ -639,7 +639,11 @@ function initSearchAutocomplete() {
       setProgrammaticScrolling(1200);
 
       const toolbar = document.querySelector(".a11y-toolbar");
-      const offset = (toolbar ? toolbar.offsetHeight : 54) + 16;
+      const mobileBar = document.querySelector(".mobile-toc-bar");
+      let offset = (toolbar ? toolbar.offsetHeight : 54) + 16;
+      if (window.innerWidth < 1025 && mobileBar && mobileBar.offsetHeight > 0) {
+        offset += mobileBar.offsetHeight;
+      }
       const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
 
       window.scrollTo({
@@ -857,8 +861,71 @@ function initAccessibilityToolbar() {
 function initTableOfContents() {
   const tocLinks = document.querySelectorAll(".sidebar-toc .toc-link");
   const filterInput = document.getElementById("toc-filter-input");
+  const mobileTocToggle = document.getElementById("mobile-toc-toggle");
+  const mobileTocCurrentLabel = document.getElementById("mobile-toc-current-label");
+  const sidebarToc = document.getElementById("navegacao-guia");
+  const sidebarBackdrop = document.getElementById("sidebar-toc-backdrop");
+  const tocCloseBtn = document.getElementById("toc-close-btn");
 
   if (!tocLinks.length) return;
+
+  // --- CONTROLES DO SUMÁRIO EM DISPOSITIVOS MÓVEIS (DRAWER OFF-CANVAS) ---
+  function openMobileToc() {
+    if (!sidebarToc) return;
+    sidebarToc.classList.add("is-open");
+    if (sidebarBackdrop) sidebarBackdrop.classList.add("is-active");
+    if (mobileTocToggle) mobileTocToggle.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden"; // Impede rolagem do fundo
+    if (filterInput) {
+      setTimeout(() => filterInput.focus(), 150);
+    } else if (tocCloseBtn) {
+      tocCloseBtn.focus();
+    }
+  }
+
+  function closeMobileToc() {
+    if (!sidebarToc) return;
+    sidebarToc.classList.remove("is-open");
+    if (sidebarBackdrop) sidebarBackdrop.classList.remove("is-active");
+    if (mobileTocToggle) {
+      mobileTocToggle.setAttribute("aria-expanded", "false");
+      mobileTocToggle.focus();
+    }
+    document.body.style.overflow = "";
+  }
+
+  if (mobileTocToggle) {
+    mobileTocToggle.addEventListener("click", () => {
+      const isOpen = sidebarToc && sidebarToc.classList.contains("is-open");
+      if (isOpen) {
+        closeMobileToc();
+      } else {
+        openMobileToc();
+      }
+    });
+  }
+
+  if (tocCloseBtn) {
+    tocCloseBtn.addEventListener("click", closeMobileToc);
+  }
+
+  if (sidebarBackdrop) {
+    sidebarBackdrop.addEventListener("click", closeMobileToc);
+  }
+
+  // Tecla ESC fecha o sumário no mobile
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && sidebarToc && sidebarToc.classList.contains("is-open")) {
+      closeMobileToc();
+    }
+  });
+
+  // Se redimensionar para desktop (>= 1025px), reseta o estado do drawer mobile
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 1025 && sidebarToc && sidebarToc.classList.contains("is-open")) {
+      closeMobileToc();
+    }
+  });
 
   // Mapeia todos os elementos alvos existentes referenciados pelo sumário
   const targetItems = [];
@@ -899,6 +966,11 @@ function initTableOfContents() {
 
       e.preventDefault();
 
+      // Se estiver no mobile, fecha automaticamente o sumário ao selecionar um tópico
+      if (window.innerWidth < 1025) {
+        closeMobileToc();
+      }
+
       // Trava o scrollspy para evitar conflito com as seções intermediárias durante a rolagem
       setProgrammaticScrolling(1200);
 
@@ -907,9 +979,13 @@ function initTableOfContents() {
       link.classList.add("is-active");
       scrollLinkIntoSidebarView(link);
 
-      // Calcula a rolagem exata compensando a barra flutuante de acessibilidade
+      // Calcula a rolagem exata compensando as barras sticky (toolbar + mobile toc bar)
       const toolbar = document.querySelector(".a11y-toolbar");
-      const offset = (toolbar ? toolbar.offsetHeight : 54) + 16;
+      const mobileBar = document.querySelector(".mobile-toc-bar");
+      let offset = (toolbar ? toolbar.offsetHeight : 54) + 16;
+      if (window.innerWidth < 1025 && mobileBar && mobileBar.offsetHeight > 0) {
+        offset += mobileBar.offsetHeight;
+      }
       const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
 
       window.scrollTo({
@@ -949,7 +1025,11 @@ function initTableOfContents() {
     if (isProgrammaticScrolling || targetItems.length === 0) return;
 
     const toolbar = document.querySelector(".a11y-toolbar");
-    const offset = (toolbar ? toolbar.offsetHeight : 54) + 30;
+    const mobileBar = document.querySelector(".mobile-toc-bar");
+    let offset = (toolbar ? toolbar.offsetHeight : 54) + 30;
+    if (window.innerWidth < 1025 && mobileBar && mobileBar.offsetHeight > 0) {
+      offset += mobileBar.offsetHeight;
+    }
     const scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
     // Se estiver no final da página, ativa o último item
@@ -991,6 +1071,12 @@ function initTableOfContents() {
 
     if (changed) {
       scrollLinkIntoSidebarView(activeLink);
+      // Atualiza o texto do badge no botão do sumário mobile
+      if (mobileTocCurrentLabel && activeLink) {
+        const text = activeLink.textContent.trim();
+        mobileTocCurrentLabel.textContent = text;
+        mobileTocCurrentLabel.title = text;
+      }
     }
   }
 
