@@ -2,3 +2,6 @@ governodigital/
 .gemini/
 *.tmp
 scratch/
+__pycache__/
+*.pyc
+

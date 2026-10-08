@@ -49,16 +49,24 @@ const searchDatabase = [
     "title": "Tipos de Acessibilidade",
     "category": "Compreendendo ",
     "categoryClass": "category-estrutura",
-    "keywords": "tipos de acessibilidade garantir autonomia pessoas deficiência, imprescindível segundo",
-    "snippet": "Para garantir a autonomia das pessoas com deficiência, é imprescindível garantir acessibilidade que, segundo o autor Romeu Kazumi Sassaki, se divide em sete ..."
+    "keywords": "tipos de acessibilidade brasileira inclusão definida como:",
+    "snippet": "Na Lei Brasileira de Inclusão acessibilidade  é definida como:"
   },
   {
     "id": "acessibilidade-digital-entendendo-o-conceito",
     "title": "Acessibilidade Digital: entendendo o conceito",
     "category": "Compreendendo ",
     "categoryClass": "category-estrutura",
-    "keywords": "acessibilidade digital entendendo o conceito dentre essas formas acessibilidade, prevista digital,",
-    "snippet": "Dentre essas formas de acessibilidade, está prevista a acessibilidade digital, que é a eliminação de barreiras na Web. Ela determina que todo tipo de página ..."
+    "keywords": "acessibilidade digital entendendo o conceito brasileira inclusão prevista digital, eliminação barreiras",
+    "snippet": "Na Lei Brasileira de Inclusão, está prevista a acessibilidade digital, que é a eliminação de barreiras na Web. Ela determina que todo tipo de página web seja..."
+  },
+  {
+    "id": "uso-de-servicos-publicos-digitais",
+    "title": "Uso de Serviços Públicos Digitais",
+    "category": "Compreendendo ",
+    "categoryClass": "category-estrutura",
+    "keywords": "uso de serviços públicos digitais último levantamento banco interamericano desenvolvimento (bid) sobre",
+    "snippet": "O último levantamento do Banco Interamericano de Desenvolvimento (BID) sobre o uso de serviços digitais no Brasil[18], publicado em 2025, evidencia que a dis..."
   },
   {
     "id": "deficiencia-visual",
@@ -82,7 +90,7 @@ const searchDatabase = [
     "category": "Tipos de defic",
     "categoryClass": "category-estrutura",
     "keywords": "boas práticas daltonismo alteração percepção cores devido funcionamento ausência cones",
-    "snippet": "3) #### Daltonismo: Alteração na percepção das cores devido ao funcionamento ou ausência dos cones da retina, células responsáveis por identificar as cores. ..."
+    "snippet": "3) Daltonismo: Alteração na percepção das cores devido ao funcionamento ou ausência dos cones da retina, células responsáveis por identificar as cores. O dal..."
   },
   {
     "id": "boas-praticas",
@@ -90,7 +98,7 @@ const searchDatabase = [
     "category": "Tipos de defic",
     "categoryClass": "category-estrutura",
     "keywords": "boas práticas",
-    "snippet": "####"
+    "snippet": ""
   },
   {
     "id": "deficiencia-auditiva",
@@ -98,7 +106,7 @@ const searchDatabase = [
     "category": "Boas práticas",
     "categoryClass": "category-estrutura",
     "keywords": "deficiência auditiva surdez total parcial: condição afetar percepção diferentes graus,",
-    "snippet": "1) #### Surdez total ou parcial: Essa condição pode afetar a percepção dos sons e, em diferentes graus, a comunicação oral."
+    "snippet": "1) Surdez total ou parcial: Essa condição pode afetar a percepção dos sons e, em diferentes graus, a comunicação oral."
   },
   {
     "id": "deficiencia-intelectual-cognitiva",
@@ -338,7 +346,7 @@ const searchDatabase = [
     "category": "Apresentação d",
     "categoryClass": "category-estrutura",
     "keywords": "língua de sinais",
-    "snippet": "###"
+    "snippet": ""
   },
   {
     "id": "cabecalhos",
@@ -370,7 +378,7 @@ const searchDatabase = [
     "category": "Estrutura da p",
     "categoryClass": "category-estrutura",
     "keywords": "conteúdo complementar menu:",
-    "snippet": "5. ### Menu:"
+    "snippet": "5. Menu:"
   },
   {
     "id": "carrossel",

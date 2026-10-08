@@ -68,8 +68,22 @@ def extract_base64_images(md_content, output_dir):
     cleaned_md = pattern.sub('', md_content)
     return cleaned_md, images_map
 
+DEFAULT_ALT_TEXTS = {
+    "image1": "Gráfico do Censo 2010 (IBGE) sobre população com deficiência no Brasil (23,9%)",
+    "image2": "Gráfico do Censo 2010 (IBGE) sobre pessoas com deficiência severa no Brasil (8,3%)",
+    "image3": "Gráfico do Censo 2022 (IBGE) com comparativo da população com deficiência",
+    "image4": "Gráfico do Censo 2022 (IBGE) demonstrando comparativo metodológico entre os censos",
+    "image5": "Infográfico das Sete Dimensões de Acessibilidade segundo Romeu Kazumi Sassaki",
+    "image6": "Gráfico da pesquisa BID (2025) sobre autoconfiança no uso de tecnologias e serviços públicos digitais",
+    "image7": "Exemplo ilustrativo de percepção de cores e daltonismo",
+    "image8": "Exemplo comparativo de contraste e espectro de cores para daltonismo"
+}
+
 def clean_inline_formatting(text):
     """Converte formatação inline básica de markdown para HTML seguro."""
+    # Remove marcas de títulos residuais no meio do parágrafo (ex: 1) #### **Cegueira**)
+    text = re.sub(r'#{2,}\s*', '', text)
+
     # Links especiais do Google Docs: <<https://...>> ou [texto](url)
     text = re.sub(r'\\<\\<\[?(https?://[^\]>\s]+)\]?\\>\\>', r'<a href="\1" target="_blank" rel="noopener noreferrer">\1</a>', text)
     text = re.sub(r'\[([^\]]+)\]\((https?://[^\)]+)\)', r'<a href="\2" target="_blank" rel="noopener noreferrer">\1</a>', text)
@@ -120,6 +134,26 @@ def parse_markdown(md_content, images_map):
             footnotes[fn_id] = clean_inline_formatting(fn_text)
             continue
             
+        # Imagens puras na linha (mesmo que com prefixo ###, **, etc., ex: ### **![][image5]** ou **![][image7]![][image8]**)
+        img_matches = list(re.finditer(r'!\[(.*?)\]\[(image\d+)\]', line))
+        line_clean_for_img = re.sub(r'#|\*|_|\s|!\[.*?\]\[image\d+\]', '', line)
+        if img_matches and len(line_clean_for_img) == 0:
+            for match in img_matches:
+                alt_text = match.group(1).strip()
+                img_id = match.group(2)
+                src = images_map.get(img_id, f"assets/images/{img_id}.png")
+                final_alt = alt_text or DEFAULT_ALT_TEXTS.get(img_id, f"Gráfico e infográfico do Guia de Acessibilidade ({img_id})")
+                block = {
+                    "type": "figure",
+                    "src": src,
+                    "alt": final_alt
+                }
+                target = current_topic or current_subsection or current_chapter
+                if target:
+                    target["content_blocks"].append(block)
+            i += 1
+            continue
+
         # Título Principal (H1)
         if line.startswith("# ") and not line.startswith("## "):
             i += 1
@@ -223,20 +257,21 @@ def parse_markdown(md_content, images_map):
                 i += 1
                 continue
             
-        # Imagens: ![][imageX]
-        img_match = re.search(r'!\[(.*?)\]\[(image\d+)\]', line)
-        if img_match:
-            alt_text = img_match.group(1).strip()
-            img_id = img_match.group(2)
-            src = images_map.get(img_id, f"assets/images/{img_id}.png")
-            block = {
-                "type": "figure",
-                "src": src,
-                "alt": alt_text or f"Gráfico e infográfico do Guia de Acessibilidade ({img_id})"
-            }
-            target = current_topic or current_subsection or current_chapter
-            if target:
-                target["content_blocks"].append(block)
+        # Imagens residuais no meio de texto: ![][imageX]
+        if img_matches:
+            for match in img_matches:
+                alt_text = match.group(1).strip()
+                img_id = match.group(2)
+                src = images_map.get(img_id, f"assets/images/{img_id}.png")
+                final_alt = alt_text or DEFAULT_ALT_TEXTS.get(img_id, f"Gráfico e infográfico do Guia de Acessibilidade ({img_id})")
+                block = {
+                    "type": "figure",
+                    "src": src,
+                    "alt": final_alt
+                }
+                target = current_topic or current_subsection or current_chapter
+                if target:
+                    target["content_blocks"].append(block)
             i += 1
             continue
             
