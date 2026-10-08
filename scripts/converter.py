@@ -79,10 +79,160 @@ DEFAULT_ALT_TEXTS = {
     "image8": "Exemplo comparativo de contraste e espectro de cores para daltonismo"
 }
 
+ART_SPECS = {
+    1: {
+        "title": "Censo IBGE 2010 — População Geral com Deficiência",
+        "topic": "2.2 Tipos de Deficiência",
+        "description": "Infográfico com destaque estatístico para os 23,9% da população brasileira (45.606.048 pessoas de um total de 190.755.799 habitantes) que declararam possuir pelo menos uma deficiência em algum grau no Censo 2010. Detalhamento por tipos: Visual (18,6%), Motora (7,0%), Auditiva (5,1%) e Mental/Intelectual (1,4%).",
+        "elements": "Gráfico de barras estilizadas com pictogramas acessíveis para cada tipo de deficiência (olho, cadeira de rodas, ouvido, cérebro/mente). Tipografia destacada para '23,9%'.",
+        "palette": "Azul institucional Prefeitura do Rio (#002B49 e #004A80), ciano (#00C0F3) e neutros de alto contraste.",
+        "guidelines": "Garantir contraste de texto mínimo de 4.5:1 sobre o fundo. Não diferenciar os tipos de deficiência apenas pela cor das barras."
+    },
+    2: {
+        "title": "Censo IBGE 2010 — Comparação: Deficiência Geral (23,9%) vs. Severa (8,3%)",
+        "topic": "2.2 Tipos de Deficiência",
+        "description": "Infográfico comparativo demonstrando o recorte entre a população geral com alguma deficiência (23,9%) e aquelas com deficiência severa (8,3%, representando pessoas com muita dificuldade ou incapacidade total). Apresenta a maior prevalência entre mulheres e o recorte regional: Estado do RJ (24,4%) e Cidade do Rio de Janeiro (24,7%, quase 1/4 da população carioca).",
+        "elements": "Diagrama comparativo com dois blocos ou funil infográfico. Ícone sutil da Cidade do Rio de Janeiro contextualizando os 24,7%.",
+        "palette": "Azul escuro (#001F33), azul intermediário (#1565C0) e destaque em amarelo ouro ou ciano.",
+        "guidelines": "Textos explicativos nítidos acompanhando os números percentuais."
+    },
+    3: {
+        "title": "Censo IBGE 2022 — Nova Classificação e Metodologia Washington Group",
+        "topic": "2.2 Tipos de Deficiência",
+        "description": "Quadro explicativo sobre a mudança de metodologia do Censo 2022: incorporação de novas perguntas e critérios mais restritivos do Washington Group. Passou a contabilizar exclusivamente casos graves e permanentes (excluindo temporários e moderados), além da divisão entre questionário básico e estendido.",
+        "elements": "Matriz com os tipos avaliados (locomoção, visão, audição, cognição e autocuidado) e caixa de aviso sobre o critério de gravidade permanente.",
+        "palette": "Fundo neutro claro, bordas estruturadas em azul ardósia (#9DBDCE) e ícones semânticos.",
+        "guidelines": "Tipografia legível sem serifa; ícones com rótulos de texto explícitos."
+    },
+    4: {
+        "title": "Comparativo Censo 2010 vs. 2022 — A Queda Estatística e a Subnotificação no Rio",
+        "topic": "2.2 Tipos de Deficiência",
+        "description": "Gráfico de impacto mostrando a discrepância estatística decorrente da mudança de metodologia: queda do percentual de pessoas com deficiência na Cidade do Rio de Janeiro de 24,7% (2010) para 6,9% (2022), e cerca de 30 milhões a menos no Brasil. Alerta para o risco de subnotificação em políticas públicas frente ao envelhecimento populacional.",
+        "elements": "Duas colunas comparativas para a Cidade do Rio: Barra 2010 (24,7%) vs Barra 2022 (6,9%), com anotação de 'Subnotificação Estatística' e dados da PNAD 2022 sobre salto de deficiências a partir dos 40 e 60 anos.",
+        "palette": "Azul marinho (#002B49) para 2010, cinza/azul suave para 2022 e linha de alerta âmbar (#92400E).",
+        "guidelines": "Incluir nota explicativa clara de que a queda reflete mudança de cálculo e não redução real da população que necessita de acessibilidade."
+    },
+    5: {
+        "title": "As 7 Dimensões da Acessibilidade (Romeu Kazumi Sassaki)",
+        "topic": "2.4 Tipos de Acessibilidade",
+        "description": "Diagrama conceitual integrando as sete dimensões de acessibilidade: 1. Arquitetônica (espaços físicos); 2. Comunicacional (linguagem simples, legendas, LIBRAS); 3. Metodológica (processos e métodos); 4. Instrumental (softwares e dispositivos); 5. Programática (leis e políticas); 6. Atitudinal (eliminação de preconceitos); 7. Digital/Tecnológica (serviços web e sistemas).",
+        "elements": "Diagrama radial/circular com o cidadão ao centro e as 7 dimensões interligadas com ícones modernos.",
+        "palette": "Tons harmoniosos da identidade visual do Rio: azul primário, ciano, verde esmeralda e ardósia.",
+        "guidelines": "Cada dimensão deve conter ícone vetorial e um pequeno subtítulo explicativo com alto contraste."
+    },
+    6: {
+        "title": "Pesquisa BID 2025 — Autoconfiança no Uso de Serviços Públicos Digitais",
+        "topic": "2.6 Uso de Serviços Públicos Digitais",
+        "description": "Gráfico baseado na pesquisa do Banco Interamericano de Desenvolvimento (BID, 2025): demonstra que mesmo com 94,2% de celulares conectados, a média de autoconfiança digital é de apenas 47,5%. A confiança cai para 24,2% entre pessoas com deficiência, 24,0% em idosos (+55 anos) e 26,7% em baixa escolaridade. 57,2% prefeririam atendimento presencial por insegurança no digital.",
+        "elements": "Gráfico de barras horizontais contrastando a média geral (47,5%) com as populações mais vulneráveis (24%), com destaque para a frase-chave sobre autonomia.",
+        "palette": "Azul cobalto (#004A80), vermelho/coral de alerta para barreiras e verde para autonomia.",
+        "guidelines": "Indicar percentuais numéricos de forma clara e visível dentro ou ao lado de cada barra."
+    },
+    7: {
+        "title": "Simulação Visual de Daltonismo — Espectro de Cores",
+        "topic": "3.1 Deficiência Visual (Daltonismo)",
+        "description": "Infográfico demonstrativo do espectro de cores visível para pessoas com diferentes tipos de daltonismo: Visão Tricromata (Normal), Protanopia (ausência de cones vermelhos), Deuteranopia (ausência de cones verdes), Tritanopia (dificuldade com azul/amarelo) e Acromatopsia (monocromática / escala de cinza).",
+        "elements": "Barras horizontais paralelas exibindo o arco-íris comparado em cada uma das condições.",
+        "palette": "Espectros simulados de Protanopia, Deuteranopia e Tritanopia com legendas descritivas.",
+        "guidelines": "Apresentar rótulos textuais nítidos para cada espectro, permitindo que a diferença seja compreendida mesmo sem visualização colorida."
+    },
+    8: {
+        "title": "Boas Práticas de Interface para Daltonismo: Não Dependa Apenas da Cor",
+        "topic": "3.1 Deficiência Visual (Daltonismo)",
+        "description": "Exemplo prático de componente de interface (formulário / status / gráfico) mostrando a abordagem incorreta (diferenciação baseada somente em cor verde/vermelho) versus a abordagem acessível (reforço simultâneo com ícones ✓ e ✕, texto descritivo e textura de traço).",
+        "elements": "Layout 'Antes vs Depois' ou 'Evite vs Prefira' com cards lado a lado.",
+        "palette": "Cores de interface com contornos definidos e ícones pretos/brancos de suporte.",
+        "guidelines": "Excelente exemplo didático para designers e desenvolvedores front-end."
+    },
+    9: {
+        "title": "Contraste Textual Mínimo — Diretrizes WCAG AA (4.5:1 e 3:1)",
+        "topic": "5.7 Contraste textual",
+        "description": "Demonstração visual das relações mínimas de contraste exigidas pela WCAG 2.2 Nível AA: 4.5:1 para texto normal e 3:1 para texto grande (18pt ou 14pt negrito). Comparativo com contraste insuficiente (reprovado) e contraste ampliado AAA (7:1).",
+        "elements": "Cards de amostra tipográfica com indicador de medição de contraste e carimbo de 'Aprovado AA' ou 'Reprovado'.",
+        "palette": "Exemplos com fundo branco (#FFFFFF) e fundos escuros (#0F172A), demonstrando ambos os modos.",
+        "guidelines": "Indicar o valor numérico exato do cálculo de luminância em cada amostra."
+    },
+    10: {
+        "title": "Comunicação Multissensorial — Informação Além da Cor",
+        "topic": "5.9 Uso de cores",
+        "description": "Exemplo de como transmitir mensagens essenciais, alertas de sistema e gráficos utilizando cor combinada com tipografia, ícones e formas geométricas, cumprindo a diretriz WCAG 1.4.1.",
+        "elements": "Trio de status (Sucesso, Atenção, Erro) exibindo simultaneamente: cor + ícone semântico + rótulo textual.",
+        "palette": "Verde esmeralda, amarelo âmbar e vermelho carmim sobre superfícies adequadas.",
+        "guidelines": "Demonstrar que o usuário com qualquer alteração visual consegue entender a ação imediatamente."
+    },
+    11: {
+        "title": "Anatomia de um Campo de Formulário Acessível",
+        "topic": "5.11 Formulários",
+        "description": "Diagrama anotado de um campo de entrada (input): rótulo visível <label> permanentemente associado pelo atributo 'for', texto de ajuda instrutivo, marcação de campo obrigatório e mensagem de validação de erro contextual com sugestão de correção.",
+        "elements": "Mockup explodido de input com setas numeradas apontando para cada requisito de acessibilidade.",
+        "palette": "Design de formulário moderno, limpo, alinhado ao padrão Governo Digital.",
+        "guidelines": "Evitar uso exclusivo de placeholder como único rótulo."
+    },
+    12: {
+        "title": "O Atributo 'alt' no Leitor de Tela — Imagens Informativas",
+        "topic": "6.1 Imagens informativas",
+        "description": "Ilustração do funcionamento da tecnologia assistiva: uma imagem de um atendimento ao público da Prefeitura do Rio sendo interpretada por um leitor de tela (NVDA/TalkBack), que sintetiza a fala com base no atributo alt descritivo.",
+        "elements": "Foto/desenho com balão de fala sonoro contendo a descrição textual acessível.",
+        "palette": "Cores quentes e acolhedoras para o atendimento humano, tons de azul para o sintetizador.",
+        "guidelines": "Ressaltar a concisão (100 a 150 caracteres) e a riqueza contextual da descrição."
+    },
+    13: {
+        "title": "Texto Real em HTML/CSS vs. Texto Embutido em Imagem Rasterizada",
+        "topic": "6.4 Imagens com texto",
+        "description": "Comparativo ilustrado: Banner promocional com texto 'achatado' dentro do arquivo de imagem (perda de qualidade ao ampliar, invisível para leitores de tela) versus Banner com imagem de fundo estilizada e texto real renderizado via HTML e CSS.",
+        "elements": "Simulação de zoom 200%: lado esquerdo borrado/pixelado; lado direito 100% nítido, selecionável e responsivo.",
+        "palette": "Contraste forte entre a imagem e as caixas de texto.",
+        "guidelines": "Destacar a preservação de nitidez em telas de alta densidade (Retina/OLED)."
+    },
+    14: {
+        "title": "Estrutura Semântica de Tabelas de Dados",
+        "topic": "6.8 Tabelas",
+        "description": "Diagrama de uma tabela acessível evidenciando a marcação de <caption> (título resumido da tabela), cabeçalhos de coluna <th> com scope='col', cabeçalhos de linha com scope='row' e células de dados <td>.",
+        "elements": "Tabela tridimensional ou explodida com linhas de conexão demonstrando como o leitor de tela relaciona cada célula ao seu cabeçalho correspondente.",
+        "palette": "Cabeçalhos em azul escuro (#002B49) e linhas zebradas suaves.",
+        "guidelines": "Mostrar a lógica de leitura horizontal e vertical para leitores de tela."
+    },
+    15: {
+        "title": "Árvore de Hierarquia Semântica de Cabeçalhos (H1 a H4)",
+        "topic": "7.1 Cabeçalhos",
+        "description": "Diagrama em árvore mostrando a correta ordenação dos títulos em um portal: H1 (único, tema principal) -> H2 (capítulos/seções) -> H3 (subtópicos) -> H4 (detalhes). Alerta visual contra a prática incorreta de pular níveis (ex: H1 direto para H3).",
+        "elements": "Organograma hierárquico com nós conectados e ícones de marcação semântica.",
+        "palette": "Gradiente estruturado de azuis da Prefeitura do Rio, do mais escuro (H1) ao mais claro (H4).",
+        "guidelines": "Excelente guia rápido de arquitetura da informação para criadores de conteúdo."
+    },
+    16: {
+        "title": "Regiões Semânticas e Pontos de Referência (Landmarks HTML5)",
+        "topic": "7.4 Conteúdo complementar",
+        "description": "Wireframe de uma página web destacando as principais regiões semânticas: <header> (topo/banner), <nav> (navegação/menus), <main> (conteúdo principal único), <aside> (complementar/lateral) e <footer> (rodapé institucional).",
+        "elements": "Esquema visual de página web com blocos codificados por cor e etiquetas de código semântico.",
+        "palette": "Paleta de layout suave com contornos pontilhados em azul e ciano.",
+        "guidelines": "Facilita o entendimento de como pessoas cegas saltam rapidamente entre seções da página."
+    },
+    17: {
+        "title": "Indicador de Foco Visível para Navegação por Teclado",
+        "topic": "8.1 Navegação por teclado",
+        "description": "Demonstração de acessibilidade motora e visual: elemento interativo (botão ou link) recebendo foco pelo teclado (tecla Tab) com anel de destaque (:focus-visible) duplo e de alto contraste. Comparação com o erro comum de remover o contorno com 'outline: none'.",
+        "elements": "Simulação de botão em 3 estados: Normal, Hover (mouse) e Foco Ativo pelo Teclado com anel iluminado de 3px.",
+        "palette": "Botão em azul royal com anel de foco em ciano vívido (#00C0F3) e offset branco.",
+        "guidelines": "Requisito indispensável para usuários que utilizam teclado, switches ou comando de voz."
+    },
+    18: {
+        "title": "Reflow Responsivo — Adaptação Fluida a 320px sem Rolagem Horizontal",
+        "topic": "9.3 Design para diferentes tamanhos de viewport",
+        "description": "Ilustração do critério WCAG 1.4.10 (Reflow): o mesmo portal exibido em tela de Desktop (1280px) com múltiplas colunas e adaptado fluidamente para tela mobile estreita (320px de largura) ou zoom de 400%, sem perda de conteúdo e sem necessidade de barra de rolagem horizontal.",
+        "elements": "Dois dispositivos lado a lado (Monitor vs Smartphone compacto) mostrando o rearranjo vertical natural dos blocos de conteúdo.",
+        "palette": "Fundos claros com blocos de texto e botões redimensionados com área de toque mínima de 44x44px.",
+        "guidelines": "Destacar a importância do design mobile-first e da tipografia responsiva com unidades relativas."
+    }
+}
+
 def clean_inline_formatting(text):
     """Converte formatação inline básica de markdown para HTML seguro."""
     # Remove marcas de títulos residuais no meio do parágrafo (ex: 1) #### **Cegueira**)
     text = re.sub(r'#{2,}\s*', '', text)
+
+    # Converte tags HTML com escape do Google Docs (ex: \<fieldset\>, \<legend\>, \`\<li\>\`) para <code>&lt;tag&gt;</code>
+    text = re.sub(r'\\`?\\<([a-zA-Z0-9_-]+)\\>\\`?', r'<code>&lt;\1&gt;</code>', text)
 
     # Links especiais do Google Docs: <<https://...>> ou [texto](url)
     text = re.sub(r'\\<\\<\[?(https?://[^\]>\s]+)\]?\\>\\>', r'<a href="\1" target="_blank" rel="noopener noreferrer">\1</a>', text)
@@ -134,19 +284,75 @@ def parse_markdown(md_content, images_map):
             footnotes[fn_id] = clean_inline_formatting(fn_text)
             continue
             
-        # Imagens puras na linha (mesmo que com prefixo ###, **, etc., ex: ### **![][image5]** ou **![][image7]![][image8]**)
-        img_matches = list(re.finditer(r'!\[(.*?)\]\[(image\d+)\]', line))
+        # Bloco de Arte / Caixa de Imagem personalizada
+        if line.startswith("> **[ESPAÇO PARA ILUSTRAÇÃO") or line.startswith("> **[Arte") or line.startswith("> **[ARTE"):
+            art_num_match = re.search(r'ARTE\s+(\d+)', line, re.IGNORECASE)
+            art_id = int(art_num_match.group(1)) if art_num_match else 1
+            art_lines = [line]
+            i += 1
+            while i < total_lines and lines[i].strip().startswith(">"):
+                art_lines.append(lines[i].strip())
+                i += 1
+            
+            block_text = "\n".join(art_lines)
+            title_m = re.search(r'>\s*\*\*Título:\*\*\s*(.*)', block_text)
+            desc_m = re.search(r'>\s*\*\*Descrição da Arte:\*\*\s*(.*)', block_text)
+            elem_m = re.search(r'>\s*\*\*Elementos Visuais:\*\*\s*(.*)', block_text)
+            pal_m = re.search(r'>\s*\*\*Paleta Sugerida:\*\*\s*(.*)', block_text)
+            guide_m = re.search(r'>\s*\*\*Diretriz de Acessibilidade:\*\*\s*(.*)', block_text)
+            
+            spec_fallback = ART_SPECS.get(art_id, {})
+            art_block = {
+                "type": "art_card",
+                "id": f"arte-{art_id}",
+                "num": art_id,
+                "title": title_m.group(1).strip() if title_m else spec_fallback.get("title", f"Ilustração {art_id}"),
+                "desc": desc_m.group(1).strip() if desc_m else spec_fallback.get("description", ""),
+                "elements": elem_m.group(1).strip() if elem_m else spec_fallback.get("elements", ""),
+                "palette": pal_m.group(1).strip() if pal_m else spec_fallback.get("palette", ""),
+                "guidelines": guide_m.group(1).strip() if guide_m else spec_fallback.get("guidelines", "")
+            }
+            target = current_topic or current_subsection or current_chapter
+            if target:
+                target["content_blocks"].append(art_block)
+            continue
+
+        # Bloco de código delimitado (``` ou ```html)
+        if line.startswith("```"):
+            lang = line[3:].strip() or "html"
+            code_lines = []
+            i += 1
+            while i < total_lines and not lines[i].strip().startswith("```"):
+                code_lines.append(lines[i])
+                i += 1
+            i += 1  # Pula fechamento ```
+            code_content = "\n".join(code_lines)
+            block = {
+                "type": "code",
+                "lang": lang,
+                "code": code_content
+            }
+            target = current_topic or current_subsection or current_chapter
+            if target:
+                target["content_blocks"].append(block)
+            continue
+
+        # Imagens residuais na linha: converte para art_card
+        img_matches = list(re.finditer(r'!\[(.*?)\]\[(image(\d+))\]', line))
         line_clean_for_img = re.sub(r'#|\*|_|\s|!\[.*?\]\[image\d+\]', '', line)
         if img_matches and len(line_clean_for_img) == 0:
             for match in img_matches:
-                alt_text = match.group(1).strip()
-                img_id = match.group(2)
-                src = images_map.get(img_id, f"assets/images/{img_id}.png")
-                final_alt = alt_text or DEFAULT_ALT_TEXTS.get(img_id, f"Gráfico e infográfico do Guia de Acessibilidade ({img_id})")
+                img_num = int(match.group(3))
+                spec = ART_SPECS.get(img_num, {})
                 block = {
-                    "type": "figure",
-                    "src": src,
-                    "alt": final_alt
+                    "type": "art_card",
+                    "id": f"arte-{img_num}",
+                    "num": img_num,
+                    "title": spec.get("title", f"Ilustração {img_num}"),
+                    "desc": spec.get("description", ""),
+                    "elements": spec.get("elements", ""),
+                    "palette": spec.get("palette", ""),
+                    "guidelines": spec.get("guidelines", "")
                 }
                 target = current_topic or current_subsection or current_chapter
                 if target:
@@ -257,17 +463,20 @@ def parse_markdown(md_content, images_map):
                 i += 1
                 continue
             
-        # Imagens residuais no meio de texto: ![][imageX]
+        # Imagens residuais no meio de texto: ![][imageX] -> converte para art_card
         if img_matches:
             for match in img_matches:
-                alt_text = match.group(1).strip()
-                img_id = match.group(2)
-                src = images_map.get(img_id, f"assets/images/{img_id}.png")
-                final_alt = alt_text or DEFAULT_ALT_TEXTS.get(img_id, f"Gráfico e infográfico do Guia de Acessibilidade ({img_id})")
+                img_num = int(match.group(3))
+                spec = ART_SPECS.get(img_num, {})
                 block = {
-                    "type": "figure",
-                    "src": src,
-                    "alt": final_alt
+                    "type": "art_card",
+                    "id": f"arte-{img_num}",
+                    "num": img_num,
+                    "title": spec.get("title", f"Ilustração {img_num}"),
+                    "desc": spec.get("description", ""),
+                    "elements": spec.get("elements", ""),
+                    "palette": spec.get("palette", ""),
+                    "guidelines": spec.get("guidelines", "")
                 }
                 target = current_topic or current_subsection or current_chapter
                 if target:
@@ -443,7 +652,63 @@ def render_block(block, indent="  "):
             return f'{indent}<div class="callout callout-success">\n{indent}  <div class="callout-title">Recomendação</div>\n{indent}  <p>{text}</p>\n{indent}</div>'
         elif text.startswith("<strong>Lei") or "13.146" in text and "Estatuto" in text:
             return f'{indent}<div class="callout callout-law">\n{indent}  <div class="callout-title">Marco Legal</div>\n{indent}  <p>{text}</p>\n{indent}</div>'
+        elif text.startswith("<strong>Incorreta:</strong>") or text.startswith("Incorreta:"):
+            return f'{indent}<div class="code-status-label status-incorrect"><span class="badge-status bad">❌ Incorreta</span> Descrição vaga ou ausência de contexto:</div>'
+        elif text.startswith("<strong>Correta:</strong>") or text.startswith("Correta:"):
+            return f'{indent}<div class="code-status-label status-correct"><span class="badge-status good">✅ Correta</span> Descritiva, contextual e informativa:</div>'
         return f'{indent}<p>{text}</p>'
+        
+    elif b_type == "art_card":
+        num_str = f"{block['num']:02d}" if block['num'] < 10 else f"{block['num']}"
+        title = block["title"]
+        desc = block["desc"]
+        elem = block["elements"]
+        pal = block["palette"]
+        guide = block["guidelines"]
+        art_id = block["id"]
+        
+        specs_html = []
+        if elem:
+            specs_html.append(f'{indent}    <div class="art-spec-pill"><span class="spec-label">Elementos Visuais:</span> {elem}</div>')
+        if pal:
+            specs_html.append(f'{indent}    <div class="art-spec-pill"><span class="spec-label">Paleta Sugerida:</span> {pal}</div>')
+        if guide:
+            specs_html.append(f'{indent}    <div class="art-spec-pill"><span class="spec-label">Diretriz de Acessibilidade:</span> {guide}</div>')
+        specs_str = "\n".join(specs_html)
+        
+        return (f'{indent}<figure class="art-placeholder-card" id="{art_id}" aria-label="Espaço para ilustração: {title}">\n'
+                f'{indent}  <div class="art-card-header">\n'
+                f'{indent}    <div class="art-badge">\n'
+                f'{indent}      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>\n'
+                f'{indent}      <span>Espaço para Ilustração • Arte {num_str}</span>\n'
+                f'{indent}    </div>\n'
+                f'{indent}    <span class="art-status-badge">Produção Manual</span>\n'
+                f'{indent}  </div>\n'
+                f'{indent}  <div class="art-card-content">\n'
+                f'{indent}    <h4 class="art-card-title">{title}</h4>\n'
+                f'{indent}    <div class="art-card-desc">\n'
+                f'{indent}      <p><strong>Descrição da Arte:</strong> {desc}</p>\n'
+                f'{indent}    </div>\n'
+                f'{indent}    <div class="art-card-specs">\n'
+                f'{specs_str}\n'
+                f'{indent}    </div>\n'
+                f'{indent}  </div>\n'
+                f'{indent}</figure>')
+
+    elif b_type == "code":
+        lang = block.get("lang", "html").upper()
+        code_raw = block.get("code", "")
+        code_escaped = (code_raw
+                        .replace("&", "&amp;")
+                        .replace("<", "&lt;")
+                        .replace(">", "&gt;"))
+        return (f'{indent}<div class="code-card" role="region" aria-label="Exemplo de código {lang}">\n'
+                f'{indent}  <div class="code-header">\n'
+                f'{indent}    <span>Exemplo de Código ({lang})</span>\n'
+                f'{indent}    <button type="button" class="code-copy-btn" onclick="navigator.clipboard.writeText(this.closest(\'.code-card\').querySelector(\'code\').innerText).then(()=>{{this.innerText=\'Copiado!\';setTimeout(()=>this.innerText=\'Copiar\',2000)}})" aria-label="Copiar código HTML">Copiar</button>\n'
+                f'{indent}  </div>\n'
+                f'{indent}  <pre><code class="language-{lang.lower()}">{code_escaped}</code></pre>\n'
+                f'{indent}</div>')
         
     elif b_type == "figure":
         src = block["src"]
@@ -506,6 +771,10 @@ def generate_keywords(title, blocks):
             text = re.sub(r'<[^>]+>', ' ', b["text"].lower())
             words.extend([w for w in text.split() if len(w) > 4][:8])
             break
+        elif b["type"] == "art_card":
+            text = re.sub(r'<[^>]+>', ' ', (b["title"] + " " + b["desc"]).lower())
+            words.extend([w for w in text.split() if len(w) > 4][:8])
+            break
     # Remove duplicatas preservando ordem
     return " ".join(dict.fromkeys(words[:12]))
 
@@ -513,6 +782,11 @@ def generate_snippet(blocks):
     for b in blocks:
         if b["type"] == "p":
             clean = re.sub(r'<[^>]+>', '', b["text"])
+            if len(clean) > 160:
+                return clean[:157] + "..."
+            return clean
+        elif b["type"] == "art_card":
+            clean = f"Arte {b['num']}: {b['title']} - {b['desc']}"
             if len(clean) > 160:
                 return clean[:157] + "..."
             return clean

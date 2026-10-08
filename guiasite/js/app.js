@@ -201,8 +201,8 @@ const searchDatabase = [
     "title": "Contraste textual",
     "category": "Apresentação d",
     "categoryClass": "category-estrutura",
-    "keywords": "contraste textual",
-    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
+    "keywords": "contraste textual mínimo diretrizes (4.5:1 demonstração visual relações",
+    "snippet": "Arte 9: Contraste Textual Mínimo — Diretrizes WCAG AA (4.5:1 e 3:1) - Demonstração visual das relações mínimas de contraste exigidas pela WCAG 2.2 Nível AA: ..."
   },
   {
     "id": "contraste-nao-textual",
@@ -217,8 +217,8 @@ const searchDatabase = [
     "title": "Uso de cores",
     "category": "Apresentação d",
     "categoryClass": "category-estrutura",
-    "keywords": "uso de cores",
-    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
+    "keywords": "uso de cores comunicação multissensorial informação exemplo transmitir mensagens essenciais, alertas",
+    "snippet": "Arte 10: Comunicação Multissensorial — Informação Além da Cor - Exemplo de como transmitir mensagens essenciais, alertas de sistema e gráficos utilizando cor..."
   },
   {
     "id": "indicacao-de-link",
@@ -273,8 +273,8 @@ const searchDatabase = [
     "title": "Imagens com texto",
     "category": "Apresentação d",
     "categoryClass": "category-estrutura",
-    "keywords": "imagens com texto",
-    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
+    "keywords": "imagens com texto html/css embutido imagem rasterizada comparativo ilustrado:",
+    "snippet": "Arte 13: Texto Real em HTML/CSS vs. Texto Embutido em Imagem Rasterizada - Comparativo ilustrado: Banner promocional com texto 'achatado' dentro do arquivo d..."
   },
   {
     "id": "imagens-complexas",
@@ -305,8 +305,8 @@ const searchDatabase = [
     "title": "Tabelas",
     "category": "Apresentação d",
     "categoryClass": "category-estrutura",
-    "keywords": "tabelas apresentação conteúdo vídeo:",
-    "snippet": "Apresentação do conteúdo em vídeo:"
+    "keywords": "tabelas estrutura semântica dados diagrama tabela acessível evidenciando",
+    "snippet": "Arte 14: Estrutura Semântica de Tabelas de Dados - Diagrama de uma tabela acessível evidenciando a marcação de <caption> (título resumido da tabela), cabeçal..."
   },
   {
     "id": "orientacoes-gerais",
@@ -377,8 +377,8 @@ const searchDatabase = [
     "title": "Conteúdo complementar",
     "category": "Estrutura da p",
     "categoryClass": "category-estrutura",
-    "keywords": "conteúdo complementar menu:",
-    "snippet": "5. Menu:"
+    "keywords": "conteúdo complementar regiões semânticas pontos referência (landmarks html5) wireframe página",
+    "snippet": "Arte 16: Regiões Semânticas e Pontos de Referência (Landmarks HTML5) - Wireframe de uma página web destacando as principais regiões semânticas: <header> (top..."
   },
   {
     "id": "carrossel",
@@ -393,8 +393,8 @@ const searchDatabase = [
     "title": "Navegação por teclado",
     "category": "Navegabilidade",
     "categoryClass": "category-estrutura",
-    "keywords": "navegação por teclado",
-    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
+    "keywords": "navegação por teclado indicador visível demonstração acessibilidade motora visual:",
+    "snippet": "Arte 17: Indicador de Foco Visível para Navegação por Teclado - Demonstração de acessibilidade motora e visual: elemento interativo (botão ou link) recebendo..."
   },
   {
     "id": "tempo-de-navegacao-ajustavel",
@@ -433,8 +433,8 @@ const searchDatabase = [
     "title": "Design para diferentes tamanhos de viewport",
     "category": "Outras dicas d",
     "categoryClass": "category-estrutura",
-    "keywords": "design para diferentes tamanhos de viewport",
-    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
+    "keywords": "design para diferentes tamanhos de viewport reflow responsivo adaptação fluida 320px rolagem",
+    "snippet": "Arte 18: Reflow Responsivo — Adaptação Fluida a 320px sem Rolagem Horizontal - Ilustração do critério WCAG 1.4.10 (Reflow): o mesmo portal exibido em tela de..."
   }
 ];
 

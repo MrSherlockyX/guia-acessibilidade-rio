@@ -2278,6 +2278,273 @@ body.high-contrast .sidebar-toc-backdrop {
   background-color: rgba(0, 0, 0, 0.92) !important;
 }
 
+/* ==========================================================================
+   CAIXAS DE ARTE / ILUSTRAÇÃO (ESPAÇO RESERVADO PARA PRODUÇÃO MANUAL)
+   ========================================================================== */
+.art-placeholder-card {
+  margin: 2rem 0;
+  border: 2px dashed #004A80;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, #F0F7FF 0%, #FFFFFF 100%);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.art-placeholder-card:hover {
+  border-color: #00C0F3;
+  box-shadow: var(--shadow-md);
+}
+
+.art-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  background-color: #E0F2FE;
+  border-bottom: 1px solid #BAE6FD;
+}
+
+.art-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #004A80;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.art-status-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  background-color: #FEF3C7;
+  color: #92400E;
+  border: 1px solid #FDE68A;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.art-card-content {
+  padding: 1.5rem;
+}
+
+.art-card-title {
+  margin: 0 0 0.85rem 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #002B49;
+  line-height: 1.35;
+}
+
+.art-card-desc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-main);
+  margin-bottom: 1.25rem;
+}
+
+.art-card-desc p {
+  margin: 0;
+}
+
+.art-card-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding-top: 1rem;
+  border-top: 1px solid #E2E8F0;
+}
+
+.art-spec-pill {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  background-color: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+}
+
+.spec-label {
+  font-weight: 700;
+  color: #004A80;
+  margin-right: 0.35rem;
+}
+
+/* RÓTULOS DE STATUS PARA CÓDIGOS COMPARATIVOS */
+.code-status-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.status-incorrect {
+  color: #DC2626;
+}
+
+.status-correct {
+  color: #16A34A;
+}
+
+.badge-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.badge-status.bad {
+  background-color: #FEE2E2;
+  color: #991B1B;
+  border: 1px solid #FCA5A5;
+}
+
+.badge-status.good {
+  background-color: #DCFCE7;
+  color: #166534;
+  border: 1px solid #86EFAC;
+}
+
+/* MODO ESCURO - ARTES E CÓDIGOS */
+body.dark-mode .art-placeholder-card {
+  border-color: #0284C7;
+  background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
+}
+
+body.dark-mode .art-card-header {
+  background-color: #1E293B;
+  border-bottom-color: #334155;
+}
+
+body.dark-mode .art-badge {
+  color: #38BDF8;
+}
+
+body.dark-mode .art-status-badge {
+  background-color: #78350F;
+  color: #FDE68A;
+  border-color: #92400E;
+}
+
+body.dark-mode .art-card-title {
+  color: #F8FAFC;
+}
+
+body.dark-mode .art-card-desc {
+  color: #E2E8F0;
+}
+
+body.dark-mode .art-card-specs {
+  border-top-color: #334155;
+}
+
+body.dark-mode .art-spec-pill {
+  background-color: #0F172A;
+  border-color: #334155;
+  color: #CBD5E1;
+}
+
+body.dark-mode .spec-label {
+  color: #38BDF8;
+}
+
+body.dark-mode .status-incorrect {
+  color: #F87171;
+}
+
+body.dark-mode .status-correct {
+  color: #4ADE80;
+}
+
+body.dark-mode .badge-status.bad {
+  background-color: #450A0A;
+  color: #FCA5A5;
+  border-color: #7F1D1D;
+}
+
+body.dark-mode .badge-status.good {
+  background-color: #052E16;
+  color: #86EFAC;
+  border-color: #14532D;
+}
+
+/* ALTO CONTRASTE - ARTES E CÓDIGOS */
+body.high-contrast .art-placeholder-card {
+  border: 2px dashed #FFFF00 !important;
+  background: #000000 !important;
+}
+
+body.high-contrast .art-card-header {
+  background-color: #000000 !important;
+  border-bottom: 2px solid #FFFF00 !important;
+}
+
+body.high-contrast .art-badge {
+  color: #FFFF00 !important;
+}
+
+body.high-contrast .art-status-badge {
+  background-color: #FFFF00 !important;
+  color: #000000 !important;
+  border: none !important;
+}
+
+body.high-contrast .art-card-title {
+  color: #FFFFFF !important;
+}
+
+body.high-contrast .art-card-desc {
+  color: #FFFFFF !important;
+}
+
+body.high-contrast .art-card-specs {
+  border-top: 1px solid #FFFF00 !important;
+}
+
+body.high-contrast .art-spec-pill {
+  background-color: #000000 !important;
+  border: 1px solid #FFFF00 !important;
+  color: #FFFFFF !important;
+}
+
+body.high-contrast .spec-label {
+  color: #00FFFF !important;
+}
+
+body.high-contrast .status-incorrect {
+  color: #FF6666 !important;
+}
+
+body.high-contrast .status-correct {
+  color: #00FF66 !important;
+}
+
+body.high-contrast .badge-status.bad {
+  background-color: #000000 !important;
+  color: #FF6666 !important;
+  border: 1px solid #FF6666 !important;
+}
+
+body.high-contrast .badge-status.good {
+  background-color: #000000 !important;
+  color: #00FF66 !important;
+  border: 1px solid #00FF66 !important;
+}
+
 /* --- IMPRESSÃO ACESSÍVEL --- */
 @media print {
   .skip-links,
