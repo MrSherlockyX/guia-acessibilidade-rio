@@ -2,15 +2,15 @@
 
 ## Introdução
 
-Em meio a um cenário de avanços tecnológicos e de transformação digital, torna-se urgente a preocupação e o compromisso da gestão pública com a inclusão digital de todos os cidadãos. Sem essa inclusão, a transformação digital torna-se mais uma barreira do que um facilitador. Por outro lado, uma transformação digital focada no ser humano usa a tecnologia para criar uma sociedade mais igualitária, garantindo acesso a serviços essenciais, diminuindo a burocracia, aumentando a eficiência, a transparência e a cidadania ativa.
-
-A implementação da acessibilidade digital promove o acesso igualitário aos conteúdos e serviços públicos, garantindo que os usuários possam navegar com autonomia e compreender com facilidade seu conteúdo. Embora o foco deste guia seja garantir o acesso de pessoas com diversos tipos de deficiência, essa inclusão acaba sendo benéfica para toda a sociedade, pois também impacta outros grupos com baixa adaptação digital, como pessoas idosas ou com baixo nível de escolaridade, por exemplo.
-
-A melhoria da acessibilidade e da usabilidade de portais não impacta negativamente quem não necessita delas, mas representa uma enorme diferença para todos aqueles que, muitas vezes, se vêem impossibilitados de acessar serviços apenas pelo fato de estarem em formato digital.   
-
-Visando estabelecer esse compromisso com a população carioca, a Prefeitura da Cidade do Rio de Janeiro, a partir do trabalho da Subsecretaria de Transformação Digital e Cidades Inteligentes, cria o *Guia de Boas Práticas de Acessibilidade Digital*, que tem como objetivo unir transformação digital e inclusão, trazendo um compilado de diretrizes, critérios práticos e tutoriais que visam orientar Secretarias e demais Órgãos municipais a adequarem seus portais destinados aos cidadãos.
-
-Reconhecemos as dificuldades intrínsecas à empreitada, mas reforçamos que mudanças dependem de engajamento e proatividade, mesmo que ocorram de forma gradual. Olhar para acessibilidade e usabilidade de nossos portais é também enxergar que todo e qualquer cidadão carioca precisa ter seus direitos assegurados e isso precisa ser prioridade para a gestão pública.
+Em meio a um cenário de avanços tecnológicos e de transformação digital, torna-se urgente o compromisso da gestão pública com a inclusão digital de todos os cidadãos, porque sem essa inclusão, a transformação digital torna-se mais uma barreira do que um facilitador. Por outro lado, uma transformação digital focada no cidadão, utiliza a tecnologia para criar uma sociedade mais igualitária, garantindo acesso a serviços essenciais, diminuindo a burocracia, aumentando a eficiência, a transparência e a cidadania ativa.  
+A implementação da acessibilidade digital promove o acesso igualitário aos conteúdos e serviços públicos, garantindo que os usuários possam navegar com autonomia e compreender com facilidade seu conteúdo.   
+Embora o foco deste guia seja garantir o acesso de pessoas com diversos tipos de deficiência, essa inclusão acaba sendo benéfica para toda a sociedade, pois também impacta outros grupos com baixa adaptação digital, como pessoas idosas, com deficiências temporárias ou com baixo nível de escolaridade, por exemplo.  
+A melhoria da acessibilidade e da usabilidade de portais não impacta negativamente quem não necessita delas, mas representa uma enorme diferença para todos aqueles que, muitas vezes, se vêem impossibilitados de acessar serviços apenas pelo fato de estarem em formato digital.  
+Visando estabelecer esse compromisso com a população, a Prefeitura da Cidade do Rio de Janeiro criou o *Guia de Boas Práticas de Acessibilidade Digital*, que tem como objetivo unir **transformação digital** e **inclusão**, trazendo um compilado de diretrizes, critérios práticos e tutoriais que visam orientar Secretarias e demais Órgãos Municipais a adequarem seus portais destinados aos cidadãos.  
+Reconhecemos as dificuldades intrínsecas à empreitada, mas reforçamos que mudanças dependem de engajamento e proatividade. Neste sentido, o *Guia* irá funcionar como um norteador de melhorias. A ideia é que as próprias secretarias e órgãos tenham autonomia para revisar sites já existentes, sendo capazes de avaliar o grau de dificuldade que oferecem para pessoas com deficiência e fazer os devidos ajustes. E, em caso de sites novos, o Guia orienta para que ele já seja criado com design inclusivo.  
+Nosso planejamento é que as mudanças ocorram de forma gradual e possam ser avaliadas anualmente a partir de um Índice de Transformação Digital de Serviços, que conta com perguntas exclusivas para acessibilidade. Os dados deste Índice estarão disponíveis para que a população acompanhe as melhorias que vem ocorrendo nos serviços públicos digitais.   
+Neste sentido, a acessibilidade digital deve ser compreendida não apenas como uma adequação técnica dos portais, mas como parte de uma política pública orientada à garantia de direitos. A adoção de práticas acessíveis desde o planejamento, desenvolvimento e manutenção dos serviços digitais contribui para reduzir barreiras, ampliar a autonomia dos cidadãos e fortalecer a relação entre a população e o poder público. Trata-se, portanto, de incorporar a perspectiva da acessibilidade à própria cultura de transformação digital, reconhecendo a diversidade dos usuários como elemento fundamental para a construção de serviços públicos mais inclusivos, eficientes e centrados nas pessoas.  
+A elaboração do *Guia de Boas Práticas de Acessibilidade Digital* representa, assim, uma iniciativa para apoiar esse processo de transformação e fortalecer a capacidade dos órgãos municipais de identificar e enfrentar barreiras digitais. Mais do que estabelecer um conjunto de recomendações, o Guia busca estimular uma mudança contínua na forma de planejar, desenvolver e avaliar os serviços públicos digitais, acompanhada por indicadores que permitam monitorar seus avanços. Dessa forma, a acessibilidade passa a integrar de maneira permanente a agenda de transformação digital do Município, contribuindo para que os serviços públicos sejam cada vez mais acessíveis e para que o exercício da cidadania não seja limitado pela forma como esses serviços são disponibilizados.
 
 ## Compreendendo a acessibilidade
 
@@ -63,8 +63,7 @@ No Censo 2022, vemos um cenário diferente. Embora o IBGE tenha mantido a utiliz
 > **Paleta Sugerida:** Fundo neutro claro, bordas estruturadas em azul ardósia (#9DBDCE) e ícones semânticos.  
 > **Diretriz de Acessibilidade:** Tipografia legível sem serifa; ícones com rótulos de texto explícitos.
 
-Além da mudança metodológica em relação aos tipos e graus de severidade das deficiências, o IBGE também alterou a forma de aplicação das questões. Ele formulou dois tipos de questionários, um estendido, que constavam as perguntas sobre deficiências, e outro básico, que não constava, favorecendo casos de subnotificação. Prova disto é que do Censo de 2010 para o de 2022, houve uma queda considerável do número de pessoas com deficiência. **Somente na cidade do Rio de Janeiro, o percentual de pessoas com deficiência caiu de 24,7% para 6,9%.** 
-
+Além da mudança metodológica em relação aos tipos e graus de severidade das deficiências, o IBGE também alterou a forma de aplicação das questões. Ele formulou dois tipos de questionários, um estendido, que constavam as perguntas sobre deficiências, e outro básico, que não constava, favorecendo casos de subnotificação. Prova disto é que do Censo de 2010 para o de 2022, houve uma queda considerável do número de pessoas com deficiência. 
 > **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 04]**  
 > **Título:** Comparativo Censo 2010 vs. 2022 — A Queda Estatística e a Subnotificação no Rio  
 > **Descrição da Arte:** Gráfico de impacto mostrando a discrepância estatística decorrente da mudança de metodologia: queda do percentual de pessoas com deficiência na Cidade do Rio de Janeiro de 24,7% (2010) para 6,9% (2022), e cerca de 30 milhões a menos no Brasil. Alerta para o risco de subnotificação em políticas públicas frente ao envelhecimento populacional.  
@@ -72,13 +71,16 @@ Além da mudança metodológica em relação aos tipos e graus de severidade das
 > **Paleta Sugerida:** Azul marinho (#002B49) para 2010, cinza/azul suave para 2022 e linha de alerta âmbar (#92400E).  
 > **Diretriz de Acessibilidade:** Incluir nota explicativa clara de que a queda reflete mudança de cálculo e não redução real da população que necessita de acessibilidade.
 
+De acordo com o resultado da pesquisa, em 2022 o Brasil contava com **203.080.0756 habitantes**, dentre os quais **18,6 milhões de pessoas com algum tipo de deficiência**, isto representa 8,9% da população brasileira. Além disso, a pesquisa também aponta para 8,2% de pessoas com deficiência na Região Sudeste, 8,1% no Estado do Rio de Janeiro e 6,9% na cidade do Rio de Janeiro.  
 A nível nacional, a discrepância entre os censos era de cerca de **30 milhões de pessoas a menos**, segundo reportagem do Jornal Folha de São Paulo[^5]. Quando questionado, o IBGE afirmou que os números não eram comparáveis devido às mudanças metodológicas. Ainda assim, o caso serve como alerta para a subnotificação de casos que não sejam severos e permanentes, excluindo uma parcela importante da população que também deve ser considerada na hora de pensarmos políticas públicas de acessibilidade. 
 
 A atenção a esta parcela da população fica ainda mais evidente quando nos deparamos com o fato de que o envelhecimento está diretamente ligado ao aumento de deficiências. Segundo a PNAD Contínua 2022[^6], a partir dos 40 anos de idade, existe um salto significativo no que diz respeito ao aumento de deficiências adquiridas, que se torna ainda maior a partir dos 60 anos.
 
 Isso é especialmente delicado em relação à cidade do Rio de Janeiro, pois ela já é a segunda capital no ranking nacional de envelhecimento populacional[^7] (Censo IBGE 2022), perdendo apenas para Porto Alegre. Além disso, atualmente, o Rio de Janeiro é o Estado com menor taxa de fecundidade, o que favorece o envelhecimento populacional. O IBGE prevê que, a partir de 2028, a população do Estado do RJ comece a encolher[^8], ficando com mais pessoas acima dos 60 anos do que jovens abaixo dos 14 anos. Isso exige adaptações urgentes em áreas como saúde, assistência social e previdência, mas também novas formas de pensar o urbanismo, a mobilidade urbana, o acesso a serviços, à informação, ao lazer e à cultura. Afinal, toda a população tem direito à cidadania plena.
 
-Desta forma, vemos que garantir os direitos das pessoas com deficiências graves e severas acaba beneficiando uma ampla parcela da sociedade. Pessoas que apresentam deficiências mais brandas ou moderadas, sejam elas permanentes ou não, também precisam contar com uma cidade que esteja preparada para atendê-las. A **acessibilidade** e a **inclusão** geram um efeito cascata, impactando positivamente na qualidade de vida, na economia e no desenvolvimento social coletivo. 
+Assim sendo, vemos que a acessibilidade deve ser compreendida não apenas como uma resposta às necessidades de pessoas que já apresentam uma deficiência, mas como um princípio de planejamento capaz de antecipar diferentes condições e necessidades ao longo da vida. Uma cidade preparada para a diversidade de seus cidadãos amplia as possibilidades de participação social e reduz barreiras que, em diferentes momentos, podem afetar pessoas com deficiência, idosos, pessoas com limitações temporárias ou indivíduos que enfrentam dificuldades de acesso a serviços e informações. 
+
+Garantir os direitos das pessoas com deficiências graves e severas acaba beneficiando uma ampla parcela da sociedade. Pessoas que apresentam deficiências mais brandas ou moderadas, sejam elas permanentes ou não, também precisam contar com uma cidade que esteja preparada para atendê-las. A **acessibilidade** e a **inclusão** geram um efeito cascata, impactando positivamente na qualidade de vida, na economia e no desenvolvimento social coletivo. 
 
 ### Direitos das Pessoas com Deficiência
 
@@ -90,7 +92,7 @@ Em 2015, o Brasil instituiu a *Lei Brasileira de Inclusão da Pessoa com Defici�
 
 Dentre os direitos assegurados pela lei estão o **direito à vida, à saúde, ao trabalho, à cultura e ao lazer, à mobilidade e também direito de acesso à informação e comunicação**, que são essenciais para o exercício pleno da cidadania.
 
-Mas a garantia de direitos pressupõe uma concepção de acessibilidade que ultrapasse a simples eliminação de barreiras físicas, abrangendo os diferentes contextos nos quais as pessoas participam da vida em sociedade. E é justamente neste contexto que aparecem as sete dimensões da acessibilidade.
+A garantia de direitos pressupõe uma concepção de acessibilidade que ultrapasse a simples eliminação de barreiras físicas, abrangendo os diferentes contextos nos quais as pessoas participam da vida em sociedade. E é justamente neste contexto que aparecem as sete dimensões da acessibilidade.
 
 ### Tipos de Acessibilidade
 
@@ -98,11 +100,9 @@ Na *Lei Brasileira de Inclusão* acessibilidade  é definida como:
 
 (...) possibilidade e condição de alcance para utilização, com segurança e autonomia, de espaços, mobiliários, equipamentos urbanos, edificações, transportes, informação e comunicação, inclusive seus sistemas e tecnologias, bem como de outros serviços e instalações abertos ao público, de uso público ou privados de uso coletivo, tanto na zona urbana como na rural, por pessoa com deficiência ou com mobilidade reduzida[^11].
 
-Para garantir a autonomia das pessoas com deficiência, é imprescindível garantir acessibilidade que, segundo o autor Romeu Kazumi Sassaki, se divide em **sete dimensões[^12]:**
+Em contrapartida, as **barreiras** são todos os tipos de impeditivos a essa segurança e autonomia da pessoa com deficiência, podendo ser urbanísticas, arquitetônicas, nos transportes, nas comunicações/informações, na tecnologia e atitudinais. A fim de evitar ao máximo essas barreiras, o governo federal recomenda o uso de **desenhos universais**[^12], ou seja, projetar produtos, serviços e ambientes que possam ser utilizados por todas as pessoas, sem necessidade de adaptação. Mas, caso isso não seja possível, deve-se realizar os ajustes necessários para que todas as pessoas possam usufruir da forma mais equitativa possível.
 
-Em contrapartida, as **barreiras** são todos os tipos de impeditivos a essa segurança e autonomia da pessoa com deficiência, podendo ser urbanísticas, arquitetônicas, nos transportes, nas comunicações/informações, na tecnologia e atitudinais. A fim de evitar ao máximo essas barreiras, o governo federal recomenda o uso de **desenhos universais**[^13], ou seja, projetar produtos, serviços e ambientes que possam ser utilizados por todas as pessoas, sem necessidade de adaptação. Mas, caso isso não seja possível, deve-se realizar os ajustes necessários para que todas as pessoas possam usufruir da forma mais equitativa possível.
-
-O autor Romeu Kazumi Sassaki contribui para ampliar a compreensão sobre o tema, trazendo a acessibilidade em **sete dimensões[^14]:**
+O autor Romeu Kazumi Sassaki contribui para ampliar a compreensão sobre o tema, trazendo a acessibilidade em **sete dimensões[^13]:**
 
 > **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 05]**  
 > **Título:** As 7 Dimensões da Acessibilidade (Romeu Kazumi Sassaki)  
@@ -120,17 +120,17 @@ Deste modo, as dimensões de Sassaki contribuem para ampliar a compreensão da a
 
 Na *Lei Brasileira de Inclusão*, está prevista a acessibilidade digital, que é a eliminação de barreiras na Web. Ela determina que todo tipo de página web seja projetada de modo que todas as pessoas possam perceber, entender, navegar e interagir de maneira efetiva.
 
-É obrigatória a acessibilidade nos sítios da internet mantidos por empresas com sede ou representação comercial no País ou por órgãos de governo, para uso da pessoa com deficiência, garantindo-lhe acesso às informações disponíveis, conforme as melhores práticas e diretrizes de acessibilidade adotadas internacionalmente.[^15] 
+É obrigatória a acessibilidade nos sítios da internet mantidos por empresas com sede ou representação comercial no País ou por órgãos de governo, para uso da pessoa com deficiência, garantindo-lhe acesso às informações disponíveis, conforme as melhores práticas e diretrizes de acessibilidade adotadas internacionalmente.[^14] 
 
 Embora a lei afirme que também abarca empresas privadas com sede no Brasil, a acessibilidade digital é ainda mais urgente quando falamos de serviços públicos, pois sua ausência acaba ferindo princípios constitucionais como a igualdade (não discriminação e igualdade de condições), cidadania (pois deixa de ter acesso a direitos fundamentais) e legalidade (não estando em conformidade com Estatuto da Pessoa com Deficiência).
 
-No Brasil, ainda existem barreiras significativas à acessibilidade digital que vão muito além de simplesmente ter ou não acesso à internet. Uma pesquisa recente da [BigDataCorp](https://mwpt.com.br/metodologia-utilizada-no-estudo-de-acessibilidade-em-sites-ativos-brasil-2024/) em parceria com Movimento Web para Todos (WPT)[^16], realizada em 2024, analisou sites brasileiros quanto à facilidade de navegação para pessoas com deficiência. Para os testes, foram escolhidos como parâmetros: a acessibilidade de imagens, links e formulários, além de verificação de código HTML para conferir se estava de acordo com as especificações da W3C. 
+No Brasil, ainda existem barreiras significativas à acessibilidade digital que vão muito além de simplesmente ter ou não acesso à internet. Uma pesquisa recente da [BigDataCorp](https://mwpt.com.br/metodologia-utilizada-no-estudo-de-acessibilidade-em-sites-ativos-brasil-2024/) em parceria com Movimento Web para Todos (WPT)[^15], realizada em 2024, analisou sites brasileiros quanto à facilidade de navegação para pessoas com deficiência. Para os testes, foram escolhidos como parâmetros: a acessibilidade de imagens, links e formulários, além de verificação de código HTML para conferir se estava de acordo com as especificações da W3C. 
 
 Mais de 30 milhões de sites brasileiros, corporativos e privados, foram verificados. Os sites inativos foram desconsiderados nesta pesquisa, restando 26,3 milhões de sites nacionais.
 
 No que se refere aos resultados, apenas 2,42% dos sites tiveram sucesso em relação aos critérios do W3C no código HTML; 16,02% tinham acessibilidade de links; 42,83% possuíam descrição de imagens; e 50,41% possuíam formulários acessíveis. 
 
-O resultado mostra que 2,9% dos sites passaram sem erros nas verificações propostas. Isso significa que todas as páginas verificadas neste site passaram nos testes. Um número grande de sites registrou falha em ao menos uma parte dos testes (aproximadamente 97,13%).[^17]
+O resultado mostra que 2,9% dos sites passaram sem erros nas verificações propostas. Isso significa que todas as páginas verificadas neste site passaram nos testes. Um número grande de sites registrou falha em ao menos uma parte dos testes (aproximadamente 97,13%).[^16]
 
 **O mais impactante da pesquisa é o fato de 89,96% dos sites governamentais não atenderem aos critérios mínimos definidos pela pesquisa.**
 
@@ -142,13 +142,13 @@ Por outro lado, também temos um quadro de defasagem em relação ao uso de tecn
 
 ### Uso de Serviços Públicos Digitais
 
-O último levantamento do Banco Interamericano de Desenvolvimento (BID) sobre o uso de serviços digitais no Brasil[^18], publicado em 2025, evidencia que a disponibilidade de dispositivos e de conexão não significa, necessariamente, capacidade de utilização autônoma das tecnologias. 
+O último levantamento do Banco Interamericano de Desenvolvimento (BID) sobre o uso de serviços digitais no Brasil[^17], publicado em 2025, evidencia que a disponibilidade de dispositivos e de conexão não significa, necessariamente, capacidade de utilização autônoma das tecnologias. 
 
 Embora cerca de 94,2% dos entrevistados possuíssem telefone celular com acesso a dados móveis, alguns grupos, como pessoas idosas, pessoas com deficiência, indivíduos com baixa escolaridade e moradores de áreas rurais, ainda apresentavam defasagens significativas no uso da internet, incluindo percentuais de não utilização. Entre os principais fatores identificados estava a baixa adaptação digital, relacionada à dificuldade ou à falta de confiança para realizar determinadas atividades sem o auxílio de outra pessoa. 
 
-Tentando avaliar o grau de adaptação dos grupos, a pesquisa listava algumas tarefas rotineiras[^19], como instalar um aplicativo no celular, fazer uma busca por palavra-chave ou enviar um e-mail com anexo, e perguntava se a pessoa se sentia confiante de realizá-las.
+Tentando avaliar o grau de adaptação dos grupos, a pesquisa listava algumas tarefas rotineiras[^18], como instalar um aplicativo no celular, fazer uma busca por palavra-chave ou enviar um e-mail com anexo, e perguntava se a pessoa se sentia confiante de realizá-las.
 
-A pesquisa mostrou que a média de entrevistados que demonstrava autoconfiança[^20] para realizar atividades digitais sem ajuda de outra pessoa era de apenas 47,5%. “Essa confiança é ainda mais baixa entre pessoas com mais de 55 anos (24,0% das habilidades), indivíduos com ensino fundamental (26,7%), moradores de áreas rurais (36,6%) e pessoas com deficiência (24,2%)”[^21]. 
+A pesquisa mostrou que a média de entrevistados que demonstrava autoconfiança[^19] para realizar atividades digitais sem ajuda de outra pessoa era de apenas 47,5%. “Essa confiança é ainda mais baixa entre pessoas com mais de 55 anos (24,0% das habilidades), indivíduos com ensino fundamental (26,7%), moradores de áreas rurais (36,6%) e pessoas com deficiência (24,2%)”[^20]. 
 
 > **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 06]**  
 > **Título:** Pesquisa BID 2025 — Autoconfiança no Uso de Serviços Públicos Digitais  
@@ -159,7 +159,7 @@ A pesquisa mostrou que a média de entrevistados que demonstrava autoconfiança[
 
 Essa desigualdade na adaptação digital também se refletiu diretamente na utilização de serviços públicos digitais. Quando questionados sobre o uso desses serviços no ano anterior, 42,8% dos entrevistados afirmou ter acessado serviços digitais pelo menos uma vez e os grupos que enfrentaram maior dificuldade de uso foram justamente aqueles que tinham menos adaptação digital. 
 
-As três principais alegações eram: a falta de experiência com serviços digitais (15,3%); dúvida sobre a validade do serviço digital (14,9%); e o fato de gostarem de interagir com um funcionário público (9,5%). Além disso, 57,2% afirmaram que se voltassem a utilizar o mesmo serviço, **iriam preferir o atendimento presencial**[^22]. 
+As três principais alegações eram: a falta de experiência com serviços digitais (15,3%); dúvida sobre a validade do serviço digital (14,9%); e o fato de gostarem de interagir com um funcionário público (9,5%). Além disso, 57,2% afirmaram que se voltassem a utilizar o mesmo serviço, **iriam preferir o atendimento presencial**[^21]. 
 
 Os resultados demonstram que a ampliação do acesso à internet e aos dispositivos tecnológicos não é suficiente para garantir a inclusão digital. A presença da tecnologia no cotidiano não elimina, por si só, as barreiras que dificultam sua utilização autônoma, especialmente entre grupos que apresentam menor familiaridade, confiança ou capacidade de interação com os recursos digitais. 
 
@@ -337,15 +337,15 @@ Principais dificuldades de uso:
 Antes de falarmos das diretrizes de acessibilidade, precisamos ressaltar alguns pontos que são essenciais para desenvolver serviços públicos de qualidade. O primeiro deles é ter em vista que a maior parte da população brasileira tem acesso à internet pelo celular, muitas vezes, essa é a única forma de acesso. Por isso, os serviços devem ser desenvolvidos para funcionar adequadamente em diferentes tamanhos de tela, o que reforça a importância do design responsivo e da adoção da estratégia mobile first. 
 
 Mobile-first é uma abordagem delineada em 2009 por Luke Wroblewski. De forma simples, o mobile-first é uma abordagem para o design responsivo: primeiro design para telas menores, e depois adicione mais recursos e conteúdo conforme as telas ficam maiores.  
-Esta abordagem de design também é conhecida como “aprimoramento progressivo”. O movimento inverso, ou “degradação graciosa”, implica projetar para um site totalmente funcional para Desktop, e então adaptar o conteúdo para telas menores a partir daí.[^23]
+Esta abordagem de design também é conhecida como “aprimoramento progressivo”. O movimento inverso, ou “degradação graciosa”, implica projetar para um site totalmente funcional para Desktop, e então adaptar o conteúdo para telas menores a partir daí.[^22]
 
 Considerar diferentes dispositivos e formas de acesso, no entanto, é apenas uma das dimensões necessárias para garantir que um serviço digital possa ser utilizado pelo maior número possível de pessoas. É preciso também considerar as diferentes capacidades e necessidades dos usuários durante a navegação e o acesso aos conteúdos. 
 
-É neste contexto que entram as Diretrizes de Acessibilidade para Conteúdo Web 2\.2[^24], que são o padrão mais atualizado de acessibilidade digital. Essas diretrizes são desenvolvidas pelo World Wide Web Consortium (W3C), em parceria com pessoas e organizações de todo o mundo e estão em conformidade com os modelos anteriores (WCAG 2.0 e WCAG 2.1). O objetivo é estabelecer um padrão comum para tornar o conteúdo da web mais acessível e atender às necessidades de pessoas, organizações e governos. 
+É neste contexto que entram as Diretrizes de Acessibilidade para Conteúdo Web 2\.2[^23], que são o padrão mais atualizado de acessibilidade digital. Essas diretrizes são desenvolvidas pelo World Wide Web Consortium (W3C), em parceria com pessoas e organizações de todo o mundo e estão em conformidade com os modelos anteriores (WCAG 2.0 e WCAG 2.1). O objetivo é estabelecer um padrão comum para tornar o conteúdo da web mais acessível e atender às necessidades de pessoas, organizações e governos. 
 
-Em 2005, o Governo Federal brasileiro criou o Modelo de Acessibilidade em Governo Eletrônico (eMAG)[^25], tendo como principal objetivo garantir a acessibilidade dos conteúdos e serviços digitais públicos, eliminando ou, pelo menos, reduzindo barreiras que pudessem dificultar o acesso e a utilização por pessoas com deficiência. O eMAG foi baseado no WCAG 1.0, bem como normas e diretrizes de países como EUA, Canadá, Irlanda, Portugal e Espanha. Sua primeira versão, o eMAG 1.4 foi elaborada pelo Departamento de Governo Eletrônico, em parceria com a ONG Acessibilidade Brasil, e disponibilizada para o público em janeiro de 2005\. A versão mais recente do eMAG (Modelo de Acessibilidade em Governo Eletrônico) é a versão 3.1, lançada em abril de 2014\.
+Em 2005, o Governo Federal brasileiro criou o Modelo de Acessibilidade em Governo Eletrônico (eMAG)[^24], tendo como principal objetivo garantir a acessibilidade dos conteúdos e serviços digitais públicos, eliminando ou, pelo menos, reduzindo barreiras que pudessem dificultar o acesso e a utilização por pessoas com deficiência. O eMAG foi baseado no WCAG 1.0, bem como normas e diretrizes de países como EUA, Canadá, Irlanda, Portugal e Espanha. Sua primeira versão, o eMAG 1.4 foi elaborada pelo Departamento de Governo Eletrônico, em parceria com a ONG Acessibilidade Brasil, e disponibilizada para o público em janeiro de 2005\. A versão mais recente do eMAG (Modelo de Acessibilidade em Governo Eletrônico) é a versão 3.1, lançada em abril de 2014\.
 
-Após esta data, não houve nenhum tipo de atualização do eMAG, apenas o lançamento das Normas ABNT 17060[^26] e 17225[^27], esta última, especificamente para adequação ao WCAG 2.2. Isso não significa que o eMAG 3.1 tenha deixado de ser útil, ele continua sendo uma referência específica para o contexto do governo brasileiro. O problema é que a ausência de uma revisão faz com que ele não acompanhe integralmente a evolução das tecnologias e das necessidades de acessibilidade.
+Após esta data, não houve nenhum tipo de atualização do eMAG, apenas o lançamento das Normas ABNT 17060[^25] e 17225[^26], esta última, especificamente para adequação ao WCAG 2.2. Isso não significa que o eMAG 3.1 tenha deixado de ser útil, ele continua sendo uma referência específica para o contexto do governo brasileiro. O problema é que a ausência de uma revisão faz com que ele não acompanhe integralmente a evolução das tecnologias e das necessidades de acessibilidade.
 
 A WCAG 2.2 continua sendo a versão mais completa e atualizada que temos sobre o tema. Devido a isto, foi escolhida para balizar as boas práticas de acessibilidade deste guia. Seus três níveis estabelecem parâmetros de comparação entre os padrões de acessibilidade, sendo eles: 
 
@@ -355,7 +355,7 @@ A WCAG 2.2 continua sendo a versão mais completa e atualizada que temos sobre o
 
 * **nível AAA (padrão ideal):** Representa o grau mais rigoroso de acessibilidade, incorporando requisitos adicionais. Nem sempre é possível ou adequado atingir AAA para todo o conteúdo. 
 
-Além dos níveis, o padrão de acessibilidade da WCAG é estruturado em quatro princípios básicos[^28] (conhecidos pela sigla **POUR**):
+Além dos níveis, o padrão de acessibilidade da WCAG é estruturado em quatro princípios básicos[^27] (conhecidos pela sigla **POUR**):
 
 1. **Perceptível:** as informações e os componentes da interface do usuário devem ser apresentados aos usuários de forma que eles possam percebê-los. 
 
@@ -443,7 +443,9 @@ Além disso, o Governo Federal prevê a utilização de **Linguagem Simples**, j
 
   * Color contrast checker da [Adobe](https://color.adobe.com/create/color-contrast-analyzer)
 
-* Textos ou imagens que são meramente decorativos não possuem requisitos mínimos de contraste.
+* Textos ou imagens que são meramente decorativos não possuem requisitos mínimos de contraste. 
+
+* Logotipos não possuem requisitos mínimos de contraste.
 
 > **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 09]**  
 > **Título:** Contraste Textual Mínimo — Diretrizes WCAG AA (4.5:1 e 3:1)  
@@ -451,9 +453,6 @@ Além disso, o Governo Federal prevê a utilização de **Linguagem Simples**, j
 > **Elementos Visuais:** Cards de amostra tipográfica com indicador de medição de contraste e carimbo de 'Aprovado AA' ou 'Reprovado'.  
 > **Paleta Sugerida:** Exemplos com fundo branco (#FFFFFF) e fundos escuros (#0F172A), demonstrando ambos os modos.  
 > **Diretriz de Acessibilidade:** Indicar o valor numérico exato do cálculo de luminância em cada amostra.
- 
-
-* Logotipos não possuem requisitos mínimos de contraste.
 
 7. [**Contraste não textual:**](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#non-text-contrast)
 
@@ -490,7 +489,7 @@ Além disso, o Governo Federal prevê a utilização de **Linguagem Simples**, j
 
   * use o \<label\> elemento
 
-  * em casos específicos, outros mecanismos como o [WAI-ARIA](https://www.w3.org/TR/wai-aria-1.2/#usage)[^29], para identificar cada controle do formulário.
+  * em casos específicos, outros mecanismos como o [WAI-ARIA](https://www.w3.org/TR/wai-aria-1.2/#usage)[^28], para identificar cada controle do formulário.
 
 * **Agrupamento de controles:** use os \<fieldset\>elementos \`\<legend\>\<span\>\` e \`\<span\>\` para agrupar e associar controles de formulário relacionados. 
 
@@ -502,7 +501,7 @@ Além disso, o Governo Federal prevê a utilização de **Linguagem Simples**, j
 
 * **Formulários longos:** divida formulários longos em vários formulários menores que constituem uma série de etapas ou fases lógicas e informem os usuários sobre seu progresso. 
 
-* **Controles personalizados:** utilize elementos de formulário estilizados e outras técnicas de aprimoramento progressivo para fornecer controles personalizados.
+* **Controles personalizados:** utilize elementos de formulário estilizados e outras técnicas de aprimoramento progressivo para fornecer controles personalizados. 
 
 > **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 11]**  
 > **Título:** Anatomia de um Campo de Formulário Acessível  
@@ -510,7 +509,6 @@ Além disso, o Governo Federal prevê a utilização de **Linguagem Simples**, j
 > **Elementos Visuais:** Mockup explodido de input com setas numeradas apontando para cada requisito de acessibilidade.  
 > **Paleta Sugerida:** Design de formulário moderno, limpo, alinhado ao padrão Governo Digital.  
 > **Diretriz de Acessibilidade:** Evitar uso exclusivo de placeholder como único rótulo.
- 
 
 11. [**Listas:**](https://www.w3.org/WAI/tutorials/page-structure/content/#lists)
 
@@ -524,7 +522,7 @@ Além disso, o Governo Federal prevê a utilização de **Linguagem Simples**, j
   * Uma lista de descrição consiste em um ou mais agrupamentos de termos e descrições. Cada agrupamento associa um ou mais termos (o conteúdo dos \<dt\>elementos) a uma ou mais descrições (o conteúdo dos \<dd\>elementos).   
   * Um agrupamento começa no primeiro item da lista ou sempre que um \<dt\>elemento segue outro \<dd\>elemento. 
 
-  **IMPORTANTE:** “Cada leitor de tela exibe \<dl\>o conteúdo de forma diferente, incluindo a contagem total, o contexto de termos/definições e os métodos de navegação. Essas diferenças não são necessariamente bugs. A partir do iOS 14, o VoiceOver anunciará que \<dl\>o conteúdo é uma lista ao navegar com o cursor virtual (não pelo comando "ler tudo"). O VoiceOver não oferece suporte a comandos de navegação em listas com \`\<li\>\` \<dl\>. Tenha cuidado ao aplicar ARIA terme definition funções a \<dl\>construções, pois o VoiceOver (macOS e iOS) ajustará a forma como elas são anunciadas.”[^30] 
+  **IMPORTANTE:** “Cada leitor de tela exibe \<dl\>o conteúdo de forma diferente, incluindo a contagem total, o contexto de termos/definições e os métodos de navegação. Essas diferenças não são necessariamente bugs. A partir do iOS 14, o VoiceOver anunciará que \<dl\>o conteúdo é uma lista ao navegar com o cursor virtual (não pelo comando "ler tudo"). O VoiceOver não oferece suporte a comandos de navegação em listas com \`\<li\>\` \<dl\>. Tenha cuidado ao aplicar ARIA terme definition funções a \<dl\>construções, pois o VoiceOver (macOS e iOS) ajustará a forma como elas são anunciadas.”[^29] 
 
   Os itens individuais de uma lista podem conter uma variedade de elementos HTML, incluindo parágrafos, títulos, elementos de formulário e outras listas (aninhadas).
 
@@ -546,24 +544,26 @@ Imagens e gráficos tornam o conteúdo mais agradável e, até mesmo, mais fáci
 
 * Caso haja necessidade de mais, considere um longdesc ou descrição expandida no texto da página.
 
+* Exemplo de descrição de imagem:
+
+Incorreta:		
+
+```html
+<img src="equipe.jpg" alt="Foto da equipe">
+```
+
+Correta:
+
+```html
+<img src="equipe.jpg" alt="Equipe de desenvolvimento do Web para Todos: cinco pessoas em frente a um quadro branco com diagramas de fluxo">
+```
+
 > **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 12]**  
 > **Título:** O Atributo 'alt' no Leitor de Tela — Imagens Informativas  
 > **Descrição da Arte:** Ilustração do funcionamento da tecnologia assistiva: uma imagem de um atendimento ao público da Prefeitura do Rio sendo interpretada por um leitor de tela (NVDA/TalkBack), que sintetiza a fala com base no atributo alt descritivo.  
 > **Elementos Visuais:** Foto/desenho com balão de fala sonoro contendo a descrição textual acessível.  
 > **Paleta Sugerida:** Cores quentes e acolhedoras para o atendimento humano, tons de azul para o sintetizador.  
 > **Diretriz de Acessibilidade:** Ressaltar a concisão (100 a 150 caracteres) e a riqueza contextual da descrição.
-
-* Exemplo de descrição de imagem:
-
-**Incorreta:**
-```html
-<img src="equipe.jpg" alt="Foto da equipe">
-```
-
-**Correta:**
-```html
-<img src="equipe.jpg" alt="Equipe de desenvolvimento do Web para Todos: cinco pessoas em frente a um quadro branco com diagramas de fluxo">
-```
 
 2. [**Imagens decorativas:**](https://www.w3.org/WAI/tutorials/images/decorative/)
 
@@ -631,7 +631,7 @@ Imagens e gráficos tornam o conteúdo mais agradável e, até mesmo, mais fáci
 > **Paleta Sugerida:** Cabeçalhos em azul escuro (#002B49) e linhas zebradas suaves.  
 > **Diretriz de Acessibilidade:** Mostrar a lógica de leitura horizontal e vertical para leitores de tela.
 
-Apresentação do conteúdo em vídeo:
+### Apresentação do conteúdo em vídeo:
 
 #### Orientações gerais:
 
@@ -652,6 +652,13 @@ Além do conteúdo textual, deve ser fornecida uma alternativa em mídia aos que
   * Identifique os oradores, indique sons não verbais, inclua informações importantes sobre o discurso. 
 
 * Legenda ao vivo: devem ser fornecidas legendas para todo conteúdo de áudio ao vivo em mídia sincronizada.
+
+> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 15]**  
+> **Título:** Anatomia de Legendas Acessíveis e Sincronizadas (Closed Captions / WebVTT)  
+> **Descrição da Arte:** Demonstração visual de um player de vídeo acessível reproduzindo áudio perfeitamente sincronizado com legendas no padrão WebVTT. Evidencia as boas práticas: identificação explícita de quem fala entre colchetes (ex: '[Palestrante]'), descrição de informações sonoras contextuais não verbais (ex: '[música suave de fundo]', '[aplausos]'), quebra em até 2 linhas e fundo escuro semitransparente que garante legibilidade sobre cenas claras ou escuras. Alerta contra a dependência cega de legendas automáticas sem revisão humana.  
+> **Elementos Visuais:** Mockup de player de vídeo com botões de controle, botão 'CC' ativado, caixa de legenda destacada e três balões explicativos apontando para: 1. Identificação do locutor; 2. Efeitos sonoros; 3. Contraste da caixa de texto.  
+> **Paleta Sugerida:** Interface do player em azul escuro (#0F172A), caixa de legenda preta (#000000) com texto branco (#FFFFFF) ou amarelo (#FFEB3B) e acentos em ciano (#00C0F3).  
+> **Diretriz de Acessibilidade:** Critério WCAG 1.2.2 (Legendas Pré-gravadas - Nível A). Nunca disponibilizar legendas geradas automaticamente sem revisão humana prévia.
 
 2. [**Uso de audiodescrição**](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#audio-description-or-media-alternative-prerecorded)
 
@@ -685,6 +692,13 @@ Além do conteúdo textual, deve ser fornecida uma alternativa em mídia aos que
 
 ### 
 
+> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 16]**  
+> **Título:** Enquadramento e Boas Práticas da Janela de LIBRAS em Vídeo  
+> **Descrição da Arte:** Guia visual completo de produção para a janela de tradução em Língua Brasileira de Sinais (LIBRAS). Demonstração da área correta de enquadramento da câmera (da linha abaixo da cintura até acima da cabeça, com folga lateral abrangendo ambos os cotovelos para visualização ampla dos sinais e do espaço de sinalização), vestimenta e parede de fundo em tons sólidos contrastantes com a cor de pele do intérprete, e posicionamento no canto inferior direito do vídeo dimensionado para permitir visualização nítida de expressões faciais sem cobrir letreiros ou legendas.  
+> **Elementos Visuais:** Ilustração de intérprete de LIBRAS com linhas guias de enquadramento (limites seguros: cabeça, cotovelos e cintura), iluminação frontal suave e inserção na tela principal de vídeo com indicação de área de segurança.  
+> **Paleta Sugerida:** Fundo de estúdio em azul marinho sóbrio (#002B49) ou cinza neutro, contraste luminoso com a pele e janela delimitada com traço sutil.  
+> **Diretriz de Acessibilidade:** Critério WCAG 1.2.6 (Língua de Sinais Pré-gravada - Nível AAA). Lembrete de que plugins automatizados (avatares 3D) não substituem a tradução humana nativa.
+
 ### Estrutura da página
 
 Orientações gerais:
@@ -703,7 +717,7 @@ Uma página web bem estruturada facilita o acesso e a navegação para todos, es
 
 * Em seguida, devem ser utilizados os níveis subsequentes de título, de maneira hierárquica, sem se pular um ou mais níveis.
 
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 15]**  
+> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 17]**  
 > **Título:** Árvore de Hierarquia Semântica de Cabeçalhos (H1 a H4)  
 > **Descrição da Arte:** Diagrama em árvore mostrando a correta ordenação dos títulos em um portal: H1 (único, tema principal) -> H2 (capítulos/seções) -> H3 (subtópicos) -> H4 (detalhes). Alerta visual contra a prática incorreta de pular níveis (ex: H1 direto para H3).  
 > **Elementos Visuais:** Organograma hierárquico com nós conectados e ícones de marcação semântica.  
@@ -726,15 +740,7 @@ Uma página web bem estruturada facilita o acesso e a navegação para todos, es
 
 * Utilize o \<aside\> elemento HTML5 para identificar regiões que complementam o conteúdo principal, mas que constituem seções separadas e significativas por si só.
 
-* Ex.: uma nota lateral explicando ou comentando o conteúdo principal.
-
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 16]**  
-> **Título:** Regiões Semânticas e Pontos de Referência (Landmarks HTML5)  
-> **Descrição da Arte:** Wireframe de uma página web destacando as principais regiões semânticas: <header> (topo/banner), <nav> (navegação/menus), <main> (conteúdo principal único), <aside> (complementar/lateral) e <footer> (rodapé institucional).  
-> **Elementos Visuais:** Esquema visual de página web com blocos codificados por cor e etiquetas de código semântico.  
-> **Paleta Sugerida:** Paleta de layout suave com contornos pontilhados em azul e ciano.  
-> **Diretriz de Acessibilidade:** Facilita o entendimento de como pessoas cegas saltam rapidamente entre seções da página.
- 
+* Ex.: uma nota lateral explicando ou comentando o conteúdo principal. 
 
 5. ### [**Menu:**](https://www.w3.org/WAI/tutorials/menus/)
 
@@ -754,6 +760,13 @@ Uma página web bem estruturada facilita o acesso e a navegação para todos, es
 
 * Como uma coleção de itens de conteúdo, os carrosséis são geralmente melhor representados como listas não ordenadas, usando \`\<ul\>\` \<ul\>e \`\<span\>\` \<li\>. Dependendo do contexto, outros elementos também podem ser usados, como marcação de títulos, seções, listas, artigos e outros elementos, conforme necessário. 
 
+> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 18]**  
+> **Título:** Regiões Semânticas e Pontos de Referência (Landmarks HTML5)  
+> **Descrição da Arte:** Wireframe de uma página web destacando as principais regiões semânticas: <header> (topo/banner), <nav> (navegação/menus), <main> (conteúdo principal único), <aside> (complementar/lateral) e <footer> (rodapé institucional).  
+> **Elementos Visuais:** Esquema visual de página web com blocos codificados por cor e etiquetas de código semântico.  
+> **Paleta Sugerida:** Paleta de layout suave com contornos pontilhados em azul e ciano.  
+> **Diretriz de Acessibilidade:** Facilita o entendimento de como pessoas cegas saltam rapidamente entre seções da página.
+
 ### Navegabilidade da interface
 
 Orientações gerais:
@@ -766,7 +779,7 @@ Orientações gerais:
 
 * Para que a navegação por teclado funcione da melhor forma possível, seja para pessoas com deficiência física ou visual (com uso de leitor de tela), é de suma importância que se respeite a hierarquia do conteúdo e se faça as indicações corretas de tag no código HTML.
 
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 17]**  
+> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 19]**  
 > **Título:** Indicador de Foco Visível para Navegação por Teclado  
 > **Descrição da Arte:** Demonstração de acessibilidade motora e visual: elemento interativo (botão ou link) recebendo foco pelo teclado (tecla Tab) com anel de destaque (:focus-visible) duplo e de alto contraste. Comparação com o erro comum de remover o contorno com 'outline: none'.  
 > **Elementos Visuais:** Simulação de botão em 3 estados: Normal, Hover (mouse) e Foco Ativo pelo Teclado com anel iluminado de 3px.  
@@ -825,15 +838,14 @@ Orientações gerais:
 
 * Certifique-se de que o tamanho do texto e a largura da linha estejam configurados para maximizar a legibilidade. 
 
-* O design deve ser responsivo para atender às diretrizes de redimensionamento (200% de zoom), garantindo que elementos como botões, campos de formulário e textos ampliados não fiquem sobrepostos ou cortados.
+* O design deve ser responsivo para atender às diretrizes de redimensionamento (200% de zoom), garantindo que elementos como botões, campos de formulário e textos ampliados não fiquem sobrepostos ou cortados. 
 
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 18]**  
+> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 20]**  
 > **Título:** Reflow Responsivo — Adaptação Fluida a 320px sem Rolagem Horizontal  
 > **Descrição da Arte:** Ilustração do critério WCAG 1.4.10 (Reflow): o mesmo portal exibido em tela de Desktop (1280px) com múltiplas colunas e adaptado fluidamente para tela mobile estreita (320px de largura) ou zoom de 400%, sem perda de conteúdo e sem necessidade de barra de rolagem horizontal.  
 > **Elementos Visuais:** Dois dispositivos lado a lado (Monitor vs Smartphone compacto) mostrando o rearranjo vertical natural dos blocos de conteúdo.  
 > **Paleta Sugerida:** Fundos claros com blocos de texto e botões redimensionados com área de toque mínima de 44x44px.  
 > **Diretriz de Acessibilidade:** Destacar a importância do design mobile-first e da tipografia responsiva com unidades relativas.
- 
 
 [^1]:  **BRASIL. Ministério da Saúde.** Saúde da pessoa com deficiência. Brasília, DF: Ministério da Saúde, \[sem data\]. Disponível em: \<\<[https\://www\.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-pessoa-com-deficiencia](https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-pessoa-com-deficiencia?utm_source=chatgpt.com)\>\>. Acesso em: 
 
@@ -857,41 +869,39 @@ Orientações gerais:
 
 [^11]:  BRASIL. Lei nº 13.146/ 2015, art. 3º, I.
 
-[^12]:  Para saber mais sobre o assunto, consulte o Guia de Bolso 7 Dimensões da Acessibilidade. Disponível em: \<\<[https\://smpd.prefeitura.rio/wp-content/uploads/sites/33/2025/11/Guia-de-Bolso-7-dimensoes-PDF.pdf](https://smpd.prefeitura.rio/wp-content/uploads/sites/33/2025/11/Guia-de-Bolso-7-dimensoes-PDF.pdf)\>\>  Acesso em:
+[^12]:  Como desenhos universais entende-se a concepção de produtos, ambientes, programas e serviços a serem usados por todas as pessoas, sem necessidade de adaptação ou de projeto específico, incluindo os recursos de tecnologia assistiva. BRASIL. Lei nº 13.146/ 2015, art. 3º, II.
 
-[^13]:  Como desenhos universais entende-se a concepção de produtos, ambientes, programas e serviços a serem usados por todas as pessoas, sem necessidade de adaptação ou de projeto específico, incluindo os recursos de tecnologia assistiva. BRASIL. Lei nº 13.146/ 2015, art. 3º, II.
+[^13]:  PREFEITURA DO RIO DE JANEIRO. *Sete Dimensões da Acessibilidade*. Secretaria Municipal da Pessoa com Deficiência, Rio de Janeiro, s/d, p. 
 
-[^14]:  PREFEITURA DO RIO DE JANEIRO. *Sete Dimensões da Acessibilidade*. Secretaria Municipal da Pessoa com Deficiência, Rio de Janeiro, s/d, p. 
+[^14]:  BRASIL. Lei nº 13.146/ 2015, art. 63\.
 
-[^15]:  BRASIL. Lei nº 13.146/ 2015, art. 63\.
+[^15]:  BIGDATACORP. *Acessibilidade nos sites brasileiros 2024*. Disponível em: [\<\<https\://blog.bigdatacorp.com.br/acessibilidade-nos-sites-brasileiros-2024/](https://blog.bigdatacorp.com.br/acessibilidade-nos-sites-brasileiros-2024/?utm_source=chatgpt.com)\>\>. Acesso em: 
 
-[^16]:  BIGDATACORP. *Acessibilidade nos sites brasileiros 2024*. Disponível em: [\<\<https\://blog.bigdatacorp.com.br/acessibilidade-nos-sites-brasileiros-2024/](https://blog.bigdatacorp.com.br/acessibilidade-nos-sites-brasileiros-2024/?utm_source=chatgpt.com)\>\>. Acesso em: 
+[^16]:  MOVIMENTO WEB PARA TODOS (WPT). Metodologia utilizada no estudo de acessibilidade em sites ativos (Brasil, 2024). WPT, 3 jul. 2024\. Disponível em: [\<\<https\://mwpt.com.br/metodologia-utilizada-no-estudo-de-acessibilidade-em-sites-ativos-brasil-2024/](https://mwpt.com.br/metodologia-utilizada-no-estudo-de-acessibilidade-em-sites-ativos-brasil-2024/?utm_source=chatgpt.com)\>\>. Acesso em: 
 
-[^17]:  MOVIMENTO WEB PARA TODOS (WPT). Metodologia utilizada no estudo de acessibilidade em sites ativos (Brasil, 2024). WPT, 3 jul. 2024\. Disponível em: [\<\<https\://mwpt.com.br/metodologia-utilizada-no-estudo-de-acessibilidade-em-sites-ativos-brasil-2024/](https://mwpt.com.br/metodologia-utilizada-no-estudo-de-acessibilidade-em-sites-ativos-brasil-2024/?utm_source=chatgpt.com)\>\>. Acesso em: 
+[^17]:  **BERGUES, Martina; LAFUENTE, Mariano.** *Uso de serviços digitais: um retrato do Brasil*. Washington, D.C.: Banco Interamericano de Desenvolvimento, 2025\. Disponível em: [\<\<https\://www\.gov.br/gestao/pt-br/assuntos/noticias/2025/abril/pesquisa-revela-que-77-dos-brasileiros-consideram-facil-o-acesso-a-servicos-publicos-digitais/usodeservicosdigitais\_bid.pdf](https://www.gov.br/gestao/pt-br/assuntos/noticias/2025/abril/pesquisa-revela-que-77-dos-brasileiros-consideram-facil-o-acesso-a-servicos-publicos-digitais/usodeservicosdigitais_bid.pdf?utm_source=chatgpt.com)\>\>. Acesso em: 
 
-[^18]:  **BERGUES, Martina; LAFUENTE, Mariano.** *Uso de serviços digitais: um retrato do Brasil*. Washington, D.C.: Banco Interamericano de Desenvolvimento, 2025\. Disponível em: [\<\<https\://www\.gov.br/gestao/pt-br/assuntos/noticias/2025/abril/pesquisa-revela-que-77-dos-brasileiros-consideram-facil-o-acesso-a-servicos-publicos-digitais/usodeservicosdigitais\_bid.pdf](https://www.gov.br/gestao/pt-br/assuntos/noticias/2025/abril/pesquisa-revela-que-77-dos-brasileiros-consideram-facil-o-acesso-a-servicos-publicos-digitais/usodeservicosdigitais_bid.pdf?utm_source=chatgpt.com)\>\>. Acesso em: 
+[^18]:  BERGUES & LAFUENTE. 2025, p. 24\.
 
-[^19]:  BERGUES & LAFUENTE. 2025, p. 24\.
+[^19]:  BERGUES & LAFUENTE., 2025, p. 23\.
 
-[^20]:  BERGUES & LAFUENTE., 2025, p. 23\.
+[^20]:  BERGUES & LAFUENTE., 2025, p. 9\.
 
-[^21]:  BERGUES & LAFUENTE., 2025, p. 9\.
+[^21]:  BERGUES & LAFUENTE, 2025, p. 35\.
 
-[^22]:  BERGUES & LAFUENTE, 2025, p. 35\.
+[^22]:  FERNANDA. Entendendo as diferenças entre design responsivo, adaptativo e mobile-first. *Medium*, 27 fev. 2018\. Disponível em: [https\://medium.com/@fnandaleite/entendendo-as-diferen%C3%A7as-entre-design-responsivo-adaptativo-e-mobile-first-ea3c61fc9181](https://medium.com/@fnandaleite/entendendo-as-diferen%C3%A7as-entre-design-responsivo-adaptativo-e-mobile-first-ea3c61fc9181). Acesso em: 
 
-[^23]:  FERNANDA. Entendendo as diferenças entre design responsivo, adaptativo e mobile-first. *Medium*, 27 fev. 2018\. Disponível em: [https\://medium.com/@fnandaleite/entendendo-as-diferen%C3%A7as-entre-design-responsivo-adaptativo-e-mobile-first-ea3c61fc9181](https://medium.com/@fnandaleite/entendendo-as-diferen%C3%A7as-entre-design-responsivo-adaptativo-e-mobile-first-ea3c61fc9181). Acesso em: 
+[^23]:  WORLD WIDE WEB CONSORTIUM (W3C). **Diretrizes de Acessibilidade para Conteúdo Web (WCAG) 2.2**. W3C Recommendation, 5 out. 2023\. Disponível em: [\<\<https\://www\.w3c.br/traducoes/wcag/wcag22-pt-BR/](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/?utm_source=chatgpt.com). Acesso em: 
 
-[^24]:  WORLD WIDE WEB CONSORTIUM (W3C). **Diretrizes de Acessibilidade para Conteúdo Web (WCAG) 2.2**. W3C Recommendation, 5 out. 2023\. Disponível em: [\<\<https\://www\.w3c.br/traducoes/wcag/wcag22-pt-BR/](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/?utm_source=chatgpt.com). Acesso em: 
+[^24]:  BRASIL. *Modelo de Acessibilidade em Governo Eletrônico (eMAG): versão 3.1*. Brasília, DF: Ministério do Planejamento, Orçamento e Gestão, 2014\. Disponível em: [\<\<https\://emag.governoeletronico.gov.br/](https://emag.governoeletronico.gov.br/?utm_source=chatgpt.com)\>\>. Acesso em: 
 
-[^25]:  BRASIL. *Modelo de Acessibilidade em Governo Eletrônico (eMAG): versão 3.1*. Brasília, DF: Ministério do Planejamento, Orçamento e Gestão, 2014\. Disponível em: [\<\<https\://emag.governoeletronico.gov.br/](https://emag.governoeletronico.gov.br/?utm_source=chatgpt.com)\>\>. Acesso em: 
+[^25]:  ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. *ABNT NBR 17060:2022: acessibilidade em aplicativos de dispositivos móveis — requisitos*. Rio de Janeiro: ABNT, 2022\. 
 
-[^26]:  ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. *ABNT NBR 17060:2022: acessibilidade em aplicativos de dispositivos móveis — requisitos*. Rio de Janeiro: ABNT, 2022\. 
+[^26]:  ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. *ABNT NBR 17225:2025: acessibilidade em conteúdo e aplicações web — requisitos*. Rio de Janeiro: ABNT, 2025\. 
 
-[^27]:  ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. *ABNT NBR 17225:2025: acessibilidade em conteúdo e aplicações web — requisitos*. Rio de Janeiro: ABNT, 2025\. 
+[^27]:  **WORLD WIDE WEB CONSORTIUM (W3C).** *Introduction to Understanding WCAG 2.2*. W3C Web Accessibility Initiative, 15 jul. 2025\. Disponível em: [\<\<https\://www\.w3.org/WAI/WCAG22/Understanding/intro](https://www.w3.org/WAI/WCAG22/Understanding/intro?utm_source=chatgpt.com)\>\>. Acesso em: 
 
-[^28]:  **WORLD WIDE WEB CONSORTIUM (W3C).** *Introduction to Understanding WCAG 2.2*. W3C Web Accessibility Initiative, 15 jul. 2025\. Disponível em: [\<\<https\://www\.w3.org/WAI/WCAG22/Understanding/intro](https://www.w3.org/WAI/WCAG22/Understanding/intro?utm_source=chatgpt.com)\>\>. Acesso em: 
+[^28]:  Para saber mais sobre as aplicações do WAI-ARIA, consulte: \<\<[https\://www\.w3.org/WAI/tutorials/forms/labels/](https://www.w3.org/WAI/tutorials/forms/labels/)\>\>.
 
-[^29]:  Para saber mais sobre as aplicações do WAI-ARIA, consulte: \<\<[https\://www\.w3.org/WAI/tutorials/forms/labels/](https://www.w3.org/WAI/tutorials/forms/labels/)\>\>.
-
-[^30]:  Para saber mais, consulte a página do MDN sobre “Elemento de lista de descrição HTML”. Disponível em: \<\<[https\://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dl](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dl)\>\>. Acesso em:
+[^29]:  Para saber mais, consulte a página do MDN sobre “Elemento de lista de descrição HTML”. Disponível em: \<\<[https\://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dl](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dl)\>\>. Acesso em:
 

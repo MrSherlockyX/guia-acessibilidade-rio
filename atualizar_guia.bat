@@ -10,6 +10,11 @@ echo Este assistente converte automaticamente o arquivo GuiaAcessibilidade.md
 echo exportado do Google Docs para a estrutura completa do portal (guiasite).
 echo.
 
+if exist "Guia de Boas Práticas de Acessibilidade Digital.md" (
+    echo [1/4] Processando exportação do Google Docs e estruturando artes...
+    python scripts\build_md.py
+)
+
 if not exist "GuiaAcessibilidade.md" (
     echo [ERRO] O arquivo GuiaAcessibilidade.md não foi encontrado nesta pasta!
     echo Copie o arquivo markdown exportado para esta pasta e tente novamente.
@@ -18,7 +23,7 @@ if not exist "GuiaAcessibilidade.md" (
     exit /b 1
 )
 
-echo [1/3] Executando o conversor de Markdown...
+echo [2/4] Executando o conversor de Markdown...
 python scripts\converter.py "GuiaAcessibilidade.md"
 
 if %ERRORLEVEL% NEQ 0 (
@@ -29,7 +34,7 @@ if %ERRORLEVEL% NEQ 0 (
 )
 
 echo.
-echo [2/3] Conversão concluída com sucesso!
+echo [3/4] Conversão concluída com sucesso!
 echo Os arquivos guiasite\index.html e guiasite\js\app.js foram atualizados.
 echo.
 
@@ -37,8 +42,8 @@ set /p PUSH_CHOICE="Deseja enviar as alterações para o GitHub agora? (S/N): "
 
 if /i "%PUSH_CHOICE%"=="S" (
     echo.
-    echo [3/3] Enviando atualizações para o repositório GitHub...
-    git add guiasite/index.html guiasite/js/app.js guiasite/assets/images/* GuiaAcessibilidade.md
+    echo [4/4] Enviando atualizações para o repositório GitHub...
+    git add guiasite/index.html guiasite/js/app.js guiasite/assets/images/* GuiaAcessibilidade.md "Guia de Boas Práticas de Acessibilidade Digital.md"
     git commit -m "docs: atualizar textos e estrutura do guia a partir do Google Docs"
     git push origin main
     echo.

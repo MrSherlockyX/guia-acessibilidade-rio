@@ -193,32 +193,48 @@ ART_SPECS = {
         "guidelines": "Mostrar a lógica de leitura horizontal e vertical para leitores de tela."
     },
     15: {
+        "title": "Anatomia de Legendas Acessíveis e Sincronizadas (Closed Captions / WebVTT)",
+        "topic": "7.2 Uso de legendas",
+        "description": "Demonstração visual de um player de vídeo acessível reproduzindo áudio perfeitamente sincronizado com legendas no padrão WebVTT. Evidencia as boas práticas: identificação explícita de quem fala entre colchetes (ex: '[Palestrante]'), descrição de informações sonoras contextuais não verbais (ex: '[música suave de fundo]', '[aplausos]'), quebra em até 2 linhas e fundo escuro semitransparente que garante legibilidade sobre cenas claras ou escuras. Alerta contra a dependência cega de legendas automáticas sem revisão humana.",
+        "elements": "Mockup de player de vídeo com botões de controle, botão 'CC' ativado, caixa de legenda destacada e três balões explicativos apontando para: 1. Identificação do locutor; 2. Efeitos sonoros; 3. Contraste da caixa de texto.",
+        "palette": "Interface do player em azul escuro (#0F172A), caixa de legenda preta (#000000) com texto branco (#FFFFFF) ou amarelo (#FFEB3B) e acentos em ciano (#00C0F3).",
+        "guidelines": "Critério WCAG 1.2.2 (Legendas Pré-gravadas - Nível A). Nunca disponibilizar legendas geradas automaticamente sem revisão humana prévia."
+    },
+    16: {
+        "title": "Enquadramento e Boas Práticas da Janela de LIBRAS em Vídeo",
+        "topic": "7.5 Língua de sinais",
+        "description": "Guia visual completo de produção para a janela de tradução em Língua Brasileira de Sinais (LIBRAS). Demonstração da área correta de enquadramento da câmera (da linha abaixo da cintura até acima da cabeça, com folga lateral abrangendo ambos os cotovelos para visualização ampla dos sinais e do espaço de sinalização), vestimenta e parede de fundo em tons sólidos contrastantes com a cor de pele do intérprete, e posicionamento no canto inferior direito do vídeo dimensionado para permitir visualização nítida de expressões faciais sem cobrir letreiros ou legendas.",
+        "elements": "Ilustração de intérprete de LIBRAS com linhas guias de enquadramento (limites seguros: cabeça, cotovelos e cintura), iluminação frontal suave e inserção na tela principal de vídeo com indicação de área de segurança.",
+        "palette": "Fundo de estúdio em azul marinho sóbrio (#002B49) ou cinza neutro, contraste luminoso com a pele e janela delimitada com traço sutil.",
+        "guidelines": "Critério WCAG 1.2.6 (Língua de Sinais Pré-gravada - Nível AAA). Lembrete de que plugins automatizados (avatares 3D) não substituem a tradução humana nativa."
+    },
+    17: {
         "title": "Árvore de Hierarquia Semântica de Cabeçalhos (H1 a H4)",
-        "topic": "7.1 Cabeçalhos",
+        "topic": "8.1 Cabeçalhos",
         "description": "Diagrama em árvore mostrando a correta ordenação dos títulos em um portal: H1 (único, tema principal) -> H2 (capítulos/seções) -> H3 (subtópicos) -> H4 (detalhes). Alerta visual contra a prática incorreta de pular níveis (ex: H1 direto para H3).",
         "elements": "Organograma hierárquico com nós conectados e ícones de marcação semântica.",
         "palette": "Gradiente estruturado de azuis da Prefeitura do Rio, do mais escuro (H1) ao mais claro (H4).",
         "guidelines": "Excelente guia rápido de arquitetura da informação para criadores de conteúdo."
     },
-    16: {
+    18: {
         "title": "Regiões Semânticas e Pontos de Referência (Landmarks HTML5)",
-        "topic": "7.4 Conteúdo complementar",
+        "topic": "8.4 Conteúdo complementar",
         "description": "Wireframe de uma página web destacando as principais regiões semânticas: <header> (topo/banner), <nav> (navegação/menus), <main> (conteúdo principal único), <aside> (complementar/lateral) e <footer> (rodapé institucional).",
         "elements": "Esquema visual de página web com blocos codificados por cor e etiquetas de código semântico.",
         "palette": "Paleta de layout suave com contornos pontilhados em azul e ciano.",
         "guidelines": "Facilita o entendimento de como pessoas cegas saltam rapidamente entre seções da página."
     },
-    17: {
+    19: {
         "title": "Indicador de Foco Visível para Navegação por Teclado",
-        "topic": "8.1 Navegação por teclado",
+        "topic": "9.1 Navegação por teclado",
         "description": "Demonstração de acessibilidade motora e visual: elemento interativo (botão ou link) recebendo foco pelo teclado (tecla Tab) com anel de destaque (:focus-visible) duplo e de alto contraste. Comparação com o erro comum de remover o contorno com 'outline: none'.",
         "elements": "Simulação de botão em 3 estados: Normal, Hover (mouse) e Foco Ativo pelo Teclado com anel iluminado de 3px.",
         "palette": "Botão em azul royal com anel de foco em ciano vívido (#00C0F3) e offset branco.",
         "guidelines": "Requisito indispensável para usuários que utilizam teclado, switches ou comando de voz."
     },
-    18: {
+    20: {
         "title": "Reflow Responsivo — Adaptação Fluida a 320px sem Rolagem Horizontal",
-        "topic": "9.3 Design para diferentes tamanhos de viewport",
+        "topic": "10.3 Design para diferentes tamanhos de viewport",
         "description": "Ilustração do critério WCAG 1.4.10 (Reflow): o mesmo portal exibido em tela de Desktop (1280px) com múltiplas colunas e adaptado fluidamente para tela mobile estreita (320px de largura) ou zoom de 400%, sem perda de conteúdo e sem necessidade de barra de rolagem horizontal.",
         "elements": "Dois dispositivos lado a lado (Monitor vs Smartphone compacto) mostrando o rearranjo vertical natural dos blocos de conteúdo.",
         "palette": "Fundos claros com blocos de texto e botões redimensionados com área de toque mínima de 44x44px.",
@@ -392,8 +408,8 @@ def parse_markdown(md_content, images_map):
                 continue
             # Verifica se é um tema maior que deve ser elevado a capítulo
             elevate_keywords = [
-                'conteúdo textual', 'conteúdo imagético', 'estrutura da página',
-                'navegabilidade', 'dicas de design', 'tipos de deficiência e acessibilidade'
+                'conteúdo textual', 'conteúdo imagético', 'conteúdo em vídeo', 'conteúdo em video',
+                'estrutura da página', 'navegabilidade', 'dicas de design', 'tipos de deficiência e acessibilidade'
             ]
             if any(k in title.lower() for k in elevate_keywords):
                 chapter_slug = slugify(title)
@@ -756,7 +772,7 @@ def render_block(block, indent="  "):
 def get_category_class(title):
     t = title.lower()
     if "visual" in t or "imagem" in t: return "category-visual"
-    if "auditivo" in t or "libras" in t or "som" in t: return "category-auditivo"
+    if "auditivo" in t or "libras" in t or "som" in t or "vídeo" in t or "video" in t: return "category-auditivo"
     if "cognitivo" in t or "tea" in t or "tdah" in t or "dislexia" in t: return "category-cognitivo"
     if "texto" in t or "fonte" in t or "contraste" in t: return "category-textual"
     if "norma" in t or "wcag" in t or "emag" in t: return "category-normas"
@@ -835,7 +851,19 @@ def update_site_files(toc_html, content_html, search_entries):
     return True
 
 def main():
-    md_file = Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_MD_PATH
+    if len(sys.argv) > 1:
+        md_file = Path(sys.argv[1])
+    else:
+        md_file = DEFAULT_MD_PATH
+        if not md_file.exists():
+            for alt_name in [
+                "Guia de Boas Práticas de Acessibilidade Digital.md",
+                "Guia de Boas Práticas de Acessibilidade Digital .md",
+            ]:
+                alt_p = PROJECT_ROOT / alt_name
+                if alt_p.exists():
+                    md_file = alt_p
+                    break
     
     if not md_file.exists():
         print(f"❌ Arquivo de entrada não encontrado: {md_file}")

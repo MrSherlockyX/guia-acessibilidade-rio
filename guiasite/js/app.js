@@ -66,7 +66,7 @@ const searchDatabase = [
     "category": "Compreendendo ",
     "categoryClass": "category-estrutura",
     "keywords": "uso de serviços públicos digitais último levantamento banco interamericano desenvolvimento (bid) sobre",
-    "snippet": "O último levantamento do Banco Interamericano de Desenvolvimento (BID) sobre o uso de serviços digitais no Brasil[18], publicado em 2025, evidencia que a dis..."
+    "snippet": "O último levantamento do Banco Interamericano de Desenvolvimento (BID) sobre o uso de serviços digitais no Brasil[17], publicado em 2025, evidencia que a dis..."
   },
   {
     "id": "deficiencia-visual",
@@ -311,24 +311,24 @@ const searchDatabase = [
   {
     "id": "orientacoes-gerais",
     "title": "Orientações gerais",
-    "category": "Tabelas",
-    "categoryClass": "category-estrutura",
-    "keywords": "orientações gerais conteúdo textual, fornecida alternativa mídia beneficiam representações alternativas",
-    "snippet": "Além do conteúdo textual, deve ser fornecida uma alternativa em mídia aos que se beneficiam de representações alternativas a texto, que podem ser áudio, víde..."
+    "category": "Apresentação d",
+    "categoryClass": "category-auditivo",
+    "keywords": "orientações gerais",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
     "id": "uso-de-legendas",
     "title": "Uso de legendas",
     "category": "Apresentação d",
-    "categoryClass": "category-estrutura",
-    "keywords": "uso de legendas",
-    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
+    "categoryClass": "category-auditivo",
+    "keywords": "uso de legendas anatomia acessíveis sincronizadas (closed captions webvtt) demonstração",
+    "snippet": "Arte 15: Anatomia de Legendas Acessíveis e Sincronizadas (Closed Captions / WebVTT) - Demonstração visual de um player de vídeo acessível reproduzindo áudio ..."
   },
   {
     "id": "uso-de-audiodescricao",
     "title": "Uso de audiodescrição",
     "category": "Apresentação d",
-    "categoryClass": "category-estrutura",
+    "categoryClass": "category-auditivo",
     "keywords": "uso de audiodescrição",
     "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
@@ -336,7 +336,7 @@ const searchDatabase = [
     "id": "midia-alternativa",
     "title": "Mídia alternativa",
     "category": "Apresentação d",
-    "categoryClass": "category-estrutura",
+    "categoryClass": "category-auditivo",
     "keywords": "mídia alternativa",
     "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
@@ -344,7 +344,7 @@ const searchDatabase = [
     "id": "lingua-de-sinais",
     "title": "Língua de sinais",
     "category": "Apresentação d",
-    "categoryClass": "category-estrutura",
+    "categoryClass": "category-auditivo",
     "keywords": "língua de sinais",
     "snippet": ""
   },
@@ -377,8 +377,8 @@ const searchDatabase = [
     "title": "Conteúdo complementar",
     "category": "Estrutura da p",
     "categoryClass": "category-estrutura",
-    "keywords": "conteúdo complementar regiões semânticas pontos referência (landmarks html5) wireframe página",
-    "snippet": "Arte 16: Regiões Semânticas e Pontos de Referência (Landmarks HTML5) - Wireframe de uma página web destacando as principais regiões semânticas: <header> (top..."
+    "keywords": "conteúdo complementar menu:",
+    "snippet": "5. Menu:"
   },
   {
     "id": "carrossel",
@@ -394,7 +394,7 @@ const searchDatabase = [
     "category": "Navegabilidade",
     "categoryClass": "category-estrutura",
     "keywords": "navegação por teclado indicador visível demonstração acessibilidade motora visual:",
-    "snippet": "Arte 17: Indicador de Foco Visível para Navegação por Teclado - Demonstração de acessibilidade motora e visual: elemento interativo (botão ou link) recebendo..."
+    "snippet": "Arte 19: Indicador de Foco Visível para Navegação por Teclado - Demonstração de acessibilidade motora e visual: elemento interativo (botão ou link) recebendo..."
   },
   {
     "id": "tempo-de-navegacao-ajustavel",
@@ -434,7 +434,7 @@ const searchDatabase = [
     "category": "Outras dicas d",
     "categoryClass": "category-estrutura",
     "keywords": "design para diferentes tamanhos de viewport reflow responsivo adaptação fluida 320px rolagem",
-    "snippet": "Arte 18: Reflow Responsivo — Adaptação Fluida a 320px sem Rolagem Horizontal - Ilustração do critério WCAG 1.4.10 (Reflow): o mesmo portal exibido em tela de..."
+    "snippet": "Arte 20: Reflow Responsivo — Adaptação Fluida a 320px sem Rolagem Horizontal - Ilustração do critério WCAG 1.4.10 (Reflow): o mesmo portal exibido em tela de..."
   }
 ];
 
