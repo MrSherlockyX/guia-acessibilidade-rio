@@ -201,8 +201,8 @@ const searchDatabase = [
     "title": "Contraste textual",
     "category": "Apresentação d",
     "categoryClass": "category-estrutura",
-    "keywords": "contraste textual mínimo diretrizes (4.5:1 demonstração visual relações",
-    "snippet": "Arte 9: Contraste Textual Mínimo — Diretrizes WCAG AA (4.5:1 e 3:1) - Demonstração visual das relações mínimas de contraste exigidas pela WCAG 2.2 Nível AA: ..."
+    "keywords": "contraste textual",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
     "id": "contraste-nao-textual",
@@ -217,8 +217,8 @@ const searchDatabase = [
     "title": "Uso de cores",
     "category": "Apresentação d",
     "categoryClass": "category-estrutura",
-    "keywords": "uso de cores comunicação multissensorial informação exemplo transmitir mensagens essenciais, alertas",
-    "snippet": "Arte 10: Comunicação Multissensorial — Informação Além da Cor - Exemplo de como transmitir mensagens essenciais, alertas de sistema e gráficos utilizando cor..."
+    "keywords": "uso de cores",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
     "id": "indicacao-de-link",
@@ -273,8 +273,8 @@ const searchDatabase = [
     "title": "Imagens com texto",
     "category": "Apresentação d",
     "categoryClass": "category-estrutura",
-    "keywords": "imagens com texto html/css embutido imagem rasterizada comparativo ilustrado:",
-    "snippet": "Arte 13: Texto Real em HTML/CSS vs. Texto Embutido em Imagem Rasterizada - Comparativo ilustrado: Banner promocional com texto 'achatado' dentro do arquivo d..."
+    "keywords": "imagens com texto",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
     "id": "imagens-complexas",
@@ -305,8 +305,8 @@ const searchDatabase = [
     "title": "Tabelas",
     "category": "Apresentação d",
     "categoryClass": "category-estrutura",
-    "keywords": "tabelas estrutura semântica dados diagrama tabela acessível evidenciando",
-    "snippet": "Arte 14: Estrutura Semântica de Tabelas de Dados - Diagrama de uma tabela acessível evidenciando a marcação de <caption> (título resumido da tabela), cabeçal..."
+    "keywords": "tabelas",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
     "id": "orientacoes-gerais",
@@ -321,8 +321,8 @@ const searchDatabase = [
     "title": "Uso de legendas",
     "category": "Apresentação d",
     "categoryClass": "category-auditivo",
-    "keywords": "uso de legendas anatomia acessíveis sincronizadas (closed captions webvtt) demonstração",
-    "snippet": "Arte 15: Anatomia de Legendas Acessíveis e Sincronizadas (Closed Captions / WebVTT) - Demonstração visual de um player de vídeo acessível reproduzindo áudio ..."
+    "keywords": "uso de legendas",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
     "id": "uso-de-audiodescricao",
@@ -393,8 +393,8 @@ const searchDatabase = [
     "title": "Navegação por teclado",
     "category": "Navegabilidade",
     "categoryClass": "category-estrutura",
-    "keywords": "navegação por teclado indicador visível demonstração acessibilidade motora visual:",
-    "snippet": "Arte 19: Indicador de Foco Visível para Navegação por Teclado - Demonstração de acessibilidade motora e visual: elemento interativo (botão ou link) recebendo..."
+    "keywords": "navegação por teclado",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   },
   {
     "id": "tempo-de-navegacao-ajustavel",
@@ -433,8 +433,8 @@ const searchDatabase = [
     "title": "Design para diferentes tamanhos de viewport",
     "category": "Outras dicas d",
     "categoryClass": "category-estrutura",
-    "keywords": "design para diferentes tamanhos de viewport reflow responsivo adaptação fluida 320px rolagem",
-    "snippet": "Arte 20: Reflow Responsivo — Adaptação Fluida a 320px sem Rolagem Horizontal - Ilustração do critério WCAG 1.4.10 (Reflow): o mesmo portal exibido em tela de..."
+    "keywords": "design para diferentes tamanhos de viewport",
+    "snippet": "Consulte as diretrizes completas desta seção no guia de acessibilidade."
   }
 ];
 
@@ -713,7 +713,7 @@ function initSearchAutocomplete() {
    ========================================================================== */
 
 function initAccessibilityToolbar() {
-  const fontSizes = [1, 1.15, 1.3, 1.5];
+  const fontSizes = [1, 1.15, 1.3, 1.5, 1.75, 2.0];
   let currentFontIndex = 0;
 
   // Restaurar preferências salvas

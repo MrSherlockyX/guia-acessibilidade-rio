@@ -34,21 +34,11 @@ No Censo IBGE 2010[^3], a metodologia utilizada para verificar se a pessoa entre
 
 Naquele ano, a população total do Brasil era de **190.755.799 habitantes**, e **23,9% da população** (45.606.048 pessoas) declarou possuir, pelo menos, uma das deficiências investigadas em algum grau:
 
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 01]**  
-> **Título:** Censo IBGE 2010 — População Geral com Deficiência  
-> **Descrição da Arte:** Infográfico com destaque estatístico para os 23,9% da população brasileira (45.606.048 pessoas de um total de 190.755.799 habitantes) que declararam possuir pelo menos uma deficiência em algum grau no Censo 2010. Detalhamento por tipos: Visual (18,6%), Motora (7,0%), Auditiva (5,1%) e Mental/Intelectual (1,4%).  
-> **Elementos Visuais:** Gráfico de barras estilizadas com pictogramas acessíveis para cada tipo de deficiência (olho, cadeira de rodas, ouvido, cérebro/mente). Tipografia destacada para '23,9%'.  
-> **Paleta Sugerida:** Azul institucional Prefeitura do Rio (#002B49 e #004A80), ciano (#00C0F3) e neutros de alto contraste.  
-> **Diretriz de Acessibilidade:** Garantir contraste de texto mínimo de 4.5:1 sobre o fundo. Não diferenciar os tipos de deficiência apenas pela cor das barras.
+![][image1]
 
 No que se refere às deficiências severas, o percentual caía para **8,3% da população brasileira**, representando aquelas pessoas que tinham muita dificuldade ou não conseguiam realizar as atividades de modo algum. 
 
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 02]**  
-> **Título:** Censo IBGE 2010 — Comparação: Deficiência Geral (23,9%) vs. Severa (8,3%)  
-> **Descrição da Arte:** Infográfico comparativo demonstrando o recorte entre a população geral com alguma deficiência (23,9%) e aquelas com deficiência severa (8,3%, representando pessoas com muita dificuldade ou incapacidade total). Apresenta a maior prevalência entre mulheres e o recorte regional: Estado do RJ (24,4%) e Cidade do Rio de Janeiro (24,7%, quase 1/4 da população carioca).  
-> **Elementos Visuais:** Diagrama comparativo com dois blocos ou funil infográfico. Ícone sutil da Cidade do Rio de Janeiro contextualizando os 24,7%.  
-> **Paleta Sugerida:** Azul escuro (#001F33), azul intermediário (#1565C0) e destaque em amarelo ouro ou ciano.  
-> **Diretriz de Acessibilidade:** Textos explicativos nítidos acompanhando os números percentuais.
+![][image2]
 
 O levantamento ainda mostrou que existia uma tendência de que mulheres apresentassem maior incidência de casos de deficiência, o que pode ser explicado principalmente pelo envelhecimento da população, somado ao fato das mulheres serem mais longevas que os homens.
 
@@ -56,20 +46,9 @@ Em 2010, a região **Sudeste apresentava 23% da população** com, pelo menos, u
 
 No Censo 2022, vemos um cenário diferente. Embora o IBGE tenha mantido a utilização da metodologia do Washington Group, ela já apresentava mudanças na forma de classificar os tipos de deficiência, abrangendo **mais tipos**. Além disso, passou a levar em consideração apenas **casos graves e permanentes**, tirando casos moderados e temporários do cenário. 
 
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 03]**  
-> **Título:** Censo IBGE 2022 — Nova Classificação e Metodologia Washington Group  
-> **Descrição da Arte:** Quadro explicativo sobre a mudança de metodologia do Censo 2022: incorporação de novas perguntas e critérios mais restritivos do Washington Group. Passou a contabilizar exclusivamente casos graves e permanentes (excluindo temporários e moderados), além da divisão entre questionário básico e estendido.  
-> **Elementos Visuais:** Matriz com os tipos avaliados (locomoção, visão, audição, cognição e autocuidado) e caixa de aviso sobre o critério de gravidade permanente.  
-> **Paleta Sugerida:** Fundo neutro claro, bordas estruturadas em azul ardósia (#9DBDCE) e ícones semânticos.  
-> **Diretriz de Acessibilidade:** Tipografia legível sem serifa; ícones com rótulos de texto explícitos.
+![][image3]
 
-Além da mudança metodológica em relação aos tipos e graus de severidade das deficiências, o IBGE também alterou a forma de aplicação das questões. Ele formulou dois tipos de questionários, um estendido, que constavam as perguntas sobre deficiências, e outro básico, que não constava, favorecendo casos de subnotificação. Prova disto é que do Censo de 2010 para o de 2022, houve uma queda considerável do número de pessoas com deficiência. 
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 04]**  
-> **Título:** Comparativo Censo 2010 vs. 2022 — A Queda Estatística e a Subnotificação no Rio  
-> **Descrição da Arte:** Gráfico de impacto mostrando a discrepância estatística decorrente da mudança de metodologia: queda do percentual de pessoas com deficiência na Cidade do Rio de Janeiro de 24,7% (2010) para 6,9% (2022), e cerca de 30 milhões a menos no Brasil. Alerta para o risco de subnotificação em políticas públicas frente ao envelhecimento populacional.  
-> **Elementos Visuais:** Duas colunas comparativas para a Cidade do Rio: Barra 2010 (24,7%) vs Barra 2022 (6,9%), com anotação de 'Subnotificação Estatística' e dados da PNAD 2022 sobre salto de deficiências a partir dos 40 e 60 anos.  
-> **Paleta Sugerida:** Azul marinho (#002B49) para 2010, cinza/azul suave para 2022 e linha de alerta âmbar (#92400E).  
-> **Diretriz de Acessibilidade:** Incluir nota explicativa clara de que a queda reflete mudança de cálculo e não redução real da população que necessita de acessibilidade.
+Além da mudança metodológica em relação aos tipos e graus de severidade das deficiências, o IBGE também alterou a forma de aplicação das questões. Ele formulou dois tipos de questionários, um estendido, que constavam as perguntas sobre deficiências, e outro básico, que não constava, favorecendo casos de subnotificação. Prova disto é que do Censo de 2010 para o de 2022, houve uma queda considerável do número de pessoas com deficiência. **![][image4]**
 
 De acordo com o resultado da pesquisa, em 2022 o Brasil contava com **203.080.0756 habitantes**, dentre os quais **18,6 milhões de pessoas com algum tipo de deficiência**, isto representa 8,9% da população brasileira. Além disso, a pesquisa também aponta para 8,2% de pessoas com deficiência na Região Sudeste, 8,1% no Estado do Rio de Janeiro e 6,9% na cidade do Rio de Janeiro.  
 A nível nacional, a discrepância entre os censos era de cerca de **30 milhões de pessoas a menos**, segundo reportagem do Jornal Folha de São Paulo[^5]. Quando questionado, o IBGE afirmou que os números não eram comparáveis devido às mudanças metodológicas. Ainda assim, o caso serve como alerta para a subnotificação de casos que não sejam severos e permanentes, excluindo uma parcela importante da população que também deve ser considerada na hora de pensarmos políticas públicas de acessibilidade. 
@@ -104,12 +83,7 @@ Em contrapartida, as **barreiras** são todos os tipos de impeditivos a essa seg
 
 O autor Romeu Kazumi Sassaki contribui para ampliar a compreensão sobre o tema, trazendo a acessibilidade em **sete dimensões[^13]:**
 
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 05]**  
-> **Título:** As 7 Dimensões da Acessibilidade (Romeu Kazumi Sassaki)  
-> **Descrição da Arte:** Diagrama conceitual integrando as sete dimensões de acessibilidade: 1. Arquitetônica (espaços físicos); 2. Comunicacional (linguagem simples, legendas, LIBRAS); 3. Metodológica (processos e métodos); 4. Instrumental (softwares e dispositivos); 5. Programática (leis e políticas); 6. Atitudinal (eliminação de preconceitos); 7. Digital/Tecnológica (serviços web e sistemas).  
-> **Elementos Visuais:** Diagrama radial/circular com o cidadão ao centro e as 7 dimensões interligadas com ícones modernos.  
-> **Paleta Sugerida:** Tons harmoniosos da identidade visual do Rio: azul primário, ciano, verde esmeralda e ardósia.  
-> **Diretriz de Acessibilidade:** Cada dimensão deve conter ícone vetorial e um pequeno subtítulo explicativo com alto contraste.
+### **![][image5]**
 
 Suas sete dimensões permitem relacionar os princípios de igualdade, autonomia, participação e inclusão presentes na *Convenção sobre os Direitos das Pessoas com Deficiência* e na *Lei Brasileira de Inclusão* a aspectos concretos da vida cotidiana. Desta forma, a perspectiva de Sassaki é utilizada neste trabalho como uma referência conceitual para compreender a acessibilidade de forma abrangente e identificar diferentes frentes nas quais barreiras podem ser eliminadas ou reduzidas, e não como uma classificação normativa estabelecida pelo ordenamento jurídico brasileiro.  
 Ao transpor essa questão para a acessibilidade digital, vemos que ela não se restringe à adequação técnica de websites, aplicativos ou sistemas, mas envolve a identificação e a eliminação de diferentes barreiras que podem dificultar o acesso à informação e aos serviços.  
@@ -150,12 +124,7 @@ Tentando avaliar o grau de adaptação dos grupos, a pesquisa listava algumas ta
 
 A pesquisa mostrou que a média de entrevistados que demonstrava autoconfiança[^19] para realizar atividades digitais sem ajuda de outra pessoa era de apenas 47,5%. “Essa confiança é ainda mais baixa entre pessoas com mais de 55 anos (24,0% das habilidades), indivíduos com ensino fundamental (26,7%), moradores de áreas rurais (36,6%) e pessoas com deficiência (24,2%)”[^20]. 
 
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 06]**  
-> **Título:** Pesquisa BID 2025 — Autoconfiança no Uso de Serviços Públicos Digitais  
-> **Descrição da Arte:** Gráfico baseado na pesquisa do Banco Interamericano de Desenvolvimento (BID, 2025): demonstra que mesmo com 94,2% de celulares conectados, a média de autoconfiança digital é de apenas 47,5%. A confiança cai para 24,2% entre pessoas com deficiência, 24,0% em idosos (+55 anos) e 26,7% em baixa escolaridade. 57,2% prefeririam atendimento presencial por insegurança no digital.  
-> **Elementos Visuais:** Gráfico de barras horizontais contrastando a média geral (47,5%) com as populações mais vulneráveis (24%), com destaque para a frase-chave sobre autonomia.  
-> **Paleta Sugerida:** Azul cobalto (#004A80), vermelho/coral de alerta para barreiras e verde para autonomia.  
-> **Diretriz de Acessibilidade:** Indicar percentuais numéricos de forma clara e visível dentro ou ao lado de cada barra.
+![][image6]
 
 Essa desigualdade na adaptação digital também se refletiu diretamente na utilização de serviços públicos digitais. Quando questionados sobre o uso desses serviços no ano anterior, 42,8% dos entrevistados afirmou ter acessado serviços digitais pelo menos uma vez e os grupos que enfrentaram maior dificuldade de uso foram justamente aqueles que tinham menos adaptação digital. 
 
@@ -210,19 +179,7 @@ A acessibilidade digital é, acima de tudo, uma forma de garantir uma navegaçã
 
 3) #### **Daltonismo**: Alteração na percepção das cores devido ao funcionamento ou ausência dos cones da retina, células responsáveis por identificar as cores. O daltonismo pode ser de quatro tipos:
 
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 07]**  
-> **Título:** Simulação Visual de Daltonismo — Espectro de Cores  
-> **Descrição da Arte:** Infográfico demonstrativo do espectro de cores visível para pessoas com diferentes tipos de daltonismo: Visão Tricromata (Normal), Protanopia (ausência de cones vermelhos), Deuteranopia (ausência de cones verdes), Tritanopia (dificuldade com azul/amarelo) e Acromatopsia (monocromática / escala de cinza).  
-> **Elementos Visuais:** Barras horizontais paralelas exibindo o arco-íris comparado em cada uma das condições.  
-> **Paleta Sugerida:** Espectros simulados de Protanopia, Deuteranopia e Tritanopia com legendas descritivas.  
-> **Diretriz de Acessibilidade:** Apresentar rótulos textuais nítidos para cada espectro, permitindo que a diferença seja compreendida mesmo sem visualização colorida.
-
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 08]**  
-> **Título:** Boas Práticas de Interface para Daltonismo: Não Dependa Apenas da Cor  
-> **Descrição da Arte:** Exemplo prático de componente de interface (formulário / status / gráfico) mostrando a abordagem incorreta (diferenciação baseada somente em cor verde/vermelho) versus a abordagem acessível (reforço simultâneo com ícones ✓ e ✕, texto descritivo e textura de traço).  
-> **Elementos Visuais:** Layout 'Antes vs Depois' ou 'Evite vs Prefira' com cards lado a lado.  
-> **Paleta Sugerida:** Cores de interface com contornos definidos e ícones pretos/brancos de suporte.  
-> **Diretriz de Acessibilidade:** Excelente exemplo didático para designers e desenvolvedores front-end.
+**![][image7]![][image8]**
 
 Principais dificuldades de uso:
 
@@ -258,6 +215,7 @@ Principais dificuldades de uso:
 * Disponibilizar Libras quando o contexto e o público justificarem esse recurso.  
 * Fornecer transcrições para conteúdos predominantemente em áudio.  
 * Utilizar linguagem clara e objetiva, com boa organização visual das informações.
+
 
   
 
@@ -308,6 +266,7 @@ Principais dificuldades de uso:
 * Processos longos, com muitas etapas ou que exigem que o usuário memorize informações.  
 * Limites de tempo muito curtos para concluir tarefas ou preencher formulários.
 
+
   Boas práticas:
 
 * Utilizar interfaces sem poluição visual, organizadas e visualmente hierarquizadas, destacando as informações mais importantes.  
@@ -315,6 +274,7 @@ Principais dificuldades de uso:
 * Evitar distrações desnecessárias e permitir que animações e notificações sejam desativadas.  
 * Reduzir a necessidade de memorização, fornecendo instruções e informações relevantes no momento em que são necessárias.  
 * Oferecer tempo suficiente para realizar tarefas e, sempre que possível, permitir que o usuário pause ou retome um processo.
+
 
 4) #### **Dislexia:** Dislexia é um transtorno específico de aprendizagem com causas de influência genética, neurobiológica e ambiental que interagem ao longo do desenvolvimento. 
 
@@ -324,6 +284,7 @@ Principais dificuldades de uso:
 * Fontes pequenas, pouco legíveis ou com pouco contraste.  
 * Interfaces que exigem leitura rápida ou memorização de muitas informações.  
 * Formulários e instruções pouco claros ou que não permitem identificar facilmente as informações principais.
+
 
   Boas práticas:
 
@@ -389,11 +350,13 @@ Além disso, o Governo Federal prevê a utilização de **Linguagem Simples**, j
 
 * Além disso, se houver títulos, listas, tabelas, imagens e outros elementos, mantenha a hierarquia semântica com a indicação das tags correspondentes.
 
+
 2. [**Tamanho de fonte e redimensionamento de texto:**](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#resize-text)
 
    A WCAG não determina um tamanho de fonte, no entanto, boas práticas de design indicam o **tamanho 16 como o mínimo**. Além disso, a questão do redimensionamento torna-se essencial para garantir a legibilidade.
 
 * O texto (exceto legenda ou imagem de texto) deve poder ser redimensionado 200%, sem apresentar perda de conteúdo ou de funcionalidade.
+
 
 3. [**Alinhamento de texto:**](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#visual-presentation)
 
@@ -421,6 +384,7 @@ Além disso, o Governo Federal prevê a utilização de **Linguagem Simples**, j
 
 * Exemplos de conteúdo que exigem layout bidimensional são imagens necessárias para compreensão (como mapas e diagramas), vídeos, jogos, apresentações, tabelas de dados (não células individuais) e interfaces onde seja necessário manter as barras de ferramentas em exibição ao manipular o conteúdo. É aceitável fornecer rolagem bidimensional para tais partes do conteúdo. 
 
+
 5. [**Espaçamento de texto:**](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#text-spacing)
 
    Os espaçamentos devem ser calculados levando em consideração o tamanho da fonte do texto. O layout do site deve suportar esses ajustes sem quebrar.
@@ -432,6 +396,7 @@ Além disso, o Governo Federal prevê a utilização de **Linguagem Simples**, j
 * Espaçamento entre letras de pelo menos 0,12 vezes o tamanho da fonte;
 
 * Espaçamento entre palavras de pelo menos 0,16 vezes o tamanho da fonte.
+
 
 6. [**Contraste textual:**](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#contrast-minimum) 
 
@@ -447,12 +412,6 @@ Além disso, o Governo Federal prevê a utilização de **Linguagem Simples**, j
 
 * Logotipos não possuem requisitos mínimos de contraste.
 
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 09]**  
-> **Título:** Contraste Textual Mínimo — Diretrizes WCAG AA (4.5:1 e 3:1)  
-> **Descrição da Arte:** Demonstração visual das relações mínimas de contraste exigidas pela WCAG 2.2 Nível AA: 4.5:1 para texto normal e 3:1 para texto grande (18pt ou 14pt negrito). Comparativo com contraste insuficiente (reprovado) e contraste ampliado AAA (7:1).  
-> **Elementos Visuais:** Cards de amostra tipográfica com indicador de medição de contraste e carimbo de 'Aprovado AA' ou 'Reprovado'.  
-> **Paleta Sugerida:** Exemplos com fundo branco (#FFFFFF) e fundos escuros (#0F172A), demonstrando ambos os modos.  
-> **Diretriz de Acessibilidade:** Indicar o valor numérico exato do cálculo de luminância em cada amostra.
 
 7. [**Contraste não textual:**](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#non-text-contrast)
 
@@ -460,18 +419,13 @@ Além disso, o Governo Federal prevê a utilização de **Linguagem Simples**, j
 
 * Como exemplo temos mudanças de estado (grifos ao passar o mouse, clicar no botão, etc) ou qualquer tipo de informação gráfica.
 
+
 8. [**Uso de cores:**](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#use-of-color)
 
 * A cor não pode ser utilizada como o **único meio visual** de transmitir informações, indica uma ação, pedir uma resposta ou distinguir um elemento visual.
 
 * Nestes casos, ela precisa vir acompanhada de uma indicação textual.
 
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 10]**  
-> **Título:** Comunicação Multissensorial — Informação Além da Cor  
-> **Descrição da Arte:** Exemplo de como transmitir mensagens essenciais, alertas de sistema e gráficos utilizando cor combinada com tipografia, ícones e formas geométricas, cumprindo a diretriz WCAG 1.4.1.  
-> **Elementos Visuais:** Trio de status (Sucesso, Atenção, Erro) exibindo simultaneamente: cor + ícone semântico + rótulo textual.  
-> **Paleta Sugerida:** Verde esmeralda, amarelo âmbar e vermelho carmim sobre superfícies adequadas.  
-> **Diretriz de Acessibilidade:** Demonstrar que o usuário com qualquer alteração visual consegue entender a ação imediatamente.
 
 9. [**Indicação de link:**](https://www.w3.org/WAI/tips/writing/#make-link-text-meaningful)
 
@@ -479,7 +433,9 @@ Além disso, o Governo Federal prevê a utilização de **Linguagem Simples**, j
 
   Ex.:  Fornecer um texto de link que descreva a finalidade de um link
 
+
 * Para um título que também é um link, o ideal é usar um elemento \<a\> envolvendo o título no código HTML. O leitor de tela será capaz de perceber que se trata de um link.
+
 
 10. [**Formulários:**](https://www.w3.org/WAI/tutorials/forms/)
 
@@ -503,13 +459,6 @@ Além disso, o Governo Federal prevê a utilização de **Linguagem Simples**, j
 
 * **Controles personalizados:** utilize elementos de formulário estilizados e outras técnicas de aprimoramento progressivo para fornecer controles personalizados. 
 
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 11]**  
-> **Título:** Anatomia de um Campo de Formulário Acessível  
-> **Descrição da Arte:** Diagrama anotado de um campo de entrada (input): rótulo visível <label> permanentemente associado pelo atributo 'for', texto de ajuda instrutivo, marcação de campo obrigatório e mensagem de validação de erro contextual com sugestão de correção.  
-> **Elementos Visuais:** Mockup explodido de input com setas numeradas apontando para cada requisito de acessibilidade.  
-> **Paleta Sugerida:** Design de formulário moderno, limpo, alinhado ao padrão Governo Digital.  
-> **Diretriz de Acessibilidade:** Evitar uso exclusivo de placeholder como único rótulo.
-
 11. [**Listas:**](https://www.w3.org/WAI/tutorials/page-structure/content/#lists)
 
 	Existem vários tipos de lista:
@@ -521,6 +470,7 @@ Além disso, o Governo Federal prevê a utilização de **Linguagem Simples**, j
 * **Listas de descrição:** são grupos de termos e descrições conectados programaticamente.  
   * Uma lista de descrição consiste em um ou mais agrupamentos de termos e descrições. Cada agrupamento associa um ou mais termos (o conteúdo dos \<dt\>elementos) a uma ou mais descrições (o conteúdo dos \<dd\>elementos).   
   * Um agrupamento começa no primeiro item da lista ou sempre que um \<dt\>elemento segue outro \<dd\>elemento. 
+
 
   **IMPORTANTE:** “Cada leitor de tela exibe \<dl\>o conteúdo de forma diferente, incluindo a contagem total, o contexto de termos/definições e os métodos de navegação. Essas diferenças não são necessariamente bugs. A partir do iOS 14, o VoiceOver anunciará que \<dl\>o conteúdo é uma lista ao navegar com o cursor virtual (não pelo comando "ler tudo"). O VoiceOver não oferece suporte a comandos de navegação em listas com \`\<li\>\` \<dl\>. Tenha cuidado ao aplicar ARIA terme definition funções a \<dl\>construções, pois o VoiceOver (macOS e iOS) ajustará a forma como elas são anunciadas.”[^29] 
 
@@ -558,13 +508,6 @@ Correta:
 <img src="equipe.jpg" alt="Equipe de desenvolvimento do Web para Todos: cinco pessoas em frente a um quadro branco com diagramas de fluxo">
 ```
 
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 12]**  
-> **Título:** O Atributo 'alt' no Leitor de Tela — Imagens Informativas  
-> **Descrição da Arte:** Ilustração do funcionamento da tecnologia assistiva: uma imagem de um atendimento ao público da Prefeitura do Rio sendo interpretada por um leitor de tela (NVDA/TalkBack), que sintetiza a fala com base no atributo alt descritivo.  
-> **Elementos Visuais:** Foto/desenho com balão de fala sonoro contendo a descrição textual acessível.  
-> **Paleta Sugerida:** Cores quentes e acolhedoras para o atendimento humano, tons de azul para o sintetizador.  
-> **Diretriz de Acessibilidade:** Ressaltar a concisão (100 a 150 caracteres) e a riqueza contextual da descrição.
-
 2. [**Imagens decorativas:**](https://www.w3.org/WAI/tutorials/images/decorative/)
 
    É aquela que tem como único objetivo adicionar decoração visual à página, em vez de transmitir informações.
@@ -573,11 +516,13 @@ Correta:
 
 * Deve-se deixar o conteúdo do atributo "alt" vazio (alt=””), para que a imagem seja ignorada pelos leitores de tela.
 
+
 3. [**Imagens funcionais:**](https://www.w3.org/WAI/tutorials/images/functional/)
 
 * O texto que acompanha uma imagem usada como link ou botão deve descrever a funcionalidade do link ou botão, não a imagem em si.
 
 * Ex.: imagem com ícone de impressora deve representar a função de impressão.
+
 
 4. [**Imagens com texto:**](https://www.gov.br/gestaodeconteudo/pt-br/manuais-e-tutoriais/acessibilidade-em-imagens/acessibilidade-em-imagens-no-plone)
 
@@ -589,18 +534,13 @@ Correta:
 
 * É essencial utilizar texto em HTML e CSS para evitar distorções ao redimensionar as telas.
 
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 13]**  
-> **Título:** Texto Real em HTML/CSS vs. Texto Embutido em Imagem Rasterizada  
-> **Descrição da Arte:** Comparativo ilustrado: Banner promocional com texto 'achatado' dentro do arquivo de imagem (perda de qualidade ao ampliar, invisível para leitores de tela) versus Banner com imagem de fundo estilizada e texto real renderizado via HTML e CSS.  
-> **Elementos Visuais:** Simulação de zoom 200%: lado esquerdo borrado/pixelado; lado direito 100% nítido, selecionável e responsivo.  
-> **Paleta Sugerida:** Contraste forte entre a imagem e as caixas de texto.  
-> **Diretriz de Acessibilidade:** Destacar a preservação de nitidez em telas de alta densidade (Retina/OLED).
 
 5. [**Imagens complexas:**](https://www.w3.org/WAI/tutorials/images/complex/)
 
 * No caso de gráficos e imagens complexas, precisamos fornecer uma descrição mais detalhada. 
 
 * A solução é fornecer as informações do gráfico no próprio contexto antes ou depois da imagem ou então em um link logo após a imagem.
+
 
 6. [**Grupos de imagens:**](https://www.w3.org/WAI/tutorials/images/groups/)
 
@@ -624,13 +564,6 @@ Correta:
 
 * Para tabelas mais complexas, associações explícitas podem ser necessárias usando atributos como scope\` id\\href\`, \`\\dref\` e \`\\dref\` headers.
 
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 14]**  
-> **Título:** Estrutura Semântica de Tabelas de Dados  
-> **Descrição da Arte:** Diagrama de uma tabela acessível evidenciando a marcação de <caption> (título resumido da tabela), cabeçalhos de coluna <th> com scope='col', cabeçalhos de linha com scope='row' e células de dados <td>.  
-> **Elementos Visuais:** Tabela tridimensional ou explodida com linhas de conexão demonstrando como o leitor de tela relaciona cada célula ao seu cabeçalho correspondente.  
-> **Paleta Sugerida:** Cabeçalhos em azul escuro (#002B49) e linhas zebradas suaves.  
-> **Diretriz de Acessibilidade:** Mostrar a lógica de leitura horizontal e vertical para leitores de tela.
-
 ### Apresentação do conteúdo em vídeo:
 
 #### Orientações gerais:
@@ -653,18 +586,13 @@ Além do conteúdo textual, deve ser fornecida uma alternativa em mídia aos que
 
 * Legenda ao vivo: devem ser fornecidas legendas para todo conteúdo de áudio ao vivo em mídia sincronizada.
 
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 15]**  
-> **Título:** Anatomia de Legendas Acessíveis e Sincronizadas (Closed Captions / WebVTT)  
-> **Descrição da Arte:** Demonstração visual de um player de vídeo acessível reproduzindo áudio perfeitamente sincronizado com legendas no padrão WebVTT. Evidencia as boas práticas: identificação explícita de quem fala entre colchetes (ex: '[Palestrante]'), descrição de informações sonoras contextuais não verbais (ex: '[música suave de fundo]', '[aplausos]'), quebra em até 2 linhas e fundo escuro semitransparente que garante legibilidade sobre cenas claras ou escuras. Alerta contra a dependência cega de legendas automáticas sem revisão humana.  
-> **Elementos Visuais:** Mockup de player de vídeo com botões de controle, botão 'CC' ativado, caixa de legenda destacada e três balões explicativos apontando para: 1. Identificação do locutor; 2. Efeitos sonoros; 3. Contraste da caixa de texto.  
-> **Paleta Sugerida:** Interface do player em azul escuro (#0F172A), caixa de legenda preta (#000000) com texto branco (#FFFFFF) ou amarelo (#FFEB3B) e acentos em ciano (#00C0F3).  
-> **Diretriz de Acessibilidade:** Critério WCAG 1.2.2 (Legendas Pré-gravadas - Nível A). Nunca disponibilizar legendas geradas automaticamente sem revisão humana prévia.
 
 2. [**Uso de audiodescrição**](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#audio-description-or-media-alternative-prerecorded)
 
 * Audiodescrição: deve ser fornecida [audiodescrição](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#dfn-audio-descriptions) para todo o conteúdo de [vídeo](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#dfn-video) [pré-gravado](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#dfn-prerecorded) em [mídia sincronizada](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#dfn-synchronized-media). 
 
 * Audiodescrição estendida: quando as pausas no áudio de primeiro plano forem insuficientes para permitir que as audiodescrições transmitam o sentido do vídeo, é fornecida uma audiodescrição estendida para todo o [vídeo](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#dfn-video) [pré-gravado](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#dfn-prerecorded) no conteúdo em [mídia sincronizada](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#dfn-synchronized-media). 
+
 
 3.  [**Mídia alternativa:**](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#audio-description-or-media-alternative-prerecorded)
 
@@ -692,13 +620,6 @@ Além do conteúdo textual, deve ser fornecida uma alternativa em mídia aos que
 
 ### 
 
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 16]**  
-> **Título:** Enquadramento e Boas Práticas da Janela de LIBRAS em Vídeo  
-> **Descrição da Arte:** Guia visual completo de produção para a janela de tradução em Língua Brasileira de Sinais (LIBRAS). Demonstração da área correta de enquadramento da câmera (da linha abaixo da cintura até acima da cabeça, com folga lateral abrangendo ambos os cotovelos para visualização ampla dos sinais e do espaço de sinalização), vestimenta e parede de fundo em tons sólidos contrastantes com a cor de pele do intérprete, e posicionamento no canto inferior direito do vídeo dimensionado para permitir visualização nítida de expressões faciais sem cobrir letreiros ou legendas.  
-> **Elementos Visuais:** Ilustração de intérprete de LIBRAS com linhas guias de enquadramento (limites seguros: cabeça, cotovelos e cintura), iluminação frontal suave e inserção na tela principal de vídeo com indicação de área de segurança.  
-> **Paleta Sugerida:** Fundo de estúdio em azul marinho sóbrio (#002B49) ou cinza neutro, contraste luminoso com a pele e janela delimitada com traço sutil.  
-> **Diretriz de Acessibilidade:** Critério WCAG 1.2.6 (Língua de Sinais Pré-gravada - Nível AAA). Lembrete de que plugins automatizados (avatares 3D) não substituem a tradução humana nativa.
-
 ### Estrutura da página
 
 Orientações gerais:
@@ -717,13 +638,6 @@ Uma página web bem estruturada facilita o acesso e a navegação para todos, es
 
 * Em seguida, devem ser utilizados os níveis subsequentes de título, de maneira hierárquica, sem se pular um ou mais níveis.
 
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 17]**  
-> **Título:** Árvore de Hierarquia Semântica de Cabeçalhos (H1 a H4)  
-> **Descrição da Arte:** Diagrama em árvore mostrando a correta ordenação dos títulos em um portal: H1 (único, tema principal) -> H2 (capítulos/seções) -> H3 (subtópicos) -> H4 (detalhes). Alerta visual contra a prática incorreta de pular níveis (ex: H1 direto para H3).  
-> **Elementos Visuais:** Organograma hierárquico com nós conectados e ícones de marcação semântica.  
-> **Paleta Sugerida:** Gradiente estruturado de azuis da Prefeitura do Rio, do mais escuro (H1) ao mais claro (H4).  
-> **Diretriz de Acessibilidade:** Excelente guia rápido de arquitetura da informação para criadores de conteúdo.
-
 2. [**Rodapé:**](https://www.w3.org/WAI/tutorials/page-structure/regions/#page-footer)
 
    Assim como o cabeçalho da página, a maioria dos sites também possui uma região na parte inferior de cada página que contém informações gerais do site, como informações sobre direitos autorais, declarações de privacidade ou isenções de responsabilidade. 
@@ -735,6 +649,7 @@ Uma página web bem estruturada facilita o acesso e a navegação para todos, es
 3. [**Conteúdo principal:**](https://www.w3.org/WAI/tutorials/page-structure/regions/#main-content)
 
 * Utilize o \<main\>elemento HTML5 para identificar a região de conteúdo principal de uma página web ou aplicação. 
+
 
 4. [**Conteúdo complementar:**](https://www.w3.org/WAI/tutorials/page-structure/regions/#complementary-content)
 
@@ -760,12 +675,6 @@ Uma página web bem estruturada facilita o acesso e a navegação para todos, es
 
 * Como uma coleção de itens de conteúdo, os carrosséis são geralmente melhor representados como listas não ordenadas, usando \`\<ul\>\` \<ul\>e \`\<span\>\` \<li\>. Dependendo do contexto, outros elementos também podem ser usados, como marcação de títulos, seções, listas, artigos e outros elementos, conforme necessário. 
 
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 18]**  
-> **Título:** Regiões Semânticas e Pontos de Referência (Landmarks HTML5)  
-> **Descrição da Arte:** Wireframe de uma página web destacando as principais regiões semânticas: <header> (topo/banner), <nav> (navegação/menus), <main> (conteúdo principal único), <aside> (complementar/lateral) e <footer> (rodapé institucional).  
-> **Elementos Visuais:** Esquema visual de página web com blocos codificados por cor e etiquetas de código semântico.  
-> **Paleta Sugerida:** Paleta de layout suave com contornos pontilhados em azul e ciano.  
-> **Diretriz de Acessibilidade:** Facilita o entendimento de como pessoas cegas saltam rapidamente entre seções da página.
 
 ### Navegabilidade da interface
 
@@ -778,13 +687,6 @@ Orientações gerais:
 * Um usuário que navega somente pelo teclado deve conseguir entrar e sair de qualquer componente ou funcionalidade usando o teclado, sem ficar permanentemente preso em algum elemento.
 
 * Para que a navegação por teclado funcione da melhor forma possível, seja para pessoas com deficiência física ou visual (com uso de leitor de tela), é de suma importância que se respeite a hierarquia do conteúdo e se faça as indicações corretas de tag no código HTML.
-
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 19]**  
-> **Título:** Indicador de Foco Visível para Navegação por Teclado  
-> **Descrição da Arte:** Demonstração de acessibilidade motora e visual: elemento interativo (botão ou link) recebendo foco pelo teclado (tecla Tab) com anel de destaque (:focus-visible) duplo e de alto contraste. Comparação com o erro comum de remover o contorno com 'outline: none'.  
-> **Elementos Visuais:** Simulação de botão em 3 estados: Normal, Hover (mouse) e Foco Ativo pelo Teclado com anel iluminado de 3px.  
-> **Paleta Sugerida:** Botão em azul royal com anel de foco em ciano vívido (#00C0F3) e offset branco.  
-> **Diretriz de Acessibilidade:** Requisito indispensável para usuários que utilizam teclado, switches ou comando de voz.
 
 2. [**Tempo de navegação ajustável:**](https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#timing-adjustable)
 
@@ -839,13 +741,6 @@ Orientações gerais:
 * Certifique-se de que o tamanho do texto e a largura da linha estejam configurados para maximizar a legibilidade. 
 
 * O design deve ser responsivo para atender às diretrizes de redimensionamento (200% de zoom), garantindo que elementos como botões, campos de formulário e textos ampliados não fiquem sobrepostos ou cortados. 
-
-> **[ESPAÇO PARA ILUSTRAÇÃO • ARTE 20]**  
-> **Título:** Reflow Responsivo — Adaptação Fluida a 320px sem Rolagem Horizontal  
-> **Descrição da Arte:** Ilustração do critério WCAG 1.4.10 (Reflow): o mesmo portal exibido em tela de Desktop (1280px) com múltiplas colunas e adaptado fluidamente para tela mobile estreita (320px de largura) ou zoom de 400%, sem perda de conteúdo e sem necessidade de barra de rolagem horizontal.  
-> **Elementos Visuais:** Dois dispositivos lado a lado (Monitor vs Smartphone compacto) mostrando o rearranjo vertical natural dos blocos de conteúdo.  
-> **Paleta Sugerida:** Fundos claros com blocos de texto e botões redimensionados com área de toque mínima de 44x44px.  
-> **Diretriz de Acessibilidade:** Destacar a importância do design mobile-first e da tipografia responsiva com unidades relativas.
 
 [^1]:  **BRASIL. Ministério da Saúde.** Saúde da pessoa com deficiência. Brasília, DF: Ministério da Saúde, \[sem data\]. Disponível em: \<\<[https\://www\.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-pessoa-com-deficiencia](https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-pessoa-com-deficiencia?utm_source=chatgpt.com)\>\>. Acesso em: 
 
@@ -904,4 +799,11 @@ Orientações gerais:
 [^28]:  Para saber mais sobre as aplicações do WAI-ARIA, consulte: \<\<[https\://www\.w3.org/WAI/tutorials/forms/labels/](https://www.w3.org/WAI/tutorials/forms/labels/)\>\>.
 
 [^29]:  Para saber mais, consulte a página do MDN sobre “Elemento de lista de descrição HTML”. Disponível em: \<\<[https\://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dl](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dl)\>\>. Acesso em:
+
+
+
+
+
+
+
 

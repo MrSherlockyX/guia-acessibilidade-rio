@@ -490,6 +490,29 @@ body.dark-mode .section-badge {
   color: #38BDF8 !important;
 }
 
+/* LINKS NO MODO ESCURO (Alto Contraste WCAG AAA > 7:1) */
+body.dark-mode a:not(.btn):not(.btn-action):not(.topbar-portal-link):not(.topbar-social-link):not(.tab-item) {
+  color: #60A5FA !important; /* Azul claro luminoso e de alto contraste sobre fundo escuro */
+}
+
+body.dark-mode a:not(.btn):not(.btn-action):not(.topbar-portal-link):not(.topbar-social-link):not(.tab-item):hover,
+body.dark-mode a:not(.btn):not(.btn-action):not(.topbar-portal-link):not(.topbar-social-link):not(.tab-item):focus-visible {
+  color: #93C5FD !important; /* Azul celeste ainda mais claro no foco e hover */
+  text-decoration: underline !important;
+}
+
+body.dark-mode .content-section a,
+body.dark-mode .footnote-backlink,
+body.dark-mode .footnote-backref {
+  color: #60A5FA !important;
+  text-decoration: underline;
+}
+
+body.dark-mode .content-section a:hover,
+body.dark-mode .content-section a:focus-visible {
+  color: #93C5FD !important;
+}
+
 body.dark-mode .callout {
   background-color: #1A2638 !important;
   color: #E2E8F0 !important;
@@ -1154,8 +1177,8 @@ textarea:focus-visible,
 
 .toc-filter-input {
   width: 100%;
-  padding: 0.45rem 0.65rem;
-  font-size: 0.85rem;
+  padding: 0.55rem 0.75rem;
+  font-size: 1rem; /* Mínimo 16px para baixa visão */
   border: 1px solid var(--border-light);
   border-radius: var(--radius-sm);
   margin-bottom: 0.85rem;
@@ -1171,7 +1194,7 @@ textarea:focus-visible,
 
 .toc-tree {
   list-style: none;
-  font-size: 0.88rem;
+  font-size: 1rem; /* Mínimo 16px para baixa visão */
 }
 
 .toc-tree-item {
@@ -1185,7 +1208,8 @@ textarea:focus-visible,
   text-decoration: none;
   border-radius: var(--radius-sm);
   font-weight: 500;
-  line-height: 1.35;
+  font-size: 1rem; /* Mínimo 16px */
+  line-height: 1.4;
   transition: all var(--transition-fast);
   border-left: 2px solid transparent;
 }
@@ -1210,8 +1234,8 @@ textarea:focus-visible,
 }
 
 .toc-sublist .toc-link {
-  font-size: 0.82rem;
-  padding: 0.3rem 0.5rem;
+  font-size: 1rem; /* Mínimo 16px para baixa visão */
+  padding: 0.35rem 0.5rem;
 }
 
 /* --- CONTEÚDO PRINCIPAL --- */
