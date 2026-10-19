@@ -1,0 +1,1066 @@
+<?php
+/**
+ * Template principal de fallback
+ */
+
+get_header();
+get_sidebar();
+?>
+
+<main class="main-content" id="conteudo-principal">
+
+<!-- ==========================================
+     CAPÍTULO 1: INTRODUÇÃO
+     ========================================== -->
+<section class="content-section" id="introducao">
+  <span class="section-badge">Capítulo 1</span>
+  <h2 class="section-heading">Introdução</h2>
+  <p>Em meio a um cenário de avanços tecnológicos e de transformação digital, torna-se urgente o compromisso da gestão pública com a inclusão digital de todos os cidadãos, porque sem essa inclusão, a transformação digital torna-se mais uma barreira do que um facilitador. Por outro lado, uma transformação digital focada no cidadão, utiliza a tecnologia para criar uma sociedade mais igualitária, garantindo acesso a serviços essenciais, diminuindo a burocracia, aumentando a eficiência, a transparência e a cidadania ativa.</p>
+  <p>A implementação da acessibilidade digital promove o acesso igualitário aos conteúdos e serviços públicos, garantindo que os usuários possam navegar com autonomia e compreender com facilidade seu conteúdo.</p>
+  <p>Embora o foco deste guia seja garantir o acesso de pessoas com diversos tipos de deficiência, essa inclusão acaba sendo benéfica para toda a sociedade, pois também impacta outros grupos com baixa adaptação digital, como pessoas idosas, com deficiências temporárias ou com baixo nível de escolaridade, por exemplo.</p>
+  <p>A melhoria da acessibilidade e da usabilidade de portais não impacta negativamente quem não necessita delas, mas representa uma enorme diferença para todos aqueles que, muitas vezes, se vêem impossibilitados de acessar serviços apenas pelo fato de estarem em formato digital.</p>
+  <p>Visando estabelecer esse compromisso com a população, a Prefeitura da Cidade do Rio de Janeiro criou o <em>Guia de Boas Práticas de Acessibilidade Digital</em>, que tem como objetivo unir <strong>transformação digital</strong> e <strong>inclusão</strong>, trazendo um compilado de diretrizes, critérios práticos e tutoriais que visam orientar Secretarias e demais Órgãos Municipais a adequarem seus portais destinados aos cidadãos.</p>
+  <p>Reconhecemos as dificuldades intrínsecas à empreitada, mas reforçamos que mudanças dependem de engajamento e proatividade. Neste sentido, o <em>Guia</em> irá funcionar como um norteador de melhorias. A ideia é que as próprias secretarias e órgãos tenham autonomia para revisar sites já existentes, sendo capazes de avaliar o grau de dificuldade que oferecem para pessoas com deficiência e fazer os devidos ajustes. E, em caso de sites novos, o Guia orienta para que ele já seja criado com design inclusivo.</p>
+  <p>Nosso planejamento é que as mudanças ocorram de forma gradual e possam ser avaliadas anualmente a partir de um Índice de Transformação Digital de Serviços, que conta com perguntas exclusivas para acessibilidade. Os dados deste Índice estarão disponíveis para que a população acompanhe as melhorias que vem ocorrendo nos serviços públicos digitais.</p>
+  <p>Neste sentido, a acessibilidade digital deve ser compreendida não apenas como uma adequação técnica dos portais, mas como parte de uma política pública orientada à garantia de direitos. A adoção de práticas acessíveis desde o planejamento, desenvolvimento e manutenção dos serviços digitais contribui para reduzir barreiras, ampliar a autonomia dos cidadãos e fortalecer a relação entre a população e o poder público. Trata-se, portanto, de incorporar a perspectiva da acessibilidade à própria cultura de transformação digital, reconhecendo a diversidade dos usuários como elemento fundamental para a construção de serviços públicos mais inclusivos, eficientes e centrados nas pessoas.</p>
+  <p>A elaboração do <em>Guia de Boas Práticas de Acessibilidade Digital</em> representa, assim, uma iniciativa para apoiar esse processo de transformação e fortalecer a capacidade dos órgãos municipais de identificar e enfrentar barreiras digitais. Mais do que estabelecer um conjunto de recomendações, o Guia busca estimular uma mudança contínua na forma de planejar, desenvolver e avaliar os serviços públicos digitais, acompanhada por indicadores que permitam monitorar seus avanços. Dessa forma, a acessibilidade passa a integrar de maneira permanente a agenda de transformação digital do Município, contribuindo para que os serviços públicos sejam cada vez mais acessíveis e para que o exercício da cidadania não seja limitado pela forma como esses serviços são disponibilizados.</p>
+</section>
+
+<!-- ==========================================
+     CAPÍTULO 2: COMPREENDENDO A ACESSIBILIDADE
+     ========================================== -->
+<section class="content-section" id="compreendendo-a-acessibilidade">
+  <span class="section-badge">Capítulo 2</span>
+  <h2 class="section-heading">Compreendendo a acessibilidade</h2>
+  <article id="pessoas-com-deficiencia-definicao">
+    <h3 class="subsection-heading">Pessoas com Deficiência: definição</h3>
+    <p>Segundo o Ministério da Saúde brasileiro, “pessoas com deficiência são aquelas que têm <strong>impedimento de médio ou longo prazo de natureza física, mental, intelectual ou sensorial</strong>, o que, em interação com uma ou mais barreiras, pode obstruir sua participação plena e efetiva na sociedade em igualdade de condições com as demais pessoas”<sup id="fnref1"><a href="#fn1" class="footnote-backlink" aria-describedby="fn1">[1]</a></sup>.</p>
+    <p>Ou seja, a deficiência não é somente um atributo de cunho físico-biológico, mas sim o <strong>resultado da interação</strong> entre as limitações da pessoa e as barreiras do meio onde ela se encontra. Podemos encontrar essas barreiras na arquitetura, nos transportes, nas comunicações, na informação, na tecnologia, além das barreiras atitudinais (preconceitos). <strong>Mas com acessibilidade e inclusão, as limitações da pessoa passam a ser apenas uma característica e não um motivo de exclusão.</strong></p>
+  </article>
+  <article id="tipos-de-deficiencia">
+    <h3 class="subsection-heading">Tipos de Deficiência</h3>
+    <p>No que se refere à origem da deficiência, o Ministério da Saúde reconhece que ela pode ser <strong>congênita</strong> (quando a pessoa já nasce com a deficiência) ou <strong>adquirida</strong> (quando a pessoa passa a ter a deficiência a partir de algum momento da vida, por motivos como doença ou acidente, por exemplo). Ela também pode ser <strong>permanente</strong> ou <strong>temporária</strong>, no que diz respeito à duração.</p>
+    <p>Oficialmente, o Brasil reconhece como tipos de deficiência: <strong>a física, visual, auditiva, intelectual</strong> e <strong>múltiplas</strong> (quando a pessoa tem mais de um tipo de deficiência). Ainda assim, o nosso Sistema Único de Saúde também trata como tal, as <strong>deficiências invisíveis ou ocultas</strong>, como:</p>
+    <p>(...) fibromialgia, lúpus, esclerose múltipla, endometriose, osteoporose, enxaqueca, surdez, baixa visão, doença de Alzheimer, dificuldades de aprendizado, esquizofrenia, TEA (transtorno do espectro autista), TDAH (transtorno de déficit de atenção e hiperatividade), depressão, TAB (transtorno afetivo bipolar), TAG (transtorno de ansiedade generalizada) e diversas outras<sup id="fnref2"><a href="#fn2" class="footnote-backlink" aria-describedby="fn2">[2]</a></sup>.</p>
+    <p>Além dos parâmetros do Ministério da Saúde, existem também os adotados pelo IBGE para realizar o Censo, que é a nossa principal forma de verificar os índices de pessoas com deficiência em todo o território nacional. Mas até mesmo dentro do próprio aferimento do IBGE existem mudanças teórico-metodológicas que precisamos levar em consideração.</p>
+    <p>No Censo IBGE 2010<sup id="fnref3"><a href="#fn3" class="footnote-backlink" aria-describedby="fn3">[3]</a></sup>, a metodologia utilizada para verificar se a pessoa entrevistada tinha algum tipo de deficiência já seguia a proposta do <strong>Washington Group</strong> sobre Estatísticas das Pessoas com Deficiência, a mesma utilizada pela ONU. As perguntas buscavam identificar se a pessoa tinha deficiência <strong>visual, auditiva, motora, mental/intelectual ou múltipla.</strong> Além do tipo, levava em consideração três níveis de severidade, tendo como referência o grau de dificuldade da pessoa para realizar algumas atividades rotineiras, sendo esses níveis: <strong>alguma dificuldade, grande dificuldade (mesmo com uso de algum aparelho) ou não conseguia de jeito algum.</strong></p>
+    <p>Naquele ano, a população total do Brasil era de <strong>190.755.799 habitantes</strong>, e <strong>23,9% da população</strong> (45.606.048 pessoas) declarou possuir, pelo menos, uma das deficiências investigadas em algum grau:</p>
+    <figure class="art-placeholder-card" id="arte-1" aria-label="Espaço para ilustração: Censo IBGE 2010 — População Geral com Deficiência">
+      <div class="art-card-header">
+        <div class="art-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Espaço para Ilustração • Arte 01</span>
+        </div>
+        <span class="art-status-badge">Produção Manual</span>
+      </div>
+      <div class="art-card-content">
+        <h4 class="art-card-title">Censo IBGE 2010 — População Geral com Deficiência</h4>
+        <div class="art-card-desc">
+          <p><strong>Descrição da Arte:</strong> Infográfico com destaque estatístico para os 23,9% da população brasileira (45.606.048 pessoas de um total de 190.755.799 habitantes) que declararam possuir pelo menos uma deficiência em algum grau no Censo 2010. Detalhamento por tipos: Visual (18,6%), Motora (7,0%), Auditiva (5,1%) e Mental/Intelectual (1,4%).</p>
+        </div>
+        <div class="art-card-specs">
+        <div class="art-spec-pill"><span class="spec-label">Elementos Visuais:</span> Gráfico de barras estilizadas com pictogramas acessíveis para cada tipo de deficiência (olho, cadeira de rodas, ouvido, cérebro/mente). Tipografia destacada para '23,9%'.</div>
+        <div class="art-spec-pill"><span class="spec-label">Paleta Sugerida:</span> Azul institucional Prefeitura do Rio (#002B49 e #004A80), ciano (#00C0F3) e neutros de alto contraste.</div>
+        <div class="art-spec-pill"><span class="spec-label">Diretriz de Acessibilidade:</span> Garantir contraste de texto mínimo de 4.5:1 sobre o fundo. Não diferenciar os tipos de deficiência apenas pela cor das barras.</div>
+        </div>
+      </div>
+    </figure>
+    <p>No que se refere às deficiências severas, o percentual caía para <strong>8,3% da população brasileira</strong>, representando aquelas pessoas que tinham muita dificuldade ou não conseguiam realizar as atividades de modo algum.</p>
+    <figure class="art-placeholder-card" id="arte-2" aria-label="Espaço para ilustração: Censo IBGE 2010 — Comparação: Deficiência Geral (23,9%) vs. Severa (8,3%)">
+      <div class="art-card-header">
+        <div class="art-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Espaço para Ilustração • Arte 02</span>
+        </div>
+        <span class="art-status-badge">Produção Manual</span>
+      </div>
+      <div class="art-card-content">
+        <h4 class="art-card-title">Censo IBGE 2010 — Comparação: Deficiência Geral (23,9%) vs. Severa (8,3%)</h4>
+        <div class="art-card-desc">
+          <p><strong>Descrição da Arte:</strong> Infográfico comparativo demonstrando o recorte entre a população geral com alguma deficiência (23,9%) e aquelas com deficiência severa (8,3%, representando pessoas com muita dificuldade ou incapacidade total). Apresenta a maior prevalência entre mulheres e o recorte regional: Estado do RJ (24,4%) e Cidade do Rio de Janeiro (24,7%, quase 1/4 da população carioca).</p>
+        </div>
+        <div class="art-card-specs">
+        <div class="art-spec-pill"><span class="spec-label">Elementos Visuais:</span> Diagrama comparativo com dois blocos ou funil infográfico. Ícone sutil da Cidade do Rio de Janeiro contextualizando os 24,7%.</div>
+        <div class="art-spec-pill"><span class="spec-label">Paleta Sugerida:</span> Azul escuro (#001F33), azul intermediário (#1565C0) e destaque em amarelo ouro ou ciano.</div>
+        <div class="art-spec-pill"><span class="spec-label">Diretriz de Acessibilidade:</span> Textos explicativos nítidos acompanhando os números percentuais.</div>
+        </div>
+      </div>
+    </figure>
+    <p>O levantamento ainda mostrou que existia uma tendência de que mulheres apresentassem maior incidência de casos de deficiência, o que pode ser explicado principalmente pelo envelhecimento da população, somado ao fato das mulheres serem mais longevas que os homens.</p>
+    <p>Em 2010, a região <strong>Sudeste apresentava 23% da população</strong> com, pelo menos, um tipo de deficiência, enquanto o <strong>Estado do Rio de Janeiro contava com 24,4% da população</strong>. No que se refere à <strong>cidade do Rio de Janeiro</strong>, o Instituto Pereira Passos lançou em junho de 2013, o <em>Cadernos do Rio: Pessoas com deficiência</em>, no qual afirmava que “quase ¼ dos habitantes da Cidade do Rio de Janeiro, ou 24,7% têm algum tipo de deficiência, em qualquer que seja o grau, seja ela física e/ou mental“<sup id="fnref4"><a href="#fn4" class="footnote-backlink" aria-describedby="fn4">[4]</a></sup>, apresentando um índice acima do nacional e do estadual.</p>
+    <p>No Censo 2022, vemos um cenário diferente. Embora o IBGE tenha mantido a utilização da metodologia do Washington Group, ela já apresentava mudanças na forma de classificar os tipos de deficiência, abrangendo <strong>mais tipos</strong>. Além disso, passou a levar em consideração apenas <strong>casos graves e permanentes</strong>, tirando casos moderados e temporários do cenário.</p>
+    <figure class="art-placeholder-card" id="arte-3" aria-label="Espaço para ilustração: Censo IBGE 2022 — Nova Classificação e Metodologia Washington Group">
+      <div class="art-card-header">
+        <div class="art-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Espaço para Ilustração • Arte 03</span>
+        </div>
+        <span class="art-status-badge">Produção Manual</span>
+      </div>
+      <div class="art-card-content">
+        <h4 class="art-card-title">Censo IBGE 2022 — Nova Classificação e Metodologia Washington Group</h4>
+        <div class="art-card-desc">
+          <p><strong>Descrição da Arte:</strong> Quadro explicativo sobre a mudança de metodologia do Censo 2022: incorporação de novas perguntas e critérios mais restritivos do Washington Group. Passou a contabilizar exclusivamente casos graves e permanentes (excluindo temporários e moderados), além da divisão entre questionário básico e estendido.</p>
+        </div>
+        <div class="art-card-specs">
+        <div class="art-spec-pill"><span class="spec-label">Elementos Visuais:</span> Matriz com os tipos avaliados (locomoção, visão, audição, cognição e autocuidado) e caixa de aviso sobre o critério de gravidade permanente.</div>
+        <div class="art-spec-pill"><span class="spec-label">Paleta Sugerida:</span> Fundo neutro claro, bordas estruturadas em azul ardósia (#9DBDCE) e ícones semânticos.</div>
+        <div class="art-spec-pill"><span class="spec-label">Diretriz de Acessibilidade:</span> Tipografia legível sem serifa; ícones com rótulos de texto explícitos.</div>
+        </div>
+      </div>
+    </figure>
+    <figure class="art-placeholder-card" id="arte-4" aria-label="Espaço para ilustração: Comparativo Censo 2010 vs. 2022 — A Queda Estatística e a Subnotificação no Rio">
+      <div class="art-card-header">
+        <div class="art-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Espaço para Ilustração • Arte 04</span>
+        </div>
+        <span class="art-status-badge">Produção Manual</span>
+      </div>
+      <div class="art-card-content">
+        <h4 class="art-card-title">Comparativo Censo 2010 vs. 2022 — A Queda Estatística e a Subnotificação no Rio</h4>
+        <div class="art-card-desc">
+          <p><strong>Descrição da Arte:</strong> Gráfico de impacto mostrando a discrepância estatística decorrente da mudança de metodologia: queda do percentual de pessoas com deficiência na Cidade do Rio de Janeiro de 24,7% (2010) para 6,9% (2022), e cerca de 30 milhões a menos no Brasil. Alerta para o risco de subnotificação em políticas públicas frente ao envelhecimento populacional.</p>
+        </div>
+        <div class="art-card-specs">
+        <div class="art-spec-pill"><span class="spec-label">Elementos Visuais:</span> Duas colunas comparativas para a Cidade do Rio: Barra 2010 (24,7%) vs Barra 2022 (6,9%), com anotação de 'Subnotificação Estatística' e dados da PNAD 2022 sobre salto de deficiências a partir dos 40 e 60 anos.</div>
+        <div class="art-spec-pill"><span class="spec-label">Paleta Sugerida:</span> Azul marinho (#002B49) para 2010, cinza/azul suave para 2022 e linha de alerta âmbar (#92400E).</div>
+        <div class="art-spec-pill"><span class="spec-label">Diretriz de Acessibilidade:</span> Incluir nota explicativa clara de que a queda reflete mudança de cálculo e não redução real da população que necessita de acessibilidade.</div>
+        </div>
+      </div>
+    </figure>
+    <p>De acordo com o resultado da pesquisa, em 2022 o Brasil contava com <strong>203.080.0756 habitantes</strong>, dentre os quais <strong>18,6 milhões de pessoas com algum tipo de deficiência</strong>, isto representa 8,9% da população brasileira. Além disso, a pesquisa também aponta para 8,2% de pessoas com deficiência na Região Sudeste, 8,1% no Estado do Rio de Janeiro e 6,9% na cidade do Rio de Janeiro.</p>
+    <p>A nível nacional, a discrepância entre os censos era de cerca de <strong>30 milhões de pessoas a menos</strong>, segundo reportagem do Jornal Folha de São Paulo<sup id="fnref5"><a href="#fn5" class="footnote-backlink" aria-describedby="fn5">[5]</a></sup>. Quando questionado, o IBGE afirmou que os números não eram comparáveis devido às mudanças metodológicas. Ainda assim, o caso serve como alerta para a subnotificação de casos que não sejam severos e permanentes, excluindo uma parcela importante da população que também deve ser considerada na hora de pensarmos políticas públicas de acessibilidade.</p>
+    <p>A atenção a esta parcela da população fica ainda mais evidente quando nos deparamos com o fato de que o envelhecimento está diretamente ligado ao aumento de deficiências. Segundo a PNAD Contínua 2022<sup id="fnref6"><a href="#fn6" class="footnote-backlink" aria-describedby="fn6">[6]</a></sup>, a partir dos 40 anos de idade, existe um salto significativo no que diz respeito ao aumento de deficiências adquiridas, que se torna ainda maior a partir dos 60 anos.</p>
+    <p>Isso é especialmente delicado em relação à cidade do Rio de Janeiro, pois ela já é a segunda capital no ranking nacional de envelhecimento populacional<sup id="fnref7"><a href="#fn7" class="footnote-backlink" aria-describedby="fn7">[7]</a></sup> (Censo IBGE 2022), perdendo apenas para Porto Alegre. Além disso, atualmente, o Rio de Janeiro é o Estado com menor taxa de fecundidade, o que favorece o envelhecimento populacional. O IBGE prevê que, a partir de 2028, a população do Estado do RJ comece a encolher<sup id="fnref8"><a href="#fn8" class="footnote-backlink" aria-describedby="fn8">[8]</a></sup>, ficando com mais pessoas acima dos 60 anos do que jovens abaixo dos 14 anos. Isso exige adaptações urgentes em áreas como saúde, assistência social e previdência, mas também novas formas de pensar o urbanismo, a mobilidade urbana, o acesso a serviços, à informação, ao lazer e à cultura. Afinal, toda a população tem direito à cidadania plena.</p>
+    <p>Assim sendo, vemos que a acessibilidade deve ser compreendida não apenas como uma resposta às necessidades de pessoas que já apresentam uma deficiência, mas como um princípio de planejamento capaz de antecipar diferentes condições e necessidades ao longo da vida. Uma cidade preparada para a diversidade de seus cidadãos amplia as possibilidades de participação social e reduz barreiras que, em diferentes momentos, podem afetar pessoas com deficiência, idosos, pessoas com limitações temporárias ou indivíduos que enfrentam dificuldades de acesso a serviços e informações.</p>
+    <p>Garantir os direitos das pessoas com deficiências graves e severas acaba beneficiando uma ampla parcela da sociedade. Pessoas que apresentam deficiências mais brandas ou moderadas, sejam elas permanentes ou não, também precisam contar com uma cidade que esteja preparada para atendê-las. A <strong>acessibilidade</strong> e a <strong>inclusão</strong> geram um efeito cascata, impactando positivamente na qualidade de vida, na economia e no desenvolvimento social coletivo.</p>
+  </article>
+  <article id="direitos-das-pessoas-com-deficiencia">
+    <h3 class="subsection-heading">Direitos das Pessoas com Deficiência</h3>
+    <p>A <em>Convenção sobre os Direitos das Pessoas com Deficiência da ONU</em> (2006) foi o primeiro tratado internacional a reconhecer a importância do respeito à diferença, do direito à autonomia e à liberdade de escolhas da pessoa com deficiência. Ao mesmo tempo, essa convenção ressaltava a urgência da igualdade de oportunidades, visando garantir a efetiva participação e inclusão na sociedade, atuando como um norteador na promoção, formulação e avaliação de políticas, planos, programas e ações em níveis regional, nacional e internacional.</p>
+    <p>Dois anos depois, em 2008, o Brasil ratificou a Convenção com status de Emenda Constitucional. “Na prática, é como se Constituição Federal tivesse um capítulo inteiro dedicado às pessoas com deficiência. Foi o primeiro tratado internacional recepcionado pelo nosso país nessa condição”.<sup id="fnref9"><a href="#fn9" class="footnote-backlink" aria-describedby="fn9">[9]</a></sup></p>
+    <p>Em 2015, o Brasil instituiu a <em>Lei Brasileira de Inclusão da Pessoa com Deficiência</em>, também conhecida como <em>Estatuto da Pessoa com Deficiência</em>, “(...) destinada a assegurar e a promover, em condições de igualdade, o exercício dos direitos e das liberdades fundamentais por pessoa com deficiência, visando à sua inclusão social e cidadania”<sup id="fnref10"><a href="#fn10" class="footnote-backlink" aria-describedby="fn10">[10]</a></sup>.</p>
+    <p>Dentre os direitos assegurados pela lei estão o <strong>direito à vida, à saúde, ao trabalho, à cultura e ao lazer, à mobilidade e também direito de acesso à informação e comunicação</strong>, que são essenciais para o exercício pleno da cidadania.</p>
+    <p>A garantia de direitos pressupõe uma concepção de acessibilidade que ultrapasse a simples eliminação de barreiras físicas, abrangendo os diferentes contextos nos quais as pessoas participam da vida em sociedade. E é justamente neste contexto que aparecem as sete dimensões da acessibilidade.</p>
+  </article>
+  <article id="tipos-de-acessibilidade">
+    <h3 class="subsection-heading">Tipos de Acessibilidade</h3>
+    <p>Na <em>Lei Brasileira de Inclusão</em> acessibilidade  é definida como:</p>
+    <p>(...) possibilidade e condição de alcance para utilização, com segurança e autonomia, de espaços, mobiliários, equipamentos urbanos, edificações, transportes, informação e comunicação, inclusive seus sistemas e tecnologias, bem como de outros serviços e instalações abertos ao público, de uso público ou privados de uso coletivo, tanto na zona urbana como na rural, por pessoa com deficiência ou com mobilidade reduzida<sup id="fnref11"><a href="#fn11" class="footnote-backlink" aria-describedby="fn11">[11]</a></sup>.</p>
+    <p>Em contrapartida, as <strong>barreiras</strong> são todos os tipos de impeditivos a essa segurança e autonomia da pessoa com deficiência, podendo ser urbanísticas, arquitetônicas, nos transportes, nas comunicações/informações, na tecnologia e atitudinais. A fim de evitar ao máximo essas barreiras, o governo federal recomenda o uso de <strong>desenhos universais</strong><sup id="fnref12"><a href="#fn12" class="footnote-backlink" aria-describedby="fn12">[12]</a></sup>, ou seja, projetar produtos, serviços e ambientes que possam ser utilizados por todas as pessoas, sem necessidade de adaptação. Mas, caso isso não seja possível, deve-se realizar os ajustes necessários para que todas as pessoas possam usufruir da forma mais equitativa possível.</p>
+    <p>O autor Romeu Kazumi Sassaki contribui para ampliar a compreensão sobre o tema, trazendo a acessibilidade em <strong>sete dimensões<sup id="fnref13"><a href="#fn13" class="footnote-backlink" aria-describedby="fn13">[13]</a></sup>:</strong></p>
+    <figure class="art-placeholder-card" id="arte-5" aria-label="Espaço para ilustração: As 7 Dimensões da Acessibilidade (Romeu Kazumi Sassaki)">
+      <div class="art-card-header">
+        <div class="art-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Espaço para Ilustração • Arte 05</span>
+        </div>
+        <span class="art-status-badge">Produção Manual</span>
+      </div>
+      <div class="art-card-content">
+        <h4 class="art-card-title">As 7 Dimensões da Acessibilidade (Romeu Kazumi Sassaki)</h4>
+        <div class="art-card-desc">
+          <p><strong>Descrição da Arte:</strong> Diagrama conceitual integrando as sete dimensões de acessibilidade: 1. Arquitetônica (espaços físicos); 2. Comunicacional (linguagem simples, legendas, LIBRAS); 3. Metodológica (processos e métodos); 4. Instrumental (softwares e dispositivos); 5. Programática (leis e políticas); 6. Atitudinal (eliminação de preconceitos); 7. Digital/Tecnológica (serviços web e sistemas).</p>
+        </div>
+        <div class="art-card-specs">
+        <div class="art-spec-pill"><span class="spec-label">Elementos Visuais:</span> Diagrama radial/circular com o cidadão ao centro e as 7 dimensões interligadas com ícones modernos.</div>
+        <div class="art-spec-pill"><span class="spec-label">Paleta Sugerida:</span> Tons harmoniosos da identidade visual do Rio: azul primário, ciano, verde esmeralda e ardósia.</div>
+        <div class="art-spec-pill"><span class="spec-label">Diretriz de Acessibilidade:</span> Cada dimensão deve conter ícone vetorial e um pequeno subtítulo explicativo com alto contraste.</div>
+        </div>
+      </div>
+    </figure>
+    <p>Suas sete dimensões permitem relacionar os princípios de igualdade, autonomia, participação e inclusão presentes na <em>Convenção sobre os Direitos das Pessoas com Deficiência</em> e na <em>Lei Brasileira de Inclusão</em> a aspectos concretos da vida cotidiana. Desta forma, a perspectiva de Sassaki é utilizada neste trabalho como uma referência conceitual para compreender a acessibilidade de forma abrangente e identificar diferentes frentes nas quais barreiras podem ser eliminadas ou reduzidas, e não como uma classificação normativa estabelecida pelo ordenamento jurídico brasileiro.</p>
+    <p>Ao transpor essa questão para a acessibilidade digital, vemos que ela não se restringe à adequação técnica de websites, aplicativos ou sistemas, mas envolve a identificação e a eliminação de diferentes barreiras que podem dificultar o acesso à informação e aos serviços.</p>
+    <p>A dimensão comunicacional, por exemplo, relaciona-se diretamente à necessidade de que conteúdos digitais sejam apresentados de forma compreensível e acessível, considerando o uso de linguagem simples. A dimensão instrumental, por sua vez, aproxima-se das condições de acesso e utilização de dispositivos, softwares e recursos tecnológicos. A dimensão programática, relaciona-se às políticas, normas e procedimentos institucionais que orientam a oferta de serviços acessíveis, sendo especialmente relevante no âmbito do poder público. Já a dimensão atitudinal está relacionada à superação de preconceitos e à adoção de uma cultura institucional que reconheça a acessibilidade como um direito e não como uma adaptação excepcional.</p>
+    <p>Deste modo, as dimensões de Sassaki contribuem para ampliar a compreensão da acessibilidade digital ao evidenciar que as barreiras não estão necessariamente localizadas apenas na tecnologia utilizada, mas podem estar presentes na comunicação, nos processos, nas atitudes, nas políticas institucionais e nas próprias condições de acesso. Essa perspectiva é particularmente relevante para os serviços públicos digitais, nos quais a acessibilidade deve ser considerada desde a concepção do serviço até sua utilização pelo cidadão.</p>
+  </article>
+  <article id="acessibilidade-digital-entendendo-o-conceito">
+    <h3 class="subsection-heading">Acessibilidade Digital: entendendo o conceito</h3>
+    <p>Na <em>Lei Brasileira de Inclusão</em>, está prevista a acessibilidade digital, que é a eliminação de barreiras na Web. Ela determina que todo tipo de página web seja projetada de modo que todas as pessoas possam perceber, entender, navegar e interagir de maneira efetiva.</p>
+    <p>É obrigatória a acessibilidade nos sítios da internet mantidos por empresas com sede ou representação comercial no País ou por órgãos de governo, para uso da pessoa com deficiência, garantindo-lhe acesso às informações disponíveis, conforme as melhores práticas e diretrizes de acessibilidade adotadas internacionalmente.<sup id="fnref14"><a href="#fn14" class="footnote-backlink" aria-describedby="fn14">[14]</a></sup></p>
+    <p>Embora a lei afirme que também abarca empresas privadas com sede no Brasil, a acessibilidade digital é ainda mais urgente quando falamos de serviços públicos, pois sua ausência acaba ferindo princípios constitucionais como a igualdade (não discriminação e igualdade de condições), cidadania (pois deixa de ter acesso a direitos fundamentais) e legalidade (não estando em conformidade com Estatuto da Pessoa com Deficiência).</p>
+    <p>No Brasil, ainda existem barreiras significativas à acessibilidade digital que vão muito além de simplesmente ter ou não acesso à internet. Uma pesquisa recente da <a href="https://mwpt.com.br/metodologia-utilizada-no-estudo-de-acessibilidade-em-sites-ativos-brasil-2024/" target="_blank" rel="noopener noreferrer">BigDataCorp</a> em parceria com Movimento Web para Todos (WPT)<sup id="fnref15"><a href="#fn15" class="footnote-backlink" aria-describedby="fn15">[15]</a></sup>, realizada em 2024, analisou sites brasileiros quanto à facilidade de navegação para pessoas com deficiência. Para os testes, foram escolhidos como parâmetros: a acessibilidade de imagens, links e formulários, além de verificação de código HTML para conferir se estava de acordo com as especificações da W3C.</p>
+    <p>Mais de 30 milhões de sites brasileiros, corporativos e privados, foram verificados. Os sites inativos foram desconsiderados nesta pesquisa, restando 26,3 milhões de sites nacionais.</p>
+    <p>No que se refere aos resultados, apenas 2,42% dos sites tiveram sucesso em relação aos critérios do W3C no código HTML; 16,02% tinham acessibilidade de links; 42,83% possuíam descrição de imagens; e 50,41% possuíam formulários acessíveis.</p>
+    <p>O resultado mostra que 2,9% dos sites passaram sem erros nas verificações propostas. Isso significa que todas as páginas verificadas neste site passaram nos testes. Um número grande de sites registrou falha em ao menos uma parte dos testes (aproximadamente 97,13%).<sup id="fnref16"><a href="#fn16" class="footnote-backlink" aria-describedby="fn16">[16]</a></sup></p>
+    <p><strong>O mais impactante da pesquisa é o fato de 89,96% dos sites governamentais não atenderem aos critérios mínimos definidos pela pesquisa.</strong></p>
+    <p>Sabemos que, no setor público, muitas são as situações de entrave à acessibilidade. Primeiramente, a grande quantidade de sistemas legados, que muitas vezes não estão preparados para o uso de tecnologias assistivas. Já no caso de projetos novos, é muito comum que as equipes tratem a acessibilidade como algo a ser corrigido depois que o site ou aplicativo já está pronto, em vez de considerá-la desde o início do projeto. Essa abordagem torna a correção de problemas estruturais mais difícil e, muitas vezes, mais cara, o que também dificulta as correções.</p>
+    <p>Esse cenário é agravado pelo baixo conhecimento técnico sobre o tema, pela pouca participação de pessoas com deficiência no desenvolvimento dos projetos e nos testes com usuários, pelos orçamentos limitados, pela pressão para cumprir prazos de lançamento e pela fiscalização insuficiente no que diz respeito ao cumprimento dos requisitos de acessibilidade. Como resultado, a acessibilidade muitas vezes não é tratada como prioridade, não atuando como um requisito fundamental de qualidade do produto ou serviço digital.</p>
+    <p>Por outro lado, também temos um quadro de defasagem em relação ao uso de tecnologias por vários grupos, especialmente idosos, pessoas com deficiência, pessoas com baixa escolaridade e de áreas rurais. O 	que também dificulta o acesso à serviços públicos digitais, fazendo com que a transformação digital de serviços ainda seja uma realidade distante daqueles que mais precisam.</p>
+  </article>
+  <article id="uso-de-servicos-publicos-digitais">
+    <h3 class="subsection-heading">Uso de Serviços Públicos Digitais</h3>
+    <p>O último levantamento do Banco Interamericano de Desenvolvimento (BID) sobre o uso de serviços digitais no Brasil<sup id="fnref17"><a href="#fn17" class="footnote-backlink" aria-describedby="fn17">[17]</a></sup>, publicado em 2025, evidencia que a disponibilidade de dispositivos e de conexão não significa, necessariamente, capacidade de utilização autônoma das tecnologias.</p>
+    <p>Embora cerca de 94,2% dos entrevistados possuíssem telefone celular com acesso a dados móveis, alguns grupos, como pessoas idosas, pessoas com deficiência, indivíduos com baixa escolaridade e moradores de áreas rurais, ainda apresentavam defasagens significativas no uso da internet, incluindo percentuais de não utilização. Entre os principais fatores identificados estava a baixa adaptação digital, relacionada à dificuldade ou à falta de confiança para realizar determinadas atividades sem o auxílio de outra pessoa.</p>
+    <p>Tentando avaliar o grau de adaptação dos grupos, a pesquisa listava algumas tarefas rotineiras<sup id="fnref18"><a href="#fn18" class="footnote-backlink" aria-describedby="fn18">[18]</a></sup>, como instalar um aplicativo no celular, fazer uma busca por palavra-chave ou enviar um e-mail com anexo, e perguntava se a pessoa se sentia confiante de realizá-las.</p>
+    <p>A pesquisa mostrou que a média de entrevistados que demonstrava autoconfiança<sup id="fnref19"><a href="#fn19" class="footnote-backlink" aria-describedby="fn19">[19]</a></sup> para realizar atividades digitais sem ajuda de outra pessoa era de apenas 47,5%. “Essa confiança é ainda mais baixa entre pessoas com mais de 55 anos (24,0% das habilidades), indivíduos com ensino fundamental (26,7%), moradores de áreas rurais (36,6%) e pessoas com deficiência (24,2%)”<sup id="fnref20"><a href="#fn20" class="footnote-backlink" aria-describedby="fn20">[20]</a></sup>.</p>
+    <figure class="art-placeholder-card" id="arte-6" aria-label="Espaço para ilustração: Pesquisa BID 2025 — Autoconfiança no Uso de Serviços Públicos Digitais">
+      <div class="art-card-header">
+        <div class="art-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Espaço para Ilustração • Arte 06</span>
+        </div>
+        <span class="art-status-badge">Produção Manual</span>
+      </div>
+      <div class="art-card-content">
+        <h4 class="art-card-title">Pesquisa BID 2025 — Autoconfiança no Uso de Serviços Públicos Digitais</h4>
+        <div class="art-card-desc">
+          <p><strong>Descrição da Arte:</strong> Gráfico baseado na pesquisa do Banco Interamericano de Desenvolvimento (BID, 2025): demonstra que mesmo com 94,2% de celulares conectados, a média de autoconfiança digital é de apenas 47,5%. A confiança cai para 24,2% entre pessoas com deficiência, 24,0% em idosos (+55 anos) e 26,7% em baixa escolaridade. 57,2% prefeririam atendimento presencial por insegurança no digital.</p>
+        </div>
+        <div class="art-card-specs">
+        <div class="art-spec-pill"><span class="spec-label">Elementos Visuais:</span> Gráfico de barras horizontais contrastando a média geral (47,5%) com as populações mais vulneráveis (24%), com destaque para a frase-chave sobre autonomia.</div>
+        <div class="art-spec-pill"><span class="spec-label">Paleta Sugerida:</span> Azul cobalto (#004A80), vermelho/coral de alerta para barreiras e verde para autonomia.</div>
+        <div class="art-spec-pill"><span class="spec-label">Diretriz de Acessibilidade:</span> Indicar percentuais numéricos de forma clara e visível dentro ou ao lado de cada barra.</div>
+        </div>
+      </div>
+    </figure>
+    <p>Essa desigualdade na adaptação digital também se refletiu diretamente na utilização de serviços públicos digitais. Quando questionados sobre o uso desses serviços no ano anterior, 42,8% dos entrevistados afirmou ter acessado serviços digitais pelo menos uma vez e os grupos que enfrentaram maior dificuldade de uso foram justamente aqueles que tinham menos adaptação digital.</p>
+    <p>As três principais alegações eram: a falta de experiência com serviços digitais (15,3%); dúvida sobre a validade do serviço digital (14,9%); e o fato de gostarem de interagir com um funcionário público (9,5%). Além disso, 57,2% afirmaram que se voltassem a utilizar o mesmo serviço, <strong>iriam preferir o atendimento presencial</strong><sup id="fnref21"><a href="#fn21" class="footnote-backlink" aria-describedby="fn21">[21]</a></sup>.</p>
+    <p>Os resultados demonstram que a ampliação do acesso à internet e aos dispositivos tecnológicos não é suficiente para garantir a inclusão digital. A presença da tecnologia no cotidiano não elimina, por si só, as barreiras que dificultam sua utilização autônoma, especialmente entre grupos que apresentam menor familiaridade, confiança ou capacidade de interação com os recursos digitais.</p>
+    <p>Por este motivo, pensar em acessibilidade digital significa ir além da disponibilidade tecnológica e considerar as diferentes necessidades dos cidadãos durante a interação com sistemas, plataformas e serviços. Trata-se, portanto, de uma estratégia fundamental para ampliar o acesso e a navegabilidade de pessoas que ainda encontram barreiras nesse ambiente, seja em razão de deficiências físicas, intelectuais ou cognitivas, da baixa escolaridade, da idade avançada ou mesmo da pouca familiaridade com as tecnologias.</p>
+    <p>Quando plataformas governamentais não são acessíveis, a transformação digital pode, paradoxalmente, ampliar desigualdades existentes ao transferir para o cidadão o ônus de superar barreiras que deveriam ser eliminadas pelo próprio serviço.</p>
+    <p>A acessibilidade digital é, acima de tudo, uma forma de garantir uma navegação mais simples, previsível, objetiva e orgânica, possibilitando um acesso mais amplo e de maior qualidade, visando a <strong>autonomia, inclusão e o direito fundamental</strong> <strong>à informação, comunicação e acesso à serviços</strong> que podem melhorar consideravelmente a qualidade de vida da população.</p>
+  </article>
+</section>
+
+<!-- ==========================================
+     CAPÍTULO 3: TIPOS DE DEFICIÊNCIA E ACESSIBILIDADE DIGITAL
+     ========================================== -->
+<section class="content-section" id="tipos-de-deficiencia-e-acessibilidade-digital">
+  <span class="section-badge">Capítulo 3</span>
+  <h2 class="section-heading">Tipos de deficiência e acessibilidade digital</h2>
+  <article id="deficiencia-visual">
+    <h3 class="subsection-heading">Deficiência Visual</h3>
+  </article>
+  <article id="principais-dificuldades-de-uso">
+    <h3 class="subsection-heading">Principais dificuldades de uso</h3>
+    <ul class="guidelines-list">
+      <li>Imagens, ícones, tabelas, mapas e gráficos sem descrição adequada</li>
+      <li>Botões, links e campos de formulário sem identificação acessível</li>
+      <li>Navegação incompatível com leitores de tela</li>
+      <li>Elementos que dependem exclusivamente de interação visual</li>
+      <li>Mensagens de erro, alertas e mudanças na tela que não são captados pelo leitor de tela</li>
+    </ul>
+    <p>Boas práticas:</p>
+    <ul class="guidelines-list">
+      <li>Utilizar HTML semântico e estrutura lógica de títulos, listas e formulários</li>
+      <li>Fornecer textos alternativos adequados para imagens e outros conteúdos visuais</li>
+      <li>Garantir compatibilidade com leitores de tela</li>
+      <li>Permitir a navegação e interação por teclado</li>
+      <li>Testar o serviço com tecnologias assistivas e com pessoas cegas</li>
+    </ul>
+    <p>2) <strong>Baixa visão:</strong> Redução significativa da capacidade visual, sem possibilidade de melhora mesmo com uso de óculos ou com cirurgia.</p>
+    <p>Principais dificuldades de uso:</p>
+    <ul class="guidelines-list">
+      <li>Textos e elementos muito pequenos ou difíceis de ampliar</li>
+      <li>Baixo contraste entre texto, ícones e fundo</li>
+      <li>Interfaces não responsivas, que perdem conteúdo ou funcionalidade quando ampliadas</li>
+      <li>Elementos interativos muito próximos ou difíceis de identificar</li>
+      <li>Informações apresentadas apenas por características visuais, como tamanho, posição ou contraste</li>
+    </ul>
+  </article>
+  <article id="boas-praticas">
+    <h3 class="subsection-heading">Boas práticas</h3>
+    <ul class="guidelines-list">
+      <li>Garantir contraste adequado entre texto, elementos e fundo</li>
+      <li>Permitir ampliação do conteúdo sem perda de informação ou quebra de layout</li>
+      <li>Utilizar tamanhos de texto e elementos interativos adequados</li>
+      <li>Manter uma organização visual clara, com boa hierarquia e espaçamento</li>
+      <li>Evitar informações que dependam exclusivamente de características visuais</li>
+    </ul>
+    <p>3) <strong>Daltonismo</strong>: Alteração na percepção das cores devido ao funcionamento ou ausência dos cones da retina, células responsáveis por identificar as cores. O daltonismo pode ser de quatro tipos:</p>
+    <figure class="art-placeholder-card" id="arte-7" aria-label="Espaço para ilustração: Simulação Visual de Daltonismo — Espectro de Cores">
+      <div class="art-card-header">
+        <div class="art-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Espaço para Ilustração • Arte 07</span>
+        </div>
+        <span class="art-status-badge">Produção Manual</span>
+      </div>
+      <div class="art-card-content">
+        <h4 class="art-card-title">Simulação Visual de Daltonismo — Espectro de Cores</h4>
+        <div class="art-card-desc">
+          <p><strong>Descrição da Arte:</strong> Infográfico demonstrativo do espectro de cores visível para pessoas com diferentes tipos de daltonismo: Visão Tricromata (Normal), Protanopia (ausência de cones vermelhos), Deuteranopia (ausência de cones verdes), Tritanopia (dificuldade com azul/amarelo) e Acromatopsia (monocromática / escala de cinza).</p>
+        </div>
+        <div class="art-card-specs">
+        <div class="art-spec-pill"><span class="spec-label">Elementos Visuais:</span> Barras horizontais paralelas exibindo o arco-íris comparado em cada uma das condições.</div>
+        <div class="art-spec-pill"><span class="spec-label">Paleta Sugerida:</span> Espectros simulados de Protanopia, Deuteranopia e Tritanopia com legendas descritivas.</div>
+        <div class="art-spec-pill"><span class="spec-label">Diretriz de Acessibilidade:</span> Apresentar rótulos textuais nítidos para cada espectro, permitindo que a diferença seja compreendida mesmo sem visualização colorida.</div>
+        </div>
+      </div>
+    </figure>
+    <figure class="art-placeholder-card" id="arte-8" aria-label="Espaço para ilustração: Boas Práticas de Interface para Daltonismo: Não Dependa Apenas da Cor">
+      <div class="art-card-header">
+        <div class="art-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Espaço para Ilustração • Arte 08</span>
+        </div>
+        <span class="art-status-badge">Produção Manual</span>
+      </div>
+      <div class="art-card-content">
+        <h4 class="art-card-title">Boas Práticas de Interface para Daltonismo: Não Dependa Apenas da Cor</h4>
+        <div class="art-card-desc">
+          <p><strong>Descrição da Arte:</strong> Exemplo prático de componente de interface (formulário / status / gráfico) mostrando a abordagem incorreta (diferenciação baseada somente em cor verde/vermelho) versus a abordagem acessível (reforço simultâneo com ícones ✓ e ✕, texto descritivo e textura de traço).</p>
+        </div>
+        <div class="art-card-specs">
+        <div class="art-spec-pill"><span class="spec-label">Elementos Visuais:</span> Layout 'Antes vs Depois' ou 'Evite vs Prefira' com cards lado a lado.</div>
+        <div class="art-spec-pill"><span class="spec-label">Paleta Sugerida:</span> Cores de interface com contornos definidos e ícones pretos/brancos de suporte.</div>
+        <div class="art-spec-pill"><span class="spec-label">Diretriz de Acessibilidade:</span> Excelente exemplo didático para designers e desenvolvedores front-end.</div>
+        </div>
+      </div>
+    </figure>
+    <p>Principais dificuldades de uso:</p>
+    <ul class="guidelines-list">
+      <li>Informações transmitidas exclusivamente por meio de cores.</li>
+      <li>Gráficos e diagramas que diferenciam dados apenas pela cor.</li>
+      <li>Mensagens de erro ou sucesso identificadas somente por cores.</li>
+      <li>Links e elementos interativos diferenciados apenas pela mudança de cor.</li>
+      <li>Combinações de cores com pouco contraste ou difíceis de distinguir.</li>
+    </ul>
+  </article>
+  <article id="boas-praticas">
+    <h3 class="subsection-heading">Boas práticas</h3>
+    <ul class="guidelines-list">
+      <li>Nunca utilizar a cor como único meio de transmitir uma informação.</li>
+      <li>Combinar cores com textos, ícones, formas ou outros recursos visuais.</li>
+      <li>Utilizar contraste adequado entre os elementos.</li>
+      <li>Adotar paletas de cores que considerem diferentes formas de daltonismo.</li>
+    </ul>
+    <p></p>
+    <div class="topic-block" id="deficiencia-auditiva">
+      <h4 class="topic-heading">Deficiência Auditiva</h4>
+      <p>1) <strong>Surdez total ou parcial:</strong> Essa condição pode afetar a percepção dos sons e, em diferentes graus, a comunicação oral.</p>
+      <p>Principais dificuldades de uso:</p>
+      <ul class="guidelines-list">
+        <li>Vídeos e conteúdos audiovisuais sem legendas.</li>
+        <li>Informações importantes transmitidas exclusivamente por áudio.</li>
+        <li>Ausência de tradução ou interpretação em Libras, quando necessária.</li>
+        <li>Alertas, notificações e mensagens de erro apresentados apenas por sons.</li>
+        <li>Conteúdos com linguagem complexa ou pouco acessível para pessoas que têm a Libras como primeira língua.</li>
+      </ul>
+      <p>Boas práticas:</p>
+      <ul class="guidelines-list">
+        <li>Disponibilizar legendas para vídeos e outros conteúdos com informação sonora.</li>
+        <li>Não depender exclusivamente de sons para transmitir informações importantes, utilizando também recursos visuais.</li>
+        <li>Disponibilizar Libras quando o contexto e o público justificarem esse recurso.</li>
+        <li>Fornecer transcrições para conteúdos predominantemente em áudio.</li>
+        <li>Utilizar linguagem clara e objetiva, com boa organização visual das informações.</li>
+      </ul>
+    </div>
+    <div class="topic-block" id="deficiencia-intelectual-cognitiva">
+      <h4 class="topic-heading">Deficiência Intelectual / Cognitiva</h4>
+      <p>No caso de deficiências intelectual e cognitiva, as dificuldades e boas práticas costumam se repetir em cada um dos tipos de deficiência. Para que a lista não ficasse extensa e repetitiva, foram citados pontos diferentes, tentando abarcar o maior número possível de boas práticas e dificuldades.</p>
+      <p>1) <strong>Deficiência intelectual:</strong> Condição caracterizada por limitações no funcionamento intelectual e nas habilidades adaptativas (como comunicação, aprendizagem, autonomia e interação social).</p>
+      <p>Principais dificuldades de uso:</p>
+      <ul class="guidelines-list">
+        <li>Textos longos, complexos ou com linguagem excessivamente técnica.</li>
+        <li>Interfaces com muitas informações ou elementos apresentados ao mesmo tempo.</li>
+        <li>Instruções pouco claras ou que exigem muitas etapas para realizar uma tarefa.</li>
+        <li>Navegação inconsistente, em que os elementos mudam de posição ou comportamento inesperadamente.</li>
+        <li>Mensagens de erro pouco claras, que não explicam o problema e como resolvê-lo.</li>
+      </ul>
+      <p>Boas práticas:</p>
+      <ul class="guidelines-list">
+        <li>Utilizar linguagem simples, clara e objetiva</li>
+        <li>Organizar as informações em pequenas partes, com títulos e hierarquia visual bem definidos.</li>
+        <li>Apresentar instruções claras e dividir tarefas complexas em etapas menores.</li>
+        <li>Manter padrões consistentes de navegação, layout e funcionamento dos elementos.</li>
+        <li>Fornecer mensagens de erro claras, indicando o que aconteceu e como o usuário pode corrigir o problema.</li>
+      </ul>
+      <p>2) <strong>Transtorno</strong> <strong>do Espectro Autista (TEA):</strong> Condição do neurodesenvolvimento que pode influenciar a comunicação, a interação social, o processamento de informações e a forma como a pessoa percebe e responde ao ambiente.</p>
+      <p>Principais dificuldades de uso:</p>
+      <ul class="guidelines-list">
+        <li>Excesso de estímulos visuais</li>
+        <li>Sons inesperados ou reprodução automática de áudio e vídeo.</li>
+        <li>Interfaces com mudanças inesperadas de layout, navegação ou funcionamento.</li>
+        <li>Instruções ambíguas, linguagem figurada ou informações pouco objetivas.</li>
+        <li>Processos complexos, com muitas etapas ou que exigem respostas rápidas.</li>
+      </ul>
+      <p>Boas práticas:</p>
+      <ul class="guidelines-list">
+        <li>Evitar animações, movimentos e estímulos visuais desnecessários, oferecendo a possibilidade de interrompê-los.</li>
+        <li>Não reproduzir áudio ou vídeo automaticamente e permitir o controle sobre sons e animações.</li>
+        <li>Manter a interface previsível e consistente, evitando mudanças inesperadas.</li>
+        <li>Utilizar linguagem simples, objetiva e direta, evitando ambiguidades quando elas não forem necessárias.</li>
+        <li>Permitir que o usuário tenha tempo suficiente para compreender as informações e concluir as tarefas, evitando limites de tempo desnecessários.</li>
+      </ul>
+      <p>3) <strong>Transtorno do Déficit de Atenção/hiperatividade (TDAH):</strong> Caracterizada por padrões persistentes de desatenção, hiperatividade e/ou impulsividade que podem impactar o aprendizado, o trabalho, a organização e as atividades do dia a dia.</p>
+      <p>Principais dificuldades de uso:</p>
+      <ul class="guidelines-list">
+        <li>Interfaces com excesso de informações, elementos ou estímulos simultâneos.</li>
+        <li>Textos longos e pouco estruturados, que dificultam a localização das informações importantes.</li>
+        <li>Animações, notificações e outros elementos que desviam a atenção durante uma tarefa.</li>
+        <li>Processos longos, com muitas etapas ou que exigem que o usuário memorize informações.</li>
+        <li>Limites de tempo muito curtos para concluir tarefas ou preencher formulários.</li>
+      </ul>
+      <p>Boas práticas:</p>
+      <ul class="guidelines-list">
+        <li>Utilizar interfaces sem poluição visual, organizadas e visualmente hierarquizadas, destacando as informações mais importantes.</li>
+        <li>Dividir conteúdos extensos em seções menores, utilizando títulos, listas e outros recursos de organização.</li>
+        <li>Evitar distrações desnecessárias e permitir que animações e notificações sejam desativadas.</li>
+        <li>Reduzir a necessidade de memorização, fornecendo instruções e informações relevantes no momento em que são necessárias.</li>
+        <li>Oferecer tempo suficiente para realizar tarefas e, sempre que possível, permitir que o usuário pause ou retome um processo.</li>
+      </ul>
+      <p>4) <strong>Dislexia:</strong> Dislexia é um transtorno específico de aprendizagem com causas de influência genética, neurobiológica e ambiental que interagem ao longo do desenvolvimento.</p>
+      <p>Principais dificuldades:</p>
+      <ul class="guidelines-list">
+        <li>Textos longos, densos ou com linguagem excessivamente complexa.</li>
+        <li>Blocos de texto sem espaçamento ou organização visual adequada.</li>
+        <li>Fontes pequenas, pouco legíveis ou com pouco contraste.</li>
+        <li>Interfaces que exigem leitura rápida ou memorização de muitas informações.</li>
+        <li>Formulários e instruções pouco claros ou que não permitem identificar facilmente as informações principais.</li>
+      </ul>
+      <p>Boas práticas:</p>
+      <ul class="guidelines-list">
+        <li>Utilizar linguagem simples</li>
+        <li>Destacar visualmente as informações mais importantes e manter uma hierarquia clara de conteúdo.</li>
+        <li>Oferecer alternativas ao conteúdo textual, como áudio, vídeos com narração ou recursos de leitura em voz alta</li>
+        <li>Fonte sem serifa e simples ou fontes exclusivas para dislexia (OpenDyslexic, Dyslexie ou Lexia Readable)</li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<!-- ==========================================
+     CAPÍTULO 4: BOAS PRÁTICAS DE ACESSIBILIDADE DIGITAL
+     ========================================== -->
+<section class="content-section" id="boas-praticas-de-acessibilidade-digital">
+  <span class="section-badge">Capítulo 4</span>
+  <h2 class="section-heading">Boas práticas de Acessibilidade Digital</h2>
+  <p>Antes de falarmos das diretrizes de acessibilidade, precisamos ressaltar alguns pontos que são essenciais para desenvolver serviços públicos de qualidade. O primeiro deles é ter em vista que a maior parte da população brasileira tem acesso à internet pelo celular, muitas vezes, essa é a única forma de acesso. Por isso, os serviços devem ser desenvolvidos para funcionar adequadamente em diferentes tamanhos de tela, o que reforça a importância do design responsivo e da adoção da estratégia mobile first.</p>
+  <p>Mobile-first é uma abordagem delineada em 2009 por Luke Wroblewski. De forma simples, o mobile-first é uma abordagem para o design responsivo: primeiro design para telas menores, e depois adicione mais recursos e conteúdo conforme as telas ficam maiores.</p>
+  <p>Esta abordagem de design também é conhecida como “aprimoramento progressivo”. O movimento inverso, ou “degradação graciosa”, implica projetar para um site totalmente funcional para Desktop, e então adaptar o conteúdo para telas menores a partir daí.<sup id="fnref22"><a href="#fn22" class="footnote-backlink" aria-describedby="fn22">[22]</a></sup></p>
+  <p>Considerar diferentes dispositivos e formas de acesso, no entanto, é apenas uma das dimensões necessárias para garantir que um serviço digital possa ser utilizado pelo maior número possível de pessoas. É preciso também considerar as diferentes capacidades e necessidades dos usuários durante a navegação e o acesso aos conteúdos.</p>
+  <p>É neste contexto que entram as Diretrizes de Acessibilidade para Conteúdo Web 2\.2<sup id="fnref23"><a href="#fn23" class="footnote-backlink" aria-describedby="fn23">[23]</a></sup>, que são o padrão mais atualizado de acessibilidade digital. Essas diretrizes são desenvolvidas pelo World Wide Web Consortium (W3C), em parceria com pessoas e organizações de todo o mundo e estão em conformidade com os modelos anteriores (WCAG 2.0 e WCAG 2.1). O objetivo é estabelecer um padrão comum para tornar o conteúdo da web mais acessível e atender às necessidades de pessoas, organizações e governos.</p>
+  <p>Em 2005, o Governo Federal brasileiro criou o Modelo de Acessibilidade em Governo Eletrônico (eMAG)<sup id="fnref24"><a href="#fn24" class="footnote-backlink" aria-describedby="fn24">[24]</a></sup>, tendo como principal objetivo garantir a acessibilidade dos conteúdos e serviços digitais públicos, eliminando ou, pelo menos, reduzindo barreiras que pudessem dificultar o acesso e a utilização por pessoas com deficiência. O eMAG foi baseado no WCAG 1.0, bem como normas e diretrizes de países como EUA, Canadá, Irlanda, Portugal e Espanha. Sua primeira versão, o eMAG 1.4 foi elaborada pelo Departamento de Governo Eletrônico, em parceria com a ONG Acessibilidade Brasil, e disponibilizada para o público em janeiro de 2005\. A versão mais recente do eMAG (Modelo de Acessibilidade em Governo Eletrônico) é a versão 3.1, lançada em abril de 2014\.</p>
+  <p>Após esta data, não houve nenhum tipo de atualização do eMAG, apenas o lançamento das Normas ABNT 17060<sup id="fnref25"><a href="#fn25" class="footnote-backlink" aria-describedby="fn25">[25]</a></sup> e 17225<sup id="fnref26"><a href="#fn26" class="footnote-backlink" aria-describedby="fn26">[26]</a></sup>, esta última, especificamente para adequação ao WCAG 2.2. Isso não significa que o eMAG 3.1 tenha deixado de ser útil, ele continua sendo uma referência específica para o contexto do governo brasileiro. O problema é que a ausência de uma revisão faz com que ele não acompanhe integralmente a evolução das tecnologias e das necessidades de acessibilidade.</p>
+  <p>A WCAG 2.2 continua sendo a versão mais completa e atualizada que temos sobre o tema. Devido a isto, foi escolhida para balizar as boas práticas de acessibilidade deste guia. Seus três níveis estabelecem parâmetros de comparação entre os padrões de acessibilidade, sendo eles:</p>
+  <ul class="guidelines-list">
+    <li><strong>nível A (padrão mínimo):</strong> elimina as barreiras de acessibilidade mais críticas, ou seja, sem esses critérios mínimos de acessibilidade, alguns usuários podem ficar impossibilitados de acessar o conteúdo.</li>
+  </ul>
+  <ul class="guidelines-list">
+    <li><strong>nível AA (recomendado):</strong> Atende a um conjunto mais amplo de necessidades e reduz significativamente as principais barreiras. É o nível geralmente utilizado como <strong>referência para conformidade de sites e serviços digitais</strong>.</li>
+  </ul>
+  <ul class="guidelines-list">
+    <li><strong>nível AAA (padrão ideal):</strong> Representa o grau mais rigoroso de acessibilidade, incorporando requisitos adicionais. Nem sempre é possível ou adequado atingir AAA para todo o conteúdo.</li>
+  </ul>
+  <p>Além dos níveis, o padrão de acessibilidade da WCAG é estruturado em quatro princípios básicos<sup id="fnref27"><a href="#fn27" class="footnote-backlink" aria-describedby="fn27">[27]</a></sup> (conhecidos pela sigla <strong>POUR</strong>):</p>
+  <article id="perceptivel">
+    <h3 class="subsection-heading">Perceptível</h3>
+  </article>
+  <article id="operavel">
+    <h3 class="subsection-heading">Operável</h3>
+  </article>
+  <article id="compreensivel">
+    <h3 class="subsection-heading">Compreensível</h3>
+  </article>
+  <article id="robusto">
+    <h3 class="subsection-heading">Robusto</h3>
+    <p>Esses princípios se dividem em diretrizes que, por sua vez, se desdobram em critérios de sucesso. As <strong>diretrizes</strong> têm como objetivo principal garantir que o conteúdo seja acessível ao maior número possível de pessoas e que possa ser apresentado em múltiplos formatos, sendo capaz de se adequar às diferentes capacidades sensoriais, físicas e cognitivas das pessoas. Em cada diretriz, existem <strong>critérios de sucesso,</strong> que são responsáveis por descrever o que deve ser feito para estar em conformidade com esse padrão de acessibilidade.</p>
+    <p>A W3C também disponibiliza em seu site: tutoriais, dicas de design acessível, dicas para desenvolvimento, formas de testar e avaliar a acessibilidade, entre outras funcionalidades. Neste sentido, o site também serviu como parâmetro para traçar indicações mais práticas para este guia, complementando as diretrizes gerais e os critérios de sucesso da WCAG.</p>
+    <p>A partir dessas referências, o guia reúne e organiza boas práticas de acessibilidade digital com o objetivo de oferecer um material prático e orientador para órgãos e secretarias municipais na criação e na revisão de seus portais web, contribuindo para a <strong>redução de barreiras de acesso e para uma experiência digital mais autônoma e inclusiva</strong>.</p>
+  </article>
+</section>
+
+<!-- ==========================================
+     CAPÍTULO 5: APRESENTAÇÃO DO CONTEÚDO TEXTUAL
+     ========================================== -->
+<section class="content-section" id="apresentacao-do-conteudo-textual">
+  <span class="section-badge">Capítulo 5</span>
+  <h2 class="section-heading">Apresentação do conteúdo textual</h2>
+  <article id="orientacoes-gerais">
+    <h3 class="subsection-heading">Orientações gerais</h3>
+  </article>
+  <article id="paragrafos">
+    <h3 class="subsection-heading">Parágrafos</h3>
+    <ul class="guidelines-list">
+      <li>Para que o leitor de tela siga corretamente o fluxo de um parágrafo para o outro, o principal é usar a estrutura semântica correta do HTML. Cada parágrafo deve estar dentro de uma tag \<p\>.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Não é recomendado utilizar a tag \<br\>, porque semanticamente é um único parágrafo com várias quebras de linha.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Também não é recomendado fazer nenhum indicativo de próximo parágrafo. Caso o parágrafo seguinte estiver com a tag \<p\>, o leitor de tela fará a leitura normalmente.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Além disso, se houver títulos, listas, tabelas, imagens e outros elementos, mantenha a hierarquia semântica com a indicação das tags correspondentes.</li>
+    </ul>
+  </article>
+  <article id="tamanho-de-fonte-e-redimensionamento-de-texto">
+    <h3 class="subsection-heading">Tamanho de fonte e redimensionamento de texto</h3>
+    <p>A WCAG não determina um tamanho de fonte, no entanto, boas práticas de design indicam o <strong>tamanho 16 como o mínimo</strong>. Além disso, a questão do redimensionamento torna-se essencial para garantir a legibilidade.</p>
+    <ul class="guidelines-list">
+      <li>O texto (exceto legenda ou imagem de texto) deve poder ser redimensionado 200%, sem apresentar perda de conteúdo ou de funcionalidade.</li>
+    </ul>
+  </article>
+  <article id="alinhamento-de-texto">
+    <h3 class="subsection-heading">Alinhamento de texto</h3>
+    <ul class="guidelines-list">
+      <li>A largura do bloco de texto não tem mais do que 80 caracteres ou glifos (40 se CJK)</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>O bloco de texto <strong>não deve</strong> ser justificado (alinhado a ambas as margens esquerda e direita).</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Para idiomas que são lidos da esquerda para a direita, o alinhamento deve ser à esquerda, como é o caso do português.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Para idiomas que são lidos da direita para a esquerda, o alinhamento deve ser à direita.</li>
+    </ul>
+  </article>
+  <article id="realinhamento-e-rolagem-de-tela">
+    <h3 class="subsection-heading">Realinhamento e rolagem de tela</h3>
+    <ul class="guidelines-list">
+      <li>O conteúdo pode ser apresentado sem perda de informação ou funcionalidade e sem exigir rolagem em duas dimensões para:</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Conteúdo de rolagem vertical com largura equivalente a 320 pixels CSS;</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Conteúdo de rolagem horizontal com altura equivalente a 256 pixels CSS.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Exceto para partes do conteúdo que requerem layout bidimensional para uso ou significado.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>320 pixels CSS equivalem a uma largura de janela de exibição (viewport) inicial de 1.280 pixels de largura, com zoom de 400%.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Para conteúdo da Web projetado para rolar horizontalmente (por exemplo, com texto vertical), os 256 pixels CSS equivalem a uma altura inicial da janela de exibição de 1024px com zoom de 400%.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Exemplos de conteúdo que exigem layout bidimensional são imagens necessárias para compreensão (como mapas e diagramas), vídeos, jogos, apresentações, tabelas de dados (não células individuais) e interfaces onde seja necessário manter as barras de ferramentas em exibição ao manipular o conteúdo. É aceitável fornecer rolagem bidimensional para tais partes do conteúdo.</li>
+    </ul>
+  </article>
+  <article id="espacamento-de-texto">
+    <h3 class="subsection-heading">Espaçamento de texto</h3>
+    <p>Os espaçamentos devem ser calculados levando em consideração o tamanho da fonte do texto. O layout do site deve suportar esses ajustes sem quebrar.</p>
+    <ul class="guidelines-list">
+      <li>Espaçamento entre linhas de pelo menos 1,5 vezes o tamanho da fonte;</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Espaçamento entre os parágrafos subsequentes de pelo menos 2 vezes o tamanho da fonte;</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Espaçamento entre letras de pelo menos 0,12 vezes o tamanho da fonte;</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Espaçamento entre palavras de pelo menos 0,16 vezes o tamanho da fonte.</li>
+    </ul>
+  </article>
+  <article id="contraste-textual">
+    <h3 class="subsection-heading">Contraste textual</h3>
+    <ul class="guidelines-list">
+      <li>Para o nível AA, o contraste textual e de imagens de texto é, no mínimo,  4.5:1. Para o texto ampliado ou imagem de texto grande, o contraste mínimo é de 3:1.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Para checar o contraste das páginas, sugerimos a utilização de ferramentas como:</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Verificador de contraste da  <a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener noreferrer">WebAIM</a></li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Color contrast checker da <a href="https://color.adobe.com/create/color-contrast-analyzer" target="_blank" rel="noopener noreferrer">Adobe</a></li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Textos ou imagens que são meramente decorativos não possuem requisitos mínimos de contraste.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Logotipos não possuem requisitos mínimos de contraste.</li>
+    </ul>
+  </article>
+  <article id="contraste-nao-textual">
+    <h3 class="subsection-heading">Contraste não textual</h3>
+    <ul class="guidelines-list">
+      <li>Para o nível AA, o contraste mínimo entre componentes de interface ou objetos gráficos e cores adjacentes deve ser de 3:1.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Como exemplo temos mudanças de estado (grifos ao passar o mouse, clicar no botão, etc) ou qualquer tipo de informação gráfica.</li>
+    </ul>
+  </article>
+  <article id="uso-de-cores">
+    <h3 class="subsection-heading">Uso de cores</h3>
+    <ul class="guidelines-list">
+      <li>A cor não pode ser utilizada como o <strong>único meio visual</strong> de transmitir informações, indica uma ação, pedir uma resposta ou distinguir um elemento visual.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Nestes casos, ela precisa vir acompanhada de uma indicação textual.</li>
+    </ul>
+  </article>
+  <article id="indicacao-de-link">
+    <h3 class="subsection-heading">Indicação de link</h3>
+    <ul class="guidelines-list">
+      <li>Links como “saiba mais”, “clique aqui” ou “leia mais” não conseguem indicar para uma pessoa com deficiência visual o assunto tratado. O ideal é que o <strong>próprio título do documento, artigo ou site seja o link.</strong></li>
+    </ul>
+    <p>Ex.:  Fornecer um texto de link que descreva a finalidade de um link</p>
+    <ul class="guidelines-list">
+      <li>Para um título que também é um link, o ideal é usar um elemento \<a\> envolvendo o título no código HTML. O leitor de tela será capaz de perceber que se trata de um link.</li>
+    </ul>
+  </article>
+  <article id="formularios">
+    <h3 class="subsection-heading">Formulários</h3>
+    <p>Além das considerações técnicas, os usuários geralmente preferem formulários simples e curtos. Solicite apenas o necessário para concluir a transação ou o processo; se forem solicitados dados irrelevantes ou excessivos, é mais provável que os usuários abandonem o formulário.</p>
+    <ul class="guidelines-list">
+      <li><strong>Controles de rotulagem:</strong></li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>use o \<label\> elemento</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>em casos específicos, outros mecanismos como o <a href="https://www.w3.org/TR/wai-aria-1.2/#usage" target="_blank" rel="noopener noreferrer">WAI-ARIA</a><sup id="fnref28"><a href="#fn28" class="footnote-backlink" aria-describedby="fn28">[28]</a></sup>, para identificar cada controle do formulário.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li><strong>Agrupamento de controles:</strong> use os \<fieldset\>elementos <code>&lt;legend&gt;</code><span\>\` e <code>&lt;span&gt;</code> para agrupar e associar controles de formulário relacionados.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li><strong>Instruções:</strong> forneça instruções para ajudar os usuários a entender como preencher o formulário e os controles individuais do formulário.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li><strong>Validação:</strong> valide os dados fornecidos pelo usuário e ofereça opções para desfazer alterações e confirmar a entrada de dados.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li><strong>Notificações:</strong> notifique os usuários sobre a conclusão bem-sucedida de tarefas, quaisquer erros e forneça instruções para ajudá-los a corrigir os erros.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li><strong>Formulários longos:</strong> divida formulários longos em vários formulários menores que constituem uma série de etapas ou fases lógicas e informem os usuários sobre seu progresso.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li><strong>Controles personalizados:</strong> utilize elementos de formulário estilizados e outras técnicas de aprimoramento progressivo para fornecer controles personalizados.</li>
+    </ul>
+  </article>
+  <article id="listas">
+    <h3 class="subsection-heading">Listas</h3>
+    <p>Existem vários tipos de lista:</p>
+    <ul class="guidelines-list">
+      <li><strong>Listas não ordenadas:</strong> usadas quando a ordem dos itens não é relevante.</li>
+      <li>A lista não ordenada consiste em um \<ul\>elemento e múltiplos itens de lista ( \<li\>):</li>
+      <li><strong>Listas ordenadas:</strong> são usadas para informações sequenciais e enumeradas automaticamente pelo navegador.</li>
+      <li>A lista ordenada consiste em um \<ol\>elemento e vários itens de lista ( \<li\>)</li>
+      <li><strong>Listas de descrição:</strong> são grupos de termos e descrições conectados programaticamente.</li>
+      <li>Uma lista de descrição consiste em um ou mais agrupamentos de termos e descrições. Cada agrupamento associa um ou mais termos (o conteúdo dos \<dt\>elementos) a uma ou mais descrições (o conteúdo dos \<dd\>elementos).</li>
+      <li>Um agrupamento começa no primeiro item da lista ou sempre que um \<dt\>elemento segue outro \<dd\>elemento.</li>
+    </ul>
+    <p><strong>IMPORTANTE:</strong> “Cada leitor de tela exibe \<dl\>o conteúdo de forma diferente, incluindo a contagem total, o contexto de termos/definições e os métodos de navegação. Essas diferenças não são necessariamente bugs. A partir do iOS 14, o VoiceOver anunciará que \<dl\>o conteúdo é uma lista ao navegar com o cursor virtual (não pelo comando "ler tudo"). O VoiceOver não oferece suporte a comandos de navegação em listas com <code>&lt;li&gt;</code> \<dl\>. Tenha cuidado ao aplicar ARIA terme definition funções a \<dl\>construções, pois o VoiceOver (macOS e iOS) ajustará a forma como elas são anunciadas.”<sup id="fnref29"><a href="#fn29" class="footnote-backlink" aria-describedby="fn29">[29]</a></sup></p>
+    <p>Os itens individuais de uma lista podem conter uma variedade de elementos HTML, incluindo parágrafos, títulos, elementos de formulário e outras listas (aninhadas).</p>
+    <p></p>
+  </article>
+</section>
+
+<!-- ==========================================
+     CAPÍTULO 6: APRESENTAÇÃO DO CONTEÚDO IMAGÉTICO
+     ========================================== -->
+<section class="content-section" id="apresentacao-do-conteudo-imagetico">
+  <span class="section-badge">Capítulo 6</span>
+  <h2 class="section-heading">Apresentação do conteúdo imagético</h2>
+  <p>Orientações gerais:</p>
+  <p>Imagens e gráficos tornam o conteúdo mais agradável e, até mesmo, mais fácil de entender, principalmente para aquelas com baixo letramento ou dificuldades cognitivas.  No entanto, é imprescindível que elas venham acompanhadas de acessibilidade, para que não se tornem barreiras para outros grupos, como pessoas com deficiência visual.</p>
+  <article id="imagens-informativas">
+    <h3 class="subsection-heading">Imagens informativas</h3>
+    <p>Imagens que representam graficamente conceitos e informações, geralmente figuras, fotos e ilustrações.</p>
+    <ul class="guidelines-list">
+      <li>Para que um leitor de tela consiga transmitir a informação da imagem, ela precisa estar descrita no “alt”.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Não há limite oficial, mas 100–150 caracteres são suficientes para a maioria dos casos.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Caso haja necessidade de mais, considere um longdesc ou descrição expandida no texto da página.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Exemplo de descrição de imagem:</li>
+    </ul>
+    <div class="code-status-label status-incorrect"><span class="badge-status bad">❌ Incorreta</span> Descrição vaga ou ausência de contexto:</div>
+    <div class="code-card" role="region" aria-label="Exemplo de código HTML">
+      <div class="code-header">
+        <span>Exemplo de Código (HTML)</span>
+        <button type="button" class="code-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.code-card').querySelector('code').innerText).then(()=>{this.innerText='Copiado!';setTimeout(()=>this.innerText='Copiar',2000)})" aria-label="Copiar código HTML">Copiar</button>
+      </div>
+      <pre><code class="language-html">&lt;img src="equipe.jpg" alt="Foto da equipe"&gt;</code></pre>
+    </div>
+    <div class="code-status-label status-correct"><span class="badge-status good">✅ Correta</span> Descritiva, contextual e informativa:</div>
+    <div class="code-card" role="region" aria-label="Exemplo de código HTML">
+      <div class="code-header">
+        <span>Exemplo de Código (HTML)</span>
+        <button type="button" class="code-copy-btn" onclick="navigator.clipboard.writeText(this.closest('.code-card').querySelector('code').innerText).then(()=>{this.innerText='Copiado!';setTimeout(()=>this.innerText='Copiar',2000)})" aria-label="Copiar código HTML">Copiar</button>
+      </div>
+      <pre><code class="language-html">&lt;img src="equipe.jpg" alt="Equipe de desenvolvimento do Web para Todos: cinco pessoas em frente a um quadro branco com diagramas de fluxo"&gt;</code></pre>
+    </div>
+  </article>
+  <article id="imagens-decorativas">
+    <h3 class="subsection-heading">Imagens decorativas</h3>
+    <p>É aquela que tem como único objetivo adicionar decoração visual à página, em vez de transmitir informações.</p>
+    <ul class="guidelines-list">
+      <li>O ideal é que os leitores de tela ignorem esse tipo de imagem, porque ele não contém nenhum conteúdo.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Deve-se deixar o conteúdo do atributo "alt" vazio (alt=””), para que a imagem seja ignorada pelos leitores de tela.</li>
+    </ul>
+  </article>
+  <article id="imagens-funcionais">
+    <h3 class="subsection-heading">Imagens funcionais</h3>
+    <ul class="guidelines-list">
+      <li>O texto que acompanha uma imagem usada como link ou botão deve descrever a funcionalidade do link ou botão, não a imagem em si.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Ex.: imagem com ícone de impressora deve representar a função de impressão.</li>
+    </ul>
+  </article>
+  <article id="imagens-com-texto">
+    <h3 class="subsection-heading">Imagens com texto</h3>
+    <ul class="guidelines-list">
+      <li>Não é recomendado que uma imagem contenha um texto dentro dela, porque leitores de tela não conseguem interpretar textos que estão em formato de imagem.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Caso isso ocorra, ele deve ser descrito na íntegra para que seja possível ser captado pelo leitor de tela.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Não coloque muito texto em suas imagens. O ideal é que a imagem complemente a informação.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>É essencial utilizar texto em HTML e CSS para evitar distorções ao redimensionar as telas.</li>
+    </ul>
+  </article>
+  <article id="imagens-complexas">
+    <h3 class="subsection-heading">Imagens complexas</h3>
+    <ul class="guidelines-list">
+      <li>No caso de gráficos e imagens complexas, precisamos fornecer uma descrição mais detalhada.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>A solução é fornecer as informações do gráfico no próprio contexto antes ou depois da imagem ou então em um link logo após a imagem.</li>
+    </ul>
+  </article>
+  <article id="grupos-de-imagens">
+    <h3 class="subsection-heading">Grupos de imagens</h3>
+    <ul class="guidelines-list">
+      <li>Se várias imagens transmitem uma única informação, o texto alternativo para uma imagem deve transmitir a informação para todo o grupo.</li>
+    </ul>
+  </article>
+  <article id="mapas-de-imagem">
+    <h3 class="subsection-heading">Mapas de imagem</h3>
+    <p>Um mapa de imagem é uma imagem dividida em áreas selecionáveis. Cada área é um link para outra página ou para outra parte da mesma página.</p>
+    <ul class="guidelines-list">
+      <li>O texto alternativo para uma imagem que contém várias áreas clicáveis ​​deve fornecer um contexto geral para o conjunto de links.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Cada área clicável individualmente deve ter um texto alternativo que descreva a finalidade ou o destino do link.</li>
+    </ul>
+  </article>
+  <article id="tabelas">
+    <h3 class="subsection-heading">Tabelas</h3>
+    <ul class="guidelines-list">
+      <li>Tabelas acessíveis precisam de marcação HTML que indique as células de cabeçalho e as células de dados, definindo sua relação. Tecnologias assistivas usam essas informações para fornecer contexto aos usuários.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>As células de cabeçalho devem ser marcadas com \<th\>\<code>\href\</code></li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>As células de dados com \<code>\dref\</code> \<td\></li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Para tabelas mais complexas, associações explícitas podem ser necessárias usando atributos como scope\<code> id\href\</code>, \<code>\dref\</code> e \<code>\dref\</code> headers.</li>
+    </ul>
+  </article>
+</section>
+
+<!-- ==========================================
+     CAPÍTULO 7: APRESENTAÇÃO DO CONTEÚDO EM VÍDEO
+     ========================================== -->
+<section class="content-section" id="apresentacao-do-conteudo-em-video">
+  <span class="section-badge">Capítulo 7</span>
+  <h2 class="section-heading">Apresentação do conteúdo em vídeo</h2>
+  <article id="orientacoes-gerais">
+    <h3 class="subsection-heading">Orientações gerais</h3>
+  </article>
+  <article id="uso-de-legendas">
+    <h3 class="subsection-heading">Uso de legendas</h3>
+    <ul class="guidelines-list">
+      <li>Legenda pré-gravada: devem ser fornecidas legendas para todo conteúdo de áudio pré-gravado em mídia sincronizada.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Legendas geradas automaticamente não costumam atender às necessidades do usuário, nem aos requisitos de acessibilidade. Geralmente, elas precisam de edições significativas.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>O formato mais comum para legendas na web é <a href="https://www.w3.org/TR/webvtt/" target="_blank" rel="noopener noreferrer">o</a> The Web Video Text Tracks Format (WebVTT).</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Caso não seja possível, deve ser oferecida uma alternativa em texto, contendo as mesmas informações do áudio pré-gravado.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Esta alternativa pode estar disponível em arquivo para download ou link.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Identifique os oradores, indique sons não verbais, inclua informações importantes sobre o discurso.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Legenda ao vivo: devem ser fornecidas legendas para todo conteúdo de áudio ao vivo em mídia sincronizada.</li>
+    </ul>
+  </article>
+  <article id="uso-de-audiodescricao">
+    <h3 class="subsection-heading">Uso de audiodescrição</h3>
+    <ul class="guidelines-list">
+      <li>Audiodescrição: deve ser fornecida <a href="https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#dfn-audio-descriptions" target="_blank" rel="noopener noreferrer">audiodescrição</a> para todo o conteúdo de <a href="https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#dfn-video" target="_blank" rel="noopener noreferrer">vídeo</a> <a href="https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#dfn-prerecorded" target="_blank" rel="noopener noreferrer">pré-gravado</a> em <a href="https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#dfn-synchronized-media" target="_blank" rel="noopener noreferrer">mídia sincronizada</a>.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Audiodescrição estendida: quando as pausas no áudio de primeiro plano forem insuficientes para permitir que as audiodescrições transmitam o sentido do vídeo, é fornecida uma audiodescrição estendida para todo o <a href="https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#dfn-video" target="_blank" rel="noopener noreferrer">vídeo</a> <a href="https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#dfn-prerecorded" target="_blank" rel="noopener noreferrer">pré-gravado</a> no conteúdo em <a href="https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#dfn-synchronized-media" target="_blank" rel="noopener noreferrer">mídia sincronizada</a>.</li>
+    </ul>
+  </article>
+  <article id="midia-alternativa">
+    <h3 class="subsection-heading">Mídia alternativa</h3>
+    <ul class="guidelines-list">
+      <li>Deve ser oferecida uma alternativa para mídia com base em tempo para todo o conteúdo em mídia sincronizada <a href="https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#dfn-prerecorded" target="_blank" rel="noopener noreferrer">pré-gravada</a> e em mídia de <a href="https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/#dfn-video-only" target="_blank" rel="noopener noreferrer">apenas vídeo</a> pré-gravado.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Como <em>alternativa para mídia com base em tempo,</em> entende-se: documento que inclui descrições em texto, corretamente sequenciadas, de informações visuais e auditivas baseadas em tempo.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Além das informações contidas nas falas, é preciso informar todo o conteúdo visual relevante para a compreensão do vídeo, como expressões corporais, risadas, informações em texto, mudança de ambiente, etc.</li>
+    </ul>
+  </article>
+  <article id="lingua-de-sinais">
+    <h3 class="subsection-heading">Língua de sinais</h3>
+    <ul class="guidelines-list">
+      <li>Deve ser oferecida alternativa em língua de sinais para todo conteúdo de áudio pré-gravado em mídia sincronizada.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>O plugin de LIBRAS não substitui a tradução humana.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>A LIBRAS não está somente ligada à língua falada do país, mas também possui regionalidades, portanto é preferível um tradutor que acompanhe essas regionalidades.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Geralmente, é melhor que o fundo e as roupas de quem está traduzindo sejam de cores sólidas que contrastem com o tom de pele. Além disso, é necessário gravar o intérprete com uma boa iluminação, a fim de garantir uma boa visibilidade.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Na hora da gravação, certifique-se que a imagem captura a linha abaixo da cintura até acima da cabeça, bem laterais até cada um dos cotovelos.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Os espectadores precisam conseguir ver claramente todos os movimentos e expressões faciais.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Posicione o intérprete de língua de sinais de forma a evitar que informações importantes no vídeo sejam obscurecidas. Geralmente, ele fica no canto inferior direito, mas se o vídeo contiver informações na parte inferior, posicione o intérprete acima dele.</li>
+    </ul>
+    <p></p>
+  </article>
+</section>
+
+<!-- ==========================================
+     CAPÍTULO 8: ESTRUTURA DA PÁGINA
+     ========================================== -->
+<section class="content-section" id="estrutura-da-pagina">
+  <span class="section-badge">Capítulo 8</span>
+  <h2 class="section-heading">Estrutura da página</h2>
+  <p>Orientações gerais:</p>
+  <p>Uma página web bem estruturada facilita o acesso e a navegação para todos, especialmente para pessoas com deficiências cognitivas, visuais ou que utilizam leitores de tela, teclado e outros recursos de acessibilidade. Uma estrutura clara também melhora a navegação em dispositivos móveis, permite acessar diretamente diferentes seções da página e ajuda os mecanismos de busca a compreender e indexar melhor o conteúdo.</p>
+  <article id="cabecalhos">
+    <h3 class="subsection-heading">Cabeçalhos</h3>
+    <p>A maioria dos sites possui uma área no topo de cada página que contém informações gerais do site, como o logotipo, a função de busca e as opções de navegação.</p>
+    <ul class="guidelines-list">
+      <li>A interface deve seguir a estrutura hierárquica correta.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Os cabeçalhos (títulos) em HTML são representados pelas tags \<h1\> até \<h6\>, informando ao navegador que trata-se de um cabeçalho ("h" vem do inglês "heading", que significa cabeçalho).</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>O "h1" deve ser o título principal da página, ou seja, deverá existir apenas um elemento "h1" em cada página.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Em seguida, devem ser utilizados os níveis subsequentes de título, de maneira hierárquica, sem se pular um ou mais níveis.</li>
+    </ul>
+  </article>
+  <article id="rodape">
+    <h3 class="subsection-heading">Rodapé</h3>
+    <p>Assim como o cabeçalho da página, a maioria dos sites também possui uma região na parte inferior de cada página que contém informações gerais do site, como informações sobre direitos autorais, declarações de privacidade ou isenções de responsabilidade.</p>
+    <ul class="guidelines-list">
+      <li>O HTML5 fornece o \<footer\>elemento <code>&lt;body&gt;</code>, que pode ser usado para definir essa região.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Se o \<footer\>elemento for usado dentro \<article\>de \<section\>outros elementos, ele não será associado a esses elementos. Ele não receberá a contentinfo função WAI-ARIA e não terá comportamento especial em tecnologias assistivas.</li>
+    </ul>
+  </article>
+  <article id="conteudo-principal">
+    <h3 class="subsection-heading">Conteúdo principal</h3>
+    <ul class="guidelines-list">
+      <li>Utilize o \<main\>elemento HTML5 para identificar a região de conteúdo principal de uma página web ou aplicação.</li>
+    </ul>
+  </article>
+  <article id="conteudo-complementar">
+    <h3 class="subsection-heading">Conteúdo complementar</h3>
+    <ul class="guidelines-list">
+      <li>Utilize o \<aside\> elemento HTML5 para identificar regiões que complementam o conteúdo principal, mas que constituem seções separadas e significativas por si só.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Ex.: uma nota lateral explicando ou comentando o conteúdo principal.</li>
+    </ul>
+    <p>5. <a href="https://www.w3.org/WAI/tutorials/menus/" target="_blank" rel="noopener noreferrer"><strong>Menu:</strong></a></p>
+    <ul class="guidelines-list">
+      <li>Dê preferência a estruturas de menu em lista. Essas informações estruturais permitem que as tecnologias assistivas anunciem o número de itens no menu e forneçam a funcionalidade de navegação correspondente.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Identifique o menu, idealmente usando o \<nav\>elemento HTML5 para permitir que os usuários acessem o menu diretamente.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Utilize formatação para indicar o item atual de um menu, como a página atual em um site, para melhorar a orientação no menu.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>A estrutura do menu deve ser consistente em todos os tamanhos de tela. Alguns itens do menu podem estar recolhidos ou até mesmo ocultos em submenus de navegação, mas os itens que forem exibidos devem aparecer na mesma ordem, com a mesma descrição e destino.</li>
+    </ul>
+  </article>
+  <article id="carrossel">
+    <h3 class="subsection-heading">Carrossel</h3>
+    <p>Os carrosséis são frequentemente usados ​​como galerias para exibir uma série de imagens. No entanto, conteúdos mais complexos, como teasers, artigos ou seções inteiras de páginas da web, também podem ser exibidos em carrosséis.</p>
+    <ul class="guidelines-list">
+      <li>Em todos os casos, utilize a marcação apropriada para garantir que a estrutura e o significado do conteúdo sejam transmitidos com clareza.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Como uma coleção de itens de conteúdo, os carrosséis são geralmente melhor representados como listas não ordenadas, usando <code>&lt;ul&gt;</code> \<ul\>e <code>&lt;span&gt;</code> \<li\>. Dependendo do contexto, outros elementos também podem ser usados, como marcação de títulos, seções, listas, artigos e outros elementos, conforme necessário.</li>
+    </ul>
+  </article>
+</section>
+
+<!-- ==========================================
+     CAPÍTULO 9: NAVEGABILIDADE DA INTERFACE
+     ========================================== -->
+<section class="content-section" id="navegabilidade-da-interface">
+  <span class="section-badge">Capítulo 9</span>
+  <h2 class="section-heading">Navegabilidade da interface</h2>
+  <p>Orientações gerais:</p>
+  <article id="navegacao-por-teclado">
+    <h3 class="subsection-heading">Navegação por teclado</h3>
+    <ul class="guidelines-list">
+      <li>Toda a funcionalidade do conteúdo deve ser operável através teclado sem exigir o pressionamento de teclas individuais em tempos específicos, exceto quando a função subjacente requer entrada de dados que dependa do caminho do movimento do usuário e não apenas dos pontos finais.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Um usuário que navega somente pelo teclado deve conseguir entrar e sair de qualquer componente ou funcionalidade usando o teclado, sem ficar permanentemente preso em algum elemento.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Para que a navegação por teclado funcione da melhor forma possível, seja para pessoas com deficiência física ou visual (com uso de leitor de tela), é de suma importância que se respeite a hierarquia do conteúdo e se faça as indicações corretas de tag no código HTML.</li>
+    </ul>
+  </article>
+  <article id="tempo-de-navegacao-ajustavel">
+    <h3 class="subsection-heading">Tempo de navegação ajustável</h3>
+    <ul class="guidelines-list">
+      <li>Em caso de navegação com limite de tempo, deve-se oferecer uma das opções:</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Desligar: o usuário pode desligar o limite de tempo antes de atingi-lo;</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Ajustar: o usuário pode ajustar o limite de tempo antes de atingi-lo em um amplo intervalo (de, pelo menos, dez vezes maior que a duração da configuração padrão); ou</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Prolongar: o usuário é avisado antes de o tempo expirar e tem, no mínimo, 20 segundos para prolongar o limite de tempo com uma simples ação.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>As exceções ao ajuste de tempo são:</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>O limite de tempo é uma parte necessária de um evento em tempo real (por exemplo, um leilão), e não é possível nenhuma alternativa ao limite de tempo;</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>O limite de tempo é essencial e prolongá-lo invalidaria a atividade;</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>O limite de tempo é superior a 20 horas.</li>
+    </ul>
+  </article>
+  <article id="controlar-movimento-de-informacoes-ou-animacoes">
+    <h3 class="subsection-heading">Controlar movimento de informações ou animações</h3>
+    <ul class="guidelines-list">
+      <li>Para qualquer informação que se mova, pisque ou role e que sejam iniciadas automaticamente, durem mais de cinco segundos e sejam apresentadas em paralelo com outro conteúdo, deve haver um mecanismo que permita ao usuário <strong>pausar ou ocultar</strong>, a menos que o movimento, o piscar ou a rolagem façam parte de uma atividade em que isso seja essencial.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>O mesmo se aplica para qualquer animação, a menos que seja essencial para a funcionalidade ou para as informações que estão sendo transmitidas.</li>
+    </ul>
+  </article>
+</section>
+
+<!-- ==========================================
+     CAPÍTULO 10: OUTRAS DICAS DE DESIGN
+     ========================================== -->
+<section class="content-section" id="outras-dicas-de-design">
+  <span class="section-badge">Capítulo 10</span>
+  <h2 class="section-heading">Outras dicas de design</h2>
+  <article id="navegacao-clara-e-consistente">
+    <h3 class="subsection-heading">Navegação clara e consistente</h3>
+    <ul class="guidelines-list">
+      <li>Garanta que a navegação entre as páginas de um site tenha nomes, estilos e posicionamento consistentes.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Ofereça mais de um método de navegação, como uma busca no site ou um mapa do site.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Ajude os usuários a entenderem onde estão no site ou na página, fornecendo dicas de orientação, como trilhas de navegação (breadcrumbs) e títulos claros.</li>
+    </ul>
+  </article>
+  <article id="feedback-facilmente-identificavel">
+    <h3 class="subsection-heading">Feedback facilmente identificável</h3>
+    <ul class="guidelines-list">
+      <li>Forneça feedback para interações, como confirmar o envio de um formulário, alertar o usuário quando algo der errado ou notificá-lo sobre alterações na página.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>As instruções devem ser fáceis de identificar.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Feedbacks importantes que exigem ação do usuário devem ser apresentados de forma destacada.</li>
+    </ul>
+  </article>
+  <article id="design-para-diferentes-tamanhos-de-viewport">
+    <h3 class="subsection-heading">Design para diferentes tamanhos de viewport</h3>
+    <ul class="guidelines-list">
+      <li>Considere como as informações da página são apresentadas em telas de diferentes tamanhos, como celulares ou janelas de navegador com zoom.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>A posição e a apresentação dos elementos principais, como cabeçalho e navegação, podem ser alteradas para melhor aproveitamento do espaço.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>Certifique-se de que o tamanho do texto e a largura da linha estejam configurados para maximizar a legibilidade.</li>
+    </ul>
+    <ul class="guidelines-list">
+      <li>O design deve ser responsivo para atender às diretrizes de redimensionamento (200% de zoom), garantindo que elementos como botões, campos de formulário e textos ampliados não fiquem sobrepostos ou cortados.</li>
+    </ul>
+  </article>
+</section>
+
+<section class="content-section" id="notas-de-rodape">
+  <span class="section-badge">Referências</span>
+  <h2 class="section-heading">Notas de Rodapé</h2>
+  <ol class="footnotes-list">
+    <li id="fn1"><strong>BRASIL. Ministério da Saúde.</strong> Saúde da pessoa com deficiência. Brasília, DF: Ministério da Saúde, \[sem data\]. Disponível em: \<\<<a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-pessoa-com-deficiencia?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">https\://www\.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-pessoa-com-deficiencia</a>\>\>. Acesso em: <a href="#fnref1" class="footnote-backref" aria-label="Voltar à referência 1">↩</a></li>
+    <li id="fn2"><strong>SETA, Renata.</strong> Deficiências invisíveis, deficiências ocultas, neurodivergências e doenças raras: fundamental falar sobre isso\! <em>Faculdade de Educação – UNICAMP</em>, 10 jul. 2024\. Disponível em: <a href="https://portal.fe.unicamp.br/artigo/deficiencias-invisiveis-deficiencias-ocultas-neurodivergencias-e-doencas-raras-fundamental-falar-sobre-isso/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">\<\<https\://portal.fe.unicamp.br/artigo/deficiencias-invisiveis-deficiencias-ocultas-neurodivergencias-e-doencas-raras-fundamental-falar-sobre-isso/</a>\>\>. Acesso em: <a href="#fnref2" class="footnote-backref" aria-label="Voltar à referência 2">↩</a></li>
+    <li id="fn3">BRASIL. <em>Cartilha do Censo 2010: pessoas com deficiência</em>. Brasília, DF: Secretaria de Direitos Humanos da Presidência da República; Secretaria Nacional de Promoção dos Direitos da Pessoa com Deficiência, 2012\. Disponível em: <a href="https://siac.fpabramo.org.br/uploads/acaoinstitucional/SNPDPCD_censo_2012.pdf?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">\<\<https\://siac.fpabramo.org.br/uploads/acaoinstitucional/SNPDPCD\_censo\_2012.pdf</a>\>\>. Acesso em: <a href="#fnref3" class="footnote-backref" aria-label="Voltar à referência 3">↩</a></li>
+    <li id="fn4">RIO DE JANEIRO (Município). Instituto Pereira Passos. <em>Cadernos do Rio: pessoas com deficiência</em>. Rio de Janeiro: Instituto Pereira Passos, jun. 2013, p. 9\. Disponível em: <a href="https://www.data.rio/documents/0507e899644f469185454462c776862b/explore?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">\<\<https\://www\.data.rio/documents/0507e899644f469185454462c776862b/explore</a>\>\>. Acesso em: <a href="#fnref4" class="footnote-backref" aria-label="Voltar à referência 4">↩</a></li>
+    <li id="fn5">FERRAZ, Carolina Valença. O desaparecimento das pessoas com deficiência; ou a balada do capacitismo estrutural. <em>Folha de S.Paulo</em>, São Paulo, 25 jul. 2025\. Opinião. Disponível em: <a href="https://www1.folha.uol.com.br/opiniao/2025/07/o-desaparecimento-das-pessoas-com-deficiencia-ou-a-balada-do-capacitismo-estrutural.shtml?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">\<\<https\://www1.folha.uol.com.br/opiniao/2025/07/o-desaparecimento-das-pessoas-com-deficiencia-ou-a-balada-do-capacitismo-estrutural.shtml</a>\>\>. Acesso em: <a href="#fnref5" class="footnote-backref" aria-label="Voltar à referência 5">↩</a></li>
+    <li id="fn6">IBGE, <strong>Diretoria de Pesquisas, Coordenação de Pesquisas por Amostra de Domicílios, Pesquisa Nacional por Amostra de Domicílios Contínua 2022\.</strong> Disponível em: \<\<<a href="https://biblioteca.ibge.gov.br/visualizacao/livros/liv102013_informativo.pdf" target="_blank" rel="noopener noreferrer">https\://biblioteca.ibge.gov.br/visualizacao/livros/liv102013\_informativo.pdf</a>\>\>. Acesso em: <a href="#fnref6" class="footnote-backref" aria-label="Voltar à referência 6">↩</a></li>
+    <li id="fn7"><strong>STEIL, Juliana.</strong> “As 20 cidades com mais idosos no Brasil, segundo Censo 2022”. <em>Valor Econômico</em>, São Paulo, 5 fev. 2025\. Disponível em: \<\<<a href="https://valor.globo.com/brasil/artigo/as-20-cidades-com-mais-idosos-no-brasil-segundo-censo-2022.ghtml" target="_blank" rel="noopener noreferrer">https\://valor.globo.com/brasil/artigo/as-20-cidades-com-mais-idosos-no-brasil-segundo-censo-2022.ghtml</a>\>\> Acesso em: <a href="#fnref7" class="footnote-backref" aria-label="Voltar à referência 7">↩</a></li>
+    <li id="fn8">TELES, Lilia; COSTA, André Coelho. População do RJ tem queda em quatro anos, segundo IBGE. <em>G1</em>, Rio de Janeiro, 22 ago. 2024\. Disponível em: \<\<<a href="https://g1.globo.com/rj/rio-de-janeiro/noticia/2024/08/22/populacao-do-rj-queda-em-quatro-anos-ibge.ghtml" target="_blank" rel="noopener noreferrer">https\://g1.globo.com/rj/rio-de-janeiro/noticia/2024/08/22/populacao-do-rj-queda-em-quatro-anos-ibge.ghtml</a>\>\>. Acesso em: <a href="#fnref8" class="footnote-backref" aria-label="Voltar à referência 8">↩</a></li>
+    <li id="fn9">BRASIL. <em>Convenção sobre os Direitos das Pessoas com Deficiência/ Lei Brasileira de Inclusão da Pessoa com Deficiência</em>. Ministério da Justiça e Cidadania. Secretaria Especial dos Direitos da Pessoa com Deficiência. 2016, p.9. Disponível em: \<\<<a href="https://www.mds.gov.br/webarquivos/Oficina%20PCF/JUSTI%C3%87A%20E%20CIDADANIA/convencao-e-lbi-pdf.pdf" target="_blank" rel="noopener noreferrer">https\://www\.mds.gov.br/webarquivos/Oficina%20PCF/JUSTI%C3%87A%20E%20CIDADANIA/convencao-e-lbi-pdf.pdf</a>\>\>. Acesso em: <a href="#fnref9" class="footnote-backref" aria-label="Voltar à referência 9">↩</a></li>
+    <li id="fn10">BRASIL. <em>Lei nº 13.146, de 6 de julho de 2015\. Institui a Lei Brasileira de Inclusão da Pessoa com Deficiência (Estatuto da Pessoa com Deficiência)</em>. Brasília, DF: Presidência da República, 2015\. Disponível em:  \<\<<a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm" target="_blank" rel="noopener noreferrer">https\://www\.planalto.gov.br/ccivil\_03/\_ato2015-2018/2015/lei/l13146.htm</a>\>\>. Acesso em: <a href="#fnref10" class="footnote-backref" aria-label="Voltar à referência 10">↩</a></li>
+    <li id="fn11">BRASIL. Lei nº 13.146/ 2015, art. 3º, I. <a href="#fnref11" class="footnote-backref" aria-label="Voltar à referência 11">↩</a></li>
+    <li id="fn12">Como desenhos universais entende-se a concepção de produtos, ambientes, programas e serviços a serem usados por todas as pessoas, sem necessidade de adaptação ou de projeto específico, incluindo os recursos de tecnologia assistiva. BRASIL. Lei nº 13.146/ 2015, art. 3º, II. <a href="#fnref12" class="footnote-backref" aria-label="Voltar à referência 12">↩</a></li>
+    <li id="fn13">PREFEITURA DO RIO DE JANEIRO. <em>Sete Dimensões da Acessibilidade</em>. Secretaria Municipal da Pessoa com Deficiência, Rio de Janeiro, s/d, p. <a href="#fnref13" class="footnote-backref" aria-label="Voltar à referência 13">↩</a></li>
+    <li id="fn14">BRASIL. Lei nº 13.146/ 2015, art. 63\. <a href="#fnref14" class="footnote-backref" aria-label="Voltar à referência 14">↩</a></li>
+    <li id="fn15">BIGDATACORP. <em>Acessibilidade nos sites brasileiros 2024</em>. Disponível em: <a href="https://blog.bigdatacorp.com.br/acessibilidade-nos-sites-brasileiros-2024/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">\<\<https\://blog.bigdatacorp.com.br/acessibilidade-nos-sites-brasileiros-2024/</a>\>\>. Acesso em: <a href="#fnref15" class="footnote-backref" aria-label="Voltar à referência 15">↩</a></li>
+    <li id="fn16">MOVIMENTO WEB PARA TODOS (WPT). Metodologia utilizada no estudo de acessibilidade em sites ativos (Brasil, 2024). WPT, 3 jul. 2024\. Disponível em: <a href="https://mwpt.com.br/metodologia-utilizada-no-estudo-de-acessibilidade-em-sites-ativos-brasil-2024/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">\<\<https\://mwpt.com.br/metodologia-utilizada-no-estudo-de-acessibilidade-em-sites-ativos-brasil-2024/</a>\>\>. Acesso em: <a href="#fnref16" class="footnote-backref" aria-label="Voltar à referência 16">↩</a></li>
+    <li id="fn17"><strong>BERGUES, Martina; LAFUENTE, Mariano.</strong> <em>Uso de serviços digitais: um retrato do Brasil</em>. Washington, D.C.: Banco Interamericano de Desenvolvimento, 2025\. Disponível em: <a href="https://www.gov.br/gestao/pt-br/assuntos/noticias/2025/abril/pesquisa-revela-que-77-dos-brasileiros-consideram-facil-o-acesso-a-servicos-publicos-digitais/usodeservicosdigitais_bid.pdf?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">\<\<https\://www\.gov.br/gestao/pt-br/assuntos/noticias/2025/abril/pesquisa-revela-que-77-dos-brasileiros-consideram-facil-o-acesso-a-servicos-publicos-digitais/usodeservicosdigitais\_bid.pdf</a>\>\>. Acesso em: <a href="#fnref17" class="footnote-backref" aria-label="Voltar à referência 17">↩</a></li>
+    <li id="fn18">BERGUES & LAFUENTE. 2025, p. 24\. <a href="#fnref18" class="footnote-backref" aria-label="Voltar à referência 18">↩</a></li>
+    <li id="fn19">BERGUES & LAFUENTE., 2025, p. 23\. <a href="#fnref19" class="footnote-backref" aria-label="Voltar à referência 19">↩</a></li>
+    <li id="fn20">BERGUES & LAFUENTE., 2025, p. 9\. <a href="#fnref20" class="footnote-backref" aria-label="Voltar à referência 20">↩</a></li>
+    <li id="fn21">BERGUES & LAFUENTE, 2025, p. 35\. <a href="#fnref21" class="footnote-backref" aria-label="Voltar à referência 21">↩</a></li>
+    <li id="fn22">FERNANDA. Entendendo as diferenças entre design responsivo, adaptativo e mobile-first. <em>Medium</em>, 27 fev. 2018\. Disponível em: <a href="https://medium.com/@fnandaleite/entendendo-as-diferen%C3%A7as-entre-design-responsivo-adaptativo-e-mobile-first-ea3c61fc9181" target="_blank" rel="noopener noreferrer">https\://medium.com/@fnandaleite/entendendo-as-diferen%C3%A7as-entre-design-responsivo-adaptativo-e-mobile-first-ea3c61fc9181</a>. Acesso em: <a href="#fnref22" class="footnote-backref" aria-label="Voltar à referência 22">↩</a></li>
+    <li id="fn23">WORLD WIDE WEB CONSORTIUM (W3C). <strong>Diretrizes de Acessibilidade para Conteúdo Web (WCAG) 2.2</strong>. W3C Recommendation, 5 out. 2023\. Disponível em: <a href="https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">\<\<https\://www\.w3c.br/traducoes/wcag/wcag22-pt-BR/</a>. Acesso em: <a href="#fnref23" class="footnote-backref" aria-label="Voltar à referência 23">↩</a></li>
+    <li id="fn24">BRASIL. <em>Modelo de Acessibilidade em Governo Eletrônico (eMAG): versão 3.1</em>. Brasília, DF: Ministério do Planejamento, Orçamento e Gestão, 2014\. Disponível em: <a href="https://emag.governoeletronico.gov.br/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">\<\<https\://emag.governoeletronico.gov.br/</a>\>\>. Acesso em: <a href="#fnref24" class="footnote-backref" aria-label="Voltar à referência 24">↩</a></li>
+    <li id="fn25">ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. <em>ABNT NBR 17060:2022: acessibilidade em aplicativos de dispositivos móveis — requisitos</em>. Rio de Janeiro: ABNT, 2022\. <a href="#fnref25" class="footnote-backref" aria-label="Voltar à referência 25">↩</a></li>
+    <li id="fn26">ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. <em>ABNT NBR 17225:2025: acessibilidade em conteúdo e aplicações web — requisitos</em>. Rio de Janeiro: ABNT, 2025\. <a href="#fnref26" class="footnote-backref" aria-label="Voltar à referência 26">↩</a></li>
+    <li id="fn27"><strong>WORLD WIDE WEB CONSORTIUM (W3C).</strong> <em>Introduction to Understanding WCAG 2.2</em>. W3C Web Accessibility Initiative, 15 jul. 2025\. Disponível em: <a href="https://www.w3.org/WAI/WCAG22/Understanding/intro?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">\<\<https\://www\.w3.org/WAI/WCAG22/Understanding/intro</a>\>\>. Acesso em: <a href="#fnref27" class="footnote-backref" aria-label="Voltar à referência 27">↩</a></li>
+    <li id="fn28">Para saber mais sobre as aplicações do WAI-ARIA, consulte: \<\<<a href="https://www.w3.org/WAI/tutorials/forms/labels/" target="_blank" rel="noopener noreferrer">https\://www\.w3.org/WAI/tutorials/forms/labels/</a>\>\>. <a href="#fnref28" class="footnote-backref" aria-label="Voltar à referência 28">↩</a></li>
+    <li id="fn29">Para saber mais, consulte a página do MDN sobre “Elemento de lista de descrição HTML”. Disponível em: \<\<<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dl" target="_blank" rel="noopener noreferrer">https\://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dl</a>\>\>. Acesso em: <a href="#fnref29" class="footnote-backref" aria-label="Voltar à referência 29">↩</a></li>
+  </ol>
+</section>
+
+    
+  </main>
+  </div> <!-- /.main-wrapper -->
+
+<?php
+get_footer();

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/",
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "latest"
+  },
+  "steps": [
+    {
+      "step": "setSiteOptions",
+      "options": {
+        "blogname": "Guia de Boas Práticas de Acessibilidade Digital",
+        "blogdescription": "Prefeitura da Cidade do Rio de Janeiro"
+      }
+    },
+    {
+      "step": "activateTheme",
+      "themeFolderName": "tema-guia-acessibilidade"
+    }
+  ]
+}

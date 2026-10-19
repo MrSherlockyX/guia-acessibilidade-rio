@@ -913,6 +913,72 @@ textarea:focus-visible,
   margin-bottom: 2rem;
 }
 
+/* --- MASCOTE ROBOZINHO NO CABEÇALHO --- */
+.header-title-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.header-title-text {
+  flex: 1;
+}
+
+.header-title-text .header-subtitle {
+  margin-bottom: 0;
+}
+
+.header-mascot-wrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-mascot-img {
+  width: 140px;
+  height: auto;
+  max-width: 100%;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35));
+  transition: transform var(--transition-base);
+  animation: mascotFloat 4s ease-in-out infinite alternate;
+}
+
+@keyframes mascotFloat {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header-mascot-img {
+    animation: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-title-flex {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .header-mascot-img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-mascot-img {
+    width: 80px;
+  }
+}
+
 /* --- BARRA DE PESQUISA COM SUGESTÕES EM TEMPO REAL --- */
 .search-section {
   position: relative;
