@@ -86,23 +86,10 @@
       </div>
 
       <div class="header-title-wrap">
-        <div class="header-title-flex">
-          <div class="header-title-text">
-            <h1>Guia de Boas Práticas de <span class="highlight-cyan">Acessibilidade Digital</span></h1>
-            <p class="header-subtitle">
-              Diretrizes, critérios técnicos e orientações práticas para a construção e adequação de portais públicos acessíveis, autônomos e inclusivos a todos os cidadãos cariocas.
-            </p>
-          </div>
-          <div class="header-mascot-wrap">
-            <img
-              src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/Robozin.png"
-              alt="Mascote robô da Acessibilidade Digital da Prefeitura do Rio"
-              class="header-mascot-img"
-              width="140"
-              height="132"
-            />
-          </div>
-        </div>
+        <h1>Guia de Boas Práticas de <span class="highlight-cyan">Acessibilidade Digital</span></h1>
+        <p class="header-subtitle">
+          Diretrizes, critérios técnicos e orientações práticas para a construção e adequação de portais públicos acessíveis, autônomos e inclusivos a todos os cidadãos cariocas.
+        </p>
       </div>
 
       <!-- BARRA DE PESQUISA COM SUGESTÕES EM TEMPO REAL (AUTOCOMPLETE) -->
@@ -146,6 +133,17 @@
         <!-- Anunciador acessível para leitores de tela -->
         <div id="search-live-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
       </section>
+
+      <!-- MASCOTE ROBOZINHO EMERGINDO DA BASE DO BANNER -->
+      <div class="header-mascot-wrap" aria-hidden="true">
+        <img
+          src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/Robozin.png"
+          alt=""
+          class="header-mascot-img"
+          width="330"
+          height="312"
+        />
+      </div>
     </div>
   </header>
 
