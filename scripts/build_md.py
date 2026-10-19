@@ -11,9 +11,18 @@ if hasattr(sys.stdout, "reconfigure"):
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 def find_source_file():
+    if len(sys.argv) > 1:
+        p = Path(sys.argv[1])
+        if p.exists():
+            return p
+            
+    # Busca por qualquer export do Docs (ex: Guia de Boas Práticas de Acessibilidade Digital (2).md)
+    files = [f for f in PROJECT_ROOT.glob("Guia de Boas Práticas*.md") if f.is_file()]
+    if files:
+        files.sort(key=lambda f: f.stat().st_mtime, reverse=True)
+        return files[0]
+        
     candidates = [
-        PROJECT_ROOT / "Guia de Boas Práticas de Acessibilidade Digital.md",
-        PROJECT_ROOT / "Guia de Boas Práticas de Acessibilidade Digital .md",
         PROJECT_ROOT / "GuiaAcessibilidade.md"
     ]
     for c in candidates:

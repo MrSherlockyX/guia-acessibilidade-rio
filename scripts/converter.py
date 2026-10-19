@@ -856,14 +856,10 @@ def main():
     else:
         md_file = DEFAULT_MD_PATH
         if not md_file.exists():
-            for alt_name in [
-                "Guia de Boas Práticas de Acessibilidade Digital.md",
-                "Guia de Boas Práticas de Acessibilidade Digital .md",
-            ]:
-                alt_p = PROJECT_ROOT / alt_name
-                if alt_p.exists():
-                    md_file = alt_p
-                    break
+            files = [f for f in PROJECT_ROOT.glob("Guia de Boas Práticas*.md") if f.is_file()]
+            if files:
+                files.sort(key=lambda f: f.stat().st_mtime, reverse=True)
+                md_file = files[0]
     
     if not md_file.exists():
         print(f"❌ Arquivo de entrada não encontrado: {md_file}")
