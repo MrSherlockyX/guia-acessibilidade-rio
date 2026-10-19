@@ -4,6 +4,43 @@
    Conforme Diretrizes WCAG 2.2 (Níveis AA e AAA) e eMAG 3.1
    ========================================================================== */
 
+/* --- FONTES LOCAIS: OPENDYSLEXIC (ACESSIBILIDADE PARA DISLEXIA) --- */
+@font-face {
+  font-family: 'OpenDyslexic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/OpenDyslexic-Regular.woff') format('woff'),
+       url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/woff/OpenDyslexic-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/OpenDyslexic-Bold.woff') format('woff'),
+       url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/woff/OpenDyslexic-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/OpenDyslexic-Italic.woff') format('woff'),
+       url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/woff/OpenDyslexic-Italic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'OpenDyslexic';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/OpenDyslexic-BoldItalic.woff') format('woff'),
+       url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/woff/OpenDyslexic-BoldItalic.woff') format('woff');
+}
+
 /* --- VARIÁVEIS CSS E DESIGN TOKENS --- */
 :root {
   --font-base-size: 16px;
@@ -480,9 +517,10 @@ body.dark-mode .toc-link:hover {
 }
 
 body.dark-mode .toc-link.is-active {
-  background-color: rgba(56, 189, 248, 0.15) !important;
-  color: #38BDF8 !important;
-  border-left: 3px solid #38BDF8 !important;
+  background-color: rgba(56, 189, 248, 0.22) !important;
+  color: #F0F9FF !important;
+  font-weight: 700 !important;
+  border-left: 4px solid #38BDF8 !important;
 }
 
 body.dark-mode .section-badge {
@@ -589,11 +627,42 @@ body.dark-mode .figure-img-wrap {
   background-color: #0F172A !important;
 }
 
-/* --- TEMA: FONTE PARA DISLEXIA --- */
+/* --- TEMA: FONTE PARA DISLEXIA (OPENDYSLEXIC, DYSLEXIE, LEXIA READABLE) --- */
 body.dyslexia-font {
-  font-family: "OpenDyslexic", "Comic Sans MS", "Arial Rounded MT Bold", sans-serif !important;
+  --font-family-sans: "OpenDyslexic", "Dyslexie", "Lexia Readable", "Comic Sans MS", sans-serif;
+  font-family: "OpenDyslexic", "Dyslexie", "Lexia Readable", "Comic Sans MS", sans-serif !important;
   line-height: 1.85 !important;
-  letter-spacing: 0.05em !important;
+  letter-spacing: 0.04em !important;
+}
+
+body.dyslexia-font button,
+body.dyslexia-font input,
+body.dyslexia-font select,
+body.dyslexia-font textarea,
+body.dyslexia-font h1,
+body.dyslexia-font h2,
+body.dyslexia-font h3,
+body.dyslexia-font h4,
+body.dyslexia-font h5,
+body.dyslexia-font h6,
+body.dyslexia-font p,
+body.dyslexia-font a,
+body.dyslexia-font span:not(.hljs *),
+body.dyslexia-font li,
+body.dyslexia-font blockquote,
+body.dyslexia-font th,
+body.dyslexia-font td,
+body.dyslexia-font label,
+body.dyslexia-font caption,
+body.dyslexia-font figcaption,
+body.dyslexia-font strong,
+body.dyslexia-font b,
+body.dyslexia-font em,
+body.dyslexia-font i {
+  font-family: "OpenDyslexic", "Dyslexie", "Lexia Readable", "Comic Sans MS", sans-serif !important;
+  letter-spacing: 0.04em !important;
+  word-spacing: 0.06em !important;
+  line-height: 1.85 !important;
 }
 
 /* --- TEMA: ESPAÇAMENTO EXPANDIDO (WCAG 2.2 Critério 1.4.12) --- */
@@ -1220,10 +1289,10 @@ textarea:focus-visible,
 }
 
 .toc-link.is-active {
-  background-color: rgba(0, 74, 128, 0.08);
-  color: var(--rio-blue-primary);
+  background-color: #E0F2FE;
+  color: var(--rio-blue-darkest);
   font-weight: 700;
-  border-left: 3px solid var(--rio-blue-primary);
+  border-left: 4px solid var(--rio-blue-primary);
 }
 
 .toc-sublist {
@@ -1877,13 +1946,14 @@ table.accessible-table tbody tr:hover {
   }
 
   .mobile-toc-badge {
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--rio-cyan-vivid);
-    background-color: rgba(56, 189, 248, 0.15);
-    padding: 0.2rem 0.55rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--rio-blue-darkest);
+    background-color: #E0F2FE;
+    border: 1px solid #BAE6FD;
+    padding: 0.25rem 0.65rem;
     border-radius: var(--radius-full);
-    max-width: 170px;
+    max-width: 180px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -2233,8 +2303,8 @@ table.accessible-table tbody tr:hover {
     font-size: 0.85rem;
   }
   .mobile-toc-badge {
-    max-width: 120px;
-    font-size: 0.72rem;
+    max-width: 140px;
+    font-size: 0.78rem;
   }
   .header-title-wrap h1 {
     font-size: clamp(1.4rem, 6.5vw, 1.75rem);
@@ -2267,8 +2337,10 @@ body.dark-mode .mobile-toc-toggle-btn:focus-visible {
   background-color: rgba(56, 189, 248, 0.15) !important;
 }
 body.dark-mode .mobile-toc-badge {
-  background-color: rgba(56, 189, 248, 0.18) !important;
-  color: #38BDF8 !important;
+  background-color: rgba(3, 105, 161, 0.4) !important;
+  color: #F8FAFC !important;
+  font-weight: 700 !important;
+  border: 1px solid rgba(56, 189, 248, 0.5) !important;
 }
 body.dark-mode .toc-close-btn {
   border-color: #2A3C56 !important;
@@ -2290,8 +2362,9 @@ body.high-contrast .mobile-toc-toggle-btn {
 }
 body.high-contrast .mobile-toc-badge {
   background-color: #000000 !important;
-  color: #00FFFF !important;
-  border: 1px solid #00FFFF !important;
+  color: #FFFF00 !important;
+  border: 1px solid #FFFF00 !important;
+  font-weight: 700 !important;
 }
 body.high-contrast .toc-close-btn {
   background-color: #000000 !important;
