@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initCodeCopyButtons();
   initBackToTop();
   initReadingProgress();
+  initRealtimeSync();
 });
 
 /* --- CARREGAMENTO DE CONTEUDO EDITADO NO PAINEL ADMIN (SE EXISTIR) --- */
@@ -20,29 +21,143 @@ function loadCustomContentIfPresent() {
   const customContent = localStorage.getItem("guia_custom_content");
   const mainEl = document.getElementById("conteudo-principal");
   if (customContent && mainEl && customContent.trim().length > 50) {
-    const banner = `
-      <div class="admin-preview-banner" role="status">
-        <div class="admin-preview-banner-inner">
-          <span>📝 <strong>Modo Editor Local:</strong> Exibindo versao modificada no Painel Admin.</span>
-          <div class="admin-preview-banner-actions">
-            <a href="admin.html" class="admin-banner-link">Abrir Editor</a>
-            <button type="button" id="btn-revert-local-preview" class="admin-banner-btn">Restaurar Oficial</button>
-          </div>
-        </div>
-      </div>
-    `;
-    mainEl.innerHTML = banner + customContent;
+    mainEl.innerHTML = customContent;
+    rebuildTableOfContents();
+  }
+}
 
-    const revertBtn = document.getElementById("btn-revert-local-preview");
-    if (revertBtn) {
-      revertBtn.addEventListener("click", () => {
-        if (confirm("Deseja descartar a versao editada localmente e voltar ao conteudo original publicado?")) {
-          localStorage.removeItem("guia_custom_content");
-          window.location.reload();
+/* --- SINCRONIZAÇÃO EM TEMPO REAL COM O PAINEL DE ADMINISTRAÇÃO --- */
+function initRealtimeSync() {
+  function applyLiveContent(newHtml) {
+    const mainEl = document.getElementById("conteudo-principal");
+    if (!mainEl || !newHtml || newHtml.trim().length < 50) return;
+    
+    // Atualiza o conteúdo da página imediatamente
+    mainEl.innerHTML = newHtml;
+
+    // Reconstrói sumário dinamicamente para refletir novos capítulos/subtítulos
+    rebuildTableOfContents();
+    initTableOfContents();
+
+    // Notifica visualmente com um toast acessível
+    showSiteUpdateToast("O portal foi atualizado em tempo real pelo editor!");
+  }
+
+  function handleReset() {
+    window.location.reload();
+  }
+
+  // 1. Canal BroadcastChannel nativo do navegador (zero delay entre abas/janelas)
+  if ("BroadcastChannel" in window) {
+    try {
+      const channel = new BroadcastChannel("guia_content_sync");
+      channel.onmessage = (event) => {
+        if (!event.data) return;
+        if (event.data.type === "UPDATE_CONTENT" && event.data.html) {
+          applyLiveContent(event.data.html);
+        } else if (event.data.type === "RESET_CONTENT") {
+          handleReset();
         }
-      });
+      };
+    } catch (e) {
+      console.warn("BroadcastChannel não suportado neste navegador:", e);
     }
   }
+
+  // 2. Evento Storage (sincronização cross-tab alternativa)
+  window.addEventListener("storage", (e) => {
+    if (e.key === "guia_custom_content") {
+      if (e.newValue) {
+        applyLiveContent(e.newValue);
+      } else {
+        handleReset();
+      }
+    }
+  });
+}
+
+function showSiteUpdateToast(message) {
+  let toast = document.getElementById("site-sync-toast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.id = "site-sync-toast";
+    toast.className = "site-sync-toast";
+    toast.setAttribute("role", "status");
+    toast.setAttribute("aria-live", "polite");
+    document.body.appendChild(toast);
+  }
+  toast.innerHTML = `
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color: var(--rio-cyan-vivid, #00C0F3); flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
+    <span>${message || "Site atualizado com sucesso!"}</span>
+  `;
+  toast.classList.add("show");
+  clearTimeout(toast._timer);
+  toast._timer = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 4000);
+}
+
+function escapeHtml(text) {
+  if (!text) return "";
+  const div = document.createElement("div");
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+function rebuildTableOfContents() {
+  const tocTree = document.querySelector(".sidebar-toc .toc-tree");
+  const mainEl = document.getElementById("conteudo-principal");
+  if (!tocTree || !mainEl) return;
+
+  const sections = mainEl.querySelectorAll(".content-section");
+  if (!sections.length) return;
+
+  let newTocHtml = "";
+  sections.forEach((section, sIdx) => {
+    const secId = section.id || `capitulo-${sIdx + 1}`;
+    if (!section.id) section.id = secId;
+
+    const headingEl = section.querySelector(".section-heading");
+    const headingText = headingEl ? headingEl.textContent.trim() : `Capítulo ${sIdx + 1}`;
+
+    const subItems = [];
+    section.querySelectorAll("article[id], h3.subsection-heading").forEach(item => {
+      let subId = "";
+      let subTitle = "";
+      if (item.tagName.toLowerCase() === "article" && item.id) {
+        subId = item.id;
+        const h3 = item.querySelector("h3, .subsection-heading");
+        subTitle = h3 ? h3.textContent.trim() : item.id;
+      } else if (item.tagName.toLowerCase() === "h3") {
+        if (!item.closest("article")) {
+          subId = item.id || `sub-${sIdx + 1}-${subItems.length + 1}`;
+          if (!item.id) item.id = subId;
+          subTitle = item.textContent.trim();
+        }
+      }
+      if (subId && subTitle && !subItems.some(x => x.id === subId)) {
+        subItems.push({ id: subId, title: subTitle });
+      }
+    });
+
+    let sublistHtml = "";
+    if (subItems.length > 0) {
+      sublistHtml = '<ul class="toc-sublist">';
+      subItems.forEach((sub, i) => {
+        sublistHtml += `<li><a href="#${sub.id}" class="toc-link">${sIdx + 1}.${i + 1} ${escapeHtml(sub.title)}</a></li>`;
+      });
+      sublistHtml += '</ul>';
+    }
+
+    newTocHtml += `
+      <li class="toc-tree-item">
+        <a href="#${secId}" class="toc-link">${sIdx + 1}. ${escapeHtml(headingText)}</a>
+        ${sublistHtml}
+      </li>
+    `;
+  });
+
+  tocTree.innerHTML = newTocHtml;
 }
 
 
@@ -873,7 +988,8 @@ function initAccessibilityToolbar() {
       document.body.classList.remove("high-contrast", "dark-mode", "dyslexia-font", "spaced-text", "underline-links");
       document.documentElement.style.setProperty("--font-scale", "1");
       currentFontIndex = 0;
-      localStorage.clear();
+      const a11yKeys = ["a11y_font_scale", "a11y_high_contrast", "a11y_dark_mode", "a11y_dyslexia", "a11y_spaced_text", "a11y_underline_links"];
+      a11yKeys.forEach(k => localStorage.removeItem(k));
 
       document.querySelectorAll(".a11y-btn").forEach(btn => {
         if (btn.id !== "btn-a11y-reset") btn.classList.remove("is-active");
@@ -898,12 +1014,15 @@ function initAccessibilityToolbar() {
    3. SUMÁRIO HIERÁRQUICO (TOC) COM SCROLLSPY ESTÁVEL E FILTRO RÁPIDO
    ========================================================================== */
 
+let currentTocTargetItems = [];
+let isTocScrollSpyListening = false;
+
 function initTableOfContents() {
+  const sidebarToc = document.getElementById("navegacao-guia");
   const tocLinks = document.querySelectorAll(".sidebar-toc .toc-link");
   const filterInput = document.getElementById("toc-filter-input");
   const mobileTocToggle = document.getElementById("mobile-toc-toggle");
   const mobileTocCurrentLabel = document.getElementById("mobile-toc-current-label");
-  const sidebarToc = document.getElementById("navegacao-guia");
   const sidebarBackdrop = document.getElementById("sidebar-toc-backdrop");
   const tocCloseBtn = document.getElementById("toc-close-btn");
 
@@ -915,7 +1034,7 @@ function initTableOfContents() {
     sidebarToc.classList.add("is-open");
     if (sidebarBackdrop) sidebarBackdrop.classList.add("is-active");
     if (mobileTocToggle) mobileTocToggle.setAttribute("aria-expanded", "true");
-    document.body.style.overflow = "hidden"; // Impede rolagem do fundo
+    document.body.style.overflow = "hidden";
     if (filterInput) {
       setTimeout(() => filterInput.focus(), 150);
     } else if (tocCloseBtn) {
@@ -934,65 +1053,66 @@ function initTableOfContents() {
     document.body.style.overflow = "";
   }
 
-  if (mobileTocToggle) {
-    mobileTocToggle.addEventListener("click", () => {
-      const isOpen = sidebarToc && sidebarToc.classList.contains("is-open");
-      if (isOpen) {
+  if (sidebarToc && !sidebarToc._drawerEventsAttached) {
+    sidebarToc._drawerEventsAttached = true;
+
+    if (mobileTocToggle) {
+      mobileTocToggle.addEventListener("click", () => {
+        const isOpen = sidebarToc && sidebarToc.classList.contains("is-open");
+        if (isOpen) {
+          closeMobileToc();
+        } else {
+          openMobileToc();
+        }
+      });
+    }
+
+    if (tocCloseBtn) {
+      tocCloseBtn.addEventListener("click", closeMobileToc);
+    }
+
+    if (sidebarBackdrop) {
+      sidebarBackdrop.addEventListener("click", closeMobileToc);
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && sidebarToc && sidebarToc.classList.contains("is-open")) {
         closeMobileToc();
-      } else {
-        openMobileToc();
       }
     });
-  }
 
-  if (tocCloseBtn) {
-    tocCloseBtn.addEventListener("click", closeMobileToc);
-  }
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 1025 && sidebarToc && sidebarToc.classList.contains("is-open")) {
+        closeMobileToc();
+      }
+    });
 
-  if (sidebarBackdrop) {
-    sidebarBackdrop.addEventListener("click", closeMobileToc);
-  }
-
-  // Tecla ESC fecha o sumário no mobile
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && sidebarToc && sidebarToc.classList.contains("is-open")) {
-      closeMobileToc();
+    if (filterInput) {
+      filterInput.addEventListener("input", () => {
+        const term = filterInput.value.trim().toLowerCase();
+        document.querySelectorAll(".toc-tree-item").forEach(item => {
+          const text = item.textContent.toLowerCase();
+          if (text.includes(term)) {
+            item.style.display = "";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      });
     }
-  });
-
-  // Se redimensionar para desktop (>= 1025px), reseta o estado do drawer mobile
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 1025 && sidebarToc && sidebarToc.classList.contains("is-open")) {
-      closeMobileToc();
-    }
-  });
+  }
 
   // Mapeia todos os elementos alvos existentes referenciados pelo sumário
-  const targetItems = [];
+  currentTocTargetItems = [];
   tocLinks.forEach(link => {
     const href = link.getAttribute("href");
     if (href && href.startsWith("#")) {
       const el = document.getElementById(href.slice(1));
       if (el) {
-        targetItems.push({ id: href.slice(1), element: el, link: link });
+        currentTocTargetItems.push({ id: href.slice(1), element: el, link: link });
       }
     }
   });
-
-  // Filtro interativo no sumário
-  if (filterInput) {
-    filterInput.addEventListener("input", () => {
-      const term = filterInput.value.trim().toLowerCase();
-      document.querySelectorAll(".toc-tree-item").forEach(item => {
-        const text = item.textContent.toLowerCase();
-        if (text.includes(term)) {
-          item.style.display = "";
-        } else {
-          item.style.display = "none";
-        }
-      });
-    });
-  }
 
   // Navegação suave e precisa ao clicar nos tópicos do sumário
   tocLinks.forEach(link => {
@@ -1006,20 +1126,16 @@ function initTableOfContents() {
 
       e.preventDefault();
 
-      // Se estiver no mobile, fecha automaticamente o sumário ao selecionar um tópico
       if (window.innerWidth < 1025) {
         closeMobileToc();
       }
 
-      // Trava o scrollspy para evitar conflito com as seções intermediárias durante a rolagem
       setProgrammaticScrolling(1200);
 
-      // Marca o link como ativo imediatamente e centraliza na sidebar
       tocLinks.forEach(l => l.classList.remove("is-active"));
       link.classList.add("is-active");
       scrollLinkIntoSidebarView(link);
 
-      // Calcula a rolagem exata compensando as barras sticky (toolbar + mobile toc bar)
       const toolbar = document.querySelector(".a11y-toolbar");
       const mobileBar = document.querySelector(".mobile-toc-bar");
       let offset = (toolbar ? toolbar.offsetHeight : 54) + 16;
@@ -1033,36 +1149,36 @@ function initTableOfContents() {
         behavior: "smooth"
       });
 
-      // Atualiza a URL sem saltos bruscos
       history.pushState(null, "", href);
 
-      // Animação de pulso para identificação visual do tópico alcançado
       targetElement.classList.remove("target-pulse");
       void targetElement.offsetWidth;
       targetElement.classList.add("target-pulse");
 
-      // Foco acessível sem forçar rolagem
       targetElement.setAttribute("tabindex", "-1");
       targetElement.focus({ preventScroll: true });
     });
   });
 
   // ScrollSpy ultra-eficiente e sem travamentos durante a leitura manual
-  let ticking = false;
-  window.addEventListener("scroll", () => {
-    if (isProgrammaticScrolling || targetItems.length === 0) return;
+  if (!isTocScrollSpyListening) {
+    isTocScrollSpyListening = true;
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (isProgrammaticScrolling || currentTocTargetItems.length === 0) return;
 
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        updateActiveTocItem();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateActiveTocItem();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
 
   function updateActiveTocItem() {
-    if (isProgrammaticScrolling || targetItems.length === 0) return;
+    if (isProgrammaticScrolling || currentTocTargetItems.length === 0) return;
 
     const toolbar = document.querySelector(".a11y-toolbar");
     const mobileBar = document.querySelector(".mobile-toc-bar");
@@ -1072,17 +1188,15 @@ function initTableOfContents() {
     }
     const scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
-    // Se estiver no final da página, ativa o último item
     if ((window.innerHeight + scrollY) >= document.documentElement.scrollHeight - 50) {
-      const lastItem = targetItems[targetItems.length - 1];
+      const lastItem = currentTocTargetItems[currentTocTargetItems.length - 1];
       setActiveLink(lastItem.link);
       return;
     }
 
-    // Encontra o tópico atual baseado na posição de rolagem
-    let activeItem = targetItems[0];
-    for (let i = 0; i < targetItems.length; i++) {
-      const item = targetItems[i];
+    let activeItem = currentTocTargetItems[0];
+    for (let i = 0; i < currentTocTargetItems.length; i++) {
+      const item = currentTocTargetItems[i];
       const rect = item.element.getBoundingClientRect();
       if (rect.top <= offset) {
         activeItem = item;
@@ -1098,7 +1212,8 @@ function initTableOfContents() {
 
   function setActiveLink(activeLink) {
     let changed = false;
-    tocLinks.forEach(l => {
+    const currentLinks = document.querySelectorAll(".sidebar-toc .toc-link");
+    currentLinks.forEach(l => {
       if (l === activeLink) {
         if (!l.classList.contains("is-active")) {
           l.classList.add("is-active");
@@ -1111,7 +1226,6 @@ function initTableOfContents() {
 
     if (changed) {
       scrollLinkIntoSidebarView(activeLink);
-      // Atualiza o texto do badge no botão do sumário mobile
       if (mobileTocCurrentLabel && activeLink) {
         const text = activeLink.textContent.trim();
         mobileTocCurrentLabel.textContent = text;
@@ -1120,7 +1234,6 @@ function initTableOfContents() {
     }
   }
 
-  // Inicializa a posição do sumário
   updateActiveTocItem();
 }
 
@@ -1129,6 +1242,9 @@ function initTableOfContents() {
    ========================================================================== */
 
 function initImageModal() {
+  if (document._imageModalInitialized) return;
+  document._imageModalInitialized = true;
+
   const modal = document.getElementById("image-modal");
   const modalImg = document.getElementById("modal-img");
   const modalCaption = document.getElementById("modal-caption");
@@ -1138,24 +1254,24 @@ function initImageModal() {
 
   let lastActiveElement = null;
 
-  document.querySelectorAll(".figure-img-wrap, .figure-zoom-btn").forEach(trigger => {
-    trigger.addEventListener("click", (e) => {
-      const figure = trigger.closest(".content-figure");
-      if (!figure) return;
-      const img = figure.querySelector("img");
-      const caption = figure.querySelector("figcaption");
+  document.addEventListener("click", (e) => {
+    const trigger = e.target.closest(".figure-img-wrap, .figure-zoom-btn");
+    if (!trigger) return;
+    const figure = trigger.closest(".content-figure");
+    if (!figure) return;
+    const img = figure.querySelector("img");
+    const caption = figure.querySelector("figcaption");
 
-      if (img) {
-        lastActiveElement = document.activeElement;
-        modalImg.src = img.src;
-        modalImg.alt = img.alt || "Imagem ampliada";
-        modalCaption.textContent = caption ? caption.textContent : img.alt || "";
-        modal.classList.add("is-active");
-        modal.setAttribute("aria-hidden", "false");
-        closeBtn.focus();
-        document.body.style.overflow = "hidden";
-      }
-    });
+    if (img) {
+      lastActiveElement = document.activeElement;
+      modalImg.src = img.src;
+      modalImg.alt = img.alt || "Imagem ampliada";
+      modalCaption.textContent = caption ? caption.textContent : img.alt || "";
+      modal.classList.add("is-active");
+      modal.setAttribute("aria-hidden", "false");
+      closeBtn.focus();
+      document.body.style.overflow = "hidden";
+    }
   });
 
   function closeModal() {
@@ -1183,19 +1299,22 @@ function initImageModal() {
    ========================================================================== */
 
 function initCodeCopyButtons() {
-  document.querySelectorAll(".code-copy-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const codeBlock = btn.closest(".code-card")?.querySelector("code");
-      if (!codeBlock) return;
-      navigator.clipboard.writeText(codeBlock.innerText).then(() => {
-        const originalText = btn.textContent;
-        btn.textContent = "Copiado!";
-        btn.style.borderColor = "var(--rio-cyan-vivid)";
-        setTimeout(() => {
-          btn.textContent = originalText;
-          btn.style.borderColor = "";
-        }, 2000);
-      });
+  if (document._copyButtonsInitialized) return;
+  document._copyButtonsInitialized = true;
+
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".code-copy-btn");
+    if (!btn) return;
+    const codeBlock = btn.closest(".code-card")?.querySelector("code");
+    if (!codeBlock) return;
+    navigator.clipboard.writeText(codeBlock.innerText).then(() => {
+      const originalText = btn.textContent;
+      btn.textContent = "Copiado!";
+      btn.style.borderColor = "var(--rio-cyan-vivid)";
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.borderColor = "";
+      }, 2000);
     });
   });
 }

@@ -2789,6 +2789,49 @@ body.dark-mode .admin-banner-btn {
   border-color: #F59E0B !important;
 }
 
+/* --- TOAST DE ATUALIZAÇÃO EM TEMPO REAL --- */
+.site-sync-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--rio-blue-darkest, #001F33);
+  color: #FFFFFF;
+  border: 1px solid var(--rio-cyan-vivid, #00C0F3);
+  border-left: 4px solid var(--rio-cyan-vivid, #00C0F3);
+  border-radius: var(--radius-md, 8px);
+  padding: 0.85rem 1.25rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  font-size: 0.92rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  z-index: 99999;
+  transform: translateY(100px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.site-sync-toast.show {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.dark-mode .site-sync-toast {
+  background-color: #0F172A;
+  color: #F8FAFC;
+  border-color: #38BDF8;
+  border-left-color: #38BDF8;
+}
+
+body.high-contrast .site-sync-toast {
+  background-color: #000000;
+  color: #FFFF00;
+  border: 2px solid #FFFF00;
+}
+
 /* --- IMPRESSÃO ACESSÍVEL --- */
 @media print {
   .skip-links,

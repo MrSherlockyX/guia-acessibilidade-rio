@@ -112,6 +112,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  function getCurrentHtmlContent() {
+    if (tabHtml && tabHtml.classList.contains("is-active")) {
+      return htmlTextarea.value;
+    }
+    return editorCanvas.innerHTML;
+  }
+
   // --- 3. AUTOSAVE E STATUS ---
   function updateStatus(saved, text) {
     if (saved) {
@@ -125,20 +132,72 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function triggerAutosave() {
     isDirty = true;
-    updateStatus(false, "Salvando...");
+    updateStatus(false, "Salvando rascunho...");
     clearTimeout(autosaveTimer);
     autosaveTimer = setTimeout(() => {
       saveToStorage();
-    }, 800);
+    }, 1200);
   }
 
   function saveToStorage() {
-    const html = editorCanvas.innerHTML;
+    const html = getCurrentHtmlContent();
     localStorage.setItem("guia_custom_content", html);
     const now = new Date();
     const timeStr = now.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
-    updateStatus(true, `Salvo localmente às ${timeStr}`);
+    updateStatus(true, `Rascunho salvo às ${timeStr}`);
     isDirty = false;
+  }
+
+  async function saveAndSyncSite() {
+    const html = getCurrentHtmlContent();
+    editorCanvas.innerHTML = html;
+    htmlTextarea.value = html;
+
+    // 1. Salva no localStorage (persistência imediata no navegador)
+    localStorage.setItem("guia_custom_content", html);
+
+    // 2. Transmite mensagem em tempo real para outras abas abertas (BroadcastChannel)
+    if ("BroadcastChannel" in window) {
+      try {
+        const channel = new BroadcastChannel("guia_content_sync");
+        channel.postMessage({ type: "UPDATE_CONTENT", html: html });
+        channel.close();
+      } catch (e) {
+        console.warn("BroadcastChannel erro:", e);
+      }
+    }
+
+    // 3. Tenta persistir no disco local via API do servidor Python se estiver rodando
+    let savedToDisk = false;
+    try {
+      const response = await fetch("/api/save", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ html: html })
+      });
+      if (response.ok) {
+        const resData = await response.json();
+        if (resData.success) {
+          savedToDisk = true;
+        }
+      }
+    } catch (err) {
+      // Servidor local não está em execução (modo estático/GitHub Pages)
+    }
+
+    const now = new Date();
+    const timeStr = now.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+
+    if (savedToDisk) {
+      updateStatus(true, `Salvo no disco e no site às ${timeStr}`);
+      showToast("💾 Site salvo e atualizado com sucesso no disco e no navegador!");
+    } else {
+      updateStatus(true, `Salvo no site às ${timeStr}`);
+      showToast("💾 Alterações salvas! O site já foi atualizado em tempo real.");
+    }
+
+    isDirty = false;
+    refreshChapterIndex();
   }
 
   editorCanvas.addEventListener("input", () => {
@@ -592,10 +651,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnSaveSite = document.getElementById("btn-save-site");
   if (btnSaveSite) {
     btnSaveSite.addEventListener("click", () => {
-      saveToStorage();
-      showToast("✅ Conteúdo salvo com sucesso no navegador! Abra o site para conferir.");
+      saveAndSyncSite();
     });
   }
+
+  // Atalho global de teclado: Ctrl + S / Cmd + S salva e atualiza imediatamente
+  document.addEventListener("keydown", (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") {
+      e.preventDefault();
+      saveAndSyncSite();
+    }
+  });
 
   // Baixar index.html atualizado completo
   const btnDownloadIndex = document.getElementById("btn-download-index");
@@ -646,8 +712,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnResetDefault = document.getElementById("btn-reset-default");
   if (btnResetDefault) {
     btnResetDefault.addEventListener("click", () => {
-      if (confirm("Tem certeza que deseja descartar todas as alterações salvas localmente e restaurar o texto oficial original?")) {
+      if (confirm("Tem certeza que deseja descartar todas as alterações salvas e restaurar o texto oficial original?")) {
         localStorage.removeItem("guia_custom_content");
+        if ("BroadcastChannel" in window) {
+          try {
+            const channel = new BroadcastChannel("guia_content_sync");
+            channel.postMessage({ type: "RESET_CONTENT" });
+            channel.close();
+          } catch (e) {}
+        }
         loadInitialContent();
         showToast("Texto oficial restaurado!");
       }
