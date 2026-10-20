@@ -33,6 +33,7 @@
           <li><a href="https://www.1746.rio/" target="_blank" rel="noopener noreferrer">Central 1746</a></li>
           <li><a href="https://transparencia.prefeitura.rio/" target="_blank" rel="noopener noreferrer">Portal da Transparência</a></li>
           <li><a href="https://lgpd.prefeitura.rio/" target="_blank" rel="noopener noreferrer">Privacidade e LGPD</a></li>
+          <li><a href="admin.html">Painel do Editor (Admin)</a></li>
         </ul>
       </div>
 

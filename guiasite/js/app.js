@@ -5,6 +5,7 @@
  */
 
 document.addEventListener("DOMContentLoaded", () => {
+  loadCustomContentIfPresent();
   initSearchAutocomplete();
   initAccessibilityToolbar();
   initTableOfContents();
@@ -13,6 +14,37 @@ document.addEventListener("DOMContentLoaded", () => {
   initBackToTop();
   initReadingProgress();
 });
+
+/* --- CARREGAMENTO DE CONTEUDO EDITADO NO PAINEL ADMIN (SE EXISTIR) --- */
+function loadCustomContentIfPresent() {
+  const customContent = localStorage.getItem("guia_custom_content");
+  const mainEl = document.getElementById("conteudo-principal");
+  if (customContent && mainEl && customContent.trim().length > 50) {
+    const banner = `
+      <div class="admin-preview-banner" role="status">
+        <div class="admin-preview-banner-inner">
+          <span>📝 <strong>Modo Editor Local:</strong> Exibindo versao modificada no Painel Admin.</span>
+          <div class="admin-preview-banner-actions">
+            <a href="admin.html" class="admin-banner-link">Abrir Editor</a>
+            <button type="button" id="btn-revert-local-preview" class="admin-banner-btn">Restaurar Oficial</button>
+          </div>
+        </div>
+      </div>
+    `;
+    mainEl.innerHTML = banner + customContent;
+
+    const revertBtn = document.getElementById("btn-revert-local-preview");
+    if (revertBtn) {
+      revertBtn.addEventListener("click", () => {
+        if (confirm("Deseja descartar a versao editada localmente e voltar ao conteudo original publicado?")) {
+          localStorage.removeItem("guia_custom_content");
+          window.location.reload();
+        }
+      });
+    }
+  }
+}
+
 
 /* ==========================================================================
    1. MOTOR DE PESQUISA COM SUGESTÕES EM TEMPO REAL (AUTOCOMPLETE)

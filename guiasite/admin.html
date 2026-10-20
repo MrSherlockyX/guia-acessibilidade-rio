@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel de Administração e Editor de Conteúdo | Guia de Acessibilidade Digital — Prefeitura do Rio</title>
+  
+  <!-- Fontes Oficiais -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+  
+  <!-- Folhas de Estilo -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- 1. TOPBAR DO PAINEL DE ADMINISTRAÇÃO -->
+  <header class="admin-topbar">
+    <div class="admin-topbar-left">
+      <a href="index.html" class="admin-brand">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/></svg>
+        <span>Painel do Guia de Acessibilidade</span>
+      </a>
+      <span class="admin-brand-badge">Modo Editor (Sem Login)</span>
+      <div class="admin-topbar-status">
+        <span class="status-dot" id="status-dot"></span>
+        <span id="status-text">Pronto</span>
+      </div>
+    </div>
+
+    <div class="admin-topbar-right">
+      <button type="button" class="admin-btn admin-btn-secondary" id="btn-copy-html" title="Copiar HTML do conteúdo">
+        📋 Copiar HTML
+      </button>
+      <button type="button" class="admin-btn admin-btn-danger" id="btn-reset-default" title="Restaurar o texto original de fábrica">
+        🔄 Restaurar Original
+      </button>
+      <button type="button" class="admin-btn admin-btn-secondary" id="btn-download-index" title="Baixar arquivo index.html completo e atualizado">
+        ⬇️ Baixar index.html
+      </button>
+      <button type="button" class="admin-btn admin-btn-success" id="btn-save-site" title="Salvar e aplicar no site imediatamente">
+        💾 Salvar no Navegador
+      </button>
+      <a href="index.html" target="_blank" class="admin-btn admin-btn-primary" title="Abrir o site em nova aba para testar">
+        👁️ Ver Site ao Vivo ↗
+      </a>
+    </div>
+  </header>
+
+  <!-- 2. CORPO PRINCIPAL COM SIDEBAR E WORKSPACE -->
+  <div class="admin-main-layout">
+    
+    <!-- SIDEBAR DE CAPÍTULOS -->
+    <aside class="admin-sidebar" aria-label="Navegação por capítulos">
+      <div class="admin-sidebar-header">
+        <span class="admin-sidebar-title">Capítulos do Guia</span>
+        <button type="button" class="admin-btn admin-btn-secondary" id="btn-insert-chapter" style="padding: 0.25rem 0.5rem; font-size: 0.78rem;">
+          + Capítulo
+        </button>
+      </div>
+      <ul class="admin-chapter-list" id="admin-chapter-list">
+        <!-- Itens inseridos dinamicamente pelo JavaScript -->
+      </ul>
+    </aside>
+
+    <!-- WORKSPACE DO EDITOR -->
+    <main class="admin-workspace">
+      
+      <!-- BARRA DE FERRAMENTAS DO EDITOR (TOOLBAR) -->
+      <div class="editor-toolbar" role="toolbar" aria-label="Ferramentas de formatação e inserção de conteúdo">
+        
+        <!-- Formatação Básica de Texto -->
+        <div class="toolbar-group">
+          <button type="button" class="toolbar-btn" data-cmd="bold" title="Negrito (Ctrl+B)"><b>B</b></button>
+          <button type="button" class="toolbar-btn" data-cmd="italic" title="Itálico (Ctrl+I)"><i>I</i></button>
+          <button type="button" class="toolbar-btn" data-cmd="underline" title="Sublinhado (Ctrl+U)"><u>U</u></button>
+          <button type="button" class="toolbar-btn" data-cmd="strikeThrough" title="Tachado"><s>S</s></button>
+          <button type="button" class="toolbar-btn" id="btn-format-mark" title="Marcação / Destaque de Texto (<mark>)"><mark style="padding: 0 3px;">Mark</mark></button>
+          <button type="button" class="toolbar-btn" data-cmd="removeFormat" title="Limpar Formatação">🧹</button>
+        </div>
+
+        <!-- Títulos e Subtítulos -->
+        <div class="toolbar-group">
+          <button type="button" class="toolbar-btn" id="btn-insert-subtitle" title="Inserir Subtítulo (H3 / H4)">
+            <b>H3/H4</b> Subtítulo
+          </button>
+        </div>
+
+        <!-- Inserção de Listas -->
+        <div class="toolbar-group">
+          <button type="button" class="toolbar-btn" data-cmd="insertUnorderedList" title="Lista com Marcadores">• Lista</button>
+          <button type="button" class="toolbar-btn" data-cmd="insertOrderedList" title="Lista Numerada">1. Lista</button>
+        </div>
+
+        <!-- Componentes Especiais do Guia Rio -->
+        <div class="toolbar-group">
+          <!-- Dropdown Callouts -->
+          <div class="dropdown-wrapper">
+            <button type="button" class="toolbar-dropdown-btn">
+              <span>📌 Callout</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+            </button>
+            <div class="dropdown-menu">
+              <button type="button" class="dropdown-item" data-callout="wcag">📘 Diretriz WCAG 2.2</button>
+              <button type="button" class="dropdown-item" data-callout="law">⚖️ Legislação & Jurídico</button>
+              <button type="button" class="dropdown-item" data-callout="tip">💡 Dica Prática</button>
+              <button type="button" class="dropdown-item" data-callout="warning">⚠️ Atenção / Alerta</button>
+            </div>
+          </div>
+
+          <button type="button" class="toolbar-btn" id="btn-insert-code" title="Inserir Caixa de Código">
+            💻 Código
+          </button>
+          <button type="button" class="toolbar-btn" id="btn-insert-image" title="Inserir Imagem / Figura com Alt Text">
+            🖼️ Imagem
+          </button>
+          <button type="button" class="toolbar-btn" id="btn-insert-art" title="Inserir Caixa de Arte Reservada">
+            🎨 Arte
+          </button>
+          <button type="button" class="toolbar-btn" id="btn-insert-table" title="Inserir Tabela Acessível">
+            📊 Tabela
+          </button>
+          <button type="button" class="toolbar-btn" id="btn-insert-link" title="Inserir Link">
+            🔗 Link
+          </button>
+          <button type="button" class="toolbar-btn" id="btn-insert-footnote" title="Inserir Nota de Rodapé & Âncora de Referência">
+            📝 Nota [X]
+          </button>
+          <button type="button" class="toolbar-btn" id="btn-insert-stat" title="Inserir Card de Estatística">
+            📈 Card
+          </button>
+        </div>
+
+        <!-- Alternador Visual / HTML -->
+        <div class="toolbar-group" style="margin-left: auto; border-right: none; padding-right: 0;">
+          <button type="button" class="toolbar-btn is-active" id="tab-mode-visual" title="Modo Visual (WYSIWYG)">
+            Visual
+          </button>
+          <button type="button" class="toolbar-btn" id="tab-mode-html" title="Modo Código HTML">
+            &lt;/&gt; HTML
+          </button>
+        </div>
+
+      </div>
+
+      <!-- ÁREAS DO EDITOR -->
+      <div class="editor-container-split">
+        <!-- Visual Editor Canvas -->
+        <div class="editor-pane" id="editor-pane">
+          <div id="editor-canvas" contenteditable="true" spellcheck="true" role="textbox" aria-multiline="true" aria-label="Editor de conteúdo do Guia de Acessibilidade">
+            <!-- Conteúdo carregado via JavaScript -->
+          </div>
+        </div>
+
+        <!-- HTML Code Editor Pane -->
+        <div class="html-pane" id="html-pane">
+          <textarea class="html-textarea" id="html-textarea" spellcheck="false" aria-label="Editor direto de código HTML"></textarea>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- 3. MODAIS DE INSERÇÃO ACESSÍVEIS -->
+
+  <!-- Modal: Novo Capítulo -->
+  <div class="admin-modal-overlay" id="modal-chapter" role="dialog" aria-modal="true" aria-labelledby="modal-chapter-title">
+    <div class="admin-modal-box">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title" id="modal-chapter-title">Inserir Novo Capítulo</h3>
+        <button type="button" class="admin-modal-close" aria-label="Fechar">&times;</button>
+      </div>
+      <form id="form-chapter">
+        <div class="admin-modal-body">
+          <div class="admin-form-group">
+            <label class="admin-label" for="chapter-num">Número do Capítulo <span class="required">*</span></label>
+            <input type="number" class="admin-input" id="chapter-num" required min="1" max="99" value="11" />
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-label" for="chapter-title">Título do Capítulo <span class="required">*</span></label>
+            <input type="text" class="admin-input" id="chapter-title" required placeholder="Ex: Acessibilidade em Documentos e PDFs" />
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-label" for="chapter-id">Identificador Âncora (ID do Sumário)</label>
+            <input type="text" class="admin-input" id="chapter-id" placeholder="Ex: acessibilidade-em-documentos-e-pdfs (opcional)" />
+            <span class="admin-help-text">Se deixar em branco, o identificador será gerado automaticamente a partir do título.</span>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button type="button" class="admin-btn admin-btn-secondary" data-modal-close>Cancelar</button>
+          <button type="submit" class="admin-btn admin-btn-primary">Inserir Capítulo</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Subtítulo (H3 / H4) -->
+  <div class="admin-modal-overlay" id="modal-subtitle" role="dialog" aria-modal="true" aria-labelledby="modal-subtitle-title">
+    <div class="admin-modal-box">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title" id="modal-subtitle-title">Inserir Subtítulo / Seção</h3>
+        <button type="button" class="admin-modal-close" aria-label="Fechar">&times;</button>
+      </div>
+      <form id="form-subtitle">
+        <div class="admin-modal-body">
+          <div class="admin-form-group">
+            <label class="admin-label" for="subtitle-level">Nível Semântico</label>
+            <select class="admin-select" id="subtitle-level">
+              <option value="h3">H3 &bull; Seção de Artigo Principal</option>
+              <option value="h4">H4 &bull; Subseção Detalhada</option>
+            </select>
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-label" for="subtitle-title">Texto do Título <span class="required">*</span></label>
+            <input type="text" class="admin-input" id="subtitle-title" required placeholder="Ex: 6.1 Imagens Decorativas" />
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-label" for="subtitle-id">ID de Âncora (Opcional)</label>
+            <input type="text" class="admin-input" id="subtitle-id" placeholder="Ex: imagens-decorativas" />
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button type="button" class="admin-btn admin-btn-secondary" data-modal-close>Cancelar</button>
+          <button type="submit" class="admin-btn admin-btn-primary">Inserir</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Caixa de Código -->
+  <div class="admin-modal-overlay" id="modal-code" role="dialog" aria-modal="true" aria-labelledby="modal-code-title">
+    <div class="admin-modal-box">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title" id="modal-code-title">Inserir Bloco de Código</h3>
+        <button type="button" class="admin-modal-close" aria-label="Fechar">&times;</button>
+      </div>
+      <form id="form-code">
+        <div class="admin-modal-body">
+          <div class="admin-form-group">
+            <label class="admin-label" for="code-lang">Linguagem / Rótulo</label>
+            <input type="text" class="admin-input" id="code-lang" value="HTML" placeholder="HTML, CSS, JavaScript, etc." />
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-label" for="code-snippet">Código <span class="required">*</span></label>
+            <textarea class="admin-textarea" id="code-snippet" rows="6" required placeholder="Cole seu código aqui..."></textarea>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button type="button" class="admin-btn admin-btn-secondary" data-modal-close>Cancelar</button>
+          <button type="submit" class="admin-btn admin-btn-primary">Inserir Código</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Imagem / Figura Acessível -->
+  <div class="admin-modal-overlay" id="modal-image" role="dialog" aria-modal="true" aria-labelledby="modal-image-title">
+    <div class="admin-modal-box">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title" id="modal-image-title">Inserir Imagem / Figura Acessível</h3>
+        <button type="button" class="admin-modal-close" aria-label="Fechar">&times;</button>
+      </div>
+      <form id="form-image">
+        <div class="admin-modal-body">
+          <div class="admin-form-group">
+            <label class="admin-label" for="image-url">URL ou Caminho da Imagem <span class="required">*</span></label>
+            <input type="text" class="admin-input" id="image-url" required placeholder="Ex: assets/images/exemplo.png ou https://..." />
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-label" for="image-alt">Texto Alternativo (Alt Text) <span class="required">*</span></label>
+            <textarea class="admin-textarea" id="image-alt" rows="3" required placeholder="Descreva com precisão o que a imagem representa para pessoas cegas ou com baixa visão (WCAG 1.1.1)"></textarea>
+            <span class="admin-help-text">Obrigatório pelas diretrizes WCAG 2.2 e eMAG 3.1.</span>
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-label" for="image-caption">Legenda Visível (Figcaption - Opcional)</label>
+            <input type="text" class="admin-input" id="image-caption" placeholder="Ex: Figura 1: Exemplo prático de contraste adequado." />
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button type="button" class="admin-btn admin-btn-secondary" data-modal-close>Cancelar</button>
+          <button type="submit" class="admin-btn admin-btn-primary">Inserir Imagem</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Caixa de Arte Reservada -->
+  <div class="admin-modal-overlay" id="modal-art" role="dialog" aria-modal="true" aria-labelledby="modal-art-title">
+    <div class="admin-modal-box">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title" id="modal-art-title">Inserir Caixa de Arte Reservada</h3>
+        <button type="button" class="admin-modal-close" aria-label="Fechar">&times;</button>
+      </div>
+      <form id="form-art">
+        <div class="admin-modal-body">
+          <div class="admin-form-group">
+            <label class="admin-label" for="art-id">Identificador da Arte <span class="required">*</span></label>
+            <input type="text" class="admin-input" id="art-id" required placeholder="Ex: arte-24, arte-30" />
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-label" for="art-title">Título do Tópico da Arte <span class="required">*</span></label>
+            <input type="text" class="admin-input" id="art-title" required placeholder="Ex: 6.8 Tabelas com Cabeçalho e Dados" />
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-label" for="art-desc">Descrição Detalhada para Produção da Arte <span class="required">*</span></label>
+            <textarea class="admin-textarea" id="art-desc" rows="4" required placeholder="Descreva os elementos que devem constar no desenho ou infográfico..."></textarea>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button type="button" class="admin-btn admin-btn-secondary" data-modal-close>Cancelar</button>
+          <button type="submit" class="admin-btn admin-btn-primary">Inserir Caixa de Arte</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Hiperlink -->
+  <div class="admin-modal-overlay" id="modal-link" role="dialog" aria-modal="true" aria-labelledby="modal-link-title">
+    <div class="admin-modal-box">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title" id="modal-link-title">Inserir Link</h3>
+        <button type="button" class="admin-modal-close" aria-label="Fechar">&times;</button>
+      </div>
+      <form id="form-link">
+        <div class="admin-modal-body">
+          <div class="admin-form-group">
+            <label class="admin-label" for="link-text">Texto do Link</label>
+            <input type="text" class="admin-input" id="link-text" placeholder="Texto visível que será clicado" />
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-label" for="link-url">Endereço Web (URL) <span class="required">*</span></label>
+            <input type="url" class="admin-input" id="link-url" required placeholder="https://..." />
+          </div>
+          <div class="admin-form-group" style="flex-direction: row; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" id="link-newtab" checked style="width: 18px; height: 18px;" />
+            <label class="admin-label" for="link-newtab" style="cursor: pointer;">Abrir em nova aba (target="_blank") com segurança rel="noopener"</label>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button type="button" class="admin-btn admin-btn-secondary" data-modal-close>Cancelar</button>
+          <button type="submit" class="admin-btn admin-btn-primary">Inserir Link</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Nota de Rodapé & Âncora de Referência -->
+  <div class="admin-modal-overlay" id="modal-footnote" role="dialog" aria-modal="true" aria-labelledby="modal-footnote-title">
+    <div class="admin-modal-box">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title" id="modal-footnote-title">Inserir Nota de Rodapé & Referência</h3>
+        <button type="button" class="admin-modal-close" aria-label="Fechar">&times;</button>
+      </div>
+      <form id="form-footnote">
+        <div class="admin-modal-body">
+          <div class="admin-form-group">
+            <label class="admin-label" for="fn-num">Número da Referência <span class="required">*</span></label>
+            <input type="number" class="admin-input" id="fn-num" required min="1" max="999" value="1" />
+            <span class="admin-help-text">Insere a âncora [X] no cursor e adiciona automaticamente na lista final de Referências com o link de retorno ↩.</span>
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-label" for="fn-text">Texto Completo da Referência / Fonte <span class="required">*</span></label>
+            <textarea class="admin-textarea" id="fn-text" rows="4" required placeholder="Ex: WORLD WIDE WEB CONSORTIUM (W3C). Diretrizes de Acessibilidade..."></textarea>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button type="button" class="admin-btn admin-btn-secondary" data-modal-close>Cancelar</button>
+          <button type="submit" class="admin-btn admin-btn-primary">Inserir Referência</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Tabela Acessível -->
+  <div class="admin-modal-overlay" id="modal-table" role="dialog" aria-modal="true" aria-labelledby="modal-table-title">
+    <div class="admin-modal-box">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title" id="modal-table-title">Inserir Tabela Acessível</h3>
+        <button type="button" class="admin-modal-close" aria-label="Fechar">&times;</button>
+      </div>
+      <form id="form-table">
+        <div class="admin-modal-body">
+          <div class="admin-form-group">
+            <label class="admin-label" for="table-caption">Título da Tabela (Caption acessível) <span class="required">*</span></label>
+            <input type="text" class="admin-input" id="table-caption" required placeholder="Ex: Tabela de Critérios de Contraste WCAG 2.2" />
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="admin-form-group">
+              <label class="admin-label" for="table-rows">Qtd. de Linhas</label>
+              <input type="number" class="admin-input" id="table-rows" value="3" min="1" max="50" />
+            </div>
+            <div class="admin-form-group">
+              <label class="admin-label" for="table-cols">Qtd. de Colunas</label>
+              <input type="number" class="admin-input" id="table-cols" value="3" min="1" max="10" />
+            </div>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button type="button" class="admin-btn admin-btn-secondary" data-modal-close>Cancelar</button>
+          <button type="submit" class="admin-btn admin-btn-primary">Criar Tabela</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Card de Estatística -->
+  <div class="admin-modal-overlay" id="modal-stat" role="dialog" aria-modal="true" aria-labelledby="modal-stat-title">
+    <div class="admin-modal-box">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title" id="modal-stat-title">Inserir Card de Estatística</h3>
+        <button type="button" class="admin-modal-close" aria-label="Fechar">&times;</button>
+      </div>
+      <form id="form-stat">
+        <div class="admin-modal-body">
+          <div class="admin-form-group">
+            <label class="admin-label" for="stat-number">Número / Destaque <span class="required">*</span></label>
+            <input type="text" class="admin-input" id="stat-number" required placeholder="Ex: 4,5:1 ou 18,6 milhões" />
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-label" for="stat-desc">Descrição / Rótulo <span class="required">*</span></label>
+            <input type="text" class="admin-input" id="stat-desc" required placeholder="Ex: Razão de contraste mínima recomendada para texto normal" />
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <button type="button" class="admin-btn admin-btn-secondary" data-modal-close>Cancelar</button>
+          <button type="submit" class="admin-btn admin-btn-primary">Inserir Card</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST DE NOTIFICAÇÃO -->
+  <div class="admin-toast" id="admin-toast" role="status" aria-live="polite">
+    <span id="toast-message">Notificação</span>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
